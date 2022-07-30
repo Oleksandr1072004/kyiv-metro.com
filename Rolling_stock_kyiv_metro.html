@@ -21,13 +21,6 @@
 	$('document').ready(function(){
 		setInterval(GetDateTime, 1000);
 		
-        $(function(){
-            $('#logo').slideUp(0);
-            $('#logo').slideDown(3000);
-            $('#menu').slideUp(0);
-            $('#menu').slideDown(2000);
-        })
-        ;
         $("#red").click(function(){
             $("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:maroon; text-shadow: 1px 1px 2px black;");
 			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
