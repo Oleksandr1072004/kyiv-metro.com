@@ -1,0 +1,980 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+p{
+  
+  box-sizing: border-box;
+  font-family: 'Tahoma', sans-serif;
+}
+body
+{
+	color:white;
+	animation: transitionIn 1.5s;
+	overflow-x: hidden;
+}
+@keyframes transitionIn{
+	from {
+		opacity: 0;
+		transform: translateX(-100px);
+	}
+	to{
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+body::after, body::before {
+  /* these are the 2 half blocks which cover the content once the animation is triggered */
+  height: 50vh;
+  width: 100%;
+  position: fixed;
+  left: 0;
+}
+body::before {
+  top: 0;
+  transform: translateY(-100%);
+}
+body::after {
+  bottom: 0;
+  transform: translateY(100%);
+}
+
+.slide-in {
+	animation: slide-in 1s ease forwards;
+}
+@keyframes slide-in{
+	from {
+		transform: translateX(100%);
+		visibility: visible;
+	}
+	to {
+		transform: translateX(0%);
+	}
+}
+
+.btn_sb, .btn_ot, .btn_sp, .btn_pv, .btn_livoberezhna, .btn_vd, .btn_b, .btn_rs, .btn_main, .btn_au{
+	position: relative;
+	display: inline-block;
+	text-decoration: none;
+	border-radius: 20px;
+	overflow: hidden;
+	transition: 0.2s;
+}
+#btn_sb{
+	color:white;
+}
+#btn_sb: hover{
+	color: white;
+	background: #8a2424;
+	box-shadow: -1 -1 10px #8a2424, 0 0 40px #8a2424, 0 0 80px #8a2424;
+}
+.light_sb {
+  position: relative;
+  padding: 25px 30px;
+  color: #8a2424;
+  font-size: 24px;
+  transition: 0.5s;
+  cursor: pointer;
+  overflow: hidden;
+}
+.light_sb:hover {
+  background-color: #8a2424;
+  color: #050801;
+  box-shadow: 0 0 5px #8a2424,
+              0 0 25px #8a2424,
+              0 0 50px #8a2424,
+              0 0 200px #8a2424;
+}
+.light_sb div {
+  position: absolute;
+}
+.light_sb div:nth-child(1){
+  width: 100%;
+  height: 2px;
+  top: 0;
+  left: -100%;
+  background: linear-gradient(to right,transparent,#8a2424);
+  animation: animate1 1s linear infinite;
+}
+.light_sb div:nth-child(2){
+  width: 2px;
+  height: 100%;
+  top: -100%;
+  right: 0;
+  background: linear-gradient(to bottom,transparent,#8a2424);
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+.light_sb div:nth-child(3){
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  right: -100%;
+  background: linear-gradient(to left,transparent,#8a2424);
+  animation: animate3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+.light_sb div:nth-child(4){
+  width: 2px;
+  height: 100%;
+  bottom: -100%;
+  left: 0;
+  background: linear-gradient(to top,transparent,#8a2424);
+  animation: animate4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+.light_ot {
+  position: relative;
+  padding: 25px 30px;
+  color: blue;
+  font-size: 24px;
+  transition: 0.5s;
+  cursor: pointer;
+  overflow: hidden;
+}
+.light_ot:hover {
+  background-color: blue;
+  color: #050801;
+  box-shadow: 0 0 5px blue,
+              0 0 25px blue,
+              0 0 50px blue,
+              0 0 200px blue;
+}
+.light_ot div {
+  position: absolute;
+}
+.light_ot div:nth-child(1){
+  width: 100%;
+  height: 2px;
+  top: 0;
+  left: -100%;
+  background: linear-gradient(to right,transparent,blue);
+  animation: animate1 1s linear infinite;
+}
+.light_ot div:nth-child(2){
+  width: 2px;
+  height: 100%;
+  top: -100%;
+  right: 0;
+  background: linear-gradient(to bottom,transparent,blue);
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+.light_ot div:nth-child(3){
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  right: -100%;
+  background: linear-gradient(to left,transparent,blue);
+  animation: animate3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+.light_ot div:nth-child(4){
+  width: 2px;
+  height: 100%;
+  bottom: -100%;
+  left: 0;
+  background: linear-gradient(to top,transparent,blue);
+  animation: animate4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+.light_sp {
+  position: relative;
+  padding: 25px 30px;
+  color: green;
+  font-size: 24px;
+  transition: 0.5s;
+  cursor: pointer;
+  overflow: hidden;
+}
+.light_sp:hover {
+  background-color: green;
+  color: #050801;
+  box-shadow: 0 0 5px green,
+              0 0 25px green,
+              0 0 50px green,
+              0 0 200px green;
+}
+.light_sp div {
+  position: absolute;
+}
+.light_sp div:nth-child(1){
+  width: 100%;
+  height: 2px;
+  top: 0;
+  left: -100%;
+  background: linear-gradient(to right,transparent,green);
+  animation: animate1 1s linear infinite;
+}
+.light_sp div:nth-child(2){
+  width: 2px;
+  height: 100%;
+  top: -100%;
+  right: 0;
+  background: linear-gradient(to bottom,transparent,green);
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+.light_sp div:nth-child(3){
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  right: -100%;
+  background: linear-gradient(to left,transparent,green);
+  animation: animate3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+.light_sp div:nth-child(4){
+  width: 2px;
+  height: 100%;
+  bottom: -100%;
+  left: 0;
+  background: linear-gradient(to top,transparent,green);
+  animation: animate4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+.light_pv {
+  position: relative;
+  padding: 25px 30px;
+  color: #bd8600;
+  font-size: 24px;
+  transition: 0.5s;
+  cursor: pointer;
+  overflow: hidden;
+}
+.light_pv:hover {
+  background-color: #bd8600;
+  color: #050801;
+  box-shadow: 0 0 5px #bd8600,
+              0 0 25px #bd8600,
+              0 0 50px #bd8600,
+              0 0 200px #bd8600;
+}
+.light_pv div {
+  position: absolute;
+}
+.light_pv div:nth-child(1){
+  width: 100%;
+  height: 2px;
+  top: 0;
+  left: -100%;
+  background: linear-gradient(to right,transparent,#bd8600);
+  animation: animate1 1s linear infinite;
+}
+.light_pv div:nth-child(2){
+  width: 2px;
+  height: 100%;
+  top: -100%;
+  right: 0;
+  background: linear-gradient(to bottom,transparent,#bd8600);
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+.light_pv div:nth-child(3){
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  right: -100%;
+  background: linear-gradient(to left,transparent,#bd8600);
+  animation: animate3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+.light_pv div:nth-child(4){
+  width: 2px;
+  height: 100%;
+  bottom: -100%;
+  left: 0;
+  background: linear-gradient(to top,transparent,#bd8600);
+  animation: animate4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+.light_livoberezhna {
+  position: relative;
+  padding: 25px 30px;
+  color: #00b8d4;
+  font-size: 24px;
+  transition: 0.5s;
+  cursor: pointer;
+  overflow: hidden;
+}
+.light_livoberezhna:hover {
+  background-color: #00b8d4;
+  color: #050801;
+  box-shadow: 0 0 5px #00b8d4,
+              0 0 25px #00b8d4,
+              0 0 50px #00b8d4,
+              0 0 200px #00b8d4;
+}
+.light_livoberezhna div {
+  position: absolute;
+}
+.light_livoberezhna div:nth-child(1){
+  width: 100%;
+  height: 2px;
+  top: 0;
+  left: -100%;
+  background: linear-gradient(to right,transparent,#00b8d4);
+  animation: animate1 1s linear infinite;
+}
+.light_livoberezhna div:nth-child(2){
+  width: 2px;
+  height: 100%;
+  top: -100%;
+  right: 0;
+  background: linear-gradient(to bottom,transparent,#00b8d4);
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+.light_livoberezhna div:nth-child(3){
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  right: -100%;
+  background: linear-gradient(to left,transparent,#00b8d4);
+  animation: animate3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+.light_livoberezhna div:nth-child(4){
+  width: 2px;
+  height: 100%;
+  bottom: -100%;
+  left: 0;
+  background: linear-gradient(to top,transparent,#00b8d4);
+  animation: animate4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+.light_vd {
+  position: relative;
+  padding: 25px 30px;
+  color: #c9af28;
+  font-size: 24px;
+  transition: 0.5s;
+  cursor: pointer;
+  overflow: hidden;
+}
+.light_vd:hover {
+  background-color: #c9af28;
+  color: #050801;
+  box-shadow: 0 0 5px #c9af28,
+              0 0 25px #c9af28,
+              0 0 50px #c9af28,
+              0 0 200px #c9af28;
+}
+.light_vd div {
+  position: absolute;
+}
+.light_vd div:nth-child(1){
+  width: 100%;
+  height: 2px;
+  top: 0;
+  left: -100%;
+  background: linear-gradient(to right,transparent,#c9af28);
+  animation: animate1 1s linear infinite;
+}
+.light_vd div:nth-child(2){
+  width: 2px;
+  height: 100%;
+  top: -100%;
+  right: 0;
+  background: linear-gradient(to bottom,transparent,#c9af28);
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+.light_vd div:nth-child(3){
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  right: -100%;
+  background: linear-gradient(to left,transparent,#c9af28);
+  animation: animate3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+.light_vd div:nth-child(4){
+  width: 2px;
+  height: 100%;
+  bottom: -100%;
+  left: 0;
+  background: linear-gradient(to top,transparent,#c9af28);
+  animation: animate4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+.light_b {
+  position: relative;
+  padding: 25px 30px;
+  color: purple;
+  font-size: 24px;
+  transition: 0.5s;
+  cursor: pointer;
+  overflow: hidden;
+}
+.light_b:hover {
+  background-color: purple;
+  color: #050801;
+  box-shadow: 0 0 5px purple,
+              0 0 25px purple,
+              0 0 50px purple,
+              0 0 200px purple;
+}
+.light_b div {
+  position: absolute;
+}
+.light_b div:nth-child(1){
+  width: 100%;
+  height: 2px;
+  top: 0;
+  left: -100%;
+  background: linear-gradient(to right,transparent,purple);
+  animation: animate1 1s linear infinite;
+}
+.light_b div:nth-child(2){
+  width: 2px;
+  height: 100%;
+  top: -100%;
+  right: 0;
+  background: linear-gradient(to bottom,transparent,purple);
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+.light_b div:nth-child(3){
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  right: -100%;
+  background: linear-gradient(to left,transparent,purple);
+  animation: animate3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+.light_b div:nth-child(4){
+  width: 2px;
+  height: 100%;
+  bottom: -100%;
+  left: 0;
+  background: linear-gradient(to top,transparent,purple);
+  animation: animate4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+@keyframes animate1 {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+@keyframes animate2 {
+  0% {
+    top: -100%;
+  }
+  50%,100% {
+    top: 100%;
+  }
+}
+@keyframes animate3 {
+  0% {
+    right: -100%;
+  }
+  50%,100% {
+    right: 100%;
+  }
+}
+@keyframes animate4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
+  }
+}
+td
+{
+	padding:20px;
+}
+#datetime_p{
+font-family: Calibri;
+color: Black;
+font-style: Italic;
+font-size:150%;
+}
+#navigation {
+float:right;
+margin: auto;
+overflow: hidden;
+}
+#navigation ul {
+list-style:none;
+}
+#navigation li {
+float: left;
+list-style: none;
+}
+
+#div_for_metro img{
+	cursor:pointer;
+	margin:0px 22px 0px 0px;
+}
+.main 
+{
+   background:#777777; 
+   position:relative;
+   width:900px;
+   margin:0px auto;
+   box-shadow:0px 0px 30px black;
+   text-shadow: 1px 1px 2px black;
+}
+.center
+{
+   position:relative;
+   width:900px;
+   background:#777777;
+   margin:20px 0px 0px 0px;
+   text-shadow: 1px 1px 2px black;
+}
+.logo_text
+{
+height:10px;
+width:100%;
+font:24px impact;
+letter-spacing:3px;
+text-shadow: 1px 1px 2px black;
+}
+#logo_text
+{
+height:10px;
+width:100%;
+font:24px impact;
+letter-spacing:3px;
+text-shadow: 1px 1px 2px black;
+}
+.menu
+
+{
+   min-width:150px;
+   display:block;
+   font:bold 20px tahoma;
+   color:#909090;
+   color:#ffffff;
+}
+.top_index
+{
+   position:relative;
+   background:#777777 url(img/m.jpg);
+   background-repeat:no-repeat;
+   width:900px;
+   height:420px;
+}
+.menu a
+{
+   display:block;
+   font:bold 20px tahoma;
+   color:#909090;
+   text-decoration:none;
+   transition: 0.2s;
+}
+.menu a:hover
+{
+   color:#ffffff;
+}
+.menu a:action
+{ 
+   color:#ffffff;
+}
+
+.menu_site
+
+{
+   min-width:150px;
+   display:block;
+   font:bold 20px tahoma;
+   color:#909090;
+   color:#ffffff;
+   text-shadow: 1px 1px 2px black;
+}
+.menu_site a
+{
+   display:block;
+   font:bold 20px tahoma;
+   color:#909090;
+   text-decoration:none;
+   transition: 0.2s;
+   text-shadow: 1px 1px 2px black;
+}
+.menu_site a:hover
+{
+   color:#ffffff;
+}
+.menu_site a:action
+{ 
+   color:#ffffff;
+}
+#menu_site
+
+{
+   min-width:150px;
+   display:block;
+   font:bold 20px tahoma;
+   color:#909090;
+   color:#ffffff;
+   text-shadow: 1px 1px 2px black;
+}
+#menu_site a:action
+{ 
+   color:#ffffff;
+}
+#menu_site a
+{
+   display:block;
+   font:bold 20px tahoma;
+   color:#909090;
+   text-decoration:none;
+   transition: 0.2s;
+   text-shadow: 1px 1px 2px black;
+}
+
+#menu_site a:hover
+{
+   color:#ffffff;
+}
+
+.rainbow{
+	color: white;
+	position: absolute;
+	background: linear-gradient(#fd004c 16.7%, #fe9000 16.7%, #fe9000 33.4%, #fff020 33.4%, #fff020 50.1%, #3edf4b 50.1%, #3edf4b 66.8%, #3363ff 66.8%, #3363ff 83.5%, #b102b7 83.5%);
+	color:transparent;
+	font-family: "Poppins",sans-serif;
+	letter-spacing: 0.05em;
+	transform: translate(-50%,50%);
+	background-clip: text;
+	-webkit-text-stroke: 0.04em black;
+	-webkit-background-clip: text;
+	background-clip: text;
+	line-height: 0.5em;
+	animation: rainbow 50s linear-gradient;
+}
+@keyframes rainbow{
+	0%{
+		background-position: 0%;
+	}
+	100%{
+		background-position: 400%;
+	}
+}
+
+.rainbow_txt{
+	position: absolute;
+	top: 35%;
+	left: 20%;
+	background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033ff, #ff00c4, #ff0000);
+	background-size: 400%;
+	font-size: 70px;
+	font-family: sans-serif;
+	letter-spacing: 5px;
+	font-weight: 600;
+	word-spacing: 5px;
+	-webkit-text-stroke: 0.04em white;
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	animation: animate 10s linear infinite;
+}
+
+@keyframes animate{
+	0%{
+		background-position: 0%;
+	}
+	100%{
+		background-position: 400%;
+	}
+}
+#menu
+
+{
+   min-width:150px;
+   display:block;
+   font:bold 20px tahoma;
+   color:#909090;
+   color:#ffffff;
+}
+#menu a:action
+{ 
+   color:#ffffff;
+}
+#menu a
+{
+   display:block;
+   font:bold 20px tahoma;
+   color:#909090;
+   text-decoration:none;
+   transition:0.2s;
+}
+#menu a:hover
+{
+   color:#ffffff;
+}
+.center p
+{
+   text-align:justify;
+   padding:20px 150px 100px 150px;
+   color:white;
+   font-size:16px;
+   font-family:tahoma;
+   letter-spacing:1px;
+   text-shadow: 1px 1px 2px black;
+}
+.center h1
+{
+   color:white;
+   text-align:center;
+   padding:20px 0px 0px 0px;
+}
+.center table
+{
+width:100%;
+margin-top:-25%;
+}
+.foto img{
+	width:100%;
+}
+#foto img{
+	width:100%;
+}
+#gallery {
+    padding: 20px;
+    border:1px solid #cccccc;
+    width: 483px;
+    margin: 10px auto;
+    height: 380px;
+}
+
+#big {
+    background-image: url("images/gal/loader.gif");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width: 483px;
+    height: 302px;
+    border:1px dotted #cccccc;
+    }
+
+#small {
+    margin-top: 10px;
+    margin-left: 33px;
+     
+}
+
+#small a img{
+    border:none;
+     
+}
+#p_color_knop{
+	position:relative;
+	width:200px;
+	border:0px solid red;
+	margin:0px 0px 30px 0px;
+	cursor:pointer;
+}
+
+#p_color_knop #red{
+	
+	padding:8px;
+	background:red;
+	width:0px;
+	float:left;
+	margin:3px;
+	
+}
+#p_color_knop #blue{
+	padding:8px;
+	background:blue;
+	width:0px;
+	float:left;
+	margin:3px;
+}
+#p_color_knop #green{
+	padding:8px;
+	background:green;
+	width:0px;
+	float:left;
+	margin:3px;
+}
+#p_color_knop #yellow{
+	padding:8px;
+	background:#ff9900;
+	width:0px;
+	float:left;
+	margin:3px;
+}
+#p_color_knop #cyan{
+	padding:8px;
+	background:#00ffff;
+	width:0px;
+	float:left;
+	margin:3px;
+}
+#p_color_knop #gold{
+	padding:8px;
+	background:#c9af28;
+	width:0px;
+	float:left;
+	margin:3px;
+}
+#p_color_knop #purple{
+	padding:8px;
+	background:#800080;
+	width:0px;
+	float:left;
+	margin:3px;
+}
+#p_color_knop #white{
+	padding:8px;
+	background:#ffffff;
+	width:0px;
+	float:left;
+	margin:3px;
+}
+#p_color_knop #rainbow_p{
+	padding:8px;
+	background: linear-gradient(#fd004c 16.7%, #fe9000 16.7%, #fe9000 33.4%, #fff020 33.4%, #fff020 50.1%, #3edf4b 50.1%, #3edf4b 66.8%, #3363ff 66.8%, #3363ff 83.5%, #b102b7 83.5%);
+	background-size: 400%;
+	animation: rainbow 50s linear-gradient;
+	width:0px;
+	float:left;
+	margin:3px;
+}
+#p_color_knop #rainbow_text{
+	padding:8px;
+	background: linear-gradient(90deg, #fd004c, #fe9000, #fff020, #3edf4b, #3363ff,#0000ff, #000080, #800080, #b102b7, #ff00c4, #fd004c);
+	background-size: 400%;
+	animation: animate 10s linear infinite;
+	width:0px;
+	float:left;
+	margin:3px;
+}
+#moto_help{
+	width:100%;
+	height:80px;
+	font:bold 12px tahoma;
+}
+#help_metro{
+	width:100%;
+	height:80px;
+	font:bold 12px tahoma;
+}
+#div_for_img img{
+	cursor:pointer;
+	margin:0px 22px 0px 0px;
+}
+#size_text{
+	position:relative;
+	width:160px;
+	border:0px solid red;
+	left:30px;
+	margin:10px 0px 0px 0px;
+	cursor:pointer;
+}
+#size_text div{
+	float:left;
+	margin-left:7px;
+	text-align:right;
+}
+#small_text{
+	font:bold 100% arial;
+}
+#middle_text{
+	font:bold 150% arial;
+}
+#big_text{
+	font:bold 200% arial;
+}
+.font_small{
+	font-size:80%;
+}
+.font_middle{
+	font-size:115%;
+}
+.font_big{
+	font-size:200%;
+}
+.input {
+outline:none;
+}
+.div {
+margin:10px 0;
+text-align:center;
+}
+.div label {
+margin:0 10px 0 0;
+}
+.div input[type=text] {
+padding:6px 10px;
+border-radius:10px;
+border:1px solid #000033;
+}
+.div input[type=button] 
+{
+padding:6px 10px;
+border-radius:10px;
+font-size:16px;
+border:1px solid #000033;
+cursor:pointer;
+}
+#galery_moto{
+position:relative;
+border:0px solid blue;
+width:380px;
+height:170px;
+margin:0px auto;
+}
+#galery_moto #div_for_metro{
+position:absolute;
+border:0px solid red;
+width:220px;
+height:125px;
+padding:20px;
+top:0px;
+left:55px;
+}
+#galery_moto #div_for_metro img{
+position:absolute;
+top:0px;
+display:none;
+}
+#galery_moto #left{
+position:absolute;
+top:50px;
+left:0px;
+cursor:pointer;
+}
+#galery_moto #right{
+position:absolute;
+top:50px;
+right:0px;
+cursor:pointer;
+}
+#big {
+    background-image: url("images/gal/loader.gif");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width: 483px;
+    height: 302px;
+    border:1px dotted #cccccc;
+    }
+
+#small {
+    margin-top: 10px;
+    margin-left: 33px;
+     
+}
+
+#small a img{
+    border:none;
+     
+}
+#gallery {
+    padding: 20px;
+    border:1px solid #cccccc;
+    width: 483px;
+    margin: 10px auto;
+    height: 380px;
+}
