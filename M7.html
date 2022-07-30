@@ -21,14 +21,6 @@
 	
 	$('document').ready(function(){
 		setInterval(GetDateTime, 1000);
-		
-		$(function(){
-			$('#logo').slideUp(0);
-			$('#logo').slideDown(3000);
-			$('#menu').slideUp(0);
-			$('#menu').slideDown(2000);
-		})
-		;
 		$("#red").click(function(){
 			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:red;");
 			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
@@ -257,7 +249,7 @@ $(function(){
 </div>
 <table id='center' cellspacing="0" border="0" width="100%" bordercolor="fff">
 <tr id='top'>
-<td id='menu' width='275px' valign="top">
+<td class='menu' width='275px' valign="top">
 <div class='menu_station' >
 <div id='station_2'>
 <p><a>Зараз список станцій Борщагівської лінії Київського метрополітена немає</a></p>
