@@ -10,14 +10,14 @@
 <script>
 	var $clas_new="font_middle";
 	var $clas_action="font_middle";
-	
+
 	function GetDateTime(){
 		var DateTime = new Date();
 		var week = new Array('Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П`ятниця', 'Субота');
 		var day  = week[DateTime.getDay()];
 		$('#divDateTime').html("Сьогодні: " + DateTime.getDate() + "." + (DateTime.getMonth()+1) + "." + DateTime.getFullYear() + " - "+day+"<br> Час: " + DateTime.getHours() + ":" + DateTime.getMinutes() + ":" + DateTime.getSeconds());
 	}
-	
+
 	$('document').ready(function(){
 		setInterval(GetDateTime, 1000);
 
@@ -65,7 +65,7 @@
 			$("#menu a:hover").attr("style","background:#ffffff;");
 			$("#menu a:action").attr("style","background:#ffffff;");
 		})
-		
+
 		$("#back_to_main_slide").click(function(){
 			$('#text_station').html('');
 			$('#title').html("Сирецько-Печерська лінія");
@@ -86,7 +86,7 @@
 				$('#qrcode').html("<p>QR code della linea:</p><img src='kyiv_metro_qrcodes/qrcode_syrets_pecherska_.png' align='left' width='300px' height='300px'>");
 			}
 		});
-		
+
 		// Stations
 		$("#station_0").click(function(){
 			$('#text_station').html('<p>Наразі станція перебуває на стадії проектування.</p>');
@@ -241,7 +241,7 @@
 				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_syrets.png' align='left' width='300px' height='300px'>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M3/Syrets_metro_station_Kiev_2010_02.jpg' style='width:1560px; height: 1050px;'>");
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Syrets_metro_station_Kiev_2010_02.jpg' style='width:100%'>");
 			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
 		});
 		$("#station_2").click(function(){
@@ -267,7 +267,7 @@
 				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_dorohozhychi.png' align='left' width='300px' height='300px'>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M3/Dorogozhychi_metro_station_Kiev_2010_01.jpg' style='width:1560px; height: 1050px;'>");
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Dorogozhychi_metro_station_Kiev_2010_01.jpg' style='width:100%'>");
 			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
 		});
 		$("#station_3").click(function(){
@@ -293,7 +293,7 @@
 				$('#qrcode').html("<p>Non esiste un codice QR per questa stazione!</p>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M3/Hertsena.jpg'>");
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Hertsena.jpg' style='width:100%'>");
 			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
 		});
 		$("#station_4").click(function(){
@@ -319,7 +319,7 @@
 				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_lukhyanivska.png' align='left' width='300px' height='300px'>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M3/Lukianovska_metro_station_Kiev_2010_01.jpg' style='width:1560px; height: 1050px;'>");
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Lukianovska_metro_station_Kiev_2010_01.jpg' style='width:100%'>");
 			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
 		});
 		$("#station_5").click(function(){
@@ -345,7 +345,7 @@
 				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_lviv_brama.png' align='left' width='300px' height='300px'>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M3/Lvivska_Brama_Metro_Station_Kiev_Project_1990s_01.jpg'>");
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Lvivska_Brama_Metro_Station_Kiev_Project_1990s_01.jpg' style='width:100%'>");
 			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/eFdsPFGFL1I' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
 		});
 		$("#station_6").click(function(){
@@ -375,7 +375,7 @@
 				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_Zoloti_Vorota.png' align='left' width='300px' height='300px'>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M3/Zoloti_Vorota_Metro_Station_Cental_Hall.jpg'><p><img src='images_kyiv_metro_M1/teatralna_and_zolot_vorota.gif'></p>");
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Zoloti_Vorota_Metro_Station_Cental_Hall.jpg' style='width:100%'><p><img src='images_kyiv_metro_M1/teatralna_and_zolot_vorota.gif' style='width:100%'></p>");
 		});
 		$("#station_7").click(function(){
 			$('#text_station').html('<p>Палац Спорту -  30-та станція Київського метрополітену, розташована на Сирецько-Печерській лінії між станціями «Кловська» і «Золоті ворота», знаходиться на глибині 59 метрів, вважається пілонно трисклепінною станцією глибокого залягання. Відкрита 31 грудня 1989 року у складі першої черги будівництва Сирецько-Печерської лінії. Назва станції — від розташованого поруч Палацу спорту. Має перехід на станцію <a href="M2.html">«Площа Василя Стуса»</a> Оболонсько-Теремківської лінії. «Палац спорту» — була єдиною станцією київського метрополітену, де на колійній стіні впродовж довгого часу зберігалися назви станції російською мовою. У лютому 2015 р. російськомовні написи було демонтовано.</p>');
@@ -400,7 +400,7 @@
 				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_palats_sportu.png' align='left' width='300px' height='300px'>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M3/Palats_sportu_metro_station_Kiev_2010_011.jpg' style='width:1560px; height: 1050px;'>");
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Palats_sportu_metro_station_Kiev_2010_011.jpg' style='width:100%'>");
 			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
 		});
 		$("#station_8").click(function(){
@@ -426,7 +426,7 @@
 				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_klovska.png' align='left' width='300px' height='300px'>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M3/Klovska_metro_station_Kiev_2010_01.jpg' style='width:1560px; height: 1050px;'>");
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Klovska_metro_station_Kiev_2010_01.jpg' style='width:100%'>");
 			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/_VpxA7KbrPg' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
 		});
 		$("#station_9").click(function(){
@@ -452,7 +452,7 @@
 				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_pecherska.png' align='left' width='300px' 	height='300px'>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M3/Pecherska_metro_station_Kiev_2010_01.jpg' style='width:1560px; height: 1050px;'>");
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Pecherska_metro_station_Kiev_2010_01.jpg' style='width:100%'>");
 			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
 		});
 		$("#station_10").click(function(){
@@ -478,7 +478,7 @@
 				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_botanichna.png' align='left' width='300px' height='300px'><p align='right'>Codice QR della scuola di Novopechersk:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_novopecherska_schkola.png' align='right' width='300px' height='300px'>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M3/Druzhby_Narodiv_metro_station_Kiev_2010_01.jpg' style='width:1560px; height: 1050px;'>");
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Druzhby_Narodiv_metro_station_Kiev_2010_01.jpg' style='width:100%'>");
 			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
 		});
 		$("#station_11").click(function(){
@@ -508,7 +508,7 @@
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 				$('#station_video').html("<p>Video di Alexander Grinenko del 2018: <iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/Fd1y_eyPP-E' allow='autoplay; encrypted-media' allowfullscreen></iframe></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M3/Vydubychi_metro_station_Kiev_2010_01.jpg' style='width:1560px; height: 1050px;'>");
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Vydubychi_metro_station_Kiev_2010_01.jpg' style='width:100%'>");
 		});
 		$("#station_12").click(function(){
 			$('#text_station').html('<p>Теличка - станція Сирецько-Печерської лінії, всього лише недобудована станція мілкого залягання, яка буде відкрита в майбутньому і тому метропотяги їдуть через цю станцію без зупинки. Буде розташована між станціями "Видубичі" і "Славутич".</p>');
@@ -563,7 +563,7 @@
 				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_slavutich.png' align='left' width='300px' height='300px'>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M3/Slavutych_metro_station_Kiev_2010_02.jpg' style='width:1560px; height: 1050px;'>");
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Slavutych_metro_station_Kiev_2010_02.jpg' style='width:100%'>");
 		});
 		$("#station_14").click(function(){
 			$('#text_station').html('<p>Осокорки - 35-та станція Київського метрополітену. Розташована на Сирецько-Печерській лінії між станціями «Славутич» і «Позняки», вважається односклепінною станцією мілкого залягання. Відкрита 30 грудня 1992 року. Назва — від місцевості й житлового масиву, що розташовані поблизу. Зал з двох боків сполучається сходами з підземними вестибюлями, котрі виконані в єдиному блоці з підземними переходами під транспортною розв`язкою (у місці перетину проспекту Бажана та Дніпровської набережної). Наземні виходи на проспект Бажана.</p>');
@@ -588,7 +588,7 @@
 				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_osokorki.png' align='left' width='300px' height='300px'>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M3/Osokorky_Metro_Station_Kiev_2011_02.jpg' style='width:1560px; height: 1050px;'>");
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Osokorky_Metro_Station_Kiev_2011_02.jpg' style='width:100%'>");
 			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/35iJ04ZYV8g' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
 		});
 		$("#station_15").click(function(){
@@ -614,7 +614,7 @@
 				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_poznyaki.png' align='left' width='300px' height='300px'>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M3/Pozniaky_metro_station_Kiev_2011_01.jpg' style='width:1560px; height: 1050px;'>");
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Pozniaky_metro_station_Kiev_2011_01.jpg' style='width:100%'>");
 			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
 		});
 		$("#station_16").click(function(){
@@ -640,7 +640,7 @@
 				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_kharkivska.png' align='left' width='300px' height='300px'>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M3/Kharkivska_metro_station_Kiev_2011_01.jpg' style='width:1560px; height: 1050px;'>");
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Kharkivska_metro_station_Kiev_2011_01.jpg' style='width:100%'>");
 			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
 		});
 		$("#station_17").click(function(){
@@ -666,7 +666,7 @@
 				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_vyrlitsya.png' align='left' width='300px' height='300px'>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M3/Vyrlytsia_metro_station_Kiev_2011_01.jpg' style='width:1560px; height: 1050px;'>");
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Vyrlytsia_metro_station_Kiev_2011_01.jpg' style='width:100%'>");
 			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
 		});
 		$("#station_18").click(function(){
@@ -692,7 +692,7 @@
 				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_borispilska.png' align='left' width='300px' height='300px'>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M3/Boryspilska_metro_station_Kiev_2011_03.jpg' style='width:1560px; height: 1050px;'>");
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Boryspilska_metro_station_Kiev_2011_03.jpg' style='width:100%'>");
 			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
 		});
 		$("#station_19").click(function(){
@@ -718,11 +718,11 @@
 				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_hutir.png' align='left' width='300px' height='300px'>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M3/Chervonyi_khutir_metro_station_Kiev_2010_01.jpg' style='width:1560px; height: 1050px;'>");
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Chervonyi_khutir_metro_station_Kiev_2010_01.jpg' style='width:100%'>");
 			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
 		});
-		
-		
+
+
 		$("#p, h1, h2, h3, h4, li, legend, td, label, option").addClass("font_middle");
 
 		$("#small_text").click(function(){
@@ -908,14 +908,14 @@
 </div>
 </div>
 </td>
-<td id='station' valign="top" rowspan='2' width="100%">
+<td id='station' valign="top" rowspan='2'>
 <p>
 <div id='text_station'></div>
 </p>
 <p>
-<div id='station_image'></div>
-<div id='station_video'></div>
-<div id='qrcode'><p>QR-код лінії:</p><img src='kyiv_metro_qrcodes/qrcode_syrets_pecherska_.png' align='left' width='300px' height='300px'></div>
+<div id='station_image' width='1050px' height='750px'></div>
+<div id='station_video' width='1050px' height='750px'></div>
+<div id='qrcode' width='1050px' height='750px'><p>QR-код лінії:</p><img src='kyiv_metro_qrcodes/qrcode_syrets_pecherska_.png' align='left' width='300px' height='300px'></div>
 <div id='back_to_main_slide' class='menu'></div>
 </p>
 </td>
