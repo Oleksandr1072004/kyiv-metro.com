@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1251" charset="UTF-8">
+<title id='title'>Лівобережна лінія</title>
+<script src="js/jquery-1_11_3_min.js"> </script>
+<link href="css/new.css" rel="stylesheet" type="text/css" />
+<link rel="icon" href="kyiv_metro_branch/1200px-Kyiv_Metro_Line_5.svg.png" type="image/x-icon">
+</head>
+<body bgcolor="#00b8d4">
+<script type="text/javascript">
+	function googleTranslateElementInit() {
+	 new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+	}
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+	var $clas_new="font_middle";
+	var $clas_action="font_middle";
+
+	function GetDateTime(){
+		var DateTime = new Date();
+		var week = new Array('Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П`ятниця', 'Субота');
+		var day  = week[DateTime.getDay()];
+		$('#divDateTime').html("Сьогодні: " + DateTime.getDate() + "." + (DateTime.getMonth()+1) + "." + DateTime.getFullYear() + " - "+day+"<br> Час: " + DateTime.getHours() + ":" + DateTime.getMinutes() + ":" + DateTime.getSeconds());
+	}
+
+	$('document').ready(function(){
+		setInterval(GetDateTime, 1000);
+		$(function(){
+			$('#logo').slideUp(0);
+			$('#logo').slideDown(3000);
+			$('#menu').slideUp(0);
+			$('#menu').slideDown(2000);
+			$('#map').slideUp(0);
+			$('#map').fadeIn(3000);
+		})
+		;
+		$("#red").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:maroon;");
+		})
+		$("#blue").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:blue;");
+		})
+		$("#green").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:lime;");
+		})
+		$("#yellow").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:gold;");
+		})
+		$("#cyan").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#00ffff;");
+		})
+		$("#gold").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:yellow;");
+		})
+		$("#purple").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#800080;");
+		})
+		$("#white").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#ffffff;");
+		})
+
+		$("#rainbow_text").click(function(){
+			$("#p, legend, td, label, option").attr("style","background: linear-gradient(90deg, #fd004c, #fe9000, #fff020, #3edf4b, #3363ff, #0000ff, #000080, #800080, #b102b7, #ff00c4, #fd004c);background-size: 400%;font-family: sans-serif;word-spacing: 5px;-webkit-text-fill-color: transparent;-webkit-text-stroke: 0.01em black;-webkit-background-clip: text;animation: animate 10s linear infinite;");
+			$("#divDateTime").attr("style","background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033ff, #ff00c4, #ff0000);background-size: 400%;font-family: Calibri; font-style: Italic; font-size:115%;word-spacing: 5px;-webkit-text-fill-color: transparent;-webkit-background-clip: text;animation: animate 10s linear infinite;");
+			$("#menu a:hover").attr("style","background:#ffffff;");
+			$("#menu a:action").attr("style","background:#ffffff;");
+		})
+
+		$("#back_to_main_slide").click(function(){
+			$('#text_station').html('');
+			$('#title').html("Лівобережна лінія");
+			$('#station_image').html("");
+			$('#station_video').html("");
+			$('#back_to_main_slide').html("");
+			$('#qrcode').html("<p></p>");
+			if ($('#e').text() == "English"){
+				$('#title').html("Лівобережна лінія");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#title').html("Livoberezhna line");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#title').html("Linea Livoberezhna");
+			}
+		});
+
+		// Stations
+		$("#station_02").click(function(){
+			$('#text_station').html('<p>Ця станція є наземною, але поки що проектується, яка буде з`являтися в цієї лінії майбутньому.</p>');
+			$('#title').html("Лівобережна лінія");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text()=="English") {
+				$('#text_station').html('<p>Ця станція є наземною, але поки що проектується, яка буде з`являтися в цієї лінії майбутньому.</p>');
+				$('#title').html("Лівобережна лінія");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text()=="Italiano") {
+				$('#text_station').html('<p>This station is ground, but it is still being designed, which will appear in this line in the future.</p>');
+				$('#title').html("Livoberezhna line");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Questa stazione è a terra, ma è ancora in fase di progettazione, che apparirà in questa linea in futuro.</p>');
+				$('#title').html("Linea Livoberezhna");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_1").click(function(){
+			$('#text_station').html('<p style="background-color: #bd8600">Вулиця Милославська -  проєктована наземна кінцева станція першої черги Лівобережної лінії і частиною Подільсько-Вигурівської Київського метрополітену. Наступна на лінії станція — «Вулиця Цвєтаєвої», перегін між станціями наземний, критий, довжиною 817 м. В середині перегону передбачено будівництво пішохідного містка над коліями.</p>');
+			$('#title').html("Вулиця Милославська (станція метро Подільсько-Вигурівської і Лівобережної лінії)");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p style="background-color: #bd8600">Вулиця Милославська -  проєктована наземна кінцева станція першої черги Лівобережної лінії і частиною Подільсько-Вигурівської Київського метрополітену. Наступна на лінії станція — «Вулиця Цвєтаєвої», перегін між станціями наземний, критий, довжиною 817 м. В середині перегону передбачено будівництво пішохідного містка над коліями.</p>');
+				$('#title').html("Вулиця Милославська (станція метро Подільсько-Вигурівської і Лівобережної лінії)");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p style="background-color: #bd8600">Vylutsya Myloslavska is the planned ground terminus of the first line of the Livoberezhna line and part of the Podilsko-Vygurivska Line of the Kyiv Metro. The next station on the line is "Vulytsya Tsvyetayevoyi", the track between the stations is ground, covered, 817 m long. In the middle of the track, a pedestrian bridge is planned to be built over the tracks.</p>');
+				$('#title').html("Vylutsya Myloslavska (metro station of Podilsko-Vygurivska and Livoberezhnaya lines)");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p style="background-color: #bd8600">Via Myloslavska e il capolinea a terra previsto della prima linea della linea Livoberezhna e parte della linea Podilsko-Vygurivska della metropolitana di Kiev. La stazione successiva della linea e "Via Cvetaeva", il binario tra le stazioni e terra, coperto, lungo 817 m Al centro del binario e prevista la costruzione di un ponte pedonale sopra i binari.</p>');
+				$('#title').html("Via Myloslavska (stazione della metropolitana delle linee Podilsko-Vygurivska e Livoberezhnaya)");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_2").click(function(){
+			$('#text_station').html('<p style="background-color: #bd8600">Вулиця Цвєтаєвої - проєктована наземна станція першої черги Лівобережної лінії і частиною Подільсько-Вигурівської Київського метрополітену, розташована між станціями «Вулиця Сабурова» і «Вулиця Милославська». Перегін до станції «Вулиця Сабурова» наземний, критий, довжиною 839 м. В середині перегону передбачено будівництво пішохідного містка над коліями. За проєктом станція повинна бути побудована на місці нинішньої станції «Марини Цвєтаєвої» Лівобережного швидкісного трамвая, вздовж вулиці Оноре де Бальзака, під існуючим шляхопроводом між вулицями Марини Цвєтаєвої та Лісківської.\n' +
+					'\n' +
+					'За конструкцією станція запроєктована колонною, з острівною платформою довжиною 126 м і шириною 10 м. На станції має бути два вестибюля з обох боків шляхопроводу, сполучених із платформою сходами. Вхід пасажирів на станцію і вихід зі станції запроєктований зі шляхопроводу. Для пасажирів з обмеженими фізичними можливостями у кожному вестибюлі передбачена установка ліфта.\n' +
+					'\n' +
+					'Проєктний строк будівництва дільниці першої черги Лівобережної лінії від станції «Вулиця Милославська» до станції «Проспект Ватутіна» з електродепо «Троєщина» — 48 місяців, але не пізніше 2020 року.</p>');
+			$('#title').html("Вулиця Цвєтаєвої (станція метро Подільсько-Вигурівської і Лівобережної лінії)");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p style="background-color: #bd8600">Вулиця Цвєтаєвої - проєктована наземна станція першої черги Лівобережної лінії і частиною Подільсько-Вигурівської Київського метрополітену, розташована між станціями «Вулиця Сабурова» і «Вулиця Милославська». Перегін до станції «Вулиця Сабурова» наземний, критий, довжиною 839 м. В середині перегону передбачено будівництво пішохідного містка над коліями. За проєктом станція повинна бути побудована на місці нинішньої станції «Марини Цвєтаєвої» Лівобережного швидкісного трамвая, вздовж вулиці Оноре де Бальзака, під існуючим шляхопроводом між вулицями Марини Цвєтаєвої та Лісківської.\n' +
+					'\n' +
+					'За конструкцією станція запроєктована колонною, з острівною платформою довжиною 126 м і шириною 10 м. На станції має бути два вестибюля з обох боків шляхопроводу, сполучених із платформою сходами. Вхід пасажирів на станцію і вихід зі станції запроєктований зі шляхопроводу. Для пасажирів з обмеженими фізичними можливостями у кожному вестибюлі передбачена установка ліфта.\n' +
+					'\n' +
+					'Проєктний строк будівництва дільниці першої черги Лівобережної лінії від станції «Вулиця Милославська» до станції «Проспект Ватутіна» з електродепо «Троєщина» — 48 місяців, але не пізніше 2020 року.</p>');
+				$('#title').html("Вулиця Цвєтаєвої (станція метро Подільсько-Вигурівської і Лівобережної лінії)");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p style="background-color: #bd8600">Vulytsya Tsvyetayevoyi is a planned ground station of the first stage of the Livoberezhna line and part of the Podilsko-Vygurivska metro line of the Kyiv metro, located between the stations "Vulytsya Saburova" and "Vulytsya Myloslavska". The stretch to the "Vulytsya Saburova" station is surface, covered, 839 m long. In the middle of the stretch, a pedestrian bridge over the tracks is planned to be built. According to the project, the station should be built on the site of the current "Marina Tsvetaeva" station of the Livoberezhna high-speed tram, along Honore de Balzac Street, under the existing overpass between Marina Tsvetaeva and Liskivska Streets. By construction, the station is designed as a column, with an island platform 126 m long and 10 m wide. The station should have two vestibules on both sides of the overpass, connected to the platform by stairs. The entrance of passengers to the station and exit from the station is designed from the overpass. For passengers with limited physical capabilities, an elevator is installed in each vestibule. The project term for the construction of the section of the first phase of the Livoberezhna line from the station "Vulytsya Myloslavska" to the station "Prospekt Vatutina" from the "Troyeshchyna" electrical depot is 48 months, but no later than 2020.</p>');
+				$('#title').html("Vulytsya Tsvyetayevoyi (metro station of Podilsko-Vygurivska and Livoberezhnaya lines)");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p style="background-color: #bd8600">Via Cvetaeva è una stazione a terra prevista della prima tappa linea Livoberezhna e parte della linea della metropolitana Podilsko-Vygurivska della metropolitana di Kiev, situata tra le stazioni "Via Saburova" e "Via Myloslavska". Il tratto fino alla stazione “Via Saburova” è in superficie, coperto, lungo 839 m, a metà del tratto è prevista la realizzazione di un ponte pedonale sui binari. Secondo il progetto, la stazione dovrebbe essere costruita sul sito dell`attuale stazione "Marina Cvetaeva" del tram ad alta velocità della Livoberezhna, lungo la via Honoré de Balzac, sotto il cavalcavia esistente tra le vie Marina Cvetaeva e Liskivska. Per costruzione, la stazione è progettata come una colonna, con una banchina a isola lunga 126 me larga 10. La stazione dovrebbe avere due vestiboli su entrambi i lati del cavalcavia, collegati alla banchina da scale. L`ingresso dei passeggeri in stazione e l`uscita dalla stazione sono progettati dal cavalcavia. Per i passeggeri con capacità fisiche limitate, in ogni vestibolo è installato un ascensore. Il termine del progetto per la costruzione della sezione della prima fase della linea Livoberezhna dalla stazione "Via Myloslavska" alla stazione "Prospekt Vatutina" dal Il deposito elettrico di Troyeshchyna è di 48 mesi, ma non oltre il 2020.</p>');
+				$('#title').html("Via Cvetaeva (stazione della metropolitana delle linee Podilsko-Vygurivska e Livoberezhnaya)");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_3").click(function(){
+			$('#text_station').html('<p style="background-color: #bd8600">Вулиця Сабурова - проєктована наземна станція першої черги Лівобережної лінії і частиною Подільсько-Вигурівської Київського метрополітену, розташована між станціями «Вулиця Драйзера» і «Вулиця Цвєтаєвої». Перегін до станції «Вулиця Драйзера» наземний, критий, довжиною 839 м. У середині перегону передбачено будівництво пішохідного містка над коліями. Унаслідок дії закону про декомунізацію станція матиме іншу назву. За проєктом станція повинна бути побудована на місці нинішньої станції «Сержа Лифаря» Лівобережного швидкісного трамвая, вздовж вулиці Оноре де Бальзака, під існуючим шляхопроводом між вулицями Сержа Лифаря та Градинської.\n' +
+					'\n' +
+					'За конструкцією станція запроєктована колонною, з острівною платформою довжиною 126 м і шириною 10 м. На станції має бути два вестибюля з обох боків шляхопроводу, сполучених із платформою сходами. Вхід пасажирів на станцію і вихід зі станції запроєктований зі шляхопроводу. Для пасажирів з обмеженими фізичними можливостями у кожному вестибюлі передбачена установка ліфта.\n' +
+					'\n' +
+					'На станції передбачено спорудження відстійно-оборотного тупика.\n' +
+					'\n' +
+					'Проєктний строк будівництва дільниці першої черги Лівобережної лінії від станції «Вулиця Милославська» до станції «Проспект Ватутіна» з електродепо «Троєщина» — 48 місяців, але не пізніше 2020 року.</p>');
+			$('#title').html("Вулиця Сабурова (станція метро Подільсько-Вигурівської і Лівобережної лінії)");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p style="background-color: #bd8600">Вулиця Сабурова - проєктована наземна станція першої черги Лівобережної лінії і частиною Подільсько-Вигурівської Київського метрополітену, розташована між станціями «Вулиця Драйзера» і «Вулиця Цвєтаєвої». Перегін до станції «Вулиця Драйзера» наземний, критий, довжиною 839 м. У середині перегону передбачено будівництво пішохідного містка над коліями. Унаслідок дії закону про декомунізацію станція матиме іншу назву. За проєктом станція повинна бути побудована на місці нинішньої станції «Сержа Лифаря» Лівобережного швидкісного трамвая, вздовж вулиці Оноре де Бальзака, під існуючим шляхопроводом між вулицями Сержа Лифаря та Градинської.\n' +
+					'\n' +
+					'За конструкцією станція запроєктована колонною, з острівною платформою довжиною 126 м і шириною 10 м. На станції має бути два вестибюля з обох боків шляхопроводу, сполучених із платформою сходами. Вхід пасажирів на станцію і вихід зі станції запроєктований зі шляхопроводу. Для пасажирів з обмеженими фізичними можливостями у кожному вестибюлі передбачена установка ліфта.\n' +
+					'\n' +
+					'На станції передбачено спорудження відстійно-оборотного тупика.\n' +
+					'\n' +
+					'Проєктний строк будівництва дільниці першої черги Лівобережної лінії від станції «Вулиця Милославська» до станції «Проспект Ватутіна» з електродепо «Троєщина» — 48 місяців, але не пізніше 2020 року.</p>');
+				$('#title').html("Вулиця Сабурова (станція метро Подільсько-Вигурівської і Лівобережної лінії)");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p style="background-color: #bd8600">Vulytsya Saburova is a planned ground station of the first line of the Livoberezhna line and a part of the Podilsko-Vygurivska Kyiv Metro, located between the stations "Vulytsya Drayzera" and "Vulytsya Tsvetaeva". The stretch to the Dreiser Street station is surface, covered, 839 m long. In the middle of the stretch, a pedestrian bridge over the tracks is planned to be built. As a result of the decommunization law, the station will have a different name. According to the project, the station should be built on the site of the current "Serzh Lyfar" station of the Livoberezhna high-speed tram, along Honore de Balzac Street, under the existing overpass between Serzh Lyfar and Gradynska Streets.\n' +
+					'\n' +
+					'According to the design, the station is designed as a column, with an island platform 126 m long and 10 m wide. The station should have two vestibules on both sides of the overpass, connected to the platform by stairs. The entrance of passengers to the station and exit from the station is designed from the overpass. For passengers with limited physical capabilities, an elevator is installed in each lobby.\n' +
+					'\n' +
+					"The construction of a settling and turning dead end is planned at the station.\n" +
+					'\n' +
+					'The project term for the construction of the section of the first stage of the Livoberezhna line from the station "Vulytsya Myloslavska" to the station "Prospekt Vatutina" from the "Troyeshchyna" electric depot is 48 months, but no later than 2020.</p>');
+				$('#title').html("Vulytsya Saburova (metro station of Podilsko-Vygurivska and Livoberezhnaya lines)");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p style="background-color: #bd8600">Via Saburova è una stazione di terra prevista della prima linea Livoberezhna e parte della metropolitana Podilsko-Vygurivska Kyiv, situata tra le stazioni "Via Dreiser" e "Via Cvetaeva". Il tratto fino alla stazione "Via Dreiser" è in superficie, coperto, lungo 839 m Al centro del tratto è prevista la realizzazione di un ponte pedonale sui binari. A causa della legge sulla decomunizzazione, la stazione avrà un nome diverso. Secondo il progetto, la stazione dovrebbe essere costruita sul sito dell`attuale stazione "Serzh Lyfar" del tram ad alta velocità della Livoberezhna, lungo Honore de Balzac Street, sotto il cavalcavia esistente tra Serzh Lyfar e Gradynska Street.\n' +
+					'\n' +
+					'Secondo il progetto, la stazione è concepita come una colonna, con una banchina a isola lunga 126 me larga 10. La stazione dovrebbe avere due vestiboli su entrambi i lati del cavalcavia, collegati alla banchina da scale. L`ingresso dei passeggeri in stazione e l`uscita dalla stazione sono progettati dal cavalcavia. Per i passeggeri con capacità fisiche limitate, è installato un ascensore in ogni lobby.\n'+
+					'\n' +
+					"Nella stazione è prevista la costruzione di un vicolo cieco di assestamento e svolta.\n" +
+					'\n' +
+					'Il termine del progetto per la costruzione del tratto della prima tappa della linea Livoberezhna dalla stazione "Via Myloslavska" alla stazione "Prospekt Vatutina" dal deposito elettrico "Troyeshchyna" è di 48 mesi, ma non oltre il 2020.</p>');
+				$('#title').html("Via Saburova (stazione della metropolitana delle linee Podilsko-Vygurivska e Livoberezhnaya)");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_4").click(function(){
+			$('#text_station').html('<p style="background-color: #bd8600">Вулиця Драйзера - проєктована наземна станція першої черги Лівобережної лінії і частиною Подільсько-Вигурівської Київського метрополітену, розташована між станціями «Вулиця Каштанова» і «Вулиця Сабурова». Перегін до станції «Вулиця Каштанова» наземний, критий, довжиною 1378 м. В середині перегону передбачено будівництво пішохідного містка над коліями. За проєктом станція повинна бути побудована на місці нинішньої станції «Теодора Драйзера» швидкісного трамвая № 2, вздовж вулиці Оноре де Бальзака, під існуючим шляхопроводом на перетині з вулицею Теодора Драйзера.\n' +
+					'\n' +
+					'За конструкцією станція запроєктована колонною, з острівною платформою довжиною 126 м і шириною 10 м. На станції має бути два вестибюля з обох боків шляхопроводу, сполучених із платформою сходами. Вхід пасажирів на станцію і вихід зі станції запроєктований зі шляхопроводу. Для пасажирів з обмеженими фізичними можливостями у кожному вестибюлі передбачена установка ліфта.\n' +
+					'\n' +
+					'Проєктний термін будівництва дільниці першої черги Лівобережної лінії від станції «Вулиця Милославська» до станції «Проспект Ватутіна» з електродепо «Троєщина» — 48 місяців, але не пізніше 2020 року.</p>');
+			$('#title').html("Вулиця Драйзера (станція метро Подільсько-Вигурівської і Лівобережної лінії)");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p style="background-color: #bd8600">Вулиця Драйзера - проєктована наземна станція першої черги Лівобережної лінії і частиною Подільсько-Вигурівської Київського метрополітену, розташована між станціями «Вулиця Каштанова» і «Вулиця Сабурова». Перегін до станції «Вулиця Каштанова» наземний, критий, довжиною 1378 м. В середині перегону передбачено будівництво пішохідного містка над коліями. За проєктом станція повинна бути побудована на місці нинішньої станції «Теодора Драйзера» швидкісного трамвая № 2, вздовж вулиці Оноре де Бальзака, під існуючим шляхопроводом на перетині з вулицею Теодора Драйзера.\n' +
+					'\n' +
+					'За конструкцією станція запроєктована колонною, з острівною платформою довжиною 126 м і шириною 10 м. На станції має бути два вестибюля з обох боків шляхопроводу, сполучених із платформою сходами. Вхід пасажирів на станцію і вихід зі станції запроєктований зі шляхопроводу. Для пасажирів з обмеженими фізичними можливостями у кожному вестибюлі передбачена установка ліфта.\n' +
+					'\n' +
+					'Проєктний термін будівництва дільниці першої черги Лівобережної лінії від станції «Вулиця Милославська» до станції «Проспект Ватутіна» з електродепо «Троєщина» — 48 місяців, але не пізніше 2020 року.</p>');
+				$('#title').html("Вулиця Драйзера (станція метро Подільсько-Вигурівської і Лівобережної лінії)");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p style="background-color: #bd8600">Vulytsya Drayzera is a planned ground station of the first stage of the Livoberezhna line and part of the Podilsko-Vygurivska Kyiv Metro, located between the stations "Vulytsya Kashtanova" and "Vulytsya Saburova". The stretch to the "Vulytsya Kashtanova" station is ground, covered, 1,378 m long. In the middle of the stretch, a pedestrian bridge over the tracks is planned. According to the project, the station should be built on the site of the current "Theodore Dreiser" station of high-speed tram No. 2, along Honore de Balzac street, under the existing overpass at the intersection with Theodore Dreiser street.\n' +
+					'\n' +
+					'According to the design, the station is designed as a column, with an island platform 126 m long and 10 m wide. The station should have two vestibules on both sides of the overpass, connected to the platform by stairs. The entrance of passengers to the station and exit from the station is designed from the overpass. For passengers with limited physical capabilities, an elevator is installed in each lobby.\n' +
+					'\n' +
+					'The project term for the construction of the section of the first stage of the Livoberezhna line from the station "Vulytsya Myloslavska" to the station "Prospekt Vatutina" from the "Troyeshchyna" electric depot is 48 months, but no later than 2020.</p>');
+				$('#title').html("Vulytsya Drayzera (metro station of Podilsko-Vygurivska and Livoberezhnaya lines)");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p style="background-color: #bd8600">Via Dreiser è una stazione a terra prevista della prima tappa della linea Livoberezhna e parte della metropolitana Podilsko-Vygurivska Kyiv, situata tra le stazioni "Via Kashtanova" e "Via Saburova". Il tratto fino alla stazione "Via Kashtanova" è in terra, coperto, lungo 1.378 m Al centro del tratto è previsto un ponte pedonale sui binari. Secondo il progetto, la stazione dovrebbe essere costruita sul sito dell`attuale stazione "Theodore Dreiser" del tram ad alta velocità n. 2, lungo via Honoré de Balzac, sotto il cavalcavia esistente all`incrocio con via Theodore Dreiser.\n '+
+					'\n' +
+					'Secondo il progetto, la stazione è concepita come una colonna, con una banchina a isola lunga 126 me larga 10. La stazione dovrebbe avere due vestiboli su entrambi i lati del cavalcavia, collegati alla banchina da scale. L`ingresso dei passeggeri in stazione e l`uscita dalla stazione sono progettati dal cavalcavia. Per i passeggeri con capacità fisiche limitate, è installato un ascensore in ogni lobby.\n'+
+					'\n' +
+					'Il termine del progetto per la costruzione del tratto della prima tappa della linea Livoberezhna dalla stazione "Via Myloslavska" alla stazione "Prospekt Vatutina" dal deposito elettrico "Troyeshchyna" è di 48 mesi, ma non oltre il 2020.</p>');
+				$('#title').html("Via Dreiser (stazione della metropolitana delle linee Podilsko-Vygurivska e Livoberezhnaya)");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_5").click(function(){
+			$('#text_station').html('<p style="background-color: #bd8600">Вулиця Каштанова - проєктована наземна станція першої черги Лівобережної лінії і частиною Подільсько-Вигурівської Київського метрополітену, розташована між станціями «Вулиця Драйзера» і «Проспект Ватутіна». За проєктом повинна бути побудована трохи південніше від нинішньої станції «Каштанова» Лівобережного швидкісного трамваю, уздовж вулиці Оноре де Бальзака близько перетину з Каштановою вулицею.\n' +
+					'\n' +
+					'За конструкцією станція запроєктована наземною, колонною, з острівною платформою довжиною 126 м і шириною 10 м. На станції буде два вестибюля, пов\'язаних з посадочної платформою сходами. Вхід пасажирів на станцію і вихід зі станції — по побудованому пішохідному містку і критим пандусам. Для пасажирів з обмеженими фізичними можливостями в кожному вестибюлі передбачено встановлення ліфта.\n' +
+					'\n' +
+					'Перегін до станції «Проспект Ватутіна» наземний, критий, довжиною 1077 м. У середині перегону передбачено будівництво пішохідного містка над коліями.\n' +
+					'\n' +
+					'Проєктний термін будівництва ділянки першої черги Лівобережної лінії від станції «Вулиця Милославська» до станції «Проспект Ватутіна» з електродепо «Троєщина» — 48 місяців, але не пізніше 2020 року.</p>');
+			$('#title').html("Вулиця Каштанова (станція метро Подільсько-Вигурівської і Лівобережної лінії)");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p style="background-color: #bd8600">Вулиця Каштанова - проєктована наземна станція першої черги Лівобережної лінії і частиною Подільсько-Вигурівської Київського метрополітену, розташована між станціями «Вулиця Драйзера» і «Проспект Ватутіна». За проєктом повинна бути побудована трохи південніше від нинішньої станції «Каштанова» Лівобережного швидкісного трамваю, уздовж вулиці Оноре де Бальзака близько перетину з Каштановою вулицею.\n' +
+					'\n' +
+					'За конструкцією станція запроєктована наземною, колонною, з острівною платформою довжиною 126 м і шириною 10 м. На станції буде два вестибюля, пов\'язаних з посадочної платформою сходами. Вхід пасажирів на станцію і вихід зі станції — по побудованому пішохідному містку і критим пандусам. Для пасажирів з обмеженими фізичними можливостями в кожному вестибюлі передбачено встановлення ліфта.\n' +
+					'\n' +
+					'Перегін до станції «Проспект Ватутіна» наземний, критий, довжиною 1077 м. У середині перегону передбачено будівництво пішохідного містка над коліями.\n' +
+					'\n' +
+					'Проєктний термін будівництва ділянки першої черги Лівобережної лінії від станції «Вулиця Милославська» до станції «Проспект Ватутіна» з електродепо «Троєщина» — 48 місяців, але не пізніше 2020 року.</p>');
+				$('#title').html("Вулиця Каштанова (станція метро Подільсько-Вигурівської і Лівобережної лінії)");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p style="background-color: #bd8600">Vulytsya Kashtanova is a planned ground station of the first stage of the Livoberezhna line and part of the Podilsko-Vygurivska Kyiv Metro, located between the stations "Vulytsya Drayzera" and "Prospekt Vatutina". According to the project, it should be built a little south of the current "Kashtanova" station of the Livoberezhna high-speed tram, along Honore de Balzac Street near the intersection with Kashtanova Street.\n' +
+					'\n' +
+					'According to the design, the station is designed as a ground, column, with an island platform 126 m long and 10 m wide. The station will have two vestibules connected to the landing platform by stairs. Passengers enter and leave the station via the built pedestrian bridge and covered ramps. For passengers with limited physical capabilities, an elevator is installed in each lobby.\n' +
+					'\n' +
+					'The stretch to the Prospekt Vatutina station is ground, covered, 1077 m long. In the middle of the stretch, a pedestrian bridge over the tracks is planned to be built.\n' +
+					'\n' +
+					'The project term for the construction of the section of the first phase of the Livoberezhna line from the station "Vulytsya Myloslavska" to the station "Prospekt Vatutina" from the "Troyeshchyna" electric depot is 48 months, but no later than 2020.</p>');
+				$('#title').html("Vulytsya Kashtanova (metro station of Podilsko-Vygurivska and Livoberezhnaya lines)");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p style="background-color: #bd8600">Via Kashtanova è una stazione a terra prevista della prima tappa della linea Livoberezhna e parte della metropolitana Podilsko-Vygurivska Kyiv, situata tra le stazioni "Via Dreiser" e "Prospekt Vatutina". Secondo il progetto, dovrebbe essere costruito un po` a sud dell`attuale stazione "Kashtanova" del tram ad alta velocità della Livoberezhna, lungo Honore de Balzac Street, vicino all`incrocio con Via Kashtanova.\n' +
+					'\n' +
+					'Secondo il progetto, la stazione è progettata come una colonna a terra, con una piattaforma a isola lunga 126 me larga 10. La stazione avrà due vestiboli collegati alla piattaforma di atterraggio da scale. I passeggeri entrano ed escono dalla stazione attraverso il ponte pedonale costruito e le rampe coperte. Per i passeggeri con capacità fisiche limitate, è installato un ascensore in ogni lobby.\n'+
+					'\n' +
+					'Il tratto fino alla stazione di Prospekt Vatutina è in terra, coperto, lungo 1077 m. Nel mezzo del tratto è prevista la realizzazione di un ponte pedonale sui binari.\n' +
+					'\n' +
+					'Il termine del progetto per la costruzione del tratto della prima fase della linea della Livoberezhna dalla stazione "Via Myloslavska" alla stazione "Prospekt Vatutina" dal deposito elettrico "Troyeshchyna" è di 48 mesi, ma non oltre il 2020.</p>');
+				$('#title').html("Via Kashtanova (stazione della metropolitana delle linee Podilsko-Vygurivska e Livoberezhnaya)");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+
+		});
+		$("#station_6").click(function(){
+			$('#text_station').html('<p style="background-color: #bd8600">Проспект Ватутіна - проєктована наземна станція першої черги Лівобережної лінії і частиною Подільсько-Вигурівської Київського метрополітену, розташована між станціями «Вулиця Каштанова» і «Городня». Проєктом передбачено розміщення станції на естакаді шляхопроводу над проспектом Романа Шухевича, на місці нинішньої станції «Романа Шухевича» Лівобережного швидкісного трамвая. У зв\'язку із декомунізацією проспекту Ватутіна, станція носитиме назву «Проспект Романа Шухевича».\n' +
+					'\n' +
+					'Існуючий трамвайний шляхопровід внаслідок недостатньої несної здатності необхідно реконструювати для лінії метрополітену — демонтувати всю існуючу прольотну будову, добудувати 5 нових опор, а дві центральні опори підсилити, встановити нову прольотну будову. Новий шляхопровід матиме 9 прольотів. На 1-му, 2-му та 7-му, 8-му прольотах під шляхопроводом будуть розташовані наземні вестибюлі. На 3—6-му прольотних будовах буде розташовуватися платформна частина.\n' +
+					'\n' +
+					'За конструкцією станція запроєктована колонною, з острівною платформою довжиною 126 м і шириною 12,1 м. Для підйому та спуску пасажирів між вестибюлями і платформою передбачено в кожному вестибюлі по три ескалатори, а для пасажирів з обмеженими фізичними можливостями — по одному пасажирському ліфту.\n' +
+					'\n' +
+					'Перегін до станції «Городня» (друга черга будівництва Лівобережної лінії) матиме довжину 2434 м. Від станції «Проспект Ватутіна» до залізничного насипу — наземний, критий. На перегоні передбачено спорудження протипожежної платформи з евакуаційними виходами, а також підземної ділянки відгалуження на Подільсько-Вигурівську лінію до станції «Райдужна». Перед залізницею лінія метро переходить у підземну, мілкого закладення, і до станції «Городня» йде вздовж залізничних колій. Перед станцією «Городня» перегін мілкого залягання переходить у криту наземну конструкцію вздовж залізничного насипу.\n' +
+					'\n' +
+					'Проєктний термін побудови дільниці першої черги Лівобережної лінії від станції «Вулиця Милославська» до станції «Проспект Ватутіна» з електродепо «Троєщина» — 48 місяців, але не пізніше 2020 року.</p>');
+			$('#title').html("Проспект Ватутіна (станція метро Подільсько-Вигурівської і Лівобережної лінії)");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p style="background-color: #bd8600">Проспект Ватутіна - проєктована наземна станція першої черги Лівобережної лінії і частиною Подільсько-Вигурівської Київського метрополітену, розташована між станціями «Вулиця Каштанова» і «Городня». Проєктом передбачено розміщення станції на естакаді шляхопроводу над проспектом Романа Шухевича, на місці нинішньої станції «Романа Шухевича» Лівобережного швидкісного трамвая. У зв\'язку із декомунізацією проспекту Ватутіна, станція носитиме назву «Проспект Романа Шухевича».\n' +
+					'\n' +
+					'Існуючий трамвайний шляхопровід внаслідок недостатньої несної здатності необхідно реконструювати для лінії метрополітену — демонтувати всю існуючу прольотну будову, добудувати 5 нових опор, а дві центральні опори підсилити, встановити нову прольотну будову. Новий шляхопровід матиме 9 прольотів. На 1-му, 2-му та 7-му, 8-му прольотах під шляхопроводом будуть розташовані наземні вестибюлі. На 3—6-му прольотних будовах буде розташовуватися платформна частина.\n' +
+					'\n' +
+					'За конструкцією станція запроєктована колонною, з острівною платформою довжиною 126 м і шириною 12,1 м. Для підйому та спуску пасажирів між вестибюлями і платформою передбачено в кожному вестибюлі по три ескалатори, а для пасажирів з обмеженими фізичними можливостями — по одному пасажирському ліфту.\n' +
+					'\n' +
+					'Перегін до станції «Городня» (друга черга будівництва Лівобережної лінії) матиме довжину 2434 м. Від станції «Проспект Ватутіна» до залізничного насипу — наземний, критий. На перегоні передбачено спорудження протипожежної платформи з евакуаційними виходами, а також підземної ділянки відгалуження на Подільсько-Вигурівську лінію до станції «Райдужна». Перед залізницею лінія метро переходить у підземну, мілкого закладення, і до станції «Городня» йде вздовж залізничних колій. Перед станцією «Городня» перегін мілкого залягання переходить у криту наземну конструкцію вздовж залізничного насипу.\n' +
+					'\n' +
+					'Проєктний термін побудови дільниці першої черги Лівобережної лінії від станції «Вулиця Милославська» до станції «Проспект Ватутіна» з електродепо «Троєщина» — 48 місяців, але не пізніше 2020 року.</p>');
+				$('#title').html("Проспект Ватутіна (станція метро Подільсько-Вигурівської і Лівобережної лінії)");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p style="background-color: #bd8600">Prospekt Vatutina is a planned ground station of the first stage of the Livoberezhna line and part of the Podilsko-Vygurivska Kyiv Metro, located between the "Vulytsya Kashtanova" and "Horodnya" stations. The project envisages placing the station on the overpass of the overpass above Roman Shukhevych Avenue, on the site of the current "Roman Shukhevych" station of the Livoberezhny high-speed tram. In connection with the decommunization of Vatutin Avenue, the station will be called "Roman Shukhevich Avenue".\n' +
+					'\n' +
+					'Due to the insufficient bearing capacity, the existing tram overpass must be reconstructed for the subway line — the entire existing span structure must be dismantled, 5 new supports will be completed, and the two central supports must be strengthened, and a new span structure must be installed. The new overpass will have 9 spans. On the 1st, 2nd and 7th, 8th spans under the overpass there will be ground lobbies. The platform part will be located on the 3rd-6th span buildings.\n' +
+					'\n' +
+					'The station is designed as a column, with an island platform 126 m long and 12.1 m wide. There are three escalators in each lobby, and one passenger elevator for passengers with limited physical capabilities. \n' +
+					'\n' +
+					'The stretch to the "Horodnya" station (the second stage of the construction of the Livoberezhna line) will be 2,434 m long. From the "Prospekt Vatutina" station to the railway embankment, it will be covered. Construction of a fire-fighting platform with evacuation exits, as well as an underground section of the branch on the Podilsko-Vygurivska line to the Raiduzhna station, is planned for the race. Before the railway, the metro line turns into an underground, shallow one, and goes along the railway tracks to the "Horodnya" station. In front of the "Horodnya" station, the shallow overpass turns into a covered ground structure along the railway embankment.\n' +
+					'\n' +
+					'The project term for the construction of the section of the first stage of the Livoberezhna line from the station "Vulytsya Myloslavska" to the station "Prospekt Vatutina" from the electrical depot "Troyeshchyna" is 48 months, but no later than 2020.</p>');
+				$('#title').html("Prospekt Vatutina (metro station of Podilsko-Vygurivska and Livoberezhnaya lines)");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p style="background-color: #bd8600">Prospekt Vatutina è una stazione a terra prevista della prima tappa della linea Livoberezhna e parte della metropolitana Podilsko-Vygurivskaya Kyiv, situata tra le stazioni "Via Kashtanova" e "Horodnia". Il progetto prevede di posizionare la stazione sul cavalcavia del cavalcavia sopra Roman Shukhevych Avenue, sul sito dell`attuale stazione "Roman Shukhevych" del tram ad alta velocità Livoberezhny. In connessione con la decomunizzazione di Vatutin Avenue, la stazione si chiamerà "Roman Shukhevich Avenue".\n' +
+					'\n' +
+					'A causa dell`insufficiente capacità portante, è necessario ricostruire il cavalcavia del tram esistente per la linea della metropolitana: è necessario smantellare l`intera struttura della campata esistente, costruire 5 nuovi supporti, rafforzare i due supporti centrali e una nuova struttura della campata essere installato. Il nuovo cavalcavia avrà 9 campate. Nella 1a, 2a e 7a, 8a campata sotto il cavalcavia ci saranno atrii a terra. La parte della piattaforma sarà situata negli edifici della 3a-6a campata.\n'+
+					'\n' +
+					'La stazione è progettata come una colonna, con una piattaforma dell`isola lunga 126 m e larga 12,1 m. Ci sono tre scale mobili in ogni lobby e un ascensore per passeggeri con capacità fisiche limitate. \n' +
+					'\n' +
+					'Il tratto fino alla stazione "Horodnia" (seconda fase della costruzione della linea Livoberezhna) sarà lungo 2.434 m e sarà percorso dalla stazione "Prospekt Vatutina" al terrapieno ferroviario. Per la gara è prevista la costruzione di una piattaforma antincendio con uscite di evacuazione, nonché una sezione sotterranea della diramazione sulla linea Podilsko-Vygurivska per la stazione di Raiduzhna. Prima della ferrovia, la linea della metropolitana si trasforma in una linea sotterranea, poco profonda, e prosegue lungo i binari fino alla stazione "Horodnia". Di fronte alla stazione "Horodnia", il cavalcavia poco profondo si trasforma in una struttura a terra coperta lungo il terrapieno della ferrovia.\n' +
+					'\n' +
+					'Il termine del progetto per la costruzione del tratto della prima fase della linea Livoberezhna dalla stazione "Via Myloslavska" alla stazione "Prospekt Vatutina" dal deposito elettrico "Troyeshchyna" è di 48 mesi, ma non oltre il 2020.</p>');
+				$('#title').html("Prospekt Vatutina (stazione della metropolitana delle linee Podilsko-Vygurivska e Livoberezhnaya)");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_7").click(function(){
+			$('#text_station').html('<p>Городня - наземна станція, що проєктувалася у 2000-х роках в складі другої черги Лівобережної лінії Київського метрополітену. Мала бути розташована між станціями «Проспект Ватутіна» і «Дніпровська». Проєктом передбачалося розташуваня станції на південному сході від залізничного зупинного пункту Троєщина (до вересня 2009 року — Городня).\n' +
+					'\n' +
+					'Проєктний термін спорудження дільниці другої черги Лівобережної лінії від станції «Проспект Ватутіна» до станції «Лівобережна» зі службовою з\'єднувальною гілкою на Святошинсько-Броварську лінію згідно з проєктною документацією мав складати 44 місяці (загалом лінія від станції «Вулиця Милославська» до станції «Лівобережна» — 113 місяців), але не пізніше 2020 року.</p>');
+			$('#title').html("Городня (станція метро Лівобережної лінії)");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p>Городня - наземна станція, що проєктувалася у 2000-х роках в складі другої черги Лівобережної лінії Київського метрополітену. Мала бути розташована між станціями «Проспект Ватутіна» і «Дніпровська». Проєктом передбачалося розташуваня станції на південному сході від залізничного зупинного пункту Троєщина (до вересня 2009 року — Городня).\n' +
+					'\n' +
+					'Проєктний термін спорудження дільниці другої черги Лівобережної лінії від станції «Проспект Ватутіна» до станції «Лівобережна» зі службовою з\'єднувальною гілкою на Святошинсько-Броварську лінію згідно з проєктною документацією мав складати 44 місяці (загалом лінія від станції «Вулиця Милославська» до станції «Лівобережна» — 113 місяців), але не пізніше 2020 року.</p>');
+				$('#title').html("Городня (станція метро Лівобережної лінії)");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p>Horodnya is a ground station that was designed in the 2000s as part of the second phase of the Livoberezhna line of the Kyiv metro. It was supposed to be located between the stations "Prospekt Vatutina" and "Dniprovska". The project envisaged the location of the station in the southeast of the Troeshchyna railway station (until September 2009 - Horodnya).\n' +
+					'\n' +
+					'The project term for the construction of the section of the second stage of the Livoberezhna line from the station "Prospekt Vatutina" to the station "Livoberezhna" with the service connecting branch to the Svyatoshynsko-Brovarska line according to the project documentation was supposed to be 44 months (in general, the line from the station "Vulystya Myloslavska" to station "Livoberezhna" — 113 months), but no later than 2020.</p>');
+				$('#title').html("Horodnya (station metro of the Livoberezhna line)");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Horodnia è una stazione di terra progettata negli anni 2000 come parte della seconda fase della linea Livoberezhna della metropolitana di Kiev. Doveva trovarsi tra le stazioni "Prospekt Vatutina" e "Dniprovska". Il progetto prevedeva l`ubicazione della stazione nel sud-est della stazione ferroviaria di Troeshchyna (fino a settembre 2009 - Horodnia).\n' +
+					'\n' +
+					'Il termine del progetto per la costruzione della sezione della seconda fase della linea Livoberezhna dalla stazione "Prospekt Vatutina" alla stazione "Livoberezhna" con il ramo di collegamento del servizio alla linea Svyatoshynsko-Brovarska secondo la documentazione del progetto doveva essere 44 mesi (in generale, la linea dalla stazione "Via Myloslavska" alla stazione "Livoberezhna" — 113 mesi), ma non oltre il 2020.</p>');
+				$('#title').html("Horodnia (stazione della metropolitana della linea Livoberezhna)");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+
+		});
+		$("#station_8").click(function(){
+			$('#text_station').html('<p>Дніпровська - єдина підземна станція, що проєктувалася у 2000-х роках у складі другої черги Лівобережної лінії Київського метрополітену. Мала бути розташована між станціями «Городня» і перспективною станцією «Броварський проспект», буде вважатися колонно дворівневою станцією мілкого залягання. Проєктом передбачалося розміщення станції поряд із залізничною станцією Київ-Дніпровський.\n' +
+					'\n' +
+					'Проєктний термін спорудження дільниці другої черги Лівобережної лінії від станції «Проспект Ватутіна» до станції «Лівобережна» зі службовою з\'єднувальною гілкою на Святошинсько-Броварську лінію згідно з проєктною документацією мав складати 44 місяці (загалом лінія від станції «Вулиця Милославська» до станції «Лівобережна» — 113 місяців), але не пізніше 2020 року.</p>');
+			$('#title').html("Дніпровська (станція метро Лівобережної лінії)");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p>Дніпровська - єдина підземна станція, що проєктувалася у 2000-х роках у складі другої черги Лівобережної лінії Київського метрополітену. Мала бути розташована між станціями «Городня» і перспективною станцією «Броварський проспект», буде вважатися колонно дворівневою станцією мілкого залягання. Проєктом передбачалося розміщення станції поряд із залізничною станцією Київ-Дніпровський.\n' +
+					'\n' +
+					'Проєктний термін спорудження дільниці другої черги Лівобережної лінії від станції «Проспект Ватутіна» до станції «Лівобережна» зі службовою з\'єднувальною гілкою на Святошинсько-Броварську лінію згідно з проєктною документацією мав складати 44 місяці (загалом лінія від станції «Вулиця Милославська» до станції «Лівобережна» — 113 місяців), але не пізніше 2020 року.</p>');
+				$('#title').html("Дніпровська (станція метро Лівобережної лінії)");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p>Dniprovs`ka is the only underground station that was designed in the 2000s as part of the second stage of the Livoberezhna line of the Kyiv metro. It was supposed to be located between the stations "Horodnya" and the promising station "Brovars`kyy Prospekt", it will be considered a columnar two-level station of shallow lying. The project envisaged placing the station next to the Kyiv-Dniprovsky railway station.\n' +
+					'\n' +
+					'The project term for the construction of the section of the second stage of the Livoberezhna line from the station "Prospekt Vatutina" to the station "Livoberezhna" with the service connecting branch to the Svyatoshynsko-Brovarska line according to the project documentation was supposed to be 44 months (in general, the line from the station "Vulytsya Myloslavska" to station "Livoberezhna" — 113 months), but no later than 2020.</p>');
+				$('#title').html("Dniprovs`ka (station metro of the Livoberezhna line)");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Dniprovska è l`unica stazione della metropolitana progettata negli anni 2000 come parte della seconda tappa della linea Livoberezhna della metropolitana di Kiev. Doveva essere situata tra le stazioni "Horodnia" e la promettente stazione "Brovarskii Prospekt", sarà considerata una stazione colonnare a due livelli di superficie poco profonda. Il progetto prevedeva di collocare la stazione vicino alla stazione ferroviaria Kyiv-Dniprovsky.\n'+
+					'\n' +
+					'Il termine del progetto per la costruzione della sezione della seconda fase della linea Livoberezhna dalla stazione "Prospekt Vatutina" alla stazione "Livoberezhna" con il ramo di collegamento del servizio alla linea Svyatoshynsko-Brovarska secondo la documentazione del progetto doveva essere 44 mesi (in generale, la linea dalla stazione "Via Myloslavska" alla stazione "Livoberezhna" — 113 mesi), ma non oltre il 2020.</p>');
+				$('#title').html("Dniprovska (stazione della metropolitana della linea Livoberezhna)");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#p, h1, h2, h3, h4, li, legend, td, label, option").addClass("font_middle");
+
+		$("#small_text").click(function(){
+			$clas_new="font_small";
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").removeClass($clas_action).addClass($clas_new);
+			$clas_action=$clas_new;
+		})
+		$("#middle_text").click(function(){
+			$clas_new="font_middle";
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").removeClass($clas_action).addClass($clas_new);
+			$clas_action=$clas_new;
+		})
+		$("#big_text").click(function(){
+			$clas_new="font_big";
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").removeClass($clas_action).addClass($clas_new);
+			$clas_action=$clas_new;
+		})
+		$(function(){
+			$('#e').click(function(){
+				if ($('#e').text()=="Почати переклад") {
+					$('#e').text('English');}
+				else if ($('#e').text()=="Українська") {
+					$('#txt_logo').html('<h4>Лівобережна лінія</h4>');
+					$('#p').html('<p>Лівобережна лі́нія — майбутня нова лінія Київського метрополітену. Розташована у Деснянському і Дніпровському районах м. Києва. Протяжність першої черги — 4,96 км, 6 станцій. Траса Лівобережної лінії за планом пролягатиме по вісі вул. Оноре де Бальзака від вул. Милославської до проспекту Генерала Ватутіна, вздовж залізниці до Броварського проспекту з підключенням до Святошинсько-Броварської лінії біля ст. «Лівобережна».</p><p>У районі лінії розташовані масиви Воскресенський, Сєрова-Райдужний, Лівобережний, промисловий район «Воскресенський», Воскресенські та Русанівські сади, село Троєщина, Вигурівщина-Троєщина (найбільший житловий масив м. Києва з населенням 240 тисяч осіб). У районі розташовано близько 600 торгових місць.</p><p>У перспективі Лівобережна лінія буде продовжена до житлового масиву Позняки і може у майбутньому стати частиною київської кільцевої лінії метрополітену.</p><p>Першу чергу лінії планується споруджувати наземною, трасою швидкісного трамвая № 2, закритого з 1 січня 2009 року. 2011 року було переглянуто попереднє рішення і заплановано будувати метро під просп. Маяковського.</p><p>Нумерація колій: «Вулиця Милославська» — «Осокорки-Південні» — I, «Осокорки-Південні» — «Вулиця Милославська» — II.</p>');
+					$('#menu_site').html('<table width="100%"><tr><td width="100px"><a href="Kiev_metro.html">Головна</a></td><td width="200px"><a href="M1.html?m=1" class="light_sb"><div></div><div></div><div></div><div></div>Святошинсько-Броварська лінія</a></td><td width="200px"><a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div>Оболонсько-Теремківська лінія</a></td><td width="200px"><a href="M3.html?m=1" class="light_sp"><div></div><div></div><div></div><div></div>Сирецько-Печерська лінія</a></td><td width="200px"><a href="M4.html?m=1" class="light_pv"><div></div><div></div><div></div><div></div>Подільсько-Вигурівська лінія</a></td><td width="200px">Лівобережна лінія</td><td width="200px"><a href="M6.html?m=1" class="light_vd"><div></div><div></div><div></div><div></div>Вишгородсько-Дарницька лінія</a></td><td width="200px"><a href="M7.html" class="light_b"><div></div><div></div><div></div><div></div>Борщагівська лінія</a></td><td width="200px"><a href="Rolling_stock_kyiv_metro.html">Рухомий пасажирський склад метрополітену</a></td><td width="200px"><a href="about_us.html">Про нас</a></td></td></tr></table>');
+					$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#ffffff;");
+					$("#divDateTime").attr("style","color:maroon; font-family: Calibri; color: black; font-style: Italic; font-size:115%;");
+					$("#station_1").text("Вулиця Милославська");$("#station_2").text("Вулиця Цвєтаєвої");$("#station_3").text("Вулиця Сабурова");$("#station_4").text("Вулиця Драйзера");$("#station_5").text("Вулиця Каштанова");$("#station_6").text("Проспект Ватутіна");$("#station_7").html("Городня<img src='20px-BSicon_LDER.svg.png'>");$("#station_8").html("Дніпровська<img src='20px-BSicon_LDER.svg.png'>");
+					$("#station_02").html("<p><a>Броварський проспект<img src='20px-BSicon_LDER.svg.png'></a></p><p><a>Проспект Соборності<img src='20px-BSicon_LDER.svg.png'></a></p><p><a>Березняки</a></p><p><a>Вулиця Здолбунівська</a></p><p><a>Вулиця Анни Ахматової</a></p><p><a>Проспект Бажана</a></p><p><a>Вулиця Колекторна</a></p><p><a>Осокорки-Центральні</a></p><p><a>Осокорки-Південні</a></p>");
+					$('#e').text('English');}
+				else if ($('#e').text() == "English") {
+					$('#txt_logo').html('<h4>Livoberezhna line</h4>');
+					$('#title').html("Livoberezhna line");
+					$('#p').html('<p> Livoberezhna line - the future new line of the Kiev subway. It is located in the Desniansky and Dniprovsky districts of Kyiv. The length of the first turn - 4.96 km, 6 stations. The line of the Livoberezhna line will be planned along the axis of the street. Honore de Balzac from the street. Miloslavskaya to the General Vatutin Avenue, along the railroad to Brovarsky Prospekt connecting to the Svyatoshinsky-Brovarskaya line near the station. "Livoberezhna". </ P><p> In the area of ​​the line there are arrays of Voskresensky, Serov-Rainbow, Livoberezhna, industrial area Voskresensky, Voskresensky and Rusanivsky Gardens, Troeshchyna village, Vygurivshchyna Troyeshchyna (the largest residential area of ​​Kiev with a population of 240 thousand people). There are about 600 retail outlets in the area. </P><p> In the future, the Livoberezhna line will be extended to the Pozniaky housing estate and may in the future become part of the Kiev metro ring line. </ p><p>The first stage of the line is planned to be built on the ground, along the route of high-speed tram No. 2, which has been closed since January 1, 2009. In 2011, the previous decision was revised and it was planned to build a subway under Ave. Mayakovsky.</p> <p>Numbering of the tracks: «Vulytsya Myloslavs`ka» — «Osokorky-Pivdenni» — I, «Osokorky-Pivdenni» — «Vulytsya Myloslavs`ka» — II.</p>');
+					$('#menu_site').html('<table width="100%"><tr><td width="100px"><a href="Kiev_metro.html">Main site</a></td><td width="200px"><a href ="M1.html?m=1" class="light_sb"><div></div><div></div><div></div><div></div>Svyatoshinsko-Brovarska line</a></td><td width="200px"><a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div>Obolonsko-Teremkivska line</a></td><td width="200px"><a href="M3.html?m=1" class="light_sp"><div></div><div></div><div></div><div></div>Syretsko-Pecherska line</a></td><td width="200px"><a href="M4.html?m=1" class="light_pv"><div></div><div></div><div></div><div></div>Podilsko-Vygurivska line</a></td><td width="200px">Livoberezhna line</td><td width="200px"><a href ="M6.html?m=1" class="light_vd"><div></div><div></div><div></div><div></div>Vyshgorodsko-Darnitska line</a></td><td width="200px"><a href="M7.html" class="light_b"><div></div><div></div><div></div><div></div>Borshchahivska line</a></td><td width="200px"><a href="Rolling_stock_kyiv_metro.html">Subway rolling stock</a></td><td width="200px"><a href="about_us.html">About us</a></td></td></tr></table>');
+					$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#ffffff;");
+					$("#divDateTime").attr("style","color:maroon; font-family: Calibri; color: black; font-style: Italic; font-size:115%;");
+					$("#station_1").text("Vulytsya Myloslavs`ka");$("#station_2").text("Vulytsya Tsvyetayevoyi");$("#station_3").text("Vulytsya Saburova");$("#station_4").text("Vulytsya Drayzera");$("#station_5").text("Vulytsya Kashtanova");$("#station_6").text("Prospekt Vatutina");$("#station_7").html("Horodnya<img src='20px-BSicon_LDER.svg.png'>");$("#station_8").html("Dniprovs`ka<img src='20px-BSicon_LDER.svg.png'>");
+					$("#station_02").html("<p><a>Brovars`kyy Prospekt<img src='20px-BSicon_LDER.svg.png'></a></p><p><a>Prospekt Sobornosti<img src='20px-BSicon_LDER.svg.png'></a></p><p><a>Bereznyaky</a></p><p><a>Vulytsya Zdolbunivska</a></p><p><a>Vulystya Anna Akhmatova</a></p><p><a>Prospekt Bazhana</a></p><p><a>Vulytsya Kolektorna</a></p ><p><a>Osokorky-Tsentral`ni</a></p><p><a>Osokorky-Pivdenni</a></p>");
+					$('#e').text('Italiano');}
+				else if ($('#e').text() == "Italiano") {
+					$('#txt_logo').html('<h4>Linea Livoberezhna</h4>');
+					$('#title').html("Linea Livoberezhna");
+					$('#p').html('<P>La linea Livoberezhna è la futura nuova linea della metropolitana di Kiev. Si trova nei distretti Desnyanskyi e Dniprovskyi di Kiev. La lunghezza della prima linea è di 4,96 km, 6 stazioni. Secondo il piano, il tracciato Livoberezhna correrà lungo l`asse di S. Honoré de Balzac da St. Myloslavska fino al viale Generala Vatutin, lungo la ferrovia per il viale Brovarsky con collegamento alla linea Svyatoshynsko-Brovarska vicino a st. "Livoberezhna".</p><p>Nell`area della linea ci sono i massicci Voskresenskyi, Serova-Rayduzhnyi, Livoberezhnyi, il distretto industriale di Voskresenskyi, i giardini Voskresenskyi e Rusanivskyi, il villaggio di Troyeshchyna, Vygurivshchyna-Troeshchyna (il più grande zona residenziale di Kiev con 240mila persone). Ci sono circa 600 negozi nella zona.</p><p>In futuro, la linea Livoberezhna sarà estesa all`area residenziale di Poznyaki e in futuro potrebbe diventare parte della linea metropolitana ad anello di Kiev.</p><p>La prima tappa della linea è prevista per la realizzazione a terra, lungo il tracciato del tram ad alta velocità n. 2, chiuso dal 1 gennaio 2009. Nel 2011, la precedente decisione è stata rivista ed era prevista la costruzione di una metropolitana sotto Ave. Majakovskij.</p><p>Нумерація колій: «Via Myloslavska» — «Osokorky-Sud» — I, «Osokorky-Sud» — «Via Myloslavska» — II.</p>');
+					$('#menu_site').html('<table width="100%"><tr><td width="100px"><a href="Kiev_metro.html">Sito principale</a></td><td width="200px"><a href ="M1.html?m=1" class="light_sb"><div></div><div></div><div></div><div></div>Linea Svyatoshinsko-Brovarska</a></td><td width="200px"><a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div>Linea Obolonsko-Teremkivska</a></td><td width="200px"><a href="M3.html?m=1" class="light_sp"><div></div><div></div><div></div><div></div>Linea Syretsko-Pecherska</a></td><td width="200px"><a href="M4.html?m=1" class="light_pv"><div></div><div></div><div></div><div></div>Linea Podilsko-Vygurivska</a></td><td width="200px">Linea Livoberezhna</td><td width="200px"><a href="M6.html?m=1" class="light_vd"><div></div><div></div><div></div><div></div>Linea Vyshgorodsko-Darnitska</a></td><td width="200px"><a href="M7.html" class="light_b"><div></div><div></div><div></div><div></div>Linea Borshchahivska</a></td><td width="200px"><a href="Rolling_stock_kyiv_metro.html">Materiale rotabile della metropolitana</a></td><td width="200px"><a href="about_us.html">Chi siamo</a></td></td></tr></table>');
+					$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#ffffff;");
+					$("#divDateTime").attr("style","color:maroon; font-family: Calibri; color: black; font-style: Italic; font-size:115%;");
+					$("#station_1").text("Via Myloslavska");$("#station_2").text("Via Cvetaeva");$("#station_3").text("Via Saburova");$("#station_4").text("Via Dreiser");$("#station_5").text("Via Kashtanova");$("#station_6").text("Prospekt Vatutina");$("#station_7").html("Horodnia<img src='20px-BSicon_LDER.svg.png'>");$("#station_8").html("Dniprovska<img src='20px-BSicon_LDER.svg.png'>");
+					$("#station_02").html("<p><a>Brovarskii Prospekt<img src='20px-BSicon_LDER.svg.png'></a></p><p><a>Prospekt Sobornosti<img src='20px-BSicon_LDER.svg.png'></a></p><p><a>Bereznyaki</a></p><p><a>Via Zdolbunivska</a></p><p><a>Via Anna Akhmatova</a></p><p><a>Via Bazhana</a></p><p><a>Via dei collezionisti</a></p ><p><a>Osokorky-Centrale</a></p><p><a>Osokorky-Sud</a></p>");
+					$('#e').text('Українська');}
+			});
+		})
+		;
+		$(function(){
+			function change_width(id_obj,x){
+				var a=$(id_obj).attr('title');
+				var w=$(id_obj).width();
+				var h=$(id_obj).height();
+				if(a==''){
+					w=w*x;
+					h=h*x;
+					$(id_obj).width(w).height(h);
+					$(id_obj).attr('title','фото зменшене в 1.5 раз');
+					a=$(id_obj).attr('title');
+				}
+				else if(a=='фото зменшене в 1.5 раз'){
+					w=w/1.5;
+					h=h/1.5;
+					$(id_obj).width(w).height(h);
+					$(id_obj).attr('title','');
+					a=$(id_obj).attr('title');
+				}
+			}
+			$('#station img').each(function(){
+				$(this).attr('title','');
+				$(this).click(function(){
+					change_width(this,1.5);
+				});
+			});
+		})
+		;
+	});
+
+</script>
+<table width='100%'>
+<tr width='20%'><td width='20%' valign='top'><h1 id='txt_logo' class='logo_text'>Лівобережна лінія</h1></td>
+<td>
+<div id="navigation">
+<ul valign="top">
+<li><div id="divDateTime" style='font-family: Calibri; color: black; font-style: Italic; font-size:115%;'></div></li>
+<li><div id="p_color_knop">
+					<div id="red"></div>
+					<div id="blue"></div>
+					<div id="green"></div>
+					<div id="yellow"></div>
+					<div id="gold"></div>
+					<div id="purple"></div>
+					<div id="white"></div>
+					<div id="rainbow_text"></div>
+				</div></li>
+<li><div id="size_text">
+<div id="e" width="100px" style=" border:1px solid red; background:#3582c4; padding:5px ">Почати переклад</div></div></li>
+<li><div id="size_text">
+				<div id="small_text">A</div>
+				<div id="middle_text">A</div>
+				<div id="big_text">A</div>
+			</div></li>
+</ul>
+</div></td></tr>
+<tr valign='top'><td valign='top'><img id='logo' src='kyiv_metro_branch/M5.png' align='left'width='300px' height='218px'></td>
+<td><img id='metro' src='kyiv_metro_branch/metro_animation_6_wagons.gif' width='100%'></td></tr>
+</table>
+<div id='menu_site' >
+<table width='100%'>
+<tr>
+<td width='100px'>
+         <a href="Kiev_metro.html">Головна</a></td>
+		 <td width='200px'>
+         <a href="M1.html?m=1" class="light_sb"><div></div><div></div><div></div><div></div>Святошинсько-Броварська лінія</a></td>
+		 <td width='200px'>
+         <a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div>Оболонсько-Теремківська лінія</a></td>
+		 <td width='200px'>
+         <a href="M3.html?m=1" class="light_sp"><div></div><div></div><div></div><div></div>Сирецько-Печерська лінія</a></td>
+		 <td width='200px'>
+         <a href="M4.html?m=1" class="light_pv"><div></div><div></div><div></div><div></div>Подільсько-Вигурівська лінія</a></td>
+		 <td width='200px'>
+Лівобережна лінія</td>
+		 <td width='200px'>
+			<a href="M6.html?m=1" class="light_vd"><div></div><div></div><div></div><div></div>Вишгородсько-Дарницька лінія</a></td>
+         <td width='200px'>
+            <a href="M7.html" class="light_b"><div></div><div></div><div></div><div></div>Борщагівська лінія</a></td>
+         <td width='200px'>
+             <a href="Rolling_stock_kyiv_metro.html">Рухомий пасажирський склад метрополітену</a></td>
+		 <td width='200px'>
+             <a href="about_us.html">Про нас</a></td>
+</td>
+   </tr>
+   </table>
+      </div>
+				<div id='p'>
+					<p>Лівобережна лі́нія — майбутня нова наземна лінія Київського метрополітену. Розташована у Деснянському і Дніпровському районах м. Києва. Протяжність першої черги — 4,96 км, 6 станцій. Траса Лівобережної лінії за планом пролягатиме по вісі вул. Оноре де Бальзака від вул. Милославської до проспекту Генерала Ватутіна, вздовж залізниці до Броварського проспекту з підключенням до Святошинсько-Броварської лінії біля ст. «Лівобережна».</p>
+
+<p>У районі лінії розташовані масиви Воскресенський, Сєрова-Райдужний, Лівобережний, промисловий район «Воскресенський», Воскресенські та Русанівські сади, село Троєщина, Вигурівщина-Троєщина (найбільший житловий масив м. Києва з населенням 240 тисяч осіб). У районі розташовано близько 600 торгових місць.</p>
+
+<p>У перспективі Лівобережна лінія буде продовжена до житлового масиву Позняки і може у майбутньому стати частиною київської кільцевої лінії метрополітену.</p>
+
+<p>Першу чергу лінії планується споруджувати наземною, трасою швидкісного трамвая № 2, закритого з 1 січня 2009 року. 2011 року було переглянуто попереднє рішення і заплановано будувати метро під просп. Маяковського.</p>
+				<p>Нумерація колій: «Вулиця Милославська» — «Осокорки-Південні» — I, «Осокорки-Південні» — «Вулиця Милославська» — II.</p></div>
+<img id='map' src='kyiv_metro_branch/kiev_metro_line_M5.jpg'>
+<table id='center' cellspacing="0" border="0" width="100%" bordercolor="fff">
+<tr id='top'>
+<td id='menu' width='275px' valign="top">
+<div class='menu_station' >
+<p><a id='station_1'>Вулиця Милославська</a></p>
+<p><a id='station_2'>Вулиця Цвєтаєвої</a></p>
+<p><a id='station_3'>Вулиця Сабурова</a></p>
+<p><a id='station_4'>Вулиця Драйзера</a></p>
+<p><a id='station_5'>Вулиця Каштанова</a></p>
+<p><a id='station_6'>Проспект Ватутіна</a></p>
+<p><a id='station_7'>Городня<img src='20px-BSicon_LDER.svg.png'></a></p>
+<p><a id='station_8'>Дніпровська<img src='20px-BSicon_LDER.svg.png'></a></p>
+	<div id="station_02">
+<p><a>Броварський проспект<img src='20px-BSicon_LDER.svg.png'></a></p>
+<p><a>Проспект Соборності<img src='20px-BSicon_LDER.svg.png'></a></p>
+<p><a>Березняки</a></p>
+<p><a>Вулиця Здолбунівська</a></p>
+<p><a>Вулиця Анни Ахматової</a></p>
+<p><a>Проспект Бажана</a></p>
+<p><a>Вулиця Колекторна</a></p>
+<p><a>Осокорки-Центральні</a></p>
+<p><a>Осокорки-Південні</a></p>
+	</div></div>
+</td>
+	<td id='station' valign="top" rowspan='2'>
+		<p>
+		<div id='text_station'></div>
+		</p>
+		<p>
+		<div id='station_image' width='1050px' height='750px'></div>
+		<div id='station_video' width='1050px' height='750px'></div>
+		<div id='back_to_main_slide' class='menu'></div>
+		</p>
+	</td>
+</tr>
+</table>
+</body>
+</html>

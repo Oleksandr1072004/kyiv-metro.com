@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1251">
+<title id='title'>Святошинсько-Броварська лінія</title>
+<script src="js/jquery-1_11_3_min.js"> </script>
+<link href="css/new.css" rel="stylesheet" type="text/css" />
+<link rel="icon" href="kyiv_metro_branch/Kyiv_Metro_Line_1.svg.png" type="image/x-icon">
+</head>
+<body bgcolor="8a2424">
+<script>
+	var $clas_new="font_middle";
+	var $clas_action="font_middle";
+
+	
+	function GetDateTime(){
+		var DateTime = new Date();
+		var week = new Array('Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П`ятниця', 'Субота');
+		var day  = week[DateTime.getDay()];
+		$('#divDateTime').html("Сьогодні: " + DateTime.getDate() + "." + (DateTime.getMonth()+1) + "." + DateTime.getFullYear() + " - "+day+"<br> Час: " + DateTime.getHours() + ":" + DateTime.getMinutes() + ":" + DateTime.getSeconds());
+	}
+	
+	$('document').ready(function(){
+		setInterval(GetDateTime, 1000);
+		
+		$(function(){
+			$('#logo').slideUp(0);
+			$('#logo').slideDown(3000);
+			$('#menu').slideUp(0);
+			$('#menu').slideDown(2000);
+			$('#map').slideUp(0);
+			$('#map').fadeIn(3000);
+		})
+		;
+		$("#red").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:maroon;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+		})
+		$("#blue").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:lightblue;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+		})
+		$("#green").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:lime;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+		})
+		$("#yellow").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:gold;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+		})
+		$("#cyan").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#00ffff;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+		})
+		$("#gold").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:yellow;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+		})
+		$("#purple").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#ff00ff;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+		})
+		$("#white").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#ffffff;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+		})
+		
+		$("#rainbow_text").click(function(){
+			$("#p, legend, td, label, option").attr("style","background: linear-gradient(90deg, #fd004c, #fe9000, #fff020, #3edf4b, #3363ff, #0000ff, #000080, #800080, #b102b7, #ff00c4, #fd004c);background-size: 400%;font-family: sans-serif;word-spacing: 5px;-webkit-text-fill-color: transparent;-webkit-text-stroke: 0.01em white;-webkit-background-clip: text;animation: animate 10s linear infinite;");
+			$("#divDateTime").attr("style","background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033ff, #ff00c4, #ff0000);background-size: 400%;font-family: Calibri; font-style: Italic; font-size:115%;word-spacing: 5px;-webkit-text-fill-color: transparent;-webkit-background-clip: text;animation: animate 10s linear infinite;");
+			$("h1, h2, h3, h4").attr("style","background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033ff, #ff00c4, #ff0000);background-size: 400%; width:100%; font:24px impact; height:10px; font-style: Italic; font-size:115%;letter-spacing: 3px;-webkit-text-fill-color: transparent;-webkit-background-clip: text;animation: animate 10s linear infinite;");
+			$("#menu a:hover").attr("style","background:#ffffff;");
+			$("#menu a:action").attr("style","background:#ffffff;");
+		})
+		
+		$("#back_to_main_slide").click(function(){
+			$('#text_station').html('');
+			$('#title').html("Святошинсько-Броварська лінія");
+			$('#station_image').html("");
+			$('#station_video').html("");
+			$('#back_to_main_slide').html("");
+			$('#qrcode').html("<p>QR-код лінії:</p><img src='kyiv_metro_qrcodes/qrcode_svyatoshyno_brovarska_.png' align='left' width='300px' height='300px'>");
+			if ($('#e').text() == "English"){
+				$('#title').html("Святошинсько-Броварська лінія");
+				$('#qrcode').html("<p>QR-код лінії:</p><img src='kyiv_metro_qrcodes/qrcode_svyatoshyno_brovarska_.png' align='left' width='300px' height='300px'>");
+			}
+			else if ($('#e').text()=="Italiano") {
+				$('#title').html("Svyatoshynsko-Brovarska line");
+				$('#qrcode').html("<p>QR code of the line:</p><img src='kyiv_metro_qrcodes/qrcode_svyatoshyno_brovarska_.png' align='left' width='300px' height='300px'>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#title').html("Linea Svyatoshynsko-Brovarska");
+				$('#qrcode').html("<p>Codice QR della linea:</p><img src='kyiv_metro_qrcodes/qrcode_svyatoshyno_brovarska_.png' align='left' width='300px' height='300px'>");
+			}
+		});
+		
+		// Stations
+		$("#station_0").click(function(){
+			$('#text_station').html('<p>Новобіличі - проектована станція Київського метрополітену. Майбутня кінцева, буде розташована за станцією Академмістечко на Святошинсько-Броварській лінії. Вихід зі станції буде до залізничної платформи Новобіличі, що неподалік однойменного масиву. Згідно з проектом за станцією розташовуватиметься електродепо метрополітену. За планом, мала бути збудована ще у 2003 році. Буде вважатися станцією мілкого залягання.</p>');
+			$('#title').html("Новобіличі (станція метро Святошинсько-Броварської лінії)");
+			$('#qrcode').html("<p>QR-код цієї станції немає!</p>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p>Новобіличі - проектована станція Київського метрополітену. Майбутня кінцева, буде розташована за станцією Академмістечко на Святошинсько-Броварській лінії. Вихід зі станції буде до залізничної платформи Новобіличі, що неподалік однойменного масиву. Згідно з проектом за станцією розташовуватиметься електродепо метрополітену. За планом, мала бути збудована ще у 2003 році. Буде вважатися станцією мілкого залягання.</p>');
+				$('#title').html("Новобіличі (станція метро Святошинсько-Броварської лінії)");
+				$('#qrcode').html("<p>QR-код цієї станції немає!</p>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text()=="Italiano") {
+				$('#text_station').html('<p>Novobylychi is a planned station of the Kyiv metro. The future terminus will be located behind the Akademmistechko station on the Svyatoshynsko-Brovarska line. The exit from the station will be to the Novobilichi railway platform, which is not far from the massif of the same name. According to the project, the electric depot of the metro will be located behind the station. According to the plan, it was supposed to be built in 2003. It will be considered a shallow station.</p>');
+				$('#title').html("Novobilychi (metro station of Svyatoshynsko-Brovarska line)");
+				$('#qrcode').html("<p>There is no QR code for this station!</p>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Novobylychi e una stazione prevista della metropolitana di Kiev. Il futuro capolinea sara situato dietro la stazione di Akademmistechko sulla linea Svyatoshynsko-Brovarska. L`uscita dalla stazione sara al binario ferroviario di Novobilichi, che non e lontano dal massiccio omonimo. Secondo il progetto, il deposito elettrico della metropolitana sara situato dietro la stazione. Secondo il piano, doveva essere costruito nel 2003. Sara considerata una stazione poco profonda.</p>');
+				$('#title').html("Novobilychi (metro station of Svyatoshynsko-Brovarska line)");
+				$('#qrcode').html("<p>Non esiste un codice QR per questa stazione!</p>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M1/novobylychi.jpg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_1").click(function(){
+			$('#text_station').html('<p>Академмістечко - 42-га станція Київського метрополітену. Кінцева станція Святошинсько-Броварської лінії, розташована після станції «Житомирська», вважається колонно двоповерховою станцією мілкого залягання. Названа за розташованим поряд житловим масивом. Відкрита 24 травня 2003 року. Є однією з найбільш завантажених станцій київського метро мілкого залягання.</p>');
+			$('#title').html("Академмістечко (станція метро Святошинсько-Броварської лінії)");
+			$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_akademistecko_.png' align='left' width='300px' height='300px'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p>Академмістечко - 42-га станція Київського метрополітену. Кінцева станція Святошинсько-Броварської лінії, розташована після станції «Житомирська», вважається колонно двоповерховою станцією мілкого залягання. Названа за розташованим поряд житловим масивом. Відкрита 24 травня 2003 року. Є однією з найбільш завантажених станцій київського метро мілкого залягання.</p>');
+				$('#title').html("Академмістечко (станція метро Святошинсько-Броварської лінії)");
+				$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_akademistecko_.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p>Akademmistechko - the 42nd station of the Kyiv metro. The terminal station of the Svyatoshynsko-Brovarska line, located after the "Zhytomyrska" station, is considered to be a two-story, columned, shallow-lying station. Named after the nearby residential area. Opened on May 24, 2003. It is one of the busiest stations of the Kyiv metro of shallow depth.</p>');
+				$('#title').html("Akademmistechko (metro station of Svyatoshynsko-Brovarska line)");
+				$('#qrcode').html("<p>QR code of the station:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_akademistecko_.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text() == "Українська"){
+				$('#text_station').html('<p>Akademmistechko - la 42a stazione della metropolitana di Kiev. La stazione terminale della linea Svyatoshynsko-Brovarska, situata dopo la stazione "Zhytomyrska", e considerata una stazione a due piani, con colonne e poco profonda. Prende il nome dalla vicina zona residenziale. Inaugurato il 24 maggio 2003. E una delle stazioni piu trafficate della metropolitana di Kiev.</p>');
+				$('#title').html("Akademmistechko (stazione della metropolitana della linea Svyatoshynsko-Brovarska)");
+				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_akademistecko_.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M1/Akademmistechko_metro_station_Kiev_2010_01.jpg' style='width:1550px; height: 1050px;'>");
+			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/TW3d8ry2yUM' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
+		});
+		$("#station_2").click(function(){
+			$('#text_station').html('<p>Житомирська - 41-ша станція Київського метрополітену. Розташована на Святошинсько-Броварській лінії між станціями «Академмістечко» і «Святошин». Відкрита 24 травня 2003 року. Вважається односклепінною станцією мілкого залягання.</p>');
+			$('#title').html("Житомирська (станція метро Святошинсько-Броварської лінії)");
+			$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_zhytomirska_.png' align='left' width='300px' height='300px'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p>Житомирська - 41-ша станція Київського метрополітену. Розташована на Святошинсько-Броварській лінії між станціями «Академмістечко» і «Святошин». Відкрита 24 травня 2003 року. Вважається односклепінною станцією мілкого залягання.</p>');
+				$('#title').html("Житомирська (станція метро Святошинсько-Броварської лінії)");
+				$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_zhytomirska_.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p>Zhytomyrska - the 41st station of the Kyiv metro. It is located on the Svyatoshynsk-Brovary line between the stations "Akademmistechko" and "Svyatoshyn". Opened on May 24, 2003. It is considered a single-vault station of shallow lying.</p>');
+				$('#title').html("Svyatoshyn (metro station of Svyatoshynsko-Brovarska line)");
+				$('#qrcode').html("<p>QR code of the station:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_zhytomirska_.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text() == "Українська"){
+				$('#text_station').html('<p>Zhytomyrska - la 41a stazione della metropolitana di Kiev. Si trova sulla linea Svyatoshynsk-Brovarsk tra le stazioni "Akademmistechko" e "Svyatoshyn". Inaugurato il 24 maggio 2003. E considerata una stazione a volta singola di mentire poco profonde.</p>');
+				$('#title').html("Zhytomyrska (stazione della metropolitana della linea Svyatoshynsko-Brovarska)");
+				$('#qrcode').html("<p>QR code of the station:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_zhytomirska_.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M1/Zhytomyrska_metro_station_Kiev_2010_04.jpg' style='width:1550px; height: 1050px;'>");
+			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/xeJ-m_xou4Y' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
+		});
+		$("#station_3").click(function(){
+			$('#text_station').html('<p>Святошин - 14-та станція Київського метрополітену. Розташована на Святошинсько-Броварській лінії між станціями «Житомирська» і «Нивки», вважається колонною трипрогінною станцією мілкого залягання. Станція має два виходи. Відкрита 5 листопада 1971 року під назвою «Святошино» в складі 5-ї пускової черги («Завод Більшовик» (нині — «Шулявська») — «Святошино»), що складається з трьох станцій: Жовтнева (нині — Бучанська), «Нивки», «Святошино». Нинішня назва — з 1991 року. На станції заставлено тактильне покриття. З 24 лютого 2018 станція знаходиться на капітальному ремонті. Ведеться ремонт колійних стін, також заплановано встановлення ліфтів для інвалідів. Під час ремонту частково закрито підземний перехід та не функціонують виходи до проспекту Перемоги, заводу «АТЕК». Станцію було відкрито 1 листопада 2019 року. У ході реконструкції було змінено облицювання станції зі збереженням стилістики (без великого орнаменту на колійній стіні), внутрішнє облаштування (лавки, покажчики), обладнано ліфт для маломобільних пасажирів, встановлено тактильне покриття, замінено турнікети, проведено ремонт та переходу, куди веде вихід.</p>');
+			$('#title').html("Святошин (станція метро Святошинсько-Броварської лінії)");
+			$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_svyatoshyn.png' align='left' width='300px' height='300px'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p>Святошин - 14-та станція Київського метрополітену. Розташована на Святошинсько-Броварській лінії між станціями «Житомирська» і «Нивки», вважається колонною трипрогінною станцією мілкого залягання. Станція має два виходи. Відкрита 5 листопада 1971 року під назвою «Святошино» в складі 5-ї пускової черги («Завод Більшовик» (нині — «Шулявська») — «Святошино»), що складається з трьох станцій: Жовтнева (нині — Бучанська), «Нивки», «Святошино». Нинішня назва — з 1991 року. На станції заставлено тактильне покриття. З 24 лютого 2018 станція знаходиться на капітальному ремонті. Ведеться ремонт колійних стін, також заплановано встановлення ліфтів для інвалідів. Під час ремонту частково закрито підземний перехід та не функціонують виходи до проспекту Перемоги, заводу «АТЕК». Станцію було відкрито 1 листопада 2019 року. У ході реконструкції було змінено облицювання станції зі збереженням стилістики (без великого орнаменту на колійній стіні), внутрішнє облаштування (лавки, покажчики), обладнано ліфт для маломобільних пасажирів, встановлено тактильне покриття, замінено турнікети, проведено ремонт та переходу, куди веде вихід.</p>');
+				$('#title').html("Святошин (станція метро Святошинсько-Броварської лінії)");
+				$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_svyatoshyn.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p>Svyatoshyn - the 14th station of the Kyiv metro. Located on the Svyatoshynsk-Brovary line between the Zhytomyrska and Nyvky stations, it is considered a column three-track shallow-lying station. The station has two exits. It was opened on November 5, 1971 under the name "Svyatoshino" as part of the 5th starting line ("Bilzhovyk Plant" (now - "Shulyavska") - "Svyatoshino"), consisting of three stations: Zhovtneva (now - Buchanska), "Nyvky ", "Svyatoshino". The current name is from 1991. The station has a tactile surface. Since February 24, 2018, the station is undergoing major repairs. Track walls are being repaired, and elevators for the disabled are also planned to be installed. During the repair, the underpass is partially closed and the exits to Peremogy Avenue, the "ATEK" plant are not functioning. The station was opened on November 1, 2019. During the reconstruction, the cladding of the station was changed while preserving the style (without large ornaments on the track wall), the internal arrangement (benches, signs), an elevator for passengers with reduced mobility was equipped, a tactile surface was installed, the turnstiles were replaced, and the transition leading to the exit was repaired.</p>');
+				$('#title').html("Svyatoshyn (metro station of Svyatoshynsko-Brovarska line)");
+				$('#qrcode').html("<p>QR code of the station:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_svyatoshyn.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text() == "Українська"){
+				$('#text_station').html('<p>Svyatoshyn - la quattordicesima stazione della metropolitana di Kiev. Situata sulla linea Svyatoshynsk-Brovary tra le stazioni Zhytomyrska e Nyvky, e considerata una stazione poco profonda a tre binari. La stazione ha due uscite. E stato inaugurato il 5 novembre 1971 con il nome "Svyatoshino" come parte della 5a linea di partenza ("Bilzhovyk Plant" (ora - "Shulyavska") - "Svyatoshino"), composta da tre stazioni: Zhovtneva (ora - Buchanska) , "Nyvky", "Svyatoshino". Il nome attuale e del 1991. La stazione ha una superficie tattile. Dal 24 febbraio 2018 la stazione e sottoposta a importanti lavori di ristrutturazione. Sono in corso la riparazione delle pareti dei binari e l`installazione di ascensori per disabili. Durante i lavori il sottopasso e parzialmente chiuso e le uscite su Peremogy Avenue, l`impianto "ATEK" non sono funzionanti. La stazione e stata aperta il 1 novembre 2019. Durante la ricostruzione e stato modificato il rivestimento della stazione preservandone lo stile (senza grandi fregi sulla parete dei binari), la disposizione interna (panchine, segnaletica), e stato attrezzato un ascensore per passeggeri a mobilita ridotta, e stata installata una superficie tattile, sono stati sostituiti i tornelli e riparato il passaggio che porta all`uscita.</p>');
+				$('#title').html("Svyatoshyn (stazione della metropolitana della linea Svyatoshynsko-Brovarska)");
+				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_svyatoshyn.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M1/Станция_метро_Святошин.jpg' style='width:1560px; height: 1000px;'>");
+			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/52KUFBQvpx0' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
+		});
+		$("#station_4").click(function(){
+			$('#text_station').html('<p>Нивки - 13-та станція Київського метрополітену. Розташована на Святошинсько-Броварській лінії між станціями «Святошин» і «Бучанська», вважається колонною станцією мілкого залягання. Названа за однойменною історичною місцевістю Києва. Відкрита 5 листопада 1971 року.</p>');
+			$('#title').html("Нивки (станція метро Святошинсько-Броварської лінії)");
+			$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_nyvky.png' align='left' width='300px' height='300px'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p>Нивки - 13-та станція Київського метрополітену. Розташована на Святошинсько-Броварській лінії між станціями «Святошин» і «Бучанська», вважається колонною станцією мілкого залягання. Названа за однойменною історичною місцевістю Києва. Відкрита 5 листопада 1971 року.</p>');
+				$('#title').html("Нивки (станція метро Святошинсько-Броварської лінії)");
+				$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_nyvky.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p>Nyvky is the 13th station of the Kyiv metro. Located on the Svyatoshynsk-Brovarsk line between the stations "Svyatoshyn" and "Buchanska", it is considered a column station of shallow lying. It is named after the historical area of Kyiv of the same name. Opened on November 5, 1971.</p>');
+				$('#title').html("Nyvky (metro station of Svyatoshynsko-Brovarska line)");
+				$('#qrcode').html("<p>QR code of the station:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_nyvky.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text() == "Українська"){
+				$('#text_station').html('<p>Nyvky e la tredicesima stazione della metropolitana di Kiev. Situata sulla linea Svyatoshynsk-Brovarsk tra le stazioni "Svyatoshyn" e "Buchanska", e considerata una stazione a colonne poco profonda. Prende il nome dall`omonima area storica di Kiev. Inaugurato il 5 novembre 1971.</p>');
+				$('#title').html("Nyvky (stazione della metropolitana della linea Svyatoshynsko-Brovarska)");
+				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_nyvky.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M1/Nyvky_metro_station_Kiev_2010_021.jpg' style='width:1558px; height: 1050px;'>");
+			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/TW3d8ry2yUM' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
+		});
+		$("#station_5").click(function(){
+			$('#text_station').html('<p>Бучанська - 12-та станція Київського метрополітену. Розташована на Святошинсько-Броварській лінії між станціями «Нивки» і «Шулявська», вважається колонною станцією мілкого залягання. Відкрита 5 листопада 1971 року під назвою «Жовтнева». Нинішня назва — з 2 лютого 1993 року, походить від української назви міста Буча, де розташована станція. До 2022 року мала назву Берестейська.</p>');
+			$('#title').html("Бучанська (станція метро Святошинсько-Броварської лінії)");
+			$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_bychanska.png' align='left' width='300px' height='300px'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p>Бучанська - 12-та станція Київського метрополітену. Розташована на Святошинсько-Броварській лінії між станціями «Нивки» і «Шулявська», вважається колонною станцією мілкого залягання. Відкрита 5 листопада 1971 року під назвою «Жовтнева». Нинішня назва — з 2 лютого 1993 року, походить від української назви міста Буча, де розташована станція. До 2022 року мала назву Берестейська.</p>');
+				$('#title').html("Бучанська (станція метро Святошинсько-Броварської лінії)");
+				$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_bychanska.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p>Buchanska - the 12th station of the Kyiv metro. Located on the Svyatoshynsko-Brovarska line between the stations "Nyvky" and "Shulyavska", it is considered a column station of shallow lying. It was opened on November 5, 1971 under the name "Zhovtneva". The current name - since February 2, 1993, comes from the Ukrainian name of the city Bucha, where the station is located. Until 2022, it was called Beresteyska.</p>');
+				$('#title').html("Buchanska (metro station of Svyatoshynsko-Brovarska line)");
+				$('#qrcode').html("<p>QR code of the station:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_bychanska.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text() == "Українська"){
+				$('#text_station').html('<p>Buchanska - la dodicesima stazione della metropolitana di Kiev. Situata sulla linea Svyatoshynsko-Brovarska tra le stazioni "Nyvky" e "Shulyavska", e considerata una stazione a colonna poco profonda. E stato aperto il 5 novembre 1971 con il nome "Zhovtneva". Il nome attuale - dal 2 febbraio 1993, deriva dal nome ucraino della citta Bucha, dove si trova la stazione. Fino al 2022 si chiamava Beresteyska.</p>');
+				$('#title').html("Buchanska (stazione della metropolitana della linea Svyatoshynsko-Brovarska)");
+				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_bychanska.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M1/Beresteyska_metro_station_Kiev_2010_01.jpg' style='width:1550px; height: 1053px;'>");
+			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/tdAxRqZ68lw' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
+		});
+		$("#station_6").click(function(){
+			$('#text_station').html('<p>Шулявська - 7-ма станція Київського метрополітену. Розташована на Святошинсько-Броварській лінії між станціями «Бучанська» і «Політехнічний інститут», знаходиться на глибині 92 метра і вважається пілонною станцією глибокого залягання з укороченим центральним залом і проміжним вестибюлем. Відкрита 5 листопада 1963 року у складі другої черги будівництва під назвою «Завод „Більшовик“». Нинішня назва — з 2 лютого 1993 року. В майбутньому буде мати перехід на станцію <a href="M6.html">з тієї самої назви, як і тут</a> Вишгородсько-Дарницької лінії.</p>');
+			$('#title').html("Шулявська (станція метро Святошинсько-Броварської лінії)");
+			$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_shuliavska.png' align='left' width='300px' height='300px'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p>Шулявська - 7-ма станція Київського метрополітену. Розташована на Святошинсько-Броварській лінії між станціями «Бучанська» і «Політехнічний інститут», знаходиться на глибині 92 метра і вважається пілонною станцією глибокого залягання з укороченим центральним залом і проміжним вестибюлем. Відкрита 5 листопада 1963 року у складі другої черги будівництва під назвою «Завод „Більшовик“». Нинішня назва — з 2 лютого 1993 року. В майбутньому буде мати перехід на станцію <a href="M6.html">з тієї самої назви, як і тут</a> Вишгородсько-Дарницької лінії.</p>');
+				$('#title').html("Шулявська (станція метро Святошинсько-Броварської лінії)");
+				$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_shuliavska.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p>Shulyavska - the 7th station of the Kyiv metro. Located on the Svyatoshynsko-Brovarska line between the Buchanska and Polytechnic Institute stations, it is at a depth of 92 meters and is considered a deep-lying pylon station with a shortened central hall and an intermediate lobby. It was opened on November 5, 1963 as part of the second stage of construction under the name "Bolshevik Plant". The current name is from February 2, 1993. In the future, there will be a transfer to the station <a href="M6.html">with the same name as here</a> of the Vyshgorod-Darnytska line.</p>');
+				$('#title').html("Shuliavska (metro station of Svyatoshynsko-Brovarska line)");
+				$('#qrcode').html("<p>QR code of the station: </p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_shuliavska.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text() == "Українська"){
+				$('#text_station').html('<p>Shulyavska - la settima stazione della metropolitana di Kiev. Situato sulla linea Svyatoshynska-Brovarska tra le stazioni Buchanska e Istituto Politecnico, si trova a una profondita di 92 metri ed e considerata una stazione di traliccio profondo con una sala centrale accorciata e una lobby intermedia. Fu inaugurato il 5 novembre 1963 come parte della seconda fase di costruzione con il nome di "Pianta bolscevica". Il nome attuale e del 2 febbraio 1993. In futuro, ci sara un trasferimento alla stazione <a href="M6.html">con lo stesso nome qui</a> della linea Vyshgorod-Darnytska.</p>');
+				$('#title').html("Shulyavska (stazione della metropolitana della linea Svyatoshynsko-Brovarska)");
+				$('#qrcode').html("<p>Codice QR della stazione: </p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_shuliavska.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M1/Shulyavska_metro_station_Kiev_2010_01.jpg' style='width:1550px; height: 1050px;'>");
+			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/28jpHN_aWyg' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
+		});
+		$("#station_7").click(function(){
+			$('#text_station').html('<p>Політехнічний Інститут -  6-та станція Київського метрополітену. Розташована на Святошинсько-Броварській лінії між станціями «Шулявська» і «Вокзальна», знаходиться на глибині 55 метрів, вважається пілонною станцією глибокого залягання з укороченим центральним залом. Відкрита 5 листопада 1963 року у складі другої черги метро.</p>');
+			$('#title').html("Політехнічний Інститут (станція метро Святошинсько-Броварської лінії)");
+			$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_politekhnichnyi_instytut.png' align='left' width='300px' height='300px'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p>Політехнічний Інститут -  6-та станція Київського метрополітену. Розташована на Святошинсько-Броварській лінії між станціями «Шулявська» і «Вокзальна», знаходиться на глибині 55 метрів, вважається пілонною станцією глибокого залягання з укороченим центральним залом. Відкрита 5 листопада 1963 року у складі другої черги метро.</p>');
+				$('#title').html("Політехнічний Інститут (станція метро Святошинсько-Броварської лінії)");
+				$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_politekhnichnyi_instytut.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p>Polytechnic Institute - the 6th station of the Kyiv metro. Located on the Svyatoshynsko-Brovarska line between Shulyavska and Vokzalna stations, it is at a depth of 55 meters and is considered a deep-lying pylon station with a shortened central hall. It was opened on November 5, 1963 as part of the second line of the subway.</p>');
+				$('#title').html("Polytechnic Institute (metro station of Svyatoshynsko-Brovarska line)");
+				$('#qrcode').html("<p>QR code of the station:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_politekhnichnyi_instytut.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text() == "Українська"){
+				$('#text_station').html('<p>Istituto Politecnico - la sesta stazione della metropolitana di Kiev. Situato sulla linea Svyatoshynsk-Brovary tra le stazioni di Shulyavska e Vokzalna, si trova a una profondita di 55 metri ed e considerata una stazione di traliccio profondo con una sala centrale accorciata. Fu inaugurato il 5 novembre 1963 come parte della seconda linea della metropolitana.</p>');
+				$('#title').html("Istituto Politecnico (stazione della metropolitana Sviatoshynsko-Brovarska)");
+				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_politekhnichnyi_instytut.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M1/Политехнический_институт_05.jpg' style='width:1550px; height: 1053px;'>");
+			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/28jpHN_aWyg' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
+		});
+		$("#station_8").click(function(){
+			$('#text_station').html('<p>Вокзальна - станція Київського метрополітену. Розташована на Святошинсько-Броварській лінії між станціями «Політехнічний інститут» і «Університет», знаходиться на глибині 42 метра, вважається пілонною станцією глибокого залягання з укороченим центральним залом. Відкрита 6 листопада 1960 року у складі першої черги будівництва. Є однією з найбільш завантажених станцій київського метро. З 1986 року станція має статус «пам`ятка архітектури місцевого значення», охоронний номер 192. Буде мати перехід на станцію <a href="M4.html">з тієї самої назви, як і тут</a> Подільсько-Вигурівської лінії.</p>');
+			$('#title').html("Вокзальна (станція метро Святошинсько-Броварської лінії)");
+			$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_vokzalna.png' align='left' width='300px' height='300px'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/ekFCNOLGsUA' allow='autoplay; encrypted-media' allowfullscreen></iframe><p>Відео від Олександра Гриненка з 2021 року: <iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/cZcC7GE21IE' allow='autoplay; encrypted-media' allowfullscreen></iframe></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p>Вокзальна - станція Київського метрополітену. Розташована на Святошинсько-Броварській лінії між станціями «Політехнічний інститут» і «Університет», знаходиться на глибині 42 метра, вважається пілонною станцією глибокого залягання з укороченим центральним залом. Відкрита 6 листопада 1960 року у складі першої черги будівництва. Є однією з найбільш завантажених станцій київського метро. З 1986 року станція має статус «пам`ятка архітектури місцевого значення», охоронний номер 192. Буде мати перехід на станцію <a href="M4.html">з тієї самої назви, як і тут</a> Подільсько-Вигурівської лінії.</p>');
+				$('#title').html("Вокзальна (станція метро Святошинсько-Броварської лінії)");
+				$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_vokzalna.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+				$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/ekFCNOLGsUA' allow='autoplay; encrypted-media' allowfullscreen></iframe><p>Відео від Олександра Гриненка з 2021 року: <iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/cZcC7GE21IE' allow='autoplay; encrypted-media' allowfullscreen></iframe></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p>Vokzalna - a station of the Kyiv metro. Located on the Svyatoshynsko-Brovary line between the "Polytechnic Institute" and "University" stations, it is at a depth of 42 meters and is considered a deep-lying pylon station with a shortened central hall. It was opened on November 6, 1960 as part of the first phase of construction. It is one of the busiest stations of the Kyiv metro. Since 1986, the station has the status of "architectural monument of local importance", security number 192. It will have a transition to the station <a href="M4.html">with the same name as here</a> of the Podilsko-Vygurivska line.</p>');
+				$('#title').html("Vokzalna (metro station of the Svyatoshynsko-Brovarska line)");
+				$('#qrcode').html("<p>QR code of the station:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_vokzalna.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+				$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/ekFCNOLGsUA' allow='autoplay; encrypted-media' allowfullscreen></iframe><p>Video from Alexander Grinenko from 2021: <iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/cZcC7GE21IE' allow='autoplay; encrypted-media' allowfullscreen></iframe></p>");
+			}
+			else if ($('#e').text() == "Українська"){
+				$('#text_station').html('<p>Vokzalna - una stazione della metropolitana di Kiev. Situato sulla linea Svyatoshynsk-Brovary tra le stazioni "Polytechnic Institute" e "University", si trova a una profondita di 42 metri ed e considerata una stazione di traliccio profondo con una sala centrale accorciata. Fu inaugurato il 6 novembre 1960 nell`ambito della prima fase di costruzione. E una delle stazioni piu trafficate della metropolitana di Kiev. Dal 1986 la stazione ha lo status di "monumento architettonico di importanza locale", numero di sicurezza 192. Avra un passaggio alla stazione <a href="M4.html">con lo stesso nome di qui</a> di la linea Podilsko-Vygurivska.</p>');
+				$('#title').html("Vokzalna (stazione della metropolitana della linea Svyatoshynsko-Brovarska)");
+				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_vokzalna.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+				$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/ekFCNOLGsUA' allow='autoplay; encrypted-media' allowfullscreen></iframe><p>Video di Alexander Grinenko del 2021: <iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/cZcC7GE21IE' allow='autoplay; encrypted-media' allowfullscreen></iframe></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M1/Vokzalna_metro_station_Kiev_2010_01.jpg' style='width:1550px; height: 1053px;'>");
+		});
+		$("#station_9").click(function(){
+			$('#text_station').html('<p>Університет - станція Київського метрополітену на Святошинсько-Броварській лінії. Розташована між станціями «Вокзальна» і «Театральна», знаходиться на глибині 87 метрів, вважається пілонною станцією глибокого залягання з укороченим центральним залом. Відкрита 6 листопада 1960 року у складі першої черги будівництва. Свою назву станція отримала внаслідок розташування поблизу від головного («червоного») корпусу Національного університету ім. Т. Г. Шевченка. Поруч зі станцією також розташовані Ботанічний сад ім. О. В. Фоміна, Володимирський собор, Національний педагогічний університет імені Михайла Драгоманова. З 1986 року станція має статус «пам`ятка архітектури місцевого значення», охоронний номер 171.</p>');
+			$('#title').html("Університет (станція метро Святошинсько-Броварської лінії)");
+			$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_universitet.png' align='left' width='300px' height='300px'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p>Університет - станція Київського метрополітену на Святошинсько-Броварській лінії. Розташована між станціями «Вокзальна» і «Театральна», знаходиться на глибині 87 метрів, вважається пілонною станцією глибокого залягання з укороченим центральним залом. Відкрита 6 листопада 1960 року у складі першої черги будівництва. Свою назву станція отримала внаслідок розташування поблизу від головного («червоного») корпусу Національного університету ім. Т. Г. Шевченка. Поруч зі станцією також розташовані Ботанічний сад ім. О. В. Фоміна, Володимирський собор, Національний педагогічний університет імені Михайла Драгоманова. З 1986 року станція має статус «пам`ятка архітектури місцевого значення», охоронний номер 171.</p>');
+				$('#title').html("Університет (станція метро Святошинсько-Броварської лінії)");
+				$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_universitet.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p>Universytet is a station of the Kyiv Metro on the Svyatoshynsko-Brovarska line. Located between the "Vokzalna" and "Teatralna" stations, it is at a depth of 87 meters and is considered a deep-lying pylon station with a shortened central hall. It was opened on November 6, 1960 as part of the first phase of construction. The station got its name due to its location near the main ("red") building of the National University named after T. G. Shevchenko. The Botanical Garden named after O. V. Fomina, Volodymyr`s Cathedral, Mykhailo Drahomanov National Pedagogical University. Since 1986, the station has the status of "architectural monument of local importance", security number 171.</p>');
+				$('#title').html("Universytet (metro station of the Svyatoshynsko-Brovarska line)");
+				$('#qrcode').html("<p>QR code of the station:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_universitet.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text() == "Українська"){
+				$('#text_station').html('<p>L`Universita e una stazione della metropolitana di Kiev sulla linea Svyatoshynsko-Brovarska. Situata tra le stazioni "Vokzalna" e "Teatralna", si trova a una profondita di 87 metri ed e considerata una stazione a traliccio profondo con una sala centrale accorciata. Fu inaugurato il 6 novembre 1960 nell`ambito della prima fase di costruzione. La stazione ha preso il nome dalla sua posizione vicino all`edificio principale ("rosso") dell`Universita Nazionale che porta il suo nome TG Shevchenko. Nei pressi della stazione si trova anche l`Orto Botanico intitolato alla stazione. OV Fomina, Cattedrale di Volodymyr, Universita Pedagogica Nazionale Mykhailo Drahomanov. Dal 1986 la stazione ha lo status di "monumento architettonico di importanza locale", numero di sicurezza 171.</p>');
+				$('#title').html("Universita (stazione della metropolitana della linea Svyatoshynsko-Brovarska)");
+				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_universitet.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M1/Universytet_metro_station_Kiev_2010_01.jpg' style='width:1550px; height: 1053px;'>");
+			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/waSSokf1D9A' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
+		});
+		$("#station_10").click(function(){
+			$('#text_station').html('<p>Театральна - станція Святошинсько-Броварської лінії, яка розташована між станціями "Університет" і "Хрещатик", знаходиться на глибині 70 метрів, вважається єдиною пілонно трисклепінною станцією глибокого залягання цієї лінії. Має перехід на станцію <a href="M3.html">Золоті Ворота</a> Сирецько-Печерської лінії, раніше вона називалась Ленінською.</p>');
+			$('#title').html("Театральна (станція метро Святошинсько-Броварської лінії)");
+			$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_teatralna.png' align='left' width='300px' height='300px'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p>Театральна - станція Святошинсько-Броварської лінії, яка розташована між станціями "Університет" і "Хрещатик", знаходиться на глибині 70 метрів, вважається єдиною пілонно трисклепінною станцією глибокого залягання цієї лінії. Має перехід на станцію <a href="M3.html">Золоті Ворота</a> Сирецько-Печерської лінії, раніше вона називалась Ленінською.</p>');
+				$('#title').html("Театральна (станція метро Святошинсько-Броварської лінії)");
+				$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_teatralna.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p>Teatralna - the station of the Svyatoshynsko-Brovarska line, which is located between the "University" and "Khreshchatyk" stations, is at a depth of 70 meters, and is considered the only deep-lying pylon three-vaulted station of this line. It has a transition to the <a href="M3.html">Zoloti Vorota</a> station of the Syretsko-Pecherska line, previously it was called Leninska.</p>');
+				$('#title').html("Teatralna (metro station of Svyatoshynsko-Brovarska line)");
+				$('#qrcode').html("<p>QR code of the station:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_teatralna.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text() == "Українська"){
+				$('#text_station').html('<p>Teatralna - la stazione della linea Svyatoshynsko-Brovarska, che si trova tra le stazioni "Universita" e "Khreshchatyk", si trova a una profondita di 70 metri ed e considerata l`unica stazione a tre volte di un pilone profondo di questa linea. Ha un passaggio alla stazione <a href="M3.html">Zoloti Vorota</a> della linea Syretsko-Pecherska, precedentemente chiamata Leninska.</p>');
+				$('#title').html("Teatralna (stazione della metropolitana della linea Svyatoshynsko-Brovarska)");
+				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_teatralna.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M1/Teatralna_metro_station_Kiev_2010_01.jpg' style='width:1560px; height: 1053px;'><p><img src='images_kyiv_metro_M1/teatralna_and_zolot_vorota.gif'></p>");
+			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/fFhzz5EYQY4' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
+		});
+		$("#station_11").click(function(){
+			$('#text_station').html('<p>Хрещатик - центральна станція Святошинсько-Броварської лінії, яка була відкрита 6 листопада 1960 року, розташована між станціями "Театральна" і "Арсенальна", знаходиться на глибині 60 метрів. Має перехід на станцію <a href="M2.html">Майдан Незалежності</a> Оболонсько-Теремківської лінії. Вважається пілонною станцією глибокого залягання з укороченим центральним залом. Свою назву отримала від центральної і широкої вулиці Києва. Станція унікальна завдяки аріхтектурою, мармурою, пілонами з яскравими вставками і майоліками. Має три виходів наземних вестибюлів: 1-ий вмонтований у будинок № 19-А по вулиці Хрещатик; 2-ий (архітектори І. Л. Масленков, Ю. Б. Тягно) розташований по Інститутській вулиці, 6; а третій улаштовано у будинок № 13 по вулиці Архітектора Городецького.</p>');
+			$('#title').html("Хрещатик (станція метро Святошинсько-Броварської лінії)");
+			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/fO6UdtLsH2U' allow='autoplay; encrypted-media' allowfullscreen></iframe><p>Відео від Олександра Гриненка з 2021 року: <iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/LohoSsFJqZc' allow='autoplay; encrypted-media' allowfullscreen></iframe></p>");
+			$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_khreshchatyk.png' align='left' width='300px' height='300px'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p>Хрещатик - центральна станція Святошинсько-Броварської лінії, яка була відкрита 6 листопада 1960 року, розташована між станціями "Театральна" і "Арсенальна", знаходиться на глибині 60 метрів. Має перехід на станцію <a href="M2.html">Майдан Незалежності</a> Оболонсько-Теремківської лінії. Вважається пілонною станцією глибокого залягання з укороченим центральним залом. Свою назву отримала від центральної і широкої вулиці Києва. Станція унікальна завдяки аріхтектурою, мармурою, пілонами з яскравими вставками і майоліками. Має три виходів наземних вестибюлів: 1-ий вмонтований у будинок № 19-А по вулиці Хрещатик; 2-ий (архітектори І. Л. Масленков, Ю. Б. Тягно) розташований по Інститутській вулиці, 6; а третій улаштовано у будинок № 13 по вулиці Архітектора Городецького.</p>');
+				$('#title').html("Хрещатик (станція метро Святошинсько-Броварської лінії)");
+				$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/fO6UdtLsH2U' allow='autoplay; encrypted-media' allowfullscreen></iframe><p>Відео від Олександра Гриненка з 2021 року: <iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/LohoSsFJqZc' allow='autoplay; encrypted-media' allowfullscreen></iframe></p>");
+				$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_khreshchatyk.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p>Khreshchatyk is the central station of the Svyatoshynsko-Brovarska line, which was opened on November 6, 1960, located between the "Teatralna" and "Arsenalna" stations, at a depth of 60 meters. It has a transfer to the <a href="M2.html">Maidan Nezalezhnosti</a> station of the Obolonsko-Teremkivskaya line. It is considered a deep-lying pylon station with a shortened central hall. It got its name from the central and wide street of Kyiv. The station is unique due to its architecture, marble, pylons with bright inserts and majolica. It has three exits of ground vestibules: the 1st is installed in building No. 19-A on Khreshchatyk Street; The 2nd (architects I. L. Maslenkov, Yu. B. Tyagno) is located at 6 Instytutska Street; and the third is arranged in building No. 13 on Arkhitektor Horodetskyi Street.</p>');
+				$('#title').html("Khreshchatyk (metro station of Svyatoshynsko-Brovarska line)");
+				$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/fO6UdtLsH2U' allow='autoplay; encrypted-media' allowfullscreen></iframe><p>Video from Alexander Grinenko from 2021: <iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/LohoSsFJqZc' allow='autoplay; encrypted-media' allowfullscreen></iframe></p>");
+				$('#qrcode').html("<p>QR code of the station:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_khreshchatyk.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text() == "Українська"){
+				$('#text_station').html('<p>Khreshchatyk e la stazione centrale della linea Svyatoshynsko-Brovarska, aperta il 6 novembre 1960, situata tra le stazioni "Teatralna" e "Arsenalna", a una profondita di 60 metri. Ha un trasferimento alla stazione <a href="M2.html">Maidan Nezalezhnosti</a> della linea Obolonsko-Teremkivskaya. E considerata una stazione di traliccio profondo con una sala centrale accorciata. Ha preso il nome dalla strada centrale e ampia di Kiev. La stazione e unica per la sua architettura, marmo, tralicci con inserti luminosi e maioliche. Ha tre uscite di vestiboli a terra: la prima e installata nell`edificio n. 19-A in Khreshchatyk Street; Il 2° (architetti I. L. Maslenkov, Yu. B. Tyagno) si trova in via Instytutska 6; e il terzo e disposto nell`edificio n. 13 in via Arkhitektor Horodetskyi.</p>');
+				$('#title').html("Khreshchatyk (stazione della metropolitana della linea Svyatoshynsko-Brovarska)");
+				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_khreshchatyk.png' align='left' width='300px' height='300px'>");
+				$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/fO6UdtLsH2U' allow='autoplay; encrypted-media' allowfullscreen></iframe><p>Video di Alexander Grinenko del 2021: <iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/LohoSsFJqZc' allow='autoplay; encrypted-media' allowfullscreen></iframe></p>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M1/Крещатик_(станция_метро)_04.jpg' style='width:1560px; height: 1050px;'>");
+		});
+		$("#station_12").click(function(){
+			$('#text_station').html('<p>Арсенальна - єдина станція Київського метрополітену, яка відкрилася вперше із 5 станцій 6 листопада 1960 року. Найглибша станція не лише в Києві, але й в світу, розташована між станціями Хрещатик і Дніпро, знаходиться на глибині 105,5 метрів, а сусідня станція Дніпро вважається наземною і знаходиться в мості. Має дві ескалатори (1-ий має довжину 47 м, а 2-ий - 56 м), тому не існувало таке будівля метрополітену із такої довжини, вважається станцією глибокого залягання англійського (Лондонського) типу і не має центрального зала.</p>');
+			$('#title').html("Арсенальна (станція метро Святошинсько-Броварської лінії)");
+			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/Fksziw_2ZT0' allow='autoplay; encrypted-media' allowfullscreen></iframe><p>Відео від Олександра Гриненка з 2021 року: <iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/99P4zeCQGqA' allow='autoplay; encrypted-media' allowfullscreen></iframe></p>");
+			$('#qrcode').html("<p>QR-код найглибшої станції світу:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_Arsenalna_.svg' align='left' width='300px' height='300px'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p>Арсенальна - єдина станція Київського метрополітену, яка відкрилася вперше із 5 станцій 6 листопада 1960 року. Найглибша станція не лише в Києві, але й в світу, розташована між станціями Хрещатик і Дніпро, знаходиться на глибині 105,5 метрів, а сусідня станція Дніпро вважається наземною і знаходиться в мості. Має дві ескалатори (1-ий має довжину 47 м, а 2-ий - 56 м), тому не існувало таке будівля метрополітену із такої довжини, вважається станцією глибокого залягання англійського (Лондонського) типу і не має центрального зала.</p>');
+				$('#title').html("Арсенальна (станція метро Святошинсько-Броварської лінії)");
+				$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/Fksziw_2ZT0' allow='autoplay; encrypted-media' allowfullscreen></iframe><p>Відео від Олександра Гриненка з 2021 року: <iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/99P4zeCQGqA' allow='autoplay; encrypted-media' allowfullscreen></iframe></p>");
+				$('#qrcode').html("<p>QR-код найглибшої станції світу:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_Arsenalna_.svg' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p>Arsenalna is the only station of the Kyiv metro, which opened for the first time out of 5 stations on November 6, 1960. The deepest station not only in Kyiv, but also in the world, located between Khreshchatyk and Dnipro stations, is at a depth of 105.5 meters, while the nearby Dnipro station is considered ground and is located in the bridge. It has two escalators (the 1st is 47 m long, and the 2nd is 56 m long), so there was no such metro building of this length, it is considered a deep-lying station of the English (London) type and has no central hall.</p>');
+				$('#title').html("Arsenalna (metro station of Svyatoshynsko-Brovarska line)");
+				$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/Fksziw_2ZT0' allow='autoplay; encrypted-media' allowfullscreen></iframe><p>Video from Alexander Grinenko from 2021: <iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/99P4zeCQGqA' allow='autoplay; encrypted-media' allowfullscreen></iframe></p>");
+				$('#qrcode').html("<p>QR code of the deepest station in the world:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_Arsenalna_.svg' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text() == "Українська"){
+				$('#text_station').html('<p>Arsenalna e l`unica stazione della metropolitana di Kiev, aperta per la prima volta su 5 stazioni il 6 novembre 1960. La stazione piu profonda non solo di Kiev, ma anche del mondo, situata tra le stazioni di Khreshchatyk e Dnipro, si trova a una profondita di 105,5 metri, mentre la vicina stazione di Dnipro e considerata terra e si trova nel ponte. Ha due scale mobili (la prima e lunga 47 m e la seconda e lunga 56 m), quindi non esisteva un edificio della metropolitana di questa lunghezza, e considerata una stazione profonda del tipo inglese (Londra) e non ha sala centrale.</p>');
+				$('#title').html("Arsenalna (stazione della metropolitana della linea Svyatoshynsko-Brovarska)");
+				$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/Fksziw_2ZT0' allow='autoplay; encrypted-media' allowfullscreen></iframe><p>Video di Alexander Grinenko del 2021: <iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/99P4zeCQGqA' allow='autoplay; encrypted-media' allowfullscreen></iframe></p>");
+				$('#qrcode').html("<p>Codice QR della stazione piu profonda del mondo:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_Arsenalna_.svg' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M1/Arsenalna_station._Kyiv_metro.jpg' style='width:1550px; height: 1050px;'>");
+		});
+		$("#station_13").click(function(){
+			$('#text_station').html('<p>Дніпро - станція Київського метрополітену, розташована на Святошинсько-Броварській лінії між станціями «Арсенальна» і «Гідропарк». Відкрита 6 листопада 1960 року в складі першої черги будівництва. До 1965 року була кінцевою. Є найменш завантаженою станцією Київського метрополітену. З 2008 року станція має статус «щойно виявлений об`єкт культурної спадщини», пам`ятка архітектури та містобудування, науки і техніки (охоронний номер 529/1-Кв).</p>');
+			$('#title').html("Дніпро (станція метро Святошинсько-Броварської лінії)");
+			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/NsnY8C5nWS4' allow='autoplay; encrypted-media' allowfullscreen></iframe><p>Відео від Олександра Гриненка з 2021 року: <iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/SclUInJl3fs' allow='autoplay; encrypted-media' allowfullscreen></iframe></p>");
+			$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_dnipro_.png' align='left' width='300px' height='300px'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p>Дніпро - станція Київського метрополітену, розташована на Святошинсько-Броварській лінії між станціями «Арсенальна» і «Гідропарк». Відкрита 6 листопада 1960 року в складі першої черги будівництва. До 1965 року була кінцевою. Є найменш завантаженою станцією Київського метрополітену. З 2008 року станція має статус «щойно виявлений об`єкт культурної спадщини», пам`ятка архітектури та містобудування, науки і техніки (охоронний номер 529/1-Кв).</p>');
+				$('#title').html("Дніпро (станція метро Святошинсько-Броварської лінії)");
+				$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/NsnY8C5nWS4' allow='autoplay; encrypted-media' allowfullscreen></iframe><p>Відео від Олександра Гриненка з 2021 року: <iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/SclUInJl3fs' allow='autoplay; encrypted-media' allowfullscreen></iframe></p>");
+				$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_dnipro_.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p>Dnipro is a station of the Kyiv Metro, located on the Svyatoshynsk-Brovary line between Arsenalna and Gidropark stations. It was opened on November 6, 1960 as part of the first phase of construction. Until 1965, it was final. It is the least busy station of the Kyiv metro. Since 2008, the station has the status of "newly discovered object of cultural heritage", monument of architecture and urban planning, science and technology (security number 529/1-Kv).</p>');
+				$('#title').html("Dnipro (metro station of Svyatoshynsko-Brovarska line)");
+				$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/NsnY8C5nWS4' allow='autoplay; encrypted-media' allowfullscreen></iframe><p>Video from Alexander Grinenko from 2021: <iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/SclUInJl3fs' allow='autoplay; encrypted-media' allowfullscreen></iframe></p>");
+				$('#qrcode').html("<p>QR code of the station:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_dnipro_.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text() == "Українська"){
+				$('#text_station').html('<p>Dnipro e una stazione della metropolitana di Kiev situata sulla linea Svyatoshynsk-Brovary tra le stazioni di Arsenalna e Gidropark. Fu inaugurato il 6 novembre 1960 nell`ambito della prima fase di costruzione. Fino al 1965 era definitivo. E la stazione meno trafficata della metropolitana di Kiev. Dal 2008 la stazione ha lo status di "oggetto dei beni culturali di nuova scoperta", monumento dell`architettura e dell`urbanistica, della scienza e della tecnologia (numero di sicurezza 529/1-Kv).</p>');
+				$('#title').html("Dnipro (stazione della metropolitana della linea Svyatoshynsko-Brovarska)");
+				$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/NsnY8C5nWS4' allow='autoplay; encrypted-media' allowfullscreen></iframe><p>Video di Alexander Grinenko del 2021: <iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/SclUInJl3fs' allow='autoplay; encrypted-media' allowfullscreen></iframe></p>");
+				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_dnipro_.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M1/Днепр_(станция_метро)_08.jpg' style='width:1560px; height: 1053px;'>");
+		});
+		$("#station_14").click(function(){
+			$('#text_station').html('<p>Гідропарк - 8-ма станція Київського метрополітену. Розташована на Святошинсько-Броварській лінії між станціями «Дніпро» і «Лівобережна», на Венеціанському острові. Відкрита 5 листопада 1965 року. Станція «Гідропарк» наземна, має два виходи сполучених з підземними переходами під лінією метро.</p>');
+			$('#title').html("Гідропарк (станція метро Святошинсько-Броварської лінії)");
+			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/x8Zg12brZb4' allow='autoplay; encrypted-media' allowfullscreen></iframe><p>Відео від Олександра Гриненка з 2021 року: <iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/PN_QLMZWiFA' allow='autoplay; encrypted-media' allowfullscreen></iframe></p>");
+			$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_hidropark.png' align='left' width='300px' height='300px'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p>Гідропарк - 8-ма станція Київського метрополітену. Розташована на Святошинсько-Броварській лінії між станціями «Дніпро» і «Лівобережна», на Венеціанському острові. Відкрита 5 листопада 1965 року. Станція «Гідропарк» наземна, має два виходи сполучених з підземними переходами під лінією метро.</p>');
+				$('#title').html("Гідропарк (станція метро Святошинсько-Броварської лінії)");
+				$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/x8Zg12brZb4' allow='autoplay; encrypted-media' allowfullscreen></iframe><p>Відео від Олександра Гриненка з 2021 року: <iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/PN_QLMZWiFA' allow='autoplay; encrypted-media' allowfullscreen></iframe></p>");
+				$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_hidropark.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p>Hidropark - the 8th station of the Kyiv metro. It is located on the Svyatoshynsk-Brovary line between the Dnipro and Livoberezhna stations, on the Venetian island. Opened on November 5, 1965. The station "Hidropark" is above ground, has two exits connected to underground passages under the metro line.</p>');
+				$('#title').html("Hidropark (metro station of Svyatoshynsko-Brovarska line)");
+				$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/x8Zg12brZb4' allow='autoplay; encrypted-media' allowfullscreen></iframe><p>Video from Alexander Grinenko from 2021: <iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/PN_QLMZWiFA' allow='autoplay; encrypted-media' allowfullscreen></iframe></p>");
+				$('#qrcode').html("<p>QR code of the station:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_hidropark.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text() == "Українська"){
+				$('#text_station').html('<p>Idroparco - l`ottava stazione della metropolitana di Kiev. Si trova sulla linea Svyatoshynsk-Brovary tra le stazioni di Dnipro e Livoberezhna, sull`isola veneziana. Inaugurato il 5 novembre 1965. La stazione "Idroparco" e fuori terra, ha due uscite collegate a passaggi sotterranei sotto la linea metropolitana.</p>');
+				$('#title').html("Idroparco (stazione della metropolitana della linea Svyatoshynsko-Brovarska)");
+				$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/x8Zg12brZb4' allow='autoplay; encrypted-media' allowfullscreen></iframe><p>Video di Alexander Grinenko del 2021: <iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/PN_QLMZWiFA' allow='autoplay; encrypted-media' allowfullscreen></iframe></p>");
+				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_hidropark.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M1/Hidropark_metro_station_Kiev_2011_01.jpg' style='width:1550px; height: 1050px;'>");
+		});
+		$("#station_15").click(function(){
+			$('#text_station').html('<p>Лівобережна - 9-та станція Київського метрополітену. Розташована на Святошинсько-Броварській лінії між станціями «Гідропарк» і «Дарниця». Відкрита 5 листопада 1965 року. Буде мати аж дві переходи на станції <a href="M3.html">Броварський проспект</a>Сирецько-Печерської лінії і <a href="M5.html">Броварський проспект</a> Лівобережної лінії.</p>');
+			$('#title').html("Лівобережна (станція метро Святошинсько-Броварської лінії)");
+			$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_livoberezhna.png' align='left' width='300px' height='300px'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p>Лівобережна - 9-та станція Київського метрополітену. Розташована на Святошинсько-Броварській лінії між станціями «Гідропарк» і «Дарниця». Відкрита 5 листопада 1965 року. Буде мати аж дві переходи на станції <a href="M3.html">Броварський проспект</a>Сирецько-Печерської лінії і <a href="M5.html">Броварський проспект</a> Лівобережної лінії.</p>');
+				$('#title').html("Лівобережна (станція метро Святошинсько-Броварської лінії)");
+				$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_livoberezhna.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p>Livoberezhna - the 9th station of the Kyiv metro. It is located on the Svyatoshynsko-Brovarska line between the "Hydropark" and "Darnytsia" stations. Opened on November 5, 1965. It will have as many as two crossings at the station <a href="M3.html">Brovarskyi Prospekt</a> of the Syretsko-Pecherska Line and <a href="M5.html">Brovarskyi Prospekt</a> of the Livoberezhna Line.</p>');
+				$('#title').html("Livoberezhna (metro station of Svyatoshynsko-Brovarska line)");
+				$('#qrcode').html("<p>QR code of the station:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_livoberezhna.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text() == "Українська"){
+				$('#text_station').html('<p>Livoberezhna - la nona stazione della metropolitana di Kiev. Si trova sulla linea Svyatoshynsko-Brovarska tra le stazioni "Hydropark" e "Darnytsia". Inaugurato il 5 novembre 1965. Avra ben due incroci alla stazione <a href="M3.html">Brovarskyi Prospekt</a> della linea Syretsko-Pecherska e <a href="M5.html">Brovarskyi Prospekt</a> della linea Livoberezhna.</p>');
+				$('#title').html("Livoberezhna (stazione della metropolitana della linea Svyatoshynsko-Brovarska)");
+				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_livoberezhna.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/2pS30039ang' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
+			$('#station_image').html("<img src='images_kyiv_metro_M1/Livoberezhna_(Kiev_Metro).jpg' style='width:1550px; height: 1050px;'>");
+		});
+		$("#station_16").click(function(){
+			$('#text_station').html('<p>Дарниця - 10-та станція Київського метрополітену. Розташована на Святошинсько-Броварській лінії між станціями «Лівобережна» і «Чернігівська». Відкрита 5 листопада 1965 року.</p>');
+			$('#title').html("Дарниця (станція метро Святошинсько-Броварської лінії)");
+			$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_darnitsya.png' align='left' width='300px' height='300px'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p>Дарниця - 10-та станція Київського метрополітену. Розташована на Святошинсько-Броварській лінії між станціями «Лівобережна» і «Чернігівська». Відкрита 5 листопада 1965 року.</p>');
+				$('#title').html("Дарниця (станція метро Святошинсько-Броварської лінії)");
+				$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_darnitsya.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p>Darnytsia - the 10th station of the Kyiv metro. It is located on the Svyatoshynsko-Brovarska line between Livoberezhna and Chernihivska stations. Opened on November 5, 1965.</p>');
+				$('#title').html("Darnytsia (metro station of Svyatoshynsko-Brovarska line)");
+				$('#qrcode').html("<p>QR code of the station:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_darnitsya.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text() == "Українська"){
+				$('#text_station').html('<p>Darnytsia - la decima stazione della metropolitana di Kiev. Si trova sulla linea Svyatoshynsko-Brovarska tra le stazioni di Livoberezhna e Chernihivska. Inaugurato il 5 novembre 1965.</p>');
+				$('#title').html("Darnytsia (stazione della metropolitana della linea Svyatoshynsko-Brovarska)");
+				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_darnitsya.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M1/Darnytsia_Metro_Station_Kiev_2012_04.jpg' style='width:1550px; height: 1050px;'>");
+			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/eWHI3Mv-gfk' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
+		});
+		$("#station_17").click(function(){
+			$('#text_station').html('<p>Чернігівська - 11-та станція Київського метрополітену. Розташована на Святошинсько-Броварській лінії між станціями «Дарниця» і «Лісова». Була відкрита 4 жовтня 1968 року. Відмічається інших наземних станцій цієї лінії, що ця станція розташована під автодорожнім шляхопроводом.</p>');
+			$('#title').html("Чернігівська (станція метро Святошинсько-Броварської лінії)");
+			$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_chernihivska.png' align='left' width='300px' height='300px'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p>Чернігівська - 11-та станція Київського метрополітену. Розташована на Святошинсько-Броварській лінії між станціями «Дарниця» і «Лісова». Була відкрита 4 жовтня 1968 року. Відмічається інших наземних станцій цієї лінії, що ця станція розташована під автодорожнім шляхопроводом.</p>');
+				$('#title').html("Чернігівська (станція метро Святошинсько-Броварської лінії)");
+				$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_chernihivska.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p>Chernihivska - the 11th station of the Kyiv metro. It is located on the Svyatoshynsko-Brovarska line between the stations "Darnytsia" and "Lisova". It was opened on October 4, 1968. It is noted from other ground stations of this line that this station is located under a road overpass.</p>');
+				$('#title').html("Chernihivska (metro station of Svyatoshynsko-Brovarska line)");
+				$('#qrcode').html("<p>QR code of the station:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_chernihivska.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text() == "Українська"){
+				$('#text_station').html('<p>Chernihivska - l`undicesima stazione della metropolitana di Kiev. Si trova sulla linea Svyatoshynsko-Brovarska tra le stazioni "Darnytsia" e "Lisova". Fu inaugurato il 4 ottobre 1968. Da altre stazioni a terra di questa linea si nota che questa stazione si trova sotto un cavalcavia stradale.</p>');
+				$('#title').html("Chernihivska (stazione della metropolitana della linea Svyatoshynsko-Brovarska)");
+				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_chernihivska.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/_g5iKSwyZf8' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
+			$('#station_image').html("<img src='images_kyiv_metro_M1/Chernihivska_metro_station_Kiev_2011_03.jpg' style='width:1550px; height: 1050px;'>");
+		});
+		$("#station_18").click(function(){
+			$('#text_station').html('<p>Лісова - 18-та станція Київського метрополітену, східна кінцева на Святошинсько-Броварській лінії, наступна після станції «Чернігівська». Відкрита 5 грудня 1979 року під назвою «Піонерська». Нинішня назва — з 2 лютого 1993 року. Має два виходи, сполучені з підземними переходами під Броварським проспектом. Одна з найзавантаженіших станцій у київському метро.</p>');
+			$('#title').html("Лісова (станція метро Святошинсько-Броварської лінії)");
+			$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_lisova.png' align='left' width='300px' height='300px'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p>Лісова - 18-та станція Київського метрополітену, східна кінцева на Святошинсько-Броварській лінії, наступна після станції «Чернігівська». Відкрита 5 грудня 1979 року під назвою «Піонерська». Нинішня назва — з 2 лютого 1993 року. Має два виходи, сполучені з підземними переходами під Броварським проспектом. Одна з найзавантаженіших станцій у київському метро.</p>');
+				$('#title').html("Лісова (станція метро Святошинсько-Броварської лінії)");
+				$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_lisova.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p>Lisova is the 18th station of the Kyiv metro, the eastern terminus on the Svyatoshynsko-Brovarska line, the next after Chernihivska station. It was opened on December 5, 1979 under the name "Pionerska". The current name is from February 2, 1993. It has two exits, connected to underground passages under Brovarsky prospect. One of the busiest stations in the Kyiv metro.</p>');
+				$('#title').html("Lisova (metro station of Svyatoshynsko-Brovarska line)");
+				$('#qrcode').html("<p>QR code of the station:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_lisova.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text() == "Українська"){
+				$('#text_station').html('<p>Lisova e la diciottesima stazione della metropolitana di Kiev, capolinea orientale della linea Svyatoshynsko-Brovarska, la successiva dopo la stazione di Chernihivska. E stato aperto il 5 dicembre 1979 con il nome "Pionerska". Il nome attuale e del 2 febbraio 1993. Ha due uscite, collegate ai passaggi sotterranei sotto Brovarskii Prospect. Una delle stazioni piu trafficate della metropolitana di Kiev.</p>');
+				$('#title').html("Lisova (stazione della metropolitana della linea Svyatoshynsko-Brovarska)");
+				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M1/qrcode_lisova.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M1/Лісова.jpg'>");
+			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/8kJEF6-d5dc' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
+		});
+		
+		$("#p, h1, h2, h3, h4, li, legend, td, label, option").addClass("font_middle");
+
+		$("#small_text").click(function(){
+			$clas_new="font_small";
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").removeClass($clas_action).addClass($clas_new);
+			$clas_action=$clas_new;
+		})
+		$("#middle_text").click(function(){
+			$clas_new="font_middle";
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").removeClass($clas_action).addClass($clas_new);
+			$clas_action=$clas_new;
+		})
+		$("#big_text").click(function(){
+			$clas_new="font_big";
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").removeClass($clas_action).addClass($clas_new);
+			$clas_action=$clas_new;
+		})
+		$(function(){
+			$('#e').click(function(){
+				if ($('#e').text()=="Почати переклад") {
+					$('#e').text('English');}
+				else if ($('#e').text()=="Українська") {
+					$('#title').html("Святошинсько-Броварська лінія");
+					$('#qrcode').html("<p>QR-код лінії:</p><img src='kyiv_metro_qrcodes/qrcode_svyatoshyno_brovarska_.png' align='left' width='300px' height='300px'>");
+					$('#txt_logo').html('<h4>Святошинсько-Броварська лінія</h4>');
+					$('#menu_site').html('<table width="100%"><tr><td width="100px"><a href="Kiev_metro.html">Головна</a></td><td width="200px">Святошинсько-Броварська лінія</td><td width="200px"><a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div>Оболонсько-Теремківська лінія</td><td width="200px"><a href="M3.html?m=1" class="light_sp"><div></div><div></div><div></div><div></div>Сирецько-Печерська лінія</a></td><td width="200px"><a href="M4.html?m=1" class="light_pv"><div></div><div></div><div></div><div></div>Подільсько-Вигурівська лінія</a></td><td width="200px"><a href="M5.html?m=1" class="light_livoberezhna"><div></div><div></div><div></div><div></div>Лівобережна лінія</a></td><td width="200px"><a href="M6.html?m=1" class="light_vd"><div></div><div></div><div></div><div></div>Вишгородсько-Дарницька лінія</a></td><td width="200px"><a href="M7.html" class="light_b"><div></div><div></div><div></div><div></div>Борщагівська лінія</a></td><td width="200px"><a href="Rolling_stock_kyiv_metro.html">Рухомий пасажирський склад метрополітену</a></td><td width="200px"><a href="about_us.html">Про нас</a></td></td></tr></table>');
+					$('#p').html('<p>Святошинсько-Броварська лінія (також Святошино-Броварська лінія або Червона лінія метро) — історично перша лінія Київського метрополітену. Кількість станцій — 18, довжина лінії — 22,7 км, час проїзду — 38,5 хв.</p><p>Нумерація колій: «Академмістечко» — «Лісова» — I, «Лісова» — «Академмістечко» — II.</p>');
+					$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#ffffff;");
+					$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+					$("#station_0").text("Новобіличі");$("#station_1").text("Академмістечко");$("#station_2").text("Житомирська");$("#station_3").html("Святошин<img src='20px-BSicon_LDER.svg.png'>");$("#station_4").text("Нивки");$("#station_5").html("Бучанська<img src='20px-BSicon_LDER.svg.png'>");$("#station_6").text("Шулявська");$("#station_7").text("Політехнічний Інститут");$("#station_8").html("Вокзальна<img src='20px-BSicon_LDER.svg.png'>");$("#station_9").text("Університет");$("#station_10").text("Театральна");$("#station_11").text("Хрещатик");$("#station_12").text("Арсенальна");$("#station_13").text("Дніпро");$("#station_14").text("Гідропарк");$("#station_15").html("Лівобережна<img src='20px-BSicon_LDER.svg.png'>");$("#station_16").text("Дарниця");$("#station_17").text("Чернігівська");$("#station_18").text("Лісова");
+					$('#e').text('English');}
+				else if ($('#e').text() == "English") {
+					$('#title').html("Sviatoshynsko-Brovarska line");
+					$('#qrcode').html("<p>QR code of the line:</p><img src='kyiv_metro_qrcodes/qrcode_svyatoshyno_brovarska_.png' align='left' width='300px' height='300px'>");
+					$('#txt_logo').html('<h4>Sviatoshynsko-Brovarska line</h4>');
+					$('#menu_site'). html ('<table width = "100%"> <tr> <td width = "100px"> <a href="Kiev_metro.html">Main site</a> </td> <td width = "200px"> Sviatoshynsko-Brovarska line </td> <td width = "200px"> <a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div> Obolonsko-Teremkivska line </td> <td width = "200px"> <a href="M3.html?m=1" class="light_sp"><div></div><div></div><div></div><div></div> Syretsko-Pecherska line </a> </td> <td width = "200px"> <a href = "M4.html? M = 1 " class="light_pv"><div></div><div></div><div></div><div></div> Podilsko-Vyhurivska line </a> </td> <td width =" 200px "> <a href="M5.html?m=1" class="light_livoberezhna"><div></div><div></div><div></div><div></div> Livoberezhna line </a> </td> <td width = "200px"> <a href="M6.html?m=1" class="light_vd"><div></div><div></div><div></div><div></div> Vyshhorodsko-Darnytska line </a> </td> <td width = "200px"> <a href="M7.html" class="light_b"><div></div><div></div><div></div><div></div> Borshchahivska line </a> </td> <td width = "200px"> <a href="Rolling_stock_kyiv_metro.html"> Subway rolling stock </a> </td> <td width = "200px"> <a href = "about_us.html"> About us </a> </td> </td> </tr> </table> ');
+					$('#p').html('<p>Sviatoshynsko-Brovarska line (also Sviatoshyna-Brovarska line or Red metro line) - historically the first line of the Kyiv metro. Number of stations - 18, line length - 22.7 km, travel time - 38.5 minutes. </p> <p> Numbering of tracks: "Akademgorodok" - "Lisova" - I, "Lisova" - "Akademisteko" - II . </p>');
+					$("#p, h1, h2, h3, li, legend, td, label, option").attr("style","color:#ffffff;");
+					$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+					$("#station_0").text("Novobylychi");$("#station_1").text("Akademmistechko");$("#station_2").text("Zhytomyrska");$("#station_3").html("Sviatoshyn<img src='20px-BSicon_LDER.svg.png'>");$("#station_4").text("Nyvky");$("#station_5").html("Buchanska<img src='20px-BSicon_LDER.svg.png'>");$("#station_6").text("Shulyavska");$("#station_7").text("Polytechnic Institute");$("#station_8").html("Vokzalna<img src='20px-BSicon_LDER.svg.png'>");$("#station_9").text("Universytet");$("#station_10").text("Teatralna");$("#station_11").text("Khreshchatyk");$("#station_12").text("Arsenalna");$("#station_13").text("Dnipro");$("#station_14").text("Hidropark");$("#station_15").html("Livoberezhna<img src='20px-BSicon_LDER.svg.png'>");$("#station_16").text("Darnytsia");$("#station_17").text("Chernihivska");$("#station_18").text("Lisova");
+					$('#e').text('Italiano');}
+				else if ($('#e').text() == "Italiano") {
+					$('#title').html("Linea Sviatoshynsko-Brovarska");
+					$('#qrcode').html("<p>Codice QR della linea:</p><img src='kyiv_metro_qrcodes/qrcode_svyatoshyno_brovarska_.png' align='left' width='300px' height='300px'>");
+					$('#txt_logo').html('<h4>Linea Sviatoshynsko-Brovarska</h4>');
+					$('#menu_site').html ('<table width = "100%"> <tr> <td width = "100px"> <a href="Kiev_metro.html">Sito principale</a> </td> <td width = "200px">Linea Sviatoshynsko-Brovarska </td> <td width = "200px"> <a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div>Linea Obolonsko-Teremkivska </td> <td width = "200px"> <a href="M3.html?m=1" class="light_sp"><div></div><div></div><div></div><div></div>Linea Syretsko-Pecherska </a> </td> <td width = "200px"> <a href = "M4.html? M = 1 " class="light_pv"><div></div><div></div><div></div><div></div>Linea Podilsko-Vyhurivska </a> </td> <td width =" 200px "><a href="M5.html?m=1" class="light_livoberezhna"><div></div><div></div><div></div><div></div>Linea Livoberezhna </a> </td> <td width = "200px"><a href="M6.html?m=1" class="light_vd"><div></div><div></div><div></div><div></div>Linea Vyshhorodsko-Darnytska </a> </td> <td width = "200px"> <a href="M7.html" class="light_b"><div></div><div></div><div></div><div></div>Linea Borshchahivska</a> </td> <td width = "200px"> <a href="Rolling_stock_kyiv_metro.html">Materiale rotabile della metropolitana </a> </td> <td width = "200px"> <a href = "about_us.html">Chi siamo </a> </td> </td> </tr> </table> ');
+					$('#p').html('<p>Linea Sviatoshynsko-Brovarska (anche linea Sviatoshyna-Brovarska o linea rossa della metropolitana) - storicamente la prima linea della metropolitana di Kiev. Numero di stazioni - 18, lunghezza della linea - 22,7 km, tempo di percorrenza - 38,5 minuti. </p> <p> Numerazione dei binari: "Akademgorodok" - "Lisova" - I, "Lisova" - "Akademisteko" - II . </p>');
+					$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#ffffff;");
+					$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+					$("#station_0").text("Novobilichi");$("#station_1").text("Akademmistechko");$("#station_2").text("Zhytomyrska");$("#station_3").html("Svyatosyn<img src='20px-BSicon_LDER.svg.png'>");$("#station_4").text("Nykvy");$("#station_5").html("Buchanska<img src='20px-BSicon_LDER.svg.png'>");$("#station_6").text("Shulyavska");$("#station_7").text("Istituto Politecnico");$("#station_8").html("Vokzalna<img src='20px-BSicon_LDER.svg.png'>");$("#station_9").text("Universita");$("#station_10").text("Teatralna");$("#station_11").text("Khreshchatyk");$("#station_12").text("Arsenalna");$("#station_13").text("Dnipro");$("#station_14").text("Idroparco");$("#station_15").html("Livoberezhna<img src='20px-BSicon_LDER.svg.png'>");$("#station_16").text("Darnytsia");$("#station_17").text("Chernihivska");$("#station_18").text("Lisova");
+					$('#e').text('Українська');}
+			});
+		})
+		;
+		$(function(){
+			function change_width(id_obj,x){
+				var a=$(id_obj).attr('title');
+				var w=$(id_obj).width();
+				var h=$(id_obj).height();
+				if(a==''){
+					w=w*x;
+					h=h*x;
+					$(id_obj).width(w).height(h);
+					$(id_obj).attr('title','фото зменшене в 1.5 раз');
+					a=$(id_obj).attr('title');
+				}
+				else if(a=='фото зменшене в 1.5 раз'){
+					w=w/1.5;
+					h=h/1.5;
+					$(id_obj).width(w).height(h);
+					$(id_obj).attr('title','');
+					a=$(id_obj).attr('title');
+				}
+			}
+			$('#station img').each(function(){
+				$(this).attr('title','');
+				$(this).click(function(){
+					change_width(this,1.5);
+				});
+			});
+			$('#station_image').each(function(){
+				$(this).attr('title','');
+				$(this).click(function(){
+					change_width(this,1.5);
+				});
+			});
+		})
+		;
+	});
+</script>
+<table width='100%'>
+<tr width='20%'><td width='20%' valign='top'><h1 id='txt_logo' class='logo_text'>Святошинсько-Броварська лінія</h1></td>
+<td>
+<div id="navigation">
+<ul valign="top">
+<li align='left'><div id="divDateTime" style='font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;'></div></li>
+<li><div id="p_color_knop">
+					<div id="blue"></div>
+					<div id="green"></div>
+					<div id="yellow"></div>
+					<div id="cyan"></div>
+					<div id="gold"></div>
+					<div id="purple"></div>
+					<div id="white"></div>
+					<div id="rainbow_text"></div>
+				</div></li>
+<li><div id="size_text">
+<div id="e" width="100px" style=" border:1px solid red; background:#3582c4; padding:5px ">Почати переклад</div></div></li>
+<li><div id="size_text">
+				<div id="small_text">A</div>
+				<div id="middle_text">A</div>
+				<div id="big_text">A</div>
+			</div></li>
+</ul>
+</div></td></tr>
+<tr valign='top'><td valign='top'><img id='logo' src='kyiv_metro_branch/M1.png' align='left'width='300px' height='218px'></td>
+<td><img id='metro' src='kyiv_metro_branch/metro_animation.gif' width='100%'></td></tr>
+</table>
+<div id='menu_site' >
+<table width='100%'>
+<tr>
+<td width='100px'>
+		 <a href="Kiev_metro.html">Головна</a></td>
+		 <td width='200px'>
+Святошинсько-Броварська лінія</td>
+		 <td width='200px'>
+		 <a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div>Оболонсько-Теремківська лінія</a></td>
+		 <td width='200px'>
+		 <a href="M3.html?m=1" class="light_sp"><div></div><div></div><div></div><div></div>Сирецько-Печерська лінія</a></td>
+		 <td width='200px'>
+		 <a href="M4.html?m=1" class="light_pv"><div></div><div></div><div></div><div></div>Подільсько-Вигурівська лінія</a></td>
+		 <td width='200px'>
+		 <a href="M5.html?m=1" class="light_livoberezhna"><div></div><div></div><div></div><div></div>Лівобережна лінія</a></td>
+		 <td width='200px'>
+		 <a href="M6.html?m=1" class="light_vd"><div></div><div></div><div></div><div></div>Вишгородсько-Дарницька лінія</a></td>
+		<td width='200px'>
+		 <a href="M7.html" class="light_b"><div></div><div></div><div></div><div></div>Борщагівська лінія</a></td>
+		<td width='200px'>
+            <a href="Rolling_stock_kyiv_metro.html">Рухомий пасажирський склад метрополітену</a></td>
+		<td width='200px'>
+            <a href="about_us.html">Про нас</a></td>
+        </td>
+</td>
+   </tr>
+   </table>
+	  </div>
+				<div id='p'>
+<p>Святошинсько-Броварська лінія (також Святошино-Броварська лінія або Червона лінія метро) — історично перша лінія Київського метрополітену. Кількість станцій — 18, довжина лінії — 22,7 км, час проїзду — 38,5 хв.</p>
+
+<p>Нумерація колій: «Академмістечко» — «Лісова» — I, «Лісова» — «Академмістечко» — II.</p>
+</div>
+<img id='map' src='kyiv_metro_branch/kiev_metro_line_M1.jpg'>
+<table id='center' cellspacing="0" border="0" width="100%" bordercolor="fff">
+	<tr id='top'>
+		<td id='menu_station' width='275px' valign="top">
+			<div class='menu'>
+				<p><a id='station_0'>Новобіличі</a></p>
+				<p><a id='station_1'>Академмістечко</a></p>
+				<a><a id='station_2'>Житомирська</a></p>
+				<p><a id='station_3'>Святошин<img src='20px-BSicon_LDER.svg.png'></a></p>
+				<p><a id='station_4'>Нивки</a></p>
+				<p><a id='station_5'>Бучанська<img src='20px-BSicon_LDER.svg.png'></a></p>
+				<p><a id='station_6'>Шулявська</a></p>
+				<p><a id='station_7'>Політехнічний Інститут</a></p>
+				<p><a id='station_8'>Вокзальна<img src='20px-BSicon_LDER.svg.png'></a></p>
+				<p><a id='station_9'>Університет</a></p>
+				<p><a id='station_10'>Театральна</a></p>
+				<p><a id='station_11'>Хрещатик</a></p>
+				<p><a id='station_12'>Арсенальна</a></p>
+				<p><a id='station_13'>Дніпро</a></p>
+				<p><a id='station_14'>Гідропарк</a></p>
+				<p><a id='station_15'>Лівобережна<img src='20px-BSicon_LDER.svg.png'></a></p>
+				<p><a id='station_16'>Дарниця</a></p>
+				<p><a id='station_17'>Чернігівська</a></p>
+				<p><a id='station_18'>Лісова</a></p>
+			</div>
+		</td>
+<td id='station' valign="top" rowspan='2'>
+<p>
+<div id='text_station'></div>
+</p>
+<p>
+<div id='station_image' width='1050px' height='750px'></div>
+<div id='station_video' width='1050px' height='750px'></div>
+<div id='qrcode' width='1050px' height='750px'><p>QR-код лінії:</p><img src='kyiv_metro_qrcodes/qrcode_svyatoshyno_brovarska_.png' align='left' width='300px' height='300px'></div>
+<div id='back_to_main_slide' class='menu'></div>
+</p>
+</td>
+</tr>
+</table>
+</body>
+</html>

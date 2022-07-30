@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1251">
+<title id='title'>Про нас</title>
+<script src="js/jquery-1_11_3_min.js"> </script>
+<link href="css/new.css" rel="stylesheet" type="text/css" />
+<link rel="icon" href="kyiv_metro_branch/1200px-Kyiv_Metro_logo_2015.svg.png" type="image/x-icon">
+</head>
+<body background="dnipro_ukraine.jpg"  style=" height: 100%; background-repeat: no-repeat; background-size: cover;">
+<script>
+	var $clas_new="font_middle";
+	var $clas_action="font_middle";
+
+	var DateTime = new Date();
+	var week = new Array('Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П`ятниця', 'Субота');
+	var day  = week[DateTime.getDay()];
+	var week_eng = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
+	var day_eng  = week_eng[DateTime.getDay()];
+	var week_ita = new Array('Domenica','Lunedi','Martedi','Mercoledi','Giovedi','Venerdi','Sabato');
+	var day_ita  = week_ita[DateTime.getDay()];
+
+	function GetDateTime(){
+		var DateTime = new Date();
+		var week = new Array('Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П`ятниця', 'Субота');
+		var day  = week[DateTime.getDay()];
+		$('#divDateTime').html("Сьогодні: " + DateTime.getDate() + "." + (DateTime.getMonth()+1) + "." + DateTime.getFullYear() + " - "+day+"<br> Час: " + DateTime.getHours() + ":" + DateTime.getMinutes() + ":" + DateTime.getSeconds());
+	}
+	
+	$('document').ready(function(){
+		setInterval(GetDateTime, 1000);
+
+		$(function(){
+			$('#logo').slideUp(0);
+			$('#logo').slideDown(3000);
+		})
+		$(function(){
+			$('#logo_M1').slideUp(0);
+			$('#logo_M1').slideDown(1500);
+		})
+		$(function(){
+			$('#logo_M2').slideUp(0);
+			$('#logo_M2').slideDown(2000);
+		})
+		$(function(){
+			$('#logo_M3').slideUp(0);
+			$('#logo_M3').slideDown(3000);
+		})
+		$(function(){
+			$('#logo_M4').slideUp(0);
+			$('#logo_M4').slideDown(4000);
+		})
+		$(function(){
+			$('#logo_M5').slideUp(0);
+			$('#logo_M5').slideDown(5000);
+		})
+		$(function(){
+			$('#gallery').fadeOut(0);
+			$('#gallery').fadeIn(3000);
+		})
+		$(function(){
+			$('#metro_map').slideUp(0);
+			$('#metro_map').slideDown(3000);
+		})
+		$(function(){
+			$('#metro_history').slideUp(0);
+			$('#metro_history').fadeIn(4000);
+		})
+		$(function(){
+			$('#video_history').fadeOut(0);
+			$('#video_history').slideDown(5000);
+		})
+		;
+		$("#red").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:maroon; text-shadow: 1px 1px 2px white;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+		})
+		$("#blue").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:blue; text-shadow: 1px 1px 2px white;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+		})
+		$("#green").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:lime; text-shadow: 1px 1px 2px black;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+		})
+		$("#yellow").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:gold; text-shadow: 1px 1px 2px black;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+		})
+		$("#cyan").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#00ffff; text-shadow: 1px 1px 2px black;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+		})
+		$("#gold").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:yellow; text-shadow: 1px 1px 2px black;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+		})
+		$("#purple").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#800080; text-shadow: 1px 1px 2px white;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+		})
+		$("#white").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#ffffff; text-shadow: 1px 1px 2px black;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+		})
+		$("#rainbow_text").click(function(){
+			$("#p, legend, td, label, option").attr("style","background: linear-gradient(90deg, #fd004c, #fe9000, #fff020, #3edf4b, #3363ff, #0000ff, #000080, #800080, #b102b7, #ff00c4, #fd004c);background-size: 400%;font-family: sans-serif;word-spacing: 5px;-webkit-text-fill-color: transparent;-webkit-text-stroke: 0.01em black;-webkit-background-clip: text;animation: animate 10s linear infinite;");
+			$("#divDateTime").attr("style","background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033ff, #ff00c4, #ff0000);background-size: 400%;font-family: Calibri; font-style: Italic; font-size:115%;word-spacing: 5px;-webkit-text-fill-color: transparent;-webkit-background-clip: text;animation: animate 10s linear infinite;");
+			$("h1, h2, h3, h4").attr("style","background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033ff, #ff00c4, #ff0000);background-size: 400%; width:100%; font:24px impact; height:10px; font-style: Italic; font-size:115%;letter-spacing: 3px;-webkit-text-fill-color: transparent;-webkit-background-clip: text;animation: animate 10s linear infinite;");
+			$("#menu a:hover").attr("style","background:#ffffff;");
+			$("#menu a:action").attr("style","background:#ffffff;");
+		})
+
+		$("#p, h1, h2, h3, h4, li, legend, td, label, option").addClass("font_middle");
+
+		$("#small_text").click(function(){
+			$clas_new="font_small";
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").removeClass($clas_action).addClass($clas_new);
+			$clas_action=$clas_new;
+		})
+		$("#middle_text").click(function(){
+			$clas_new="font_middle";
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").removeClass($clas_action).addClass($clas_new);
+			$clas_action=$clas_new;
+		})
+		$("#big_text").click(function(){
+			$clas_new="font_big";
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").removeClass($clas_action).addClass($clas_new);
+			$clas_action=$clas_new;
+		})
+
+		$(function(){
+			$('#e').click(function(){
+				if ($('#e').text()=="Українська") {
+					$('#title').html('Про нас');
+					$('#txt_logo').html('<h4>Про нас</h4>');
+					$('#menu_site').html('<table width="100%"> <tr><td width="100px"><a href="Kiev_metro.html">Головна</a></td><td width="200px"><a href="M1.html?m=1" class="light_sb"><div></div><div></div><div></div><div></div>Святошинсько-Броварська лінія</a></td><td width="200px"><a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div>Оболонсько-Теремківська лінія</td><td width="200px"><a href="M3.html?m=1" class="light_sp"><div></div><div></div><div></div><div></div>Сирецько-Печерська лінія</a></td><td width="200px"><a href="M4.html?m=1" class="light_pv"><div></div><div></div><div></div><div></div>Подільсько-Вигурівська лінія</a></td><td width="200px"><a href="M5.html?m=1" class="light_livoberezhna"><div></div><div></div><div></div><div></div>Лівобережна лінія</a></td><td width="200px"><a href="M6.html?m=1" class="light_vd"><div></div><div></div><div></div><div></div>Вишгородсько-Дарницька лінія</a></td><td width="200px"><a href="M7.html" class="light_b"><div></div><div></div><div></div><div></div>Борщагівська лінія</a></td><td width="200px"><a href="Rolling_stock_kyiv_metro.html">Рухомий пасажирський склад метрополітену</a></td><td width="200px">Про нас</td></td></tr></table>');
+					$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#ffffff; text-shadow: 1px 1px 2px black;");
+					$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%; text-shadow: 1px 1px 2px black;");
+					$("#first_about_us").html("<h4>Александр Гриненко (автор сайту)</h4>"); $("#second_about_us").html("<h4>Київський метрополітен</h4>"); $("#third_about_us").html("<h4>UATV Channel</h4>"); $("#site_second").html("<p>Сайт: <a href='http://www.metro.kyiv.ua/'><img src='kyiv_metro_about_us/mlogo.png' width='132' height='26.5'></a></p>"); $("#site_third").html("<p id='site_third'>Сайт: <a href='https://uatv.ua/'><img src='kyiv_metro_about_us/channel_uatv.jpg' width='50' height='50'></a></p>");
+					$('#e').text('English');}
+				else if ($('#e').text() == "English") {
+					$('#txt_logo').html('<h4>About us</h4>');
+					$('#title').html('About us');
+					$('#menu_site').html('<table width="100%"> <tr><td width="100px"><a href="Kiev_metro.html">Main site</a></td><td width="200px"><a href="M1.html?m=1" class="light_sb"><div></div><div></div><div></div><div></div>Svyatoshinsko-Brovarska line</a></td><td width="200px"><a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div>Obolonsko-Teremkivska line</td><td width="200px"><a href="M3.html?m=1" class="light_sp"><div></div><div></div><div></div><div></div>Syretsko-Pecherska line</a></td><td width="200px"><a href="M4.html?m=1" class="light_pv"><div></div><div></div><div></div><div></div>Podilsko-Vygurivska line</a></td><td width="200px"><a href="M5.html?m=1" class="light_livoberezhna"><div></div><div></div><div></div><div></div>Livoberezhna line</a></td><td width="200px"><a href="M6.html?m=1" class="light_vd"><div></div><div></div><div></div><div></div>Vyshhorodsko-Darnytska line</a></td><td width="200px"><a href="M7.html" class="light_b"><div></div><div></div><div></div><div></div>Borshchahivska line</a></td><td width="200px"><a href="Rolling_stock_kyiv_metro.html">Subway rolling stock</a></td><td width="200px">About us</td></td></tr></table>');
+					$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#ffffff; text-shadow: 1px 1px 2px black;");
+					$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%; text-shadow: 1px 1px 2px black;");
+					$("#first_about_us").html("<h4>Alexander Grinenko (author of the site)</h4>"); $("#second_about_us").html("<h4>Kyiv metro</h4>"); $("#third_about_us").html("<h4>UATV Channel</h4>"); $("#site_second").html("<p>Site: <a href='http://www.metro.kyiv.ua/'><img src='kyiv_metro_about_us/mlogo.png' width='132' height='26.5'></a></p>"); $("#site_third").html("<p id='site_third'>Site: <a href='https://uatv.ua/'><img src='kyiv_metro_about_us/channel_uatv.jpg' width='50' height='50'></a></p>");
+					$('#e').text('Italiano');}
+				else if ($('#e').text() == "Italiano") {
+					$('#title').html('Chi siamo');
+					$('#txt_logo').html('<h4>Chi siamo</h4>');
+					$('#menu_site').html('<table width="100%"> <tr><td width="100px"><a href="Kiev_metro.html">Sito principale</a></td><td width="200px"><a href="M1.html?m=1" class="light_sb"><div></div><div></div><div></div><div></div>Linea Svyatoshinsko-Brovarska</a></td><td width="200px"><a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div>Linea Obolonsko-Teremkivska</td><td width="200px"><a href="M3.html?m=1" class="light_sp"><div></div><div></div><div></div><div></div>Linea Syretsko-Pecherska</a></td><td width="200px"><a href="M4.html?m=1" class="light_pv"><div></div><div></div><div></div><div></div>Linea Podilsko-Vygurivska</a></td><td width="200px"><a href="M5.html?m=1" class="light_livoberezhna"><div></div><div></div><div></div><div></div>Linea Livoberezhna</a></td><td width="200px"><a href="M6.html?m=1" class="light_vd"><div></div><div></div><div></div><div></div>Linea Vyshhorodsko-Darnytska</a></td><td width="200px"><a href="M7.html" class="light_b"><div></div><div></div><div></div><div></div>Linea Borshchahivska</a></td><td width="200px"><a href="Rolling_stock_kyiv_metro.html">Materiale rotabile della metropolitana</a></td><td width="200px">Chi siamo</td></td></tr></table>');
+					$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#ffffff; text-shadow: 1px 1px 2px black;");
+					$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%; text-shadow: 1px 1px 2px black;");
+					$("#first_about_us").html("<h4>Alexander Grinenko (autore del sito)</h4>"); $("#second_about_us").html("<h4>Metropolitana di Kiev</h4>"); $("#third_about_us").html("<h4>Canale UATV</h4>"); $("#site_second").html("<p>Luogo: <a href='http://www.metro.kyiv.ua/'><img src='kyiv_metro_about_us/mlogo.png' width='132' height='26.5'></a></p>"); $("#site_third").html("<p id='site_third'>Luogo: <a href='https://uatv.ua/'><img src='kyiv_metro_about_us/channel_uatv.jpg' width='50' height='50'></a></p>");
+					$('#e').text('Українська');}
+			});
+		})
+		;
+		$(function(){
+			function change_width(id_obj,x){
+				var a=$(id_obj).attr('title');
+				var w=$(id_obj).width();
+				var h=$(id_obj).height();
+				if(a==''){
+					w=w*x;
+					h=h*x;
+					$(id_obj).width(w).height(h);
+					$(id_obj).attr('title','фото зменшене в 1.5 раз');
+					a=$(id_obj).attr('title');
+				}
+				else if(a=='фото зменшене в 1.5 раз'){
+					w=w/1.5;
+					h=h/1.5;
+					$(id_obj).width(w).height(h);
+					$(id_obj).attr('title','');
+					a=$(id_obj).attr('title');
+				}
+			}
+			$('#div_for_metro img').each(function(){
+				$(this).attr('title','');
+				$(this).click(function(){
+					change_width(this,1.5);
+				});
+			});
+		})
+		;
+	});
+
+</script>
+<table width='100%'>
+<tr width='20%'><td width='20%' valign='top'><h1 id='txt_logo' class='logo_text'>Про нас</h1></td>
+<td>
+<div id="navigation">
+<ul valign="top">
+<li align='left'><div id="divDateTime" style='font-family: Calibri; color: Orange; font-style: Italic; font-size:115%; text-shadow: 1px 1px 2px black;'></div></li>
+<li><div id="p_color_knop">
+					<div id="red"></div>
+					<div id="blue"></div>
+					<div id="green"></div>
+					<div id="yellow"></div>
+					<div id="cyan"></div>
+					<div id="gold"></div>
+					<div id="purple"></div>
+					<div id="white"></div>
+					<div id="rainbow_text"></div>
+				</div></li>
+<li><div id="size_text">
+<div id="e" width="100px" style=" border:1px solid red; background:#3582c4; padding:5px ">Українська</div></div></li>
+<li><div id="size_text">
+				<div id="small_text">A</div>
+				<div id="middle_text">A</div>
+				<div id="big_text">A</div>
+			</div></li>
+</ul>
+</div></td></tr>
+<tr valign='top'><td valign='top'><img id='logo' src='kyiv_metro_branch/logo.png' width='175px' height='200px'></td>
+<td><div id="divDateTime" style='font-family: Calibri; color: orange; font-style: Italic; font-size:115%;'></div></td></tr>
+</table>
+<div id='menu_site'>
+<table width='100%'>
+<tr>
+<td width='100px'>
+         <a href="Kiev_metro.html">Головна</a></td>
+		 <td width='200px'>
+         <a href="M1.html?m=1" class="light_sb"><div></div><div></div><div></div><div></div>Святошинсько-Броварська лінія</a></td>
+		 <td width='200px'>
+         <a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div>Оболонсько-Теремківська лінія</a></td>
+		 <td width='200px'>
+         <a href="M3.html?m=1" class="light_sp"><div></div><div></div><div></div><div></div>Сирецько-Печерська лінія</a></td>
+		 <td width='200px'>
+         <a href="M4.html?m=1" class="light_pv"><div></div><div></div><div></div><div></div>Подільсько-Вигурівська лінія</a></td>
+		 <td width='200px'>
+		 <a href="M5.html?m=1" class="light_livoberezhna"><div></div><div></div><div></div><div></div>Лівобережна лінія</a></td>
+		 <td width='200px'>
+		 <a href="M6.html?m=1" class="light_vd"><div></div><div></div><div></div><div></div>Вишгородсько-Дарницька лінія</a></td>
+		 <td width='200px'>
+		 <a href="M7.html" class="light_b"><div></div><div></div><div></div><div></div>Борщагівська лінія</a></td>
+		<td width='200px'>
+            <a href="Rolling_stock_kyiv_metro.html">Рухомий пасажирський склад метрополітену</a></td>
+		<td width='200px'>
+            Про нас</td>
+</td>
+   </tr>
+   </table>
+      </div>
+<table width='100%'>
+<tr style='text-shadow: 1px 1px 2px black;'>
+<td>
+<h2 id='first_about_us'>Александр Гриненко (автор сайту)</h2>
+<p>Facebook: <a href="https://m.facebook.com/oleksandryrinenko"><img src="kyiv_metro_about_us/face.gif" width="50" height="50"></a></p>
+<p>YouTube: <a href="https://www.youtube.com/channel/UCHg4-pGC9nY6CPNUq1TWmGw?view_as=subscriber"> <img src="kyiv_metro_about_us/youtube.gif" width="100" height="50"></a></p>
+<p>Instagram: <a href="https://www.instagram.com/oleksandryrinenko/"><img src="kyiv_metro_about_us/blog-post-instagram-MOD-AV.gif" width="50" height="50"></a></p></td>
+<td>
+<h2 id='second_about_us'>Київський метрополітен</h2>
+<p id='site_second'>Сайт: <a href="http://www.metro.kyiv.ua/"><img src="kyiv_metro_about_us/mlogo.png" width="132" height="26.5"></a></p>
+<p>Facebook: <a href="https://www.facebook.com/kyivmetro/"> <img src="kyiv_metro_about_us/face.gif" width="50" height="50"></a></p>
+<p>Instagram: <a href="https://www.instagram.com/kyivmetrogram/"><img src="kyiv_metro_about_us/blog-post-instagram-MOD-AV.gif" width="50" height="50"></a></p></td>
+<td>
+<h2 id='third_about_us'>UATV Channel</h2>
+<p id='site_third'>Сайт: <a href="https://uatv.ua/"><img src="kyiv_metro_about_us/channel_uatv.jpg" width="50" height="50"></a></p>
+<p>Facebook English: <a href="https://www.facebook.com/UATVEN/"><img src="kyiv_metro_about_us/face.gif" width="50" height="50"></a></p>
+<p>YouTube: <a href="https://www.youtube.com/c/UATVchannel/videos"> <img src="kyiv_metro_about_us/youtube.gif" width="100" height="50"></a></p>
+<p>Instagram: <a href="https://www.instagram.com/uatv_channel/"><img src="kyiv_metro_about_us/blog-post-instagram-MOD-AV.gif" width="50" height="50"></a></p></td>
+</tr></table>
+<div class="place-map"><iframe height="450" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5081.036919842304!2d30.4646932!3d50.4500695!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cfbb8a567e73%3A0x5d0214cd2164d27d!2sKp%20%22Kyyivs%CA%B9kyy%20Metropoliten%22!5e0!3m2!1sru!2sua!4v1657445915135!5m2!1sru!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+<div id="div_for_metro" align='center'>
+<img id='logo_M1' src='kyiv_metro_branch/M1.png' width='200px' height='118px'>
+<img id='logo_M2' src='kyiv_metro_branch/M2.png' width='200px' height='118px'>
+<img id='logo_M3' src='kyiv_metro_branch/M3.png' width='200px' height='118px'>
+<img id='logo_M4' src='kyiv_metro_branch/M4.png' width='200px' height='118px'>
+<img id='logo_M5' src='kyiv_metro_branch/M5.png' width='200px' height='118px'>
+</div>
+				<p id="help_metro">
+
+				</p>
+<div id='metro_gif_video' align='center'>
+<img id='metro_map' src='kyiv_metro_branch/800px-Kiev_metro_map_en_uk.svg.png' style='width:500px; height: 350px;'>
+<img id='metro_history' src='Kyiv_metro_history_-_uk.gif' style='width:500px; height: 350px;'>
+<iframe id='video_history' style='width:500px; height: 350px;' src='https://www.youtube.com/embed/PN88ebMRXxs' allow='autoplay; encrypted-media' allowfullscreen></iframe>
+</div>
+</body>
+</html>

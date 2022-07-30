@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1251">
+<title id='title'>Подільсько-Вигурівська лінія</title>
+<script src="js/jquery-1_11_3_min.js"> </script>
+<link href="css/new.css" rel="stylesheet" type="text/css" />
+<link rel="icon" href="kyiv_metro_branch/1024px-Kyiv_Metro_Line_4.svg.png" type="image/x-icon">
+</head>
+<body bgcolor="#bd8600">
+<script type="text/javascript">
+	function googleTranslateElementInit() {
+	 new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+	}
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+	var $clas_new="font_middle";
+	var $clas_action="font_middle";
+	
+	function GetDateTime(){
+		var DateTime = new Date();
+		var week = new Array('Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П`ятниця', 'Субота');
+		var day  = week[DateTime.getDay()];
+		$('#divDateTime').html("Сьогодні: " + DateTime.getDate() + "." + (DateTime.getMonth()+1) + "." + DateTime.getFullYear() + " - "+day+"<br> Час: " + DateTime.getHours() + ":" + DateTime.getMinutes() + ":" + DateTime.getSeconds());
+	}
+	
+	$('document').ready(function(){
+		setInterval(GetDateTime, 1000);
+		
+		$(function(){
+			$('#logo').slideUp(0);
+			$('#logo').slideDown(3000);
+			$('#menu').slideUp(0);
+			$('#menu').slideDown(2000);
+			$('#map').slideUp(0);
+			$('#map').fadeIn(3000);
+		})
+		;
+		$("#red").click(function(){
+			$("#p, h1, h3, li, legend, td, label, option").attr("style","color:maroon;");
+			$("#divDateTime").attr("style","color:maroon; font-family: Calibri; color: Black; font-style: Italic; font-size:115%;");
+		})
+		$("#blue").click(function(){
+			$("#p, h1, h3, li, legend, td, label, option").attr("style","color:lightblue;");
+			$("#divDateTime").attr("style","color:lightblue; font-family: Calibri; color: Black; font-style: Italic; font-size:115%;");
+		})
+		$("#green").click(function(){
+			$("#p, h1, h3, li, legend, td, label, option").attr("style","color:lime;");
+			$("#divDateTime").attr("style","color:lime; font-family: Calibri; color: Black; font-style: Italic; font-size:115%;");
+		})
+		$("#yellow").click(function(){
+			$("#p, h1, h3, li, legend, td, label, option").attr("style","color:gold;");
+			$("#divDateTime").attr("style","color:gold; font-family: Calibri; color: Black; font-style: Italic; font-size:115%;");
+		})
+		$("#cyan").click(function(){
+			$("#p, h1, h3, li, legend, td, label, option").attr("style","color:#00ffff;");
+			$("#divDateTime").attr("style","color:#00ffff; font-family: Calibri; color: Black; font-style: Italic; font-size:115%;");
+		})
+		$("#gold").click(function(){
+			$("#p, h1, h3, li, legend, td, label, option").attr("style","color:yellow;");
+			$("#divDateTime").attr("style","color:yellow; font-family: Calibri; color: Black; font-style: Italic; font-size:115%;");
+		})
+		$("#purple").click(function(){
+			$("#p, h1, h3, li, legend, td, label, option").attr("style","color:#800080;");
+			$("#divDateTime").attr("style","color:#800080; font-family: Calibri; color: Black; font-style: Italic; font-size:115%;");
+		})
+		$("#white").click(function(){
+			$("#p, h1, h3, li, legend, td, label, option").attr("style","color:#ffffff;");
+			$("#divDateTime").attr("style","color:#ffffff; font-family: Calibri; color: Black; font-style: Italic; font-size:115%;");
+		})
+		$("#rainbow_text").click(function(){
+			$("#p, legend, td, label, option").attr("style","background: linear-gradient(90deg, #fd004c, #fe9000, #fff020, #3edf4b, #3363ff, #0000ff, #000080, #800080, #b102b7, #ff00c4, #fd004c);background-size: 400%;font-family: sans-serif;word-spacing: 5px;-webkit-text-fill-color: transparent;-webkit-text-stroke: 0.02em black;-webkit-background-clip: text;animation: animate 10s linear infinite;");
+			$("#divDateTime").attr("style","background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033ff, #ff00c4, #ff0000);background-size: 400%;font-family: Calibri; font-style: Italic; font-size:115%;word-spacing: 5px;-webkit-text-fill-color: transparent;-webkit-background-clip: text;animation: animate 10s linear infinite;");
+			$("#menu a:hover").attr("style","background:#ffffff;");
+			$("#menu a:action").attr("style","background:#ffffff;");
+		})
+		
+		$("#back_to_main_slide").click(function(){
+			$('#text_station').html('');
+			$('#title').html("Подільсько-Вигурівська лінія");
+			$('#station_image').html("");
+			$('#station_video').html("");
+			$('#back_to_main_slide').html("");
+			if ($('#e').text() == "English"){
+				$('#title').html("Подільсько-Вигурівська лінія");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#title').html("Podilsko-Vygurovskaya line");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#title').html("Linea Podilsko-Vyhurivska");
+			}
+		});
+		
+		// Stations
+		$("#station_1").click(function(){
+			$('#text_station').html('<p style="background-color: #00b8d4">Вулиця Милославська -  проєктована наземна кінцева станція першої черги Лівобережної лінії і частиною Подільсько-Вигурівської Київського метрополітену. Наступна на лінії станція — «Вулиця Цвєтаєвої», перегін між станціями наземний, критий, довжиною 817 м. В середині перегону передбачено будівництво пішохідного містка над коліями.</p>');
+			$('#title').html("Вулиця Милославська (станція метро Подільсько-Вигурівської і Лівобережної лінії)");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p style="background-color: #00b8d4">Вулиця Милославська -  проєктована наземна кінцева станція першої черги Лівобережної лінії і частиною Подільсько-Вигурівської Київського метрополітену. Наступна на лінії станція — «Вулиця Цвєтаєвої», перегін між станціями наземний, критий, довжиною 817 м. В середині перегону передбачено будівництво пішохідного містка над коліями.</p>');
+				$('#title').html("Вулиця Милославська (станція метро Подільсько-Вигурівської і Лівобережної лінії)");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p style="background-color: #00b8d4">Vylutsya Myloslavska is the planned ground terminus of the first line of the Livoberezhna Line and part of the Podilsko-Vygurivska Line of the Kyiv Metro. The next station on the line is "Vulytsya Tsvyetayevoyi", the track between the stations is ground, covered, 817 m long. In the middle of the track, a pedestrian bridge is planned to be built over the tracks.</p>');
+				$('#title').html("Vylutsya Myloslavska (metro station of Podilsko-Vygurivska and Livoberezhnaya lines)");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p style="background-color: #00b8d4">Via Myloslavska e il capolinea a terra previsto della prima linea della Livoberezhna Line e parte della linea Podilsko-Vygurivska della metropolitana di Kiev. La stazione successiva della linea e "Via Cvetaeva", il binario tra le stazioni e terra, coperto, lungo 817 m Al centro del binario e prevista la costruzione di un ponte pedonale sopra i binari.</p>');
+				$('#title').html("Via Myloslavska (stazione della metropolitana delle linee Podilsko-Vygurivska e Livoberezhnaya)");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_2").click(function(){
+			$('#text_station').html('<p style="background-color: #00b8d4">Вулиця Цвєтаєвої - проєктована станція першої черги Лівобережної лінії і частиною Подільсько-Вигурівської Київського метрополітену, розташована між станціями «Вулиця Сабурова» і «Вулиця Милославська». Перегін до станції «Вулиця Сабурова» наземний, критий, довжиною 839 м. В середині перегону передбачено будівництво пішохідного містка над коліями.</p>');
+			$('#title').html("Вулиця Цвєтаєвої (станція метро Подільсько-Вигурівської і Лівобережної лінії)");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p style="background-color: #00b8d4">Вулиця Цвєтаєвої - проєктована станція першої черги Лівобережної лінії і частиною Подільсько-Вигурівської Київського метрополітену, розташована між станціями «Вулиця Сабурова» і «Вулиця Милославська». Перегін до станції «Вулиця Сабурова» наземний, критий, довжиною 839 м. В середині перегону передбачено будівництво пішохідного містка над коліями.</p>');
+				$('#title').html("Вулиця Цвєтаєвої (станція метро Подільсько-Вигурівської і Лівобережної лінії)");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p style="background-color: #00b8d4">Vulytsya Tsvyetayevoyi is a planned station of the first line of the Livoberezhna line and a part of the Podilsko-Vygurivska Kyiv Metro, located between the stations "Vulytsya Saburova" and "Vylutsya Myloslavska". The stretch to the "Vulytsya Saburova" station is surface, covered, 839 m long. In the middle of the stretch, a pedestrian bridge over the tracks is planned to be built.</p>');
+				$('#title').html("Vulytsya Tsvyetayevoyi (metro station of Podilsko-Vygurivska and Livoberezhnaya lines)");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p style="background-color: #00b8d4">Via Cvetaeva e una stazione prevista della prima linea della linea Livoberezhna e una parte della metropolitana Podilsko-Vygurivska Kyiv, situata tra le stazioni "Via Saburova" e "Via Myloslavska". Il tratto fino alla stazione “Via Saburova” e in superficie, coperto, lungo 839 m, a meta del tratto e prevista la realizzazione di un ponte pedonale sui binari.</p>');
+				$('#title').html("Via Cvetaeva (stazione della metropolitana delle linee Podilsko-Vygurivska e Livoberezhnaya)");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_3").click(function(){
+			$('#text_station').html('<p style="background-color: #00b8d4">Вулиця Сабурова - проєктована станція першої черги Лівобережної лінії і частиною Подільсько-Вигурівської Київського метрополітену, розташована між станціями «Вулиця Драйзера» і «Вулиця Цвєтаєвої». Перегін до станції «Вулиця Драйзера» наземний, критий, довжиною 839 м. У середині перегону передбачено будівництво пішохідного містка над коліями. Унаслідок дії закону про декомунізацію станція матиме іншу назву.</p>');
+			$('#title').html("Вулиця Сабурова (станція метро Подільсько-Вигурівської і Лівобережної лінії)");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p style="background-color: #00b8d4">Вулиця Сабурова - проєктована станція першої черги Лівобережної лінії і частиною Подільсько-Вигурівської Київського метрополітену, розташована між станціями «Вулиця Драйзера» і «Вулиця Цвєтаєвої». Перегін до станції «Вулиця Драйзера» наземний, критий, довжиною 839 м. У середині перегону передбачено будівництво пішохідного містка над коліями. Унаслідок дії закону про декомунізацію станція матиме іншу назву.</p>');
+				$('#title').html("Вулиця Сабурова (станція метро Подільсько-Вигурівської і Лівобережної лінії)");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p style="background-color: #00b8d4">Vulytsya Saburova is a planned station of the first stage of the Livoberezhna line and a part of the Podilsko-Vygurivska Kyiv Metro, located between the stations "Vulytsya Drayzera" and "Vulytsya Tsvyetayevoyi". The stretch to the Vulytsya Dreiser station is surface, covered, 839 m long. In the middle of the stretch, a pedestrian bridge over the tracks is planned to be built. As a result of the decommunization law, the station will have a different name.</p>');
+				$('#title').html("Vulytsya Saburova (metro station of Podilsko-Vygurivska and Livoberezhnaya lines)");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p style="background-color: #00b8d4">Via Saburova e una stazione prevista della prima tappa della linea Livoberezhna e una parte della metropolitana Podilsko-Vygurivska Kyiv, situata tra le stazioni "Dreizera Via" e "Via Cvetaeva". Il tratto fino alla stazione di Dreiser Via e in superficie, coperto, lungo 839 m Al centro del tratto e prevista la realizzazione di un ponte pedonale sui binari. A causa della legge sulla decomunizzazione, la stazione avra un nome diverso.</p>');
+				$('#title').html("Via Saburova (stazione della metropolitana delle linee Podilsko-Vygurivska e Livoberezhnaya)");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+			
+		});
+		$("#station_4").click(function(){
+			$('#text_station').html('<p style="background-color: #00b8d4">Вулиця Драйзера - проєктована станція першої черги Лівобережної лінії і частиною Подільсько-Вигурівської Київського метрополітену, розташована між станціями «Вулиця Каштанова» і «Вулиця Сабурова». Перегін до станції «Вулиця Каштанова» наземний, критий, довжиною 1378 м. В середині перегону передбачено будівництво пішохідного містка над коліями.</p>');
+			$('#title').html("Вулиця Драйзера (станція метро Подільсько-Вигурівської і Лівобережної лінії)");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p style="background-color: #00b8d4">Вулиця Драйзера - проєктована станція першої черги Лівобережної лінії і частиною Подільсько-Вигурівської Київського метрополітену, розташована між станціями «Вулиця Каштанова» і «Вулиця Сабурова». Перегін до станції «Вулиця Каштанова» наземний, критий, довжиною 1378 м. В середині перегону передбачено будівництво пішохідного містка над коліями.</p>');
+				$('#title').html("Вулиця Драйзера (станція метро Подільсько-Вигурівської і Лівобережної лінії)");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p style="background-color: #00b8d4">Vulytsya Dreizera is a planned station of the first stage of the Livoberezhna line and part of the Podilsko-Vygurivska Kyiv Metro, located between the stations "Vulytsya Kashtanova" and "Vulytsya Saburova". The stretch to the "Vulytsya Kashtanova" station is ground, covered, 1,378 m long. In the middle of the stretch, a pedestrian bridge over the tracks is planned.</p>');
+				$('#title').html("Vulytsya Dreizera (metro station of Podilsko-Vygurivska and Livoberezhnaya lines)");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p style="background-color: #00b8d4">Via Dreiser e una stazione prevista della prima tappa della linea Livoberezhna e parte della metropolitana Podilsko-Vygurivska Kyiv, situata tra le stazioni "Via Kashtanova" e "Via Saburova". Il tratto fino alla stazione "Via Kashtanova" e in terra, coperto, lungo 1.378 m Al centro del tratto e previsto un ponte pedonale sui binari.</p>');
+				$('#title').html("Via Dreiser (stazione della metropolitana delle linee Podilsko-Vygurivska e Livoberezhnaya)");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_5").click(function(){
+			$('#text_station').html('<p style="background-color: #00b8d4">Вулиця Каштанова - проєктована станція першої черги Лівобережної лінії і частиною Подільсько-Вигурівської Київського метрополітену, розташована між станціями «Вулиця Драйзера» і «Проспект Ватутіна».</p>');
+			$('#title').html("Вулиця Каштанова (станція метро Подільсько-Вигурівської і Лівобережної лінії)");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p style="background-color: #00b8d4">Вулиця Каштанова - проєктована станція першої черги Лівобережної лінії і частиною Подільсько-Вигурівської Київського метрополітену, розташована між станціями «Вулиця Драйзера» і «Проспект Ватутіна».</p>');
+				$('#title').html("Вулиця Каштанова (станція метро Подільсько-Вигурівської і Лівобережної лінії)");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p style="background-color: #00b8d4">Vulytsya Kashtanova is a planned station of the first line of the Livoberezhna line and a part of the Podilsko-Vygurivska Kyiv Metro, located between the Vulytsya Drayzera and Prospekt Vatutina stations.</p>');
+				$('#title').html("Vulytsya Kashtanova (metro station of Podilsko-Vygurivska and Livoberezhnaya lines)");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p style="background-color: #00b8d4">Via Kashtanova e una stazione prevista della prima linea della linea Livoberezhna e una parte della metropolitana Podilsko-Vygurivska Kyiv, situata tra le stazioni di Via Dreizera e Prospekt Vatutina.</p>');
+				$('#title').html("Via Kashtanova (stazione della metropolitana delle linee Podilsko-Vygurivska e Livoberezhnaya)");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_6").click(function(){
+			$('#text_station').html('<p style="background-color: #00b8d4">Проспект Ватутіна - проєктована станція першої черги Лівобережної лінії і частиною Подільсько-Вигурівської Київського метрополітену, розташована між станціями «Вулиця Каштанова» і «Городня». Проєктом передбачено розміщення станції на естакаді шляхопроводу над проспектом Романа Шухевича, на місці нинішньої станції «Романа Шухевича» Лівобережного швидкісного трамвая. На перегоні передбачено спорудження протипожежної платформи з евакуаційними виходами, а також підземної ділянки відгалуження на Подільсько-Вигурівську лінію до станції «Райдужна».</p>');
+			$('#title').html("Проспект Ватутіна (станція метро Подільсько-Вигурівської і Лівобережної лінії)");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p style="background-color: #00b8d4">Проспект Ватутіна - проєктована станція першої черги Лівобережної лінії і частиною Подільсько-Вигурівської Київського метрополітену, розташована між станціями «Вулиця Каштанова» і «Городня». Проєктом передбачено розміщення станції на естакаді шляхопроводу над проспектом Романа Шухевича, на місці нинішньої станції «Романа Шухевича» Лівобережного швидкісного трамвая. На перегоні передбачено спорудження протипожежної платформи з евакуаційними виходами, а також підземної ділянки відгалуження на Подільсько-Вигурівську лінію до станції «Райдужна».</p>');
+				$('#title').html("Проспект Ватутіна (станція метро Подільсько-Вигурівської і Лівобережної лінії)");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p style="background-color: #00b8d4">Prospekt Vatutina is a planned station of the first stage of the Livoberezhna line and part of the Podilsko-Vygurivskaya Kyiv Metro, located between the "Vulytsya Kashtanova" and "Horodnia" stations. The project envisages placing the station on the overpass of the overpass above Roman Shukhevych Avenue, on the site of the current "Roman Shukhevych" station of the Livoberezhny high-speed tram. Construction of a fire-fighting platform with evacuation exits, as well as an underground section of the branch on the Podilsko-Vygurivska line to the Raiduzhna station, is planned for the race.</p>');
+				$('#title').html("Prospekt Vatutina (metro station of Podilsko-Vygurivska and Livoberezhnaya lines)");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p style="background-color: #00b8d4">Prospekt Vatutina e una stazione prevista della prima tappa della linea Left Bank e parte della metropolitana Podilsko-Vygurivskaya Kyiv, situata tra le stazioni "Kashtanova Street" e "Horodnia". Il progetto prevede di posizionare la stazione sul cavalcavia del cavalcavia sopra Roman Shukhevych Avenue, sul sito dell`attuale stazione "Roman Shukhevych" del tram ad alta velocita Livoberezhny. Per la gara e prevista la costruzione di una piattaforma antincendio con uscite di evacuazione, nonche una sezione sotterranea della diramazione sulla linea Podilsko-Vygurivska per la stazione di Raiduzhna.</p>');
+				$('#title').html("Prospekt Vatutina (stazione della metropolitana delle linee Podilsko-Vygurivska e Livoberezhnaya)");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_7").click(function(){
+			$('#text_station').html('<p>Братиславська - проєктована кінцева станція Подільсько-Вигурівської лінії Київського метрополітену. Згідно з проектом буде розташована на Лівому березі Києва, буде вважатися станцією мілкого залягання.</p>');
+			$('#title').html("Братиславська (станція метро Подільсько-Вигурівської лінії)");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p>Братиславська - проєктована кінцева станція Подільсько-Вигурівської лінії Київського метрополітену. Згідно з проектом буде розташована на Лівому березі Києва, буде вважатися станцією мілкого залягання.</p>');
+				$('#title').html("Братиславська (станція метро Подільсько-Вигурівської лінії)");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p>Bratyslavs`ka - the projected terminal station of the Podilska-Vygurivska line of the Kyiv metro. According to the project, it will be located on the Left Bank of Kyiv and will be considered a shallow station.</p>');
+				$('#title').html("Bratyslavs`ka (metro station of the Podilsko-Vygurivska line)");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Bratislavska - la prevista stazione terminale della linea Podilska-Vygurivska della metropolitana di Kiev. Secondo il progetto, sara situata sulla riva sinistra di Kiev e sara considerata una stazione poco profonda.</p>');
+				$('#title').html("Bratislavska (stazione della metropolitana della linea Podilsko-Vygurivska)");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_8").click(function(){
+			$('#text_station').html('<p>Бульвар Перова - проєктована станція Київського метрополітену. Згідно з проектом буде розташована на Лівому березі Києва, на перетині бульвару Перова і вулиці Сулеймана Стальського і між станціями "Братиславська" і "Райдужна", а також між станціями "Проспект Ватутіна" (станція з Лівобережної лінії) і "Райдужна", буде вважатися станцією мілкого залягання.</p>');
+			$('#title').html("Бульвар Перова (станція метро Подільсько-Вигурівської лінії)");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p>Бульвар Перова - проєктована станція Київського метрополітену. Згідно з проектом буде розташована на Лівому березі Києва, на перетині бульвару Перова і вулиці Сулеймана Стальського і між станціями "Братиславська" і "Райдужна", а також між станціями "Проспект Ватутіна" (станція з Лівобережної лінії) і "Райдужна", буде вважатися станцією мілкого залягання.</p>');
+				$('#title').html("Бульвар Перова (станція метро Подільсько-Вигурівської лінії)");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p>Bul`var Perova - a planned station of the Kyiv Metro. According to the project, it will be located on the Left Bank of Kyiv, at the intersection of Perov Boulevard and Suleiman Stalskyi Street and between the stations "Bratyslavs`ka" and "Rayduzhna", as well as between the stations "Prospekt Vatutina" (a station from the Livoberezhna line) and "Rayduzhna", will be considered a shallow station.</p>');
+				$('#title').html("Bul`var Perova (metro station of Podilsko-Vygurivska line)");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Bulvar Perova - una stazione prevista della metropolitana di Kiev. Secondo il progetto, sara situato sulla riva sinistra di Kiev, all`incrocio tra Perova Boulevard e Suleiman Stalskyi Street e tra le stazioni "Bratislavska" e "Raiduzhna", nonche tra le stazioni "Prospekt Vatutina" (a stazione dalla linea Livoberezhna) e "Raiduzhna", sara considerata una stazione poco profonda.</p>');
+				$('#title').html("Bulvar Perova (stazione della metropolitana della linea Podilsko-Vygurivska)");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_9").click(function(){
+			$('#text_station').html('<p>Райдужна - станція Подільсько-Вигурівської лінії, що будується. Буде тимчасово кінцевою на Подільсько-Вигурівській лінії, розташованою після станції «Затока Десенка», а в майбутньому буде розташована між станцією "Бульвар Перова" і "Затока Десенка". Згідно з проєктом буде розташована на лівому березі Дніпра під насипом автодороги Подільського мостового переходу між 25-ю та 26-ю лініями Русанівських садів.</p>');
+			$('#title').html("Райдужна (станція метро Подільсько-Вигурівської лінії)");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p>Райдужна - станція Подільсько-Вигурівської лінії, що будується. Буде тимчасово кінцевою на Подільсько-Вигурівській лінії, розташованою після станції «Затока Десенка», а в майбутньому буде розташована між станцією "Бульвар Перова" і "Затока Десенка". Згідно з проєктом буде розташована на лівому березі Дніпра під насипом автодороги Подільського мостового переходу між 25-ю та 26-ю лініями Русанівських садів.</p>');
+				$('#title').html("Райдужна (станція метро Подільсько-Вигурівської лінії)");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p>Rayduzhna is a station of the Podilsko-Vygurivska line under construction. It will temporarily be the terminus on the Podilsko-Vygurivska line, located after the "Zatoka Desenka" station, and in the future it will be located between the "Bul`var Perova" and "Zatoka Desenka" stations. According to the project, it will be located on the left bank of the Dnieper under the highway embankment of the Podilsky bridge crossing between the 25th and 26th lines of Rusanivske Gardens.</p>');
+				$('#title').html("Rayduzhna (metro station of the Podilsko-Vygurivska line)");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Raiduzhna e una stazione della linea Podilsko-Vygurivska in costruzione. Sara temporaneamente il capolinea della linea Podilsko-Vygurivska, situato dopo la stazione "Zatoka Desenka", e in futuro sara posizionato tra le stazioni "Bulvar Perova" e "Zatoka Desenka". Secondo il progetto, sara situato sulla riva sinistra del Dnepr, sotto l`argine autostradale del ponte Podilsky che attraversa la 25a e la 26a linea dei giardini Rusanivske.</p>');
+				$('#title').html("Raiduzhna (stazione della metropolitana della linea Podilsko-Vygurivska)");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M4/Rainbow.jpg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_10").click(function(){
+			$('#text_station').html('<p>Затока Десенка - споруджувана станція Київського метрополітену. Буде розташована на Подільсько-Вигурівській лінії між станціями «Труханів острів» та «Райдужна», буде вважатися колонно естакадно наземною станцією закритого типу. Згідно з проєктом буде розміщена на лівому березі Дніпра на естакаді Подільського мостового переходу на території урочища Горбачиха між протокою Десенка і захисною дамбою Русанівських садів.</p>');
+			$('#title').html("Затока Десенка (станція метро Подільсько-Вигурівської лінії)");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p>Затока Десенка - споруджувана станція Київського метрополітену. Буде розташована на Подільсько-Вигурівській лінії між станціями «Труханів острів» та «Райдужна», буде вважатися колонно естакадно наземною станцією закритого типу. Згідно з проєктом буде розміщена на лівому березі Дніпра на естакаді Подільського мостового переходу на території урочища Горбачиха між протокою Десенка і захисною дамбою Русанівських садів.</p>');
+				$('#title').html("Затока Десенка (станція метро Подільсько-Вигурівської лінії)");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p>Zatoka Desenka - a station under construction of the Kyiv Metro. It will be located on the Podilsko-Vygurivska line between the stations "Trukhaniv ostriv" and "Rayduzhna", it will be considered a column overpass ground station of a closed type. According to the project, it will be placed on the left bank of the Dnieper at the overpass of the Podilskyi bridge crossing on the territory of the Horbachiha tract between the Desenka Strait and the protective dam of Rusanivske Gardens.</p>');
+				$('#title').html("Zatoka Desenka (metro station of the Podilsko-Vygurivska line)");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Zatoka Desenka - una stazione in costruzione della metropolitana di Kiev. Sara situato sulla linea Podilsko-Vygurivska tra le stazioni "Trukhaniv ostriv" e "Raiduzhna", sara considerata una stazione a terra di un cavalcavia a colonne di tipo chiuso. Secondo il progetto, sara collocato sulla riva sinistra del Dnepr al cavalcavia del ponte Podilskyi che attraversa il territorio del tratto Horbachiha tra lo stretto di Desenka e la diga protettiva dei giardini Rusanivske.</p>');
+				$('#title').html("Zatoka Desenka (stazione della metropolitana della linea Podilsko-Vygurivska)");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_11").click(function(){
+			$('#text_station').html('<p>Труханів острів - споруджувана наземна станція Київського метрополітену. Буде розташована на Подільсько-Вигурівській лінії між станціями «Суднобудівна» та «Затока Десенка», буде вважатися колонно естакадною наземною станцією закритого типу. Згідно з проєктом буде розміщена на естакаді Подільського мостового переходу над Бабиним озером на однойменному острові.</p>');
+			$('#title').html("Труханів острів (станція метро Подільсько-Вигурівської лінії)");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p>Труханів острів - споруджувана наземна станція Київського метрополітену. Буде розташована на Подільсько-Вигурівській лінії між станціями «Суднобудівна» та «Затока Десенка», буде вважатися колонно естакадною наземною станцією закритого типу. Згідно з проєктом буде розміщена на естакаді Подільського мостового переходу над Бабиним озером на однойменному острові.</p>');
+				$('#title').html("Труханів острів (станція метро Подільсько-Вигурівської лінії)");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p>Trukhaniv ostriv - a ground station of the Kyiv Metro under construction. It will be located on the Podilsko-Vygurivska line between the stations "Sudnobudivna" and "Zatoka Desenka", it will be considered a column overpass ground station of a closed type. According to the project, it will be placed on the overpass of the Podil bridge crossing over Babin Lake on the island of the same name.</p>');
+				$('#title').html("Trukhaniv ostriv (metro station of the Podilsko-Vygurivska line)");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Trukhaniv ostriv - una stazione a terra della metropolitana di Kiev in costruzione. Sara situato sulla linea Podilsko-Vygurivska tra le stazioni "Sudnobudivna" e "Zatoka Desenka", sara considerata una stazione di terra con cavalcavia a colonne di tipo chiuso. Secondo il progetto, sara collocato sul cavalcavia del ponte Podil che attraversa il lago Babin sull`isola omonima.</p>');
+				$('#title').html("Trukhaniv ostriv (stazione della metropolitana della linea Podilsko-Vygurivska)");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M4/Trukhaniv_ostyr.webp'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_12").click(function(){
+			$('#text_station').html('<p>Суднобудівна - споруджувана наземна станція Київського метрополітену. Буде розташована на Подільсько-Вигурівській лінії між станціями «Подільська» та «Труханів острів», буде вважатися колонно естакадною наземною станцією закритого типу. Згідно з проєктом буде розміщена на Рибальському острові на правому березі Дніпра на естакаді Подільського мостового переходу. Назва — від розташованого поблизу суднобудівного підприємства, заводу «Кузня на Рибальському».</p>');
+			$('#title').html("Суднобудівна (станція метро Подільсько-Вигурівської лінії)");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p>Суднобудівна - споруджувана наземна станція Київського метрополітену. Буде розташована на Подільсько-Вигурівській лінії між станціями «Подільська» та «Труханів острів», буде вважатися колонно естакадною наземною станцією закритого типу. Згідно з проєктом буде розміщена на Рибальському острові на правому березі Дніпра на естакаді Подільського мостового переходу. Назва — від розташованого поблизу суднобудівного підприємства, заводу «Кузня на Рибальському».</p>');
+				$('#title').html("Суднобудівна (станція метро Подільсько-Вигурівської лінії)");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p>Sudnobudivna - a ground station of the Kyiv metro under construction. It will be located on the Podilska-Vygurivska line between the stations "Podilska" and "Trukhaniv ostriv", it will be considered a column overpass of a closed type ground station. According to the project, it will be located on Rybalsky Island on the right bank of the Dnieper on the overpass of the Podilsk bridge crossing. The name comes from the nearby shipbuilding enterprise, the Kuznya na Rybalsky factory.</p>');
+				$('#title').html("Sudnobudivna (metro station of the Podilsko-Vygurivska line)");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Sudnobudivna - una stazione a terra della metropolitana di Kiev in costruzione. Sara situato sulla linea Podilsko-Vygurivska tra le stazioni "Podilska" e "Trukhaniv ostriv", sara considerato un cavalcavia a colonna di una stazione a terra di tipo chiuso. Secondo il progetto, sara situato sull`isola di Rybalsky, sulla riva destra del Dnepr, sul cavalcavia dell`attraversamento del ponte di Podilsk. Il nome deriva dalla vicina impresa di costruzioni navali, lo stabilimento di Kuznia na Rybalsky.</p>');
+				$('#title').html("Sudnobudivna (stazione della metropolitana della linea Podilsko-Vygurivska)");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M4/Shipbuilding.jpg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_13").click(function(){
+			$('#text_station').html('<p>Подільська - проєктована станція першої черги Подільсько-Вигурівської лінії Київського метрополітену. Буде розташована між станціями «Глибочицька» та «Суднобудівна». Згідно з проєктом буде розміщена на Подолі, вздовж Набережно-Лугової вулиці поблизу її перетину з Межигірською вулицею. Після станції «Подільська» лінія вздовж Набережно-Лугової вулиці виходить з мілкого закладання на естакаду, сумісну з автодорогою, та міст через Гавань Подільського мостового переходу. Буде мати перехід на станцію <a href="M2.html">Тараса Шевченка</a> Оболонсько-Теремківської лінії.</p>');
+			$('#title').html("Подільська (станція метро Подільсько-Вигурівської лінії)");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p>Подільська - проєктована станція першої черги Подільсько-Вигурівської лінії Київського метрополітену. Буде розташована між станціями «Глибочицька» та «Суднобудівна». Згідно з проєктом буде розміщена на Подолі, вздовж Набережно-Лугової вулиці поблизу її перетину з Межигірською вулицею. Після станції «Подільська» лінія вздовж Набережно-Лугової вулиці виходить з мілкого закладання на естакаду, сумісну з автодорогою, та міст через Гавань Подільського мостового переходу. Буде мати перехід на станцію <a href="M2.html">Тараса Шевченка</a> Оболонсько-Теремківської лінії.</p>');
+				$('#title').html("Подільська (станція метро Подільсько-Вигурівської лінії)");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p>Podilska is a planned station of the first stage of the Podilska-Vygurivska line of the Kyiv metro. It will be located between the "Hlybochyts`ka" and "Sudnobudivna" stations. According to the project, it will be located in Podil, along Naberezhno-Lugovaya Street near its intersection with Mezhihirska Street. After the "Podilska" station, the line along Naberezhno-Lugovaya Street leaves a shallow foundation on an overpass, compatible with the highway, and a bridge through the Harbor of the Podilska bridge crossing. It will have a transfer to the <a href="M2.html">Tarasa Shevchenka</a> station of the Obolonsko-Teremkivska line.</p>');
+				$('#title').html("Podilska (metro station of the Podilska-Vygurivska line)");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Podilska e una stazione prevista della prima tappa della linea Podilska-Vygurivska della metropolitana di Kiev. Sara situato tra le stazioni "Hlybochytska" e "Sudnobudivna". Secondo il progetto, sara situato a Podil, lungo la via Naberezhno-Lugovaya vicino all`incrocio con la via Mezhihirska. Dopo la stazione "Podilska", la linea lungo la via Naberezhno-Lugovaya lascia una base poco profonda su un cavalcavia, compatibile con l`autostrada, e un ponte attraverso il porto dell`attraversamento del ponte Podilska. Avra un trasferimento alla stazione <a href="M2.html">Tarasa Shevchenka</a> della linea Obolonsko-Teremkivska.</p>');
+				$('#title').html("Podilska (stazione della metropolitana della linea Podilska-Vygurivska)");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M4/Podilska.webp'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_14").click(function(){
+			$('#text_station').html('<p>Глибочицька - проєктована станція Київського метрополітену. Буде тимчасово кінцевою на Подільсько-Вигурівській лінії, розташованою після станції «Подільська», а в майбутньому буде розташована між станціями «Подільська» і «Площа Перемоги». Згідно з проєктом буде розташована на Лук`янівці, виходи заплановані до Татарської та Підгірної вулиць і буде мати перехід на станцію <a href="M3.html">Лук`янівську</a> Сирецько-Печерської лінії. Буде являтися пілонно трисклепінною станцією глибокого залягання.</p>');
+			$('#title').html("Глибочицька (станція метро Подільсько-Вигурівської лінії)");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p>Глибочицька - проєктована станція Київського метрополітену. Буде тимчасово кінцевою на Подільсько-Вигурівській лінії, розташованою після станції «Подільська», а в майбутньому буде розташована між станціями «Подільська» і «Площа Перемоги». Згідно з проєктом буде розташована на Лук`янівці, виходи заплановані до Татарської та Підгірної вулиць і буде мати перехід на станцію <a href="M3.html">Лук`янівську</a> Сирецько-Печерської лінії. Буде являтися пілонно трисклепінною станцією глибокого залягання.</p>');
+				$('#title').html("Глибочицька (станція метро Подільсько-Вигурівської лінії)");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p>Hlybochyts`ka - a projected station of the Kyiv metro. It will temporarily be the terminus on the Podilska-Vygurivska line, located after the "Podilska" station, and in the future it will be located between the "Podilska" and "Victory Square" stations. According to the project, it will be located on Lukyanivka, the exits are planned for Tatarska and Pidhirnaya Streets, and it will have a transition to the <a href="M3.html">Lukianivska</a> station of the Syretsko-Pecherska line. It will be a pylon-like three-vaulted deep-seated station.</p>');
+				$('#title').html("Hlybochyts`ka (metro station of the Podilsko-Vygurivska line)");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Hlybochytska - una stazione prevista della metropolitana di Kiev. Sara temporaneamente il capolinea della linea Podilska-Vygurivska, situato dopo la stazione "Podilska", e in futuro sara situato tra le stazioni "Podilska" e "Piazza della Vittoria". Secondo il progetto, sara situato su Lukyanivka, sono previste uscite per le strade Tatarska e Pidhirnaya e avra un passaggio alla stazione <a href="M3.html">Lukyanivska</a> della linea Syretsko-Pecherska. Sara una stazione profonda a tre volte simile a un pilone.</p>');
+				$('#title').html("Hlybochytska (stazione della metropolitana della linea Podilsko-Vygurivska)");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sitoу</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M4/Glybochitska.webp'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_15").click(function(){
+			$('#text_station').html('<p>Площа Перемоги - проєктована станція Київського метрополітену. У перспективі, за проєктом, буде розташована на однойменній площі після 2030 року і буде розташована між станціями "Глибочицька" і "Вокзальна".</p>');
+			$('#title').html("Площа Перемоги (станція метро Подільсько-Вигурівської лінії)");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p>Площа Перемоги - проєктована станція Київського метрополітену. У перспективі, за проєктом, буде розташована на однойменній площі після 2030 року і буде розташована між станціями "Глибочицька" і "Вокзальна".</p>');
+				$('#title').html("Площа Перемоги (станція метро Подільсько-Вигурівської лінії)");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p>Ploshcha Peremohy - a planned station of the Kyiv metro. In the future, according to the project, it will be located on the square of the same name after 2030 and will be located between the "Hlybochytska" and "Vokzalna" stations.</p>');
+				$('#title').html("Ploshcha Peremohy (metro station of the Podilsko-Vygurivska line)");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Piazza Peremohy - una stazione prevista della metropolitana di Kiev. In futuro, secondo il progetto, sara situato nell`omonima piazza dopo il 2030 e si trovera tra le stazioni "Hlybochytska" e "Vokzalna".</p>');
+				$('#title').html("Piazza Peremohy (stazione della metropolitana della linea Podilsko-Vygurivska)");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_16").click(function(){
+			$('#text_station').html('<p>Вокзальна -  проєктована станція в складі другої черги Подільсько-Вигурівської лінії Київського метрополітену, буде розташовуватися між станціями "Площа Перемоги" і "Солом`янська площа", буде вважатися пілонною станцією глибокого залягання. Буде мати перехід на станцію <a href="M1.html">з тієї самої назви, як і тут</a> Святошинсько-Броварської лінії. Планується, що станція буде розташована поблизу залізничного вокзалу Київ-Пасажирський. Згідно з плану будівництва з 2020 року не розпочато будівництво станції, але плановано закінчити будівництво станції після 2030 року.</p>');
+			$('#title').html("Вокзальна (станція метро Подільсько-Вигурівської лінії)");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p>Вокзальна -  проєктована станція в складі другої черги Подільсько-Вигурівської лінії Київського метрополітену, буде розташовуватися між станціями "Площа Перемоги" і "Солом`янська площа", буде вважатися пілонною станцією глибокого залягання. Буде мати перехід на станцію <a href="M1.html">з тієї самої назви, як і тут</a> Святошинсько-Броварської лінії. Планується, що станція буде розташована поблизу залізничного вокзалу Київ-Пасажирський. Згідно з плану будівництва з 2020 року не розпочато будівництво станції, але плановано закінчити будівництво станції після 2030 року.</p>');
+				$('#title').html("Вокзальна (станція метро Подільсько-Вигурівської лінії)");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p>Vokzalna - the designed station as part of the second stage of the Podilsko-Vygurivska line of the Kyiv metro, will be located between the "Ploshcha Peremohy" and "Solomyanska ploshcha" stations, will be considered a deep-lying pylon station. It will have a transfer to the station <a href="M1.html">with the same name as here</a> Svyatoshynsko-Brovarska line. It is planned that the station will be located near the Kyiv-Pasajyrsky railway station. According to the construction plan, the construction of the station has not started since 2020, but it is planned to finish the construction of the station after 2030.</p>');
+				$('#title').html("Vokzalna (metro station of the Podilsko-Vygurivska line)");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Vokzalna - la stazione progettata come parte della seconda tappa della linea Podilsko-Vygurivska della metropolitana di Kiev, sara situata tra le stazioni "Piazza della Vittoria" e "Solomyanska ploshcha", sara considerata una stazione di traliccio profondo. Avra un trasferimento alla stazione <a href="M1.html">con lo stesso nome di qui</a> linea Svyatoshynsko-Brovarska. Si prevede che la stazione sara situata vicino alla stazione ferroviaria Kyiv-Pasajyrsky. Secondo il piano di costruzione, la costruzione della stazione non e iniziata dal 2020, ma si prevede di terminare la costruzione della stazione dopo il 2030.</p>');
+				$('#title').html("Vokzalna (stazione della metropolitana della linea Podilsko-Vygurivska)");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_17").click(function(){
+			$('#text_station').html('<p>Солом`янська площа -  проєктована станція Подільсько-Вигурівської лінії Київського метрополітену. Згідно з проектом буде розташована на однойменній площі в перспективі після 2020 року і буде розташована між станціями "Вокзальна" і "Чоколівська".</p>');
+			$('#title').html("Солом`янська площа (станція метро Подільсько-Вигурівської лінії)");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p>Солом`янська площа -  проєктована станція Подільсько-Вигурівської лінії Київського метрополітену. Згідно з проектом буде розташована на однойменній площі в перспективі після 2020 року і буде розташована між станціями "Вокзальна" і "Чоколівська".</p>');
+				$('#title').html("Солом`янська площа (станція метро Подільсько-Вигурівської лінії)");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p>Solomyanska ploshcha - a planned station of the Podilska-Vygurivska Line of the Kyiv Metro. According to the project, it will be located on the square of the same name in the future after 2020 and will be located between the "Vokzalna" and "Chokolivs`ka" stations.</p>');
+				$('#title').html("Solomyanska ploshcha (metro station of Podilsko-Vygurivska line)");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Piazza Solomyanska - una stazione prevista della linea Podilska-Vygurivska della metropolitana di Kiev. Secondo il progetto, in futuro dopo il 2020 sara situato nell`omonima piazza e si trovera tra le stazioni "Vokzalna" e "Chokolivska".</p>');
+				$('#title').html("Piazza Solomyanska (stazione della metropolitana della linea Podilsko-Vygurivska)");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito/a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_18").click(function(){
+			$('#text_station').html('<p>Чоколівська - проєктована станція Подільсько-Вигурівської лінії Київського метрополітену. Згідно з проєктом буде розташована на Севастопольській площі в перспективі після 2022 року і буде розташована між станціями "Солом`янська площа" і "Аеропорт".</p>');
+			$('#title').html("Чоколівська (станція метро Подільсько-Вигурівської лінії)");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p>Чоколівська - проєктована станція Подільсько-Вигурівської лінії Київського метрополітену. Згідно з проєктом буде розташована на Севастопольській площі в перспективі після 2022 року і буде розташована між станціями "Солом`янська площа" і "Аеропорт".</p>');
+				$('#title').html("Чоколівська (станція метро Подільсько-Вигурівської лінії)");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p>Chokolivska is a planned station of the Podilska-Vygurivska line of the Kyiv metro. According to the project, it will be located on Sevastopol Square in the future after 2022 and will be located between the "Solomyanska Plosha" and "Airport" stations.</p>');
+				$('#title').html("Chokolivska (metro station of the Podilsko-Vygurivska line)");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Chokolivska e una stazione prevista della linea Podilska-Vygurivska della metropolitana di Kiev. Secondo il progetto, sara situato in piazza Sebastopoli in futuro dopo il 2022 e sara situato tra le stazioni "Piazza Solomyanska" e "Aeroporto".</p>');
+				$('#title').html("Chokolivska (stazione della metropolitana della linea Podilsko-Vygurivska)");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_19").click(function(){
+			$('#text_station').html('<p>Аеропорт - проєктована станція Подільсько-Вигурівської лінії Київського метрополітену. Згідно з проєктом і своєю назвою буде розташована на Повітрофлотському проспекті біля Міжнародного аеропорту «Київ» в перспективі після 2020 року.</p>');
+			$('#title').html("Аеропорт (станція метро Подільсько-Вигурівської лінії)");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p>Аеропорт - проєктована станція Подільсько-Вигурівської лінії Київського метрополітену. Згідно з проєктом і своєю назвою буде розташована на Повітрофлотському проспекті біля Міжнародного аеропорту «Київ» в перспективі після 2020 року.</p>');
+				$('#title').html("Аеропорт (станція метро Подільсько-Вигурівської лінії)");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p>Airport is a planned station of the Podilsko-Vygurivska line of the Kyiv metro. According to the project and its name, it will be located on Povitroflotsky prospect near Kyiv International Airport in the future after 2020 and will be located between "Chokolivs`ka" and "Kil`tseva doroga" stations.</p>');
+				$('#title').html("Airport (metro station of the Podilsko-Vygurivska line)");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Aeroporto e una stazione prevista della linea Podilsko-Vygurivska della metropolitana di Kiev. Secondo il progetto e il suo nome, sara situato sulla prospettiva Povitroflotsky vicino all`aeroporto internazionale di Kiev in futuro dopo il 2020 e sara situato tra le stazioni di "Chokolivska" e "Kiltseva doroga".</p>');
+				$('#title').html("Aeroporto (stazione della metropolitana della linea Podilsko-Vygurivska)");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_20").click(function(){
+			$('#text_station').html('<p>Кільцева дорога - проєктована кінцева станція Подільсько-Вигурівської лінії Київського метрополітену. Згідно з проєктом буде розташована на перетині вулиці В`ячеслава Чорновола (місто Вишневе) та Кільцевої дороги в перспективі після 2020 року. За станцією буде розміщуватися електродепо «Жуляни».</p>');
+			$('#title').html("Кільцева дорога (станція метро Подільсько-Вигурівської лінії)");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text() == "English"){
+				$('#text_station').html('<p>Кільцева дорога - проєктована кінцева станція Подільсько-Вигурівської лінії Київського метрополітену. Згідно з проєктом буде розташована на перетині вулиці В`ячеслава Чорновола (місто Вишневе) та Кільцевої дороги в перспективі після 2020 року. За станцією буде розміщуватися електродепо «Жуляни».</p>');
+				$('#title').html("Кільцева дорога (станція метро Подільсько-Вигурівської лінії)");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#text_station').html('<p>Kil`tseva doroga is the projected terminal station of the Podilsko-Vygurivska line of the Kyiv metro. According to the project, it will be located at the intersection of Vyacheslava Chornovola Street (Vishneve) and Kiltseva Road in the future after 2020. The "Zhulyany" electrical depot will be located behind the station.</p>');
+				$('#title').html("Kil`tseva doroga (metro station of the Podilsko-Vygurivska line)");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Kiltseva doroga e la prevista stazione terminale della linea Podilsko-Vygurivska della metropolitana di Kiev. Secondo il progetto, sara situato all`incrocio tra Vyacheslava Chornovola Street (Vishneve) e Kiltseva Road in futuro dopo il 2020. Il deposito elettrico "Zhulyany" sara situato dietro la stazione.</p>');
+				$('#title').html("Kiltseva doroga (stazione della metropolitana della linea Podilsko-Vygurivska)");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+
+		$("#p, h1, h2, h3, h4, li, legend, td, label, option").addClass("font_middle");
+
+		$("#small_text").click(function(){
+			$clas_new="font_small";
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").removeClass($clas_action).addClass($clas_new);
+			$clas_action=$clas_new;
+		})
+		$("#middle_text").click(function(){
+			$clas_new="font_middle";
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").removeClass($clas_action).addClass($clas_new);
+			$clas_action=$clas_new;
+		})
+		$("#big_text").click(function(){
+			$clas_new="font_big";
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").removeClass($clas_action).addClass($clas_new);
+			$clas_action=$clas_new;
+		})
+		
+		$(function(){
+			$('#e').click(function(){
+				if ($('#e').text()=="Почати переклад") {
+					$('#e').text('English');}
+				else if ($('#e').text()=="Українська") {
+					$('#txt_logo').html('<h4>Подільсько-Вигурівська лінія</h4>');
+					$('#menu_site').html('<table width="100%"><tr><td width="100px"><a href="Kiev_metro.html">Головна</a></td><td width="200px"><a href="M1.html?m=1" class="light_sb"><div></div><div></div><div></div><div></div>Святошинсько-Броварська лінія</a></td><td width="200px"><a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div>Оболонсько-Теремківська лінія</a></td><td width="200px"><a href="M3.html?m=1" class="light_sp"><div></div><div></div><div></div><div></div>Сирецько-Печерська лінія</a></td><td width="200px">Подільсько-Вигурівська лінія</td><td width="200px"><a href="M5.html?m=1" class="light_livoberezhna"><div></div><div></div><div></div><div></div>Лівобережна лінія</a></td><td width="200px"><a href="M6.html?m=1" class="light_vd"><div></div><div></div><div></div><div></div>Вишгородсько-Дарницька лінія</a></td><td width="200px"><a href="M7.html" class="light_b"><div></div><div></div><div></div><div></div>Борщагівська лінія</a></td><td width="200px"><a href="Rolling_stock_kyiv_metro.html">Рухомий пасажирський склад метрополітену</a></td><td width="200px"><a href="about_us.html">Про нас</a></td></td></tr></table>');
+					$('#p').html('<p>Подільсько-Вигурівська лінія (з 1997, попередні назви — Подільсько-Воскресенська або Вокзально-Воскресенська) — майбутня нова лінія Київського метрополітену. Станом на 2012 рік планувалося, що після закінчення будівництва лінія матиме 12+6 станцій і понад 20 км довжини. Проектний термін будівництва першої черги — 62 місяці.</p>');
+					$("#p, h2, h3, li, legend, td, label, option").attr("style","color:#ffffff;");
+					$("#divDateTime").attr("style","color:maroon; font-family: Calibri; color: black; font-style: Italic; font-size:115%;");
+					$("#station_1").text("Вулиця Милославська (станція лінії М5)");$("#station_2").text("Вулиця Цвєтаєвої (станція лінії М5)");$("#station_3").text("Вулиця Сабурова (станція лінії М5)");$("#station_4").text("Вулиця Драйзера (станція лінії М5)");$("#station_5").text("Вулиця Каштанова (станція лінії М5)");$("#station_6").text("Проспект Ватутіна (станція лінії М5)");$("#station_7").text("Братиславська");$("#station_8").html("Бульвар Перова <img src='20px-BSicon_LDER.svg.png'>");$("#station_9").text("Райдужна");$("#station_10").text("Затока Десенка");$("#station_11").text("Труханів острів");$("#station_12").text("Суднобудівна");$("#station_13").text("Подільська");$("#station_14").text("Глибочицька");$("#station_15").text("Площа Перемоги");$("#station_16").html("Вокзальна <img src='20px-BSicon_LDER.svg.png'>");$("#station_17").text("Солом`янська площа");$("#station_18").text("Чоколівська");$("#station_19").html("Аеропорт <img src='images_kyiv_metro_M4/20px-BSicon_FLUG.svg.webp'>");$("#station_20").text("Кільцева дорога");
+					$('#e').text('English');}
+				else if ($('#e').text() == "English") {
+					$('#txt_logo').html('<h4>Podilsko-Vygurovskaya line</h4>');
+					$('#menu_site').html('<table width="100%"><tr><td width="100px"><a href="Kiev_metro.html">Main site</a></td><td width="200px"><a href ="M1.html?m=1" class="light_sb"><div></div><div></div><div></div><div></div>Svyatoshinsko-Brovarska line</a></td><td width="200px"><a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div>Obolonsko-Teremkivska line</a></td><td width="200px"><a href="M3.html?m=1" class="light_sp"><div></div><div></div><div></div><div></div>Syretsko-Pecherska line</a></td><td width="200px">Podilsko-Vygurivska line</td><td width="200px"><a href="M5.html?m=1" class="light_livoberezhna"><div></div><div></div><div></div><div></div>Livoberezhna line</a></td><td width="200px"><a href ="M6.html?m=1" class="light_vd"><div></div><div></div><div></div><div></div>Vyshgorodsko-Darnitska line</a></td><td width="200px"><a href="M7.html" class="light_b"><div></div><div></div><div></div><div></div>Borshchahivska line</a></td><td width="200px"><a href="Rolling_stock_kyiv_metro.html">Subway rolling stock</a></td><td width="200px"><a href="about_us.html">About us</a></td></td></tr></table>');
+					$('#p').html('<p>Podilsko-Vygurovskaya line (since 1997, previous names - Podolsk-Voskresenskaya or Voskresenskaya) - a future new line of the Kiev subway. As of 2012 it was planned that after the construction of the line will have 12 + 6 stations and more than 20 km in length. The design phase of the first phase is 62 months. </P>');
+					$("#p, h2, h3, li, legend, td, label, option").attr("style","color:#ffffff;");
+					$("#divDateTime").attr("style","color:maroon; font-family: Calibri; color: black; font-style: Italic; font-size:115%;");
+					$("#station_1").text("Vulytsya Myloslavs`ka (M5 line station)");$("#station_2").text("Vulytsya Tsvyetayevoyi (М5 line station)");$("#station_3").text("Vulytsya Saburova (M5 line station)");$("#station_4").text("Vulytsya Drayzera (М5 line station)");$("#station_5").text("Vulytsya Kashtanova (М5 line station)");$("#station_6").text("Prospekt Vatutina (М5 line station)");$("#station_7").text("Bratyslavs`ka");$("#station_8").html("Bul`var Perova <img src='20px-BSicon_LDER.svg.png'>");$("#station_9").text("Rayduzhna");$("#station_10").text("Zatoka Desenka");$("#station_11").text("Trukhaniv ostriv");$("#station_12").text("Sudnobudivna");$("#station_13").text("Podil`s`ka");$("#station_14").text("Hlybochyts`ka");$("#station_15").text("Ploshcha Peremohy");$("#station_16").html("Vokzalna <img src='20px-BSicon_LDER.svg.png'>");$("#station_17").text("Solom`yans`ka ploshcha");$("#station_18").text("Chokolivs`ka");$("#station_19").html("Airport <img src='images_kyiv_metro_M4/20px-BSicon_FLUG.svg.webp'>");$("#station_20").text("Kil`tseva doroha");
+					$('#e').text('Italiano');}
+				else if ($('#e').text() == "Italiano") {
+					$('#txt_logo').html('<h4>Linea Podilsko-Vyhurivska</h4>');
+					$('#menu_site').html('<table width="100%"><tr><td width="100px"><a href="Kiev_metro.html">Sito principale</a></td><td width="200px"><a href ="M1.html?m=1" class="light_sb"><div></div><div></div><div></div><div></div>Linea Svyatoshinsko-Brovarska</a></td><td width="200px"><a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div>Linea Obolonsko-Teremkivska</a></td><td width="200px"><a href="M3.html?m=1" class="light_sp"><div></div><div></div><div></div><div></div>Linea Syretsko-Pecherska</a></td><td width="200px">Linea Podilsko-Vygurivska</td><td width="200px"><a href="M5.html?m=1" class="light_livoberezhna"><div></div><div></div><div></div><div></div>Linea Livoberezhna</a></td><td width="200px"><a href="M6.html?m=1" class="light_vd"><div></div><div></div><div></div><div></div>Linea Vyshgorodsko-Darnitska</a></td><td width="200px"><a href="M7.html" class="light_b"><div></div><div></div><div></div><div></div>Linea Borshchahivska</a></td><td width="200px"><a href="Rolling_stock_kyiv_metro.html">Materiale rotabile della metropolitana</a></td><td width="200px"><a href="about_us.html">Chi siamo</a></td></td></tr></table>');
+					$('#p').html('<P>La linea Podilsko-Vyhurivska (dal 1997, nomi precedenti - Podilsko-Voskresenska o Vokzalno-Voskresenska) e la futura nuova linea della metropolitana di Kiev. A partire dal 2012, era previsto che, dopo il completamento dei lavori, la linea avesse 12 + 6 stazioni e una lunghezza di oltre 20 km. Il periodo di progettazione per la realizzazione della prima fase e di 62 mesi. </P>');
+					$("#p, h2, h3, li, legend, td, label, option").attr("style","color:#ffffff;");
+					$("#divDateTime").attr("style","color:maroon; font-family: Calibri; color: black; font-style: Italic; font-size:115%;");
+					$("#station_1").text("Via Myloslavska (stazione della linea M5)");$("#station_2").text("Via Cvetaeva (stazione della linea M5)");$("#station_3").text("Via Saburova (stazione della linea M5)");$("#station_4").text("Via Dreiser (stazione della linea M5)");$("#station_5").text("Via Kashtanova (stazione della linea M5)");$("#station_6").text("Prospekt Vatutina (stazione della linea M5)");$("#station_7").text("Bratyslavska");$("#station_8").html("Bulvar Perova <img src='20px-BSicon_LDER.svg.png'>");$("#station_9").text("Raiduzhna");$("#station_10").text("Zatoka Desenka");$("#station_11").text("Trukhaniv ostriv");$("#station_12").text("Sudnobudivna");$("#station_13").text("Podilska");$("#station_14").text("Hlybochytska");$("#station_15").text("Piazza Peremohy");$("#station_16").html("Vokzalna <img src='20px-BSicon_LDER.svg.png'>");$("#station_17").text("Piazza Solomyanska");$("#station_18").text("Chokolivska");$("#station_19").html("Aeroporto <img src='images_kyiv_metro_M4/20px-BSicon_FLUG.svg.webp'>");$("#station_20").text("Kiltseva Doroha");
+					$('#e').text('Українська');}
+			});
+		})
+		;
+		$(function(){
+			function change_width(id_obj,x){
+				var a=$(id_obj).attr('title');
+				var w=$(id_obj).width();
+				var h=$(id_obj).height();
+				if(a==''){
+					w=w*x;
+					h=h*x;
+					$(id_obj).width(w).height(h);
+					$(id_obj).attr('title','фото зменшене в 1.5 раз');
+					a=$(id_obj).attr('title');
+				}
+				else if(a=='фото зменшене в 1.5 раз'){
+					w=w/1.5;
+					h=h/1.5;
+					$(id_obj).width(w).height(h);
+					$(id_obj).attr('title','');
+					a=$(id_obj).attr('title');
+				}
+			}
+			$('#station img').each(function(){
+				$(this).attr('title','');
+				$(this).click(function(){
+					change_width(this,1.5);
+				});
+			});
+		})
+		;
+	});
+</script>
+<table width='100%'>
+<tr width='20%'><td width='20%' valign='top'><h1 id='txt_logo' class='logo_text'>Подільсько-Вигурівська лінія</h1></td>
+<td>
+<div id="navigation">
+<ul valign="top">
+<li><div id="divDateTime" style='font-family: Calibri; color: black; font-style: Italic; font-size:115%;'></div></li>
+<li><div id="p_color_knop">
+					<div id="red"></div>
+					<div id="blue"></div>
+					<div id="green"></div>
+					<div id="cyan"></div>
+					<div id="gold"></div>
+					<div id="purple"></div>
+					<div id="white"></div>
+					<div id="rainbow_text"></div>
+				</div></li>
+<li><div id="size_text">
+<div id="e" width="100px" style=" border:1px solid red; background:#3582c4; padding:5px ">Почати переклад</div></div></li>
+<li><div id="size_text">
+				<div id="small_text">A</div>
+				<div id="middle_text">A</div>
+				<div id="big_text">A</div>
+			</div></li>
+</ul>
+</div></td></tr>
+<tr valign='top'><td valign='top'><img id='logo' src='kyiv_metro_branch/M4.png' align='left'width='300px' height='218px'></td>
+<td><img id='metro' src='kyiv_metro_branch/metro_animation_6_wagons.gif' width='100%'></td></tr>
+</table>
+<div id='menu_site' >
+<table width='100%'>
+<tr>
+<td width='100px'>
+         <a href="Kiev_metro.html">Головна</a></td>
+		 <td width='200px'>
+         <a href="M1.html" class="light_sb"><div></div><div></div><div></div><div></div>Святошинсько-Броварська лінія</a></td>
+		 <td width='200px'>
+         <a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div>Оболонсько-Теремківська лінія</a></td>
+		 <td width='200px'>
+         <a href="M3.html?m=1" class="light_sp"><div></div><div></div><div></div><div></div>Сирецько-Печерська лінія</a></td>
+		 <td width='200px'>
+Подільсько-Вигурівська лінія</td>
+		 <td width='200px'>
+		 <a href="M5.html?m=1" class="light_livoberezhna"><div></div><div></div><div></div><div></div>Лівобережна лінія</a></td>
+		 <td width='200px'>
+		 <a href="M6.html?m=1" class="light_vd"><div></div><div></div><div></div><div></div>Вишгородсько-Дарницька лінія</a></td>
+		 <td width='200px'>
+		 <a href="M7.html" class="light_b"><div></div><div></div><div></div><div></div>Борщагівська лінія</a></td>
+		<td width='200px'>
+            <a href="Rolling_stock_kyiv_metro.html">Рухомий пасажирський склад метрополітену</a></td>
+		<td width='200px'>
+            <a href="about_us.html">Про нас</a></td>
+</td>
+   </tr>
+   </table>
+      </div>
+				<div id='p'>
+<p>Подільсько-Вигурівська лінія (з 1997, попередні назви — Подільсько-Воскресенська або Вокзально-Воскресенська) — майбутня нова лінія Київського метрополітену. Станом на 2012 рік планувалося, що після закінчення будівництва лінія матиме 12+6 станцій і понад 20 км довжини. Проектний термін будівництва першої черги — 62 місяці.</p>
+</div>
+<img id='map' src='kyiv_metro_branch/kiev_metro_line_M4.jpg'>
+<table id='center' cellspacing="0" border="0" width="100%" bordercolor="fff">
+<tr id='top'>
+<td id='menu' width='275px' valign="top">
+<div class='menu_station'>
+<p><a id='station_1'>Вулиця Милославська (станція лінії М5)</a></p>
+<p><a id='station_2'>Вулиця Цвєтаєвої (станція лінії М5)</a></p>
+<p><a id='station_3'>Вулиця Сабурова (станція лінії М5)</a></p>
+<p><a id='station_4'>Вулиця Драйзера (станція лінії М5)</a></p>
+<p><a id='station_5'>Вулиця Каштанова (станція лінії М5)</a></p>
+<p><a id='station_6'>Проспект Ватутіна (станція лінії М5)</a></p>
+<p><a id='station_7'>Братиславська</a></p>
+<p><a id='station_8'>Бульвар Перова <img src='20px-BSicon_LDER.svg.png'></a></p>
+<p><a id='station_9'>Райдужна</a></p>
+<p><a id='station_10'>Затока Десенка</a></p>
+<p><a id='station_11'>Труханів острів</a></p>
+<p><a id='station_12'>Суднобудівна</a></p>
+<p><a id='station_13'>Подільська</a></p>
+<p><a id='station_14'>Глибочицька </a></p>
+<p><a id='station_15'>Площа Перемоги</a></p>
+<p><a id='station_16'>Вокзальна</a></p>
+<p><a id='station_17'>Солом'янська площа</a></p>
+<p><a id='station_18'>Чоколівська</a></p>
+<p><a id='station_19'>Аеропорт <img src='images_kyiv_metro_M4/20px-BSicon_FLUG.svg.webp'></a></p>
+<p><a id='station_20'>Кільцева дорога</a></p>
+</div>
+</td>
+<td id='station' valign="top" rowspan='2'>
+<p>
+<div id='text_station'></div>
+</p>
+<p>
+<div id='station_image' width='1050px' height='750px'></div>
+<div id='station_video' width='1050px' height='750px'></div>
+<div id='back_to_main_slide' class='menu'></div>
+</p>
+</td>
+</tr>
+</table>
+</body>
+</html>

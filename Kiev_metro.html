@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1251">
+<title id='title'>Київський метрополітен</title>
+<script src="js/jquery-1_11_3_min.js"> </script>
+<link href="css/new.css" rel="stylesheet" type="text/css" />
+<link rel="icon" href="kyiv_metro_branch/1200px-Kyiv_Metro_logo_2015.svg.png" type="image/x-icon">
+</head>
+<body id='background_body' background="dnipro_ukraine.jpg"  style=" height: 100%; background-repeat: no-repeat; background-size: cover;">
+<script src='https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.min.js'></script>
+<script>
+	var $clas_new="font_middle";
+	var $clas_action="font_middle";
+	
+	var DateTime = new Date();
+	var week = new Array('Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П`ятниця', 'Субота');
+	var day  = week[DateTime.getDay()];
+	var week_eng = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
+	var day_eng  = week_eng[DateTime.getDay()];
+	var week_ita = new Array('Domenica','Lunedi','Martedi','Mercoledi','Giovedi','Venerdi','Sabato');
+	var day_ita  = week_ita[DateTime.getDay()];
+	
+	var text = ["<marquee bgcolor='black' width='350 px' behavior='left' scrollamount='2' scrolldelay='15.7' truespeed>Ласкаво просимо</marquee><br><marquee bgcolor='black' width='350 px' behavior='left' scrollamount='2' scrolldelay='15.7' truespeed>Welcome</marquee><br><marquee bgcolor='black' width='350 px' behavior='left' scrollamount='2' scrolldelay='15.7' truespeed>Benvuto</marquee>", "UKR: Сьогодні: " + DateTime.getDate() + "." + (DateTime.getMonth()+1) + "." + DateTime.getFullYear() + " - "+day+"<br>ENG: Today: " + DateTime.getDate() + "." + (DateTime.getMonth()+1) + "." + DateTime.getFullYear() + " - "+day_eng+"<br>ITA: In data odierna: " + DateTime.getDate() + "." + (DateTime.getMonth()+1) + "." + DateTime.getFullYear() + " - "+day_ita+"","UKR: Тут ви можете ознайомитися інформації кожного сайту, кожної станції Київського метрополітену.<br>ENG: Here you can find information on each site, each station of the Kiev metro.<br>ITA: Qui puoi trovare informazioni su ogni sito, ogni stazione della metropolitana di Kiev.","UKR: Є в деяких станцій відео, що вони були опубліковані автором, таких як: UATV Channel і Александр Гриненко.<br>ENG: There are videos in some stations that were published by the author, such as: UATV Channel and Alexander Grinenko.<br>ITA: Ci sono video in alcune stazioni che sono state pubblicate dall'autore, come: UATV Channel e Alexander Grinenko.","UKR: В майбутньому заплановано ще чотири лінії Київського метрополітену і це: Подільсько-Вигурівська лінія, Лівобережна лінія; Вишгородсько-Дарницька лінія і Борщагівська лінія (проект сьомої лінії на даний момент залишився на паперах).<br>ENG: In the future, four more lines of the Kyiv Metro are planned: the Podilsko-Vyhurivska line, the Livoberezhna line, the Vyshgorodsko-Darnytska line and the Borshchahivska line (the project of the seventh line for now remains on paper).<br>ITA: In futuro sono previste altre quattro linee della metropolitana di Kiev: la linea Podilsko-Vyhurivska, la linea Livoberezhna, la linea Vyshgorodsko-Darnytska e la linea Borshchahivska (il progetto della settima linea per ora rimane sulla carta).","UKR: Також є сайт про рухомого пассажирського складу Київського метрополітену, ви можете ознайомитися історичних і сучасних метропотягів Київського метро, кожного з яких має свої інформації і свої модифікації.<br>ENG: There is also a site about the rolling stock of the Kyiv Metro, you can get acquainted with the historical and modern metro trains of the Kyiv Metro, each of which has its own information and modifications.<br>ITA: C'e anche un sito sul materiale rotabile della metropolitana di Kiev, puoi conoscere i treni della metropolitana storici e moderni della metropolitana di Kiev, ognuno dei quali ha le sue informazioni e modifiche.","UKR: Будьте обережні під час воєнного стану, а також під час негоди та епідемій<br>ENG: Be careful during martial law, as well as during bad weather and epidemics!<br>ITA: Fai attenzione durante la legge marziale, cosi come durante il maltempo e le epidemie!", "UKR: Дотримуйтеся дисципліну і в усіх правилах під час перебування в Київській метрополітені!<br>ENG: Follow the discipline and all the rules during your stay in the Kyiv metro!<br>ITA: Segui la disciplina e tutte le regole durante il tuo soggiorno nella metropolitana di Kiev!","UKR: Але будьте уважні, відео, фотографія і інформація кожної станції лінії метро не будуть продовжуватися після перемикання на інших слайдів!<br>ENG: But be careful, videos, photos and information of each metro line station will not continue after switching to other slides!<br>ITA: Ma attenzione, i video, le foto e le informazioni di ogni stazione della metropolitana non continueranno dopo il passaggio ad altre diapositive!","UKR: В деяких сайтах ви можете сканувати qr-код і отримуєте додаткові інформації і фотографії.<br>ENG: On some sites you can scan the qr-code and get more information and photos.<br>ITA: Su alcuni siti puoi scansionare il qr-code e ottenere maggiori informazioni e foto.", "UKR: Щасливої, мирної поїздки і доброго настрою в київському метрополітені.<br>ENG: Have a happy, peaceful trip and a good mood in the Kyiv metro.<br>ITA: Buon viaggio e buon umore nella metropolitana di Kiev.", "UKR: Ви можете перекладати тексти на сайті, тобто з української на англійську, з англійської на італійську та з італійської на українську.<br>ENG: You can translate texts on the site, i.e. from Ukrainian to English, from English to Italian and from Italian to Ukrainian.<br>ITA: Puoi tradurre i testi sul sito, ovvero dall'ucraino all'inglese, dall'inglese all'italiano e dall'italiano all'ucraino."];
+	var counter = 0;
+	setInterval(change, 4000);
+	
+	function change() {
+		document.getElementById("my_text").innerHTML = text[counter];
+		counter = random = Math.floor(Math.random() * text.length);
+		if(counter >= text.length) { counter = 1; }
+	}
+	
+	function GetDateTime(){
+		var DateTime = new Date();
+		$('#divDateTime').html("Час: " + DateTime.getHours() + ":" + DateTime.getMinutes() + ":" + DateTime.getSeconds());
+	}
+	
+	$('document').ready(function(){
+		setInterval(GetDateTime, 1000);
+		
+		$(function(){
+			$('#logo').slideUp(0);
+			$('#logo').slideDown(3000);
+			$('#logo_M1').slideUp(0);
+			$('#logo_M1').slideDown(1500);
+			$('#logo_M2').slideUp(0);
+			$('#logo_M2').slideDown(2000);
+			$('#logo_M3').slideUp(0);
+			$('#logo_M3').slideDown(3000);
+			$('#logo_M4').slideUp(0);
+			$('#logo_M4').slideDown(4000);
+			$('#logo_M5').slideUp(0);
+			$('#logo_M5').slideDown(5000);
+			$('#gallery').fadeOut(0);
+			$('#gallery').fadeIn(3000);
+			$('#metro_map').slideUp(0);
+			$('#metro_map').slideDown(3000);
+			$('#metro_history').slideUp(0);
+			$('#metro_history').fadeIn(4000);
+			$('#video_history').fadeOut(0);
+			$('#video_history').slideDown(5000);
+		})
+		;
+		$("#red").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:red; text-shadow: 1px 1px 2px black;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+			$("#menu a:hover").attr("style","background:#ffffff;");
+			$("#menu a:action").attr("style","background:#ffffff;");
+		})
+		$("#blue").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:blue; text-shadow: 1px 1px 2px white;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+			$("#menu a:hover").attr("style","background:#ffffff;");
+			$("#menu a:action").attr("style","background:#ffffff;");
+		})
+		$("#green").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:lime; text-shadow: 1px 1px 2px black;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+			$("#menu a:hover").attr("style","background:#ffffff;");
+			$("#menu a:action").attr("style","background:#ffffff;");
+		})
+		$("#yellow").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:gold; text-shadow: 1px 1px 2px black;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+			$("#menu a:hover").attr("style","background:#ffffff;");
+			$("#menu a:action").attr("style","background:#ffffff;");
+		})
+		$("#cyan").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#00ffff; text-shadow: 1px 1px 2px black;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+			$("#menu a:hover").attr("style","background:#ffffff;");
+			$("#menu a:action").attr("style","background:#ffffff;");
+		})
+		$("#gold").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:yellow; text-shadow: 1px 1px 2px black;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+			$("#menu a:hover").attr("style","background:#ffffff;");
+			$("#menu a:action").attr("style","background:#ffffff;");
+		})
+		$("#purple").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#800080; text-shadow: 1px 1px 2px black;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+			$("#menu a:hover").attr("style","background:#ffffff;");
+			$("#menu a:action").attr("style","background:#ffffff;");
+		})
+		$("#white").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#ffffff; text-shadow: 1px 1px 2px black;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+			$("#menu a:hover").attr("style","background:#ffffff;");
+			$("#menu a:action").attr("style","background:#ffffff;");
+		})
+		$("#rainbow_text").click(function(){
+			$("#p, legend, td, label, option").attr("style","background: linear-gradient(90deg, #fd004c, #fe9000, #fff020, #3edf4b, #3363ff, #0000ff, #000080, #800080, #b102b7, #ff00c4, #fd004c);background-size: 400%;font-family: sans-serif;word-spacing: 5px;-webkit-text-fill-color: transparent;-webkit-text-stroke: 0.01em black;-webkit-background-clip: text;animation: animate 10s linear infinite;");
+			$("#divDateTime").attr("style","background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033ff, #ff00c4, #ff0000);background-size: 400%;font-family: Calibri; font-style: Italic; font-size:115%;word-spacing: 5px;-webkit-text-fill-color: transparent;-webkit-background-clip: text;animation: animate 10s linear infinite;");
+			$("h1, h2, h3").attr("style","background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033ff, #ff00c4, #ff0000);background-size: 400%; width:100%; font:24px impact; height:10px; font-style: Italic; font-size:115%;letter-spacing: 3px;-webkit-text-fill-color: transparent;-webkit-background-clip: text;animation: animate 10s linear infinite;");
+			$("li").attr("style","color:#ffffff;");
+			$("#menu a:hover").attr("style","background:#ffffff;");
+			$("#menu a:action").attr("style","background:#ffffff;");
+		})
+
+		$("#p, h1, h2, h3, h4, li, legend, td, label, option").addClass("font_middle");
+
+		$("#small_text").click(function(){
+			$clas_new="font_small";
+			$("#p, h1, h3, h4, li, legend, td, label, option").removeClass($clas_action).addClass($clas_new);
+			$clas_action=$clas_new;
+		})
+		$("#middle_text").click(function(){
+			$clas_new="font_middle";
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").removeClass($clas_action).addClass($clas_new);
+			$clas_action=$clas_new;
+		})
+		$("#big_text").click(function(){
+			$clas_new="font_big";
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").removeClass($clas_action).addClass($clas_new);
+			$clas_action=$clas_new;
+		})
+
+		$(function(){
+			$('#e').click(function(){
+				if ($('#e').text()=="Українська") {
+					$('#title').html("Київський метрополітен");
+					$('#txt_logo').html('<h4>Київський метрополітен</h4>');
+					$('#menu_site').html('<table width="100%"><tr><td width="100px">Головна</td><td width="200px"><a href="M1.html?m=1" class="light_sb"><div></div><div></div><div></div><div></div>Святошинсько-Броварська лінія</a></td><td width="200px"><a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div>Оболонсько-Теремківська лінія</td><td width="200px"><a href="M3.html?m=1" class="light_sp"><div></div><div></div><div></div><div></div>Сирецько-Печерська лінія</a></td><td width="200px"><a href="M4.html?m=1" class="light_pv"><div></div><div></div><div></div><div></div>Подільсько-Вигурівська лінія</a></td><td width="200px"><a href="M5.html?m=1" class="light_livoberezhna"><div></div><div></div><div></div><div></div>Лівобережна лінія</a></td><td width="200px"><a href="M6.html?m=1" class="light_vd"><div></div><div></div><div></div><div></div>Вишгородсько-Дарницька лінія</a></td><td width="200px"><a href="M7.html" class="light_b"><div></div><div></div><div></div><div></div>Борщагівська лінія</a></td><td width="200px"><a href="Rolling_stock_kyiv_metro.html">Рухомий пасажирський склад метрополітену</a></td><td width="200px"><a href="about_us.html">Про нас</a></td></td></tr></table>');
+					$('#p').html('<p>Київський метрополітен — швидкісна позавулична транспортна система Києва. Діють три лінії, експлуатаційна довжина яких становить 69,648 км. До послуг пасажирів — 52 станції з трьома підземними пересадочними вузлами в центрі міста. Після відкриття 6 листопада 1960 року став третім метрополітеном в СРСР після московського і ленінградського.</p> <p>Власником метрополітену є багатопрофільне комунальне підприємство «Київський метрополітен», створене у 1990 році. Компанія працевлаштовує майже 8 тисяч робітників (станом на 2011 рік), у його складі діють 17 експлуатаційних служб, в тому числі три електродепо метрополітену (ТЧ-1 «Дарниця», ТЧ-2 «Оболонь» і ТЧ-3 «Харківське»), вагоноремонтний завод (ВРЗ), дирекція будівництва метрополітену. Фінансові надходження поступають від основної діяльності — перевезення пасажирів, а також непрофільних доходів — надання в оренду площ та рекламомісць, реклами (метролайти, монітори на станціях, вагонах, оформлення станцій) та субвенції і компенсації з міського та державного бюджету.</p><p>Станція «Арсенальна» Святошинсько-Броварської лінії є найглибшою станцією метрополітену у світі й розташовується на глибині 105,5 метрів (відстань від поверхні землі до платформи), а наступна станція «Дніпро» є наземною, тому цей перегін є ще й світовим рекордсменом з перепаду глибин.</p> <p>За радянських часів метрополітен мав присвяту Володимиру Леніну, однак зараз на вивісках при входах на станції це не вказано (слова «імені В. І. Леніна» демонтовані в 1990-х роках). У 1981 році нагороджений орденом Трудового Червоного Прапора.</p><p>Чотири станції першої черги будівництва («Вокзальна»[п 1], «Університет»[п 2], «Хрещатик»[п 3], «Арсенальна»[п 4]) визнані пам`ятками архітектури місцевого значення, ще три станції («Дніпро»[п 5], «Либідська»[п 6], «Золоті ворота»[п 7]) мають статус «щойно виявлений об`єкт культурної спадщини».</p><p>Автори станції «Золоті ворота» 1991 року були відзначені Державною премією України по архітектурі[п 8].</p><p>На всіх станціях Київського метрополітену присутнє 2G покриття операторів мобільного зв`язку Vodafone, Київстар, lifecell.</p><p>Метрополітен не працював 18–20 лютого 2014 року, вперше за усі роки роботи, за дорученням голови КМДА Володимира Макеєнка під приводом «загрози терористичних актів у місті» та з 18 березня по 24 травня 2020 року у зв`язку з карантином в Україні через пандемію коронавірусу.</p><p>3 5 по 30 квітня 2021 року роботу Київського метрополітену суттєво обмежено впровадженням перепусткового режиму у зв`язку загостренням епідеміологічної ситуації.</p>');
+					$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#ffffff; text-shadow: 1px 1px 2px black;");
+					$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+					$('#e').text('English');}
+				else if ($('#e').text() == "English") {
+					$('#title').html("Kyiv metro");
+					$('#txt_logo').html('<h4>Kyiv metro</h4>');
+					$('#menu_site').html('<table width="100%"> <tr><td width="100px">Main site</td><td width="200px"><a href="M1.html?m=1" class="light_sb"><div></div><div></div><div></div><div></div>Svyatoshinsko-Brovarska line</a></td><td width="200px"><a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div>Obolonsko-Teremkivska line</td><td width="200px"><a href="M3.html?m=1" class="light_sp"><div></div><div></div><div></div><div></div>Syretsko-Pecherska line</a></td><td width="200px"><a href="M4.html?m=1" class="light_pv"><div></div><div></div><div></div><div></div>Podilsko-Vygurivska line</a></td><td width="200px"><a href="M5.html?m=1" class="light_livoberezhna"><div></div><div></div><div></div><div></div>Livoberezhna line</a></td><td width="200px"><a href="M6.html?m=1" class="light_vd"><div></div><div></div><div></div><div></div>Vyshhorodsko-Darnytska line</a></td><td width="200px"><a href="M7.html" class="light_b"><div></div><div></div><div></div><div></div>Borshchahivska line</a></td><td width="200px"><a href="Rolling_stock_kyiv_metro.html">Subway rolling stock</a></td><td width="200px"><a href="about_us.html">About us</a></td></td></tr></table>');
+					$('#p').html('<p> Kiev underground - high-speed non-volatile transport system of Kiev. There are three lines with an operating length of 69,648 km. For the services of passengers - 52 stations with three underground transfer centers in the city center. After the discovery of November 6, 1960, it became the third subway in the USSR after the Moscow and Leningrad. </ P><p> The owner of the subway is a multifunctional utility company "Kyiv Metro", established in 1990. The company employs almost 8 thousand workers (as of 2011), it has 17 operational services, including three subway electrodes (PM-1 Darnitsa, PM-2 Obolon and PM-3 Kharkivske) Wagon Repair Factory (HRC), Directorate of Metro Construction. Financial revenues come from the main activities - transportation of passengers, as well as non-core income - renting space and advertising, advertising (metrolays, monitors at stations, cars, station registration) and subventions and compensation from the city and state budget. </ P><p id = `Arseanlna`> Arsenal`s station of the Svyatoshinsky-Brovarskaya line is the deepest subway station in the world and is located at a depth of 105.5 meters (distance from the surface of the earth to the platform), and the next station "Dnepr" is above ground, so this Perein is also a world record breaking point. </ p><p> During the Soviet era, the subway was devoted to Vladimir Lenin, but now it is not indicated on signboards at the entrances to the station (the words "on behalf of VI Lenin" were dismantled in the 1990s). In 1981 he was awarded the Order of the Red Banner of Labor. </ P<p> Four stations of the first stage of construction ("Vokzalna" [p 1], "University" [p 2], "Khreshchatyk" [p 3], "Arsenal" [p. 4]) are recognized as monuments of local architecture, yet three stations (Dnipro [5], Lybidska [6], «Golden Gate» [7]) have the status of "the newly discovered cultural heritage object". </ p><p> The authors of the Golden Gate station in 1991 were awarded the State Prize of Ukraine in architecture [p. 8]. </ p><p> At all stations of the Kyiv metro there is 2G coverage of mobile operators Vodafone, Kyivstar, lifecell.</p> <p>The subway did not work on February 18-20, 2014, for the first time in all years, on behalf of the Kyiv City State Administration Volodymyr Makeenko under the pretext of "threat of terrorist acts in the city" and from March 18 to May 24, 2020 due to quarantine quarantine in Ukraine coronavirus.</p><p>3 5 to 30 April 2021, the work of the Kyiv Metro is significantly limited by the introduction of a pass regime in connection with the aggravation of the epidemiological situation." </ p>');
+					$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#ffffff; text-shadow: 1px 1px 2px black;");
+					$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+					$('#e').text('Italiano');}
+				else if ($('#e').text() == "Italiano") {
+					$('#title').html("Metropolitana di Kiev");
+					$('#txt_logo').html('<h4>Metropolitana di Kiev</h4>');
+					$('#menu_site').html('<table width="100%"> <tr><td width="100px">Sito principale</td><td width="200px"><a href="M1.html?m=1" class="light_sb"><div></div><div></div><div></div><div></div>Linea Svyatoshinsko-Brovarska</a></td><td width="200px"><a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div>Linea Obolonsko-Teremkivska</td><td width="200px"><a href="M3.html?m=1" class="light_sp"><div></div><div></div><div></div><div></div>Linea Syretsko-Pecherska</a></td><td width="200px"><a href="M4.html?m=1" class="light_pv"><div></div><div></div><div></div><div></div>Linea Podilsko-Vygurivska</a></td><td width="200px"><a href="M5.html?m=1" class="light_livoberezhna"><div></div><div></div><div></div><div></div>Linea Livoberezhna</a></td><td width="200px"><a href="M6.html?m=1" class="light_vd"><div></div><div></div><div></div><div></div>Linea Vyshhorodsko-Darnytska</a></td><td width="200px"><a href="M7.html" class="light_b"><div></div><div></div><div></div><div></div>Linea Borshchahivska</a></td><td width="200px"><a href="Rolling_stock_kyiv_metro.html">Materiale rotabile della metropolitana</a></td><td width="200px"><a href="about_us.html">Chi siamo</a></td></td></tr></table>');
+					$('#p').html("<p> La metropolitana di Kiev e un sistema di trasporto fuoristrada ad alta velocita a Kiev. Ci sono tre linee con una lunghezza operativa di 69.648 km. Al servizio dei passeggeri - 52 stazioni con tre svincoli sotterranei nel centro della citta. Dopo la sua apertura il 6 novembre 1960, divenne la terza metropolitana dell'URSS dopo Mosca e Leningrado. </p><p> Il proprietario della metropolitana e l'impresa municipale multidisciplinare «Kyiv Metro», fondata nel 1990. L'azienda impiega quasi 8.000 dipendenti (a partire dal 2011) e comprende 17 servizi di manutenzione, inclusi tre depositi elettrici della metropolitana (TC-1 «Darnytsia», TC-2 «Obolon» e TC-3 «Kharkivske»), Car Repair Plant (VRZ ), Direzione della costruzione della metropolitana. I proventi finanziari provengono dall'attivita principale - trasporto passeggeri, nonche entrate non essenziali - affitto di spazi e spazi pubblicitari, pubblicita (luci della metropolitana, monitor nelle stazioni, automobili, progettazione di stazioni) e sovvenzioni e compensi dai bilanci della citta e dello stato. </p><p id = 'Arseanlna'> Stazione Arsenalna La linea Svyatoshinsko-Brovarska e la stazione della metropolitana piu profonda del mondo ed e situato a una profondita di 105,5 metri (distanza da terra alla piattaforma), e la stazione successiva «Dnieper» e fuori terra, quindi, questa gara e anche detentrice del record mondiale di differenza di profondita.</p><p> In epoca sovietica la metropolitana era dedicata a Vladimir Lenin, ma ora non e indicata sui cartelli agli ingressi della stazione (le parole «intitolate a VI Lenin» furono smantellate negli anni '90). Nel 1981 e stato insignito dell'Ordine della Bandiera Rossa del Lavoro.</p><p> Quattro stazioni della prima fase di costruzione  «Vokzalna» [n 1], «Universita»  [n 2], «Khreshchatyk» [item 3], «Arsenalna» [item 4)) sono riconosciuti come monumenti architettonici significato locale, altre tre stazioni «Dnipro» [n 5], «Lybidska» [n 6], «Golden Gate» [punto 7]) hanno lo status di «sito del patrimonio culturale di nuova scoperta». </p><p> Gli autori della stazione Golden Gate nel 1991 hanno ricevuto il Premio di Stato dell'Ucraina per l'architettura [p 8]. </p><p> In tutte le stazioni della metropolitana di Kiev e presente la copertura 2G degli operatori mobili Vodafone, Kyivstar, lifecell. </p><p> La metropolitana non ha funzionato dal 18 al 20 febbraio 2014, per la prima volta in tutti gli anni, per conto del capo dell'amministrazione statale della citta di Kiev Volodymyr Makeenko con il pretesto della «minaccia di atti terroristici nella citta» e dal 18 marzo al 24 maggio 2020 a causa della quarantena in Ucraina a causa della pandemia di coronavirus. </p><p> Dal 35 al 30 aprile 2021, il lavoro della metropolitana di Kiev e notevolmente limitato dall'introduzione di un regime di pass in connessione con l'aggravarsi della situazione epidemiologica. </p>");
+					$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#ffffff; text-shadow: 1px 1px 2px black;");
+					$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+					$('#e').text('Українська');}
+			});
+		})
+		;
+		$(function(){
+			function change_width(id_obj,x){
+				var a=$(id_obj).attr('title');
+				var w=$(id_obj).width();
+				var h=$(id_obj).height();
+				if(a==''){
+					w=w*x;
+					h=h*x;
+					$(id_obj).width(w).height(h);
+					$(id_obj).attr('title','фото зменшене в 1.5 раз');
+					a=$(id_obj).attr('title');
+				}
+				else if(a=='фото зменшене в 1.5 раз'){
+					w=w/1.5;
+					h=h/1.5;
+					$(id_obj).width(w).height(h);
+					$(id_obj).attr('title','');
+					a=$(id_obj).attr('title');
+				}
+			}
+			$('#div_for_metro img').each(function(){
+				$(this).attr('title','');
+				$(this).click(function(){
+					change_width(this,1.5);
+				});
+			});
+		})
+		;
+	});
+
+</script>
+<div id="navigation">
+<ul valign="top">
+<li><div id="p_color_knop">
+					<div id="red"></div>
+					<div id="blue"></div>
+					<div id="green"></div>
+					<div id="yellow"></div>
+					<div id="cyan"></div>
+					<div id="gold"></div>
+					<div id="purple"></div>
+					<div id="white"></div>
+					<div id="rainbow_text"></div>
+				</div></li>
+<li><div id="size_text">
+<div id="e" width="100px" style=" border:1px solid red; background:#3582c4; padding:5px ">Українська</div></div></li>
+<li><div id="size_text">
+				<div id="small_text">A</div>
+				<div id="middle_text">A</div>
+				<div id="big_text">A</div>
+			</div></li>
+</ul>
+<div id="divDateTime" style='font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;'></div>
+<p align="justify" id='my_text' style='background-color:black; color: orange; font-family: System; width:580px; height:260px'></p>
+</div>
+<h1 id='txt_logo' class='logo_text'>Київський метрополітен</h1>
+<img id='logo' src='kyiv_metro_branch/logo.png' width='175px' height='200px'>
+<div id='menu_site' >
+<table width='100%'>
+<tr>
+<td width='100px'>
+         Головна</td>
+		 <td width='200px'>
+         <a href="M1.html?m=1" class='light_sb'><div></div><div></div><div></div><div></div>Святошинсько-Броварська лінія</a></td>
+		 <td width='200px'>
+         <a href="M2.html?m=1" class='light_ot'><div></div><div></div><div></div><div></div>Оболонсько-Теремківська лінія</a></td>
+		 <td width='200px'>
+         <a href="M3.html?m=1" class='light_sp'><div></div><div></div><div></div><div></div>Сирецько-Печерська лінія</a></td>
+		 <td width='200px'>
+         <a href="M4.html?m=1" class='light_pv'><div></div><div></div><div></div><div></div>Подільсько-Вигурівська лінія</a></td>
+		 <td width='200px'>
+		 <a href="M5.html?m=1" class='light_livoberezhna'><div></div><div></div><div></div><div></div>Лівобережна лінія</a></td>
+		 <td width='200px'>
+		 <a href="M6.html?m=1" class='light_vd'><div></div><div></div><div></div><div></div>Вишгородсько-Дарницька лінія</a></td>
+		 <td width='200px'>
+		 <a href="M7.html" class='light_b'><div></div><div></div><div></div><div></div>Борщагівська лінія</a></td>
+		<td width='200px'>
+            <a href="Rolling_stock_kyiv_metro.html">Рухомий пасажирський склад метрополітену</a></td>
+		<td width='200px'>
+            <a href="about_us.html">Про нас</a></td>
+</td>
+   </tr>
+   </table>
+      </div>
+	  <div id='p' style='text-shadow: 1px 1px 2px black;'>
+<p>Київський метрополітен — швидкісна позавулична транспортна система Києва. Діють три лінії, експлуатаційна довжина яких становить 69,648 км. До послуг пасажирів — 52 станції з трьома підземними пересадочними вузлами в центрі міста. Після відкриття 6 листопада 1960 року став третім метрополітеном в СРСР після московського і ленінградського.</p>
+
+<p>Власником метрополітену є багатопрофільне комунальне підприємство «Київський метрополітен», створене у 1990 році. Компанія працевлаштовує майже 8 тисяч робітників (станом на 2011 рік), у його складі діють 17 експлуатаційних служб, в тому числі три електродепо метрополітену (ТЧ-1 «Дарниця», ТЧ-2 «Оболонь» і ТЧ-3 «Харківське»), вагоноремонтний завод (ВРЗ), дирекція будівництва метрополітену. Фінансові надходження поступають від основної діяльності — перевезення пасажирів, а також непрофільних доходів — надання в оренду площ та рекламомісць, реклами (метролайти, монітори на станціях, вагонах, оформлення станцій) та субвенції і компенсації з міського та державного бюджету.</p>
+
+<p id='Arseanlna'>Станція <a style='color:#ffffff'>«Арсенальна»</a> Святошинсько-Броварської лінії є найглибшою станцією метрополітену у світі й розташовується на глибині 105,5 метрів (відстань від поверхні землі до платформи), а наступна станція «Дніпро» є наземною, тому цей перегін є ще й світовим рекордсменом з перепаду глибин.</p>
+
+<p>За радянських часів метрополітен мав присвяту Володимиру Леніну, однак зараз на вивісках при входах на станції це не вказано (слова «імені В. І. Леніна» демонтовані в 1990-х роках). У 1981 році нагороджений орденом Трудового Червоного Прапора.</p>
+
+<p>Чотири станції першої черги будівництва (<a style='color:#ffffff'>«Вокзальна»</a>[п 1], <a style='color:#ffffff'>«Університет»</a>[п 2], <a style='color:#ffffff'>«Хрещатик»</a>[п 3], <a style='color:#ffffff'>«Арсенальна»</a>[п 4]) визнані пам'ятками архітектури місцевого значення, ще три станції (<a style='color:#ffffff'>«Дніпро»</a>[п 5], <a style='color:#ffffff'>«Либідська»</a>[п 6], <a style='color:#ffffff'>«Золоті ворота»</a>[п 7]) мають статус «щойно виявлений об'єкт культурної спадщини».</p>
+
+<p>Автори станції «Золоті ворота» 1991 року були відзначені Державною премією України по архітектурі[п 8].</p>
+
+<p>На всіх станціях Київського метрополітену присутнє 2G покриття операторів мобільного зв'язку Vodafone, Київстар, lifecell.</p>
+
+<p>Метрополітен не працював 18–20 лютого 2014 року, вперше за усі роки роботи, за дорученням голови КМДА Володимира Макеєнка під приводом «загрози терористичних актів у місті» та з 18 березня по 24 травня 2020 року у зв'язку з карантином в Україні через пандемію коронавірусу.</p>
+
+<p>3 5 по 30 квітня 2021 року роботу Київського метрополітену суттєво обмежено впровадженням перепусткового режиму у зв'язку загостренням епідеміологічної ситуації.</p>
+</div>
+<div id="div_for_metro" align='center'>
+<img id='logo_M1' src='kyiv_metro_branch/M1.png' width='200px' height='118px'>
+<img id='logo_M2' src='kyiv_metro_branch/M2.png' width='200px' height='118px'>
+<img id='logo_M3' src='kyiv_metro_branch/M3.png' width='200px' height='118px'>
+<img id='logo_M4' src='kyiv_metro_branch/M4.png' width='200px' height='118px'>
+<img id='logo_M5' src='kyiv_metro_branch/M5.png' width='200px' height='118px'>
+</div>
+				<div id="help_metro"><p>
+
+				</p></div>
+<div id='metro_gif_video' align='center'> 
+<img id='metro_map' src='kyiv_metro_branch/800px-Kiev_metro_map_en_uk.svg.png' style='width:500px; height: 350px;'>
+<img id='metro_history' src='Kyiv_metro_history_-_uk.gif' style='width:500px; height: 350px;'>
+<iframe id='video_history' style='width:500px; height: 350px;' src='https://www.youtube.com/embed/PN88ebMRXxs' allow='autoplay; encrypted-media' allowfullscreen></iframe>
+</div>
+</body>
+</html>

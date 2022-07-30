@@ -1,0 +1,347 @@
+﻿<!DOCTYPE html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1251">
+<title id='title'>Вишгородсько-Дарницька лінія</title>
+<script src="js/jquery-1_11_3_min.js"> </script>
+<link href="css/new.css" rel="stylesheet" type="text/css" />
+<link rel="icon" href="kyiv_metro_branch/1200px-Kyiv_Metro_Line_6.svg.png" type="image/x-icon">
+</head>
+<body bgcolor="#c9af28">
+<script type="text/javascript">
+	function googleTranslateElementInit() {
+	 new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+	}
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+	var $clas_new="font_middle";
+	var $clas_action="font_middle";
+	
+	function GetDateTime(){
+		var DateTime = new Date();
+		var week = new Array('Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П`ятниця', 'Субота');
+		var day  = week[DateTime.getDay()];
+		$('#divDateTime').html("Сьогодні: " + DateTime.getDate() + "." + (DateTime.getMonth()+1) + "." + DateTime.getFullYear() + " - "+day+"<br> Час: " + DateTime.getHours() + ":" + DateTime.getMinutes() + ":" + DateTime.getSeconds());
+	}
+	
+	$('document').ready(function(){
+		setInterval(GetDateTime, 1000);
+	
+		$(function(){
+			$('#logo').slideUp(0);
+			$('#logo').slideDown(3000);
+			$('#menu').slideUp(0);
+			$('#menu').slideDown(2000);
+			$('#map').slideUp(0);
+			$('#map').fadeIn(3000);
+		})
+		;
+		$("#red").click(function(){
+			$("#p, h1, h3, li, legend, td, label, option").attr("style","color:maroon;");
+			$("#divDateTime").attr("style","color:maroon; font-family: Calibri; font-style: Italic; font-size:115%;");
+		})
+		$("#blue").click(function(){
+			$("#p, h1, h3, li, legend, td, label, option").attr("style","color:blue;");
+			$("#divDateTime").attr("style","color:maroon; font-family: Calibri; color: blue; font-style: Italic; font-size:115%;");
+		})
+		$("#green").click(function(){
+			$("#p, h1, h3, li, legend, td, label, option").attr("style","color:green;");
+			$("#divDateTime").attr("style","color:maroon; font-family: Calibri; color: green; font-style: Italic; font-size:115%;");
+		})
+		$("#yellow").click(function(){
+			$("#p, h1, h3, li, legend, td, label, option").attr("style","color:gold;");
+			$("#divDateTime").attr("style","color:maroon; font-family: Calibri; color: gold; font-style: Italic; font-size:115%;");
+		})
+		$("#cyan").click(function(){
+			$("#p, h1, h3, li, legend, td, label, option").attr("style","color:#00ffff;");
+			$("#divDateTime").attr("style","color:maroon; font-family: Calibri; color: #00ffff; font-style: Italic; font-size:115%;");
+		})
+		$("#gold").click(function(){
+			$("#p, h1, h3, li, legend, td, label, option").attr("style","color:yellow;");
+			$("#divDateTime").attr("style","color:maroon; font-family: Calibri; color: yellow; font-style: Italic; font-size:115%;");
+		})
+		$("#purple").click(function(){
+			$("#p, h1, h3, li, legend, td, label, option").attr("style","color:#800080;");
+			$("#divDateTime").attr("style","color:maroon; font-family: Calibri; color: purple; font-style: Italic; font-size:115%;");
+		})
+		$("#white").click(function(){
+			$("#p, h1, h3, li, legend, td, label, option").attr("style","color:#ffffff;");
+			$("#divDateTime").attr("style","color:maroon; font-family: Calibri; color: black; font-style: Italic; font-size:115%;");
+		})
+		$("#rainbow_text").click(function(){
+			$("#p, legend, td, label, option").attr("style","background: linear-gradient(90deg, #fd004c, #fe9000, #fff020, #3edf4b, #3363ff, #0000ff, #000080, #800080, #b102b7, #ff00c4, #fd004c);background-size: 400%;font-family: sans-serif;word-spacing: 5px;-webkit-text-fill-color: transparent;-webkit-text-stroke: 0.01em black;-webkit-background-clip: text;animation: animate 10s linear infinite;");
+			$("#divDateTime").attr("style","background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033ff, #ff00c4, #ff0000);background-size: 400%;font-family: Calibri; font-style: Italic; font-size:115%;word-spacing: 5px;-webkit-text-fill-color: transparent;-webkit-background-clip: text;animation: animate 10s linear infinite;");
+			$("#menu a:hover").attr("style","background:#ffffff;");
+			$("#menu a:action").attr("style","background:#ffffff;");
+		})
+		
+		$("#back_to_main_slide").click(function(){
+			$('#text_station').html('');
+			$('#title').html("Вишгородсько-Дарницька лінія");
+			$('#station_image').html("");
+			$('#station_video').html("");
+			$('#back_to_main_slide').html("");
+			$('#qrcode').html("<p>QR-код лінії:</p><img src='kyiv_metro_qrcodes/qrcode_svyatoshyno_brovarska_.png' align='left' width='300px' height='300px'>");
+		});
+		
+		// Stations
+		$("#station_2, #station_02").click(function(){
+			$('#text_station').html('<p>Ця станція поки що проектується, яка буде з`являтися в цієї лінії майбутньому.</p>');
+			$('#title').html("Вишгородсько-Дарницька лінія");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text()=="English") {
+				$('#text_station').html('<p>Ця станція поки що проектується, яка буде з`являтися в цієї лінії майбутньому.</p>');
+				$('#title').html("Вишгородсько-Дарницька лінія");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text()=="Italiano") {
+				$('#text_station').html('<p>This station is still being designed, which will appear in this line in the future.</p>');
+				$('#title').html("Vyshhorodsko-Darnytska line");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Questa stazione è ancora in fase di progettazione, che apparirà in questa linea in futuro.</p>');
+				$('#title').html("Linea Vyshhorodsko-Darnytska");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_15").click(function(){
+			$('#text_station').html('<p>Дарницька площа - станція Київського метрополітену, що проєктується. Буде збудована на одноіменній площі між проспектом Соборності і Празькою вулицею. Плани з будівництва станції метро на завантаженій Дарницькій площі беруть свій початок у 1974 році, у складі перспективної Лівобережної лінії метро. Враховуючи зміни у трасуванні Лівобережної лінії, а також складну політичну ситуацію у 1990-х роках, станція поступово зникає зі схем. Повторно в планах спорудження станція з`являється у 2005 році, вже у складі Сирецько-Печерської лінії, але у зв`язку зі змінами в містобудівній ситуації, техніко-економічне обґрутування будівництва пускової ділянки від станції метро "Червоний хутір" до станції Лівобережна так і не відбулося. Остаточно на схемах будівництва Київського метро станція з`являється у 2012 році у складі перспективної Вишгородсько-Дарницької лінії. Спорудження станції планується після запланованої реконструкції Дарницької площі.</p>');
+			$('#title').html("Дарницька площа (станція метро Вишгородсько-Дарницької лінії)");
+			$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text()=="English") {
+				$('#text_station').html('<p>Дарницька площа - станція Київського метрополітену, що проєктується. Буде збудована на одноіменній площі між проспектом Соборності і Празькою вулицею. Плани з будівництва станції метро на завантаженій Дарницькій площі беруть свій початок у 1974 році, у складі перспективної Лівобережної лінії метро. Враховуючи зміни у трасуванні Лівобережної лінії, а також складну політичну ситуацію у 1990-х роках, станція поступово зникає зі схем. Повторно в планах спорудження станція з`являється у 2005 році, вже у складі Сирецько-Печерської лінії, але у зв`язку зі змінами в містобудівній ситуації, техніко-економічне обґрутування будівництва пускової ділянки від станції метро "Червоний хутір" до станції Лівобережна так і не відбулося. Остаточно на схемах будівництва Київського метро станція з`являється у 2012 році у складі перспективної Вишгородсько-Дарницької лінії. Спорудження станції планується після запланованої реконструкції Дарницької площі.</p>');
+				$('#title').html("Дарницька площа (станція метро Вишгородсько-Дарницької лінії)");
+				$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+				$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text()=="Italiano") {
+				$('#text_station').html('<p>Darnytska Ploshcha - a planned station of the Kyiv Metro. It will be built on the square of the same name between Sobornosti Avenue and Prague Street. Plans to build a metro station on the busy Darnytsia Square date back to 1974, as part of the promising Livoberezhnaya metro line. Given the changes in the alignment of the Left Bank line, as well as the difficult political situation in the 1990s, the station is gradually disappearing from the circuits. The station appeared again in the construction plans in 2005, already as part of the Syretsko-Pecherska line, but due to changes in the urban planning situation, the technical and economic difficulties of the construction of the starting section from the "Chervonny Khutir" metro station to the Livoberezhna station and did not happen Finally, in 2012, the station appears on the construction plans of the Kyiv metro as part of the promising Vyshgorod-Darnytsia line. The construction of the station is planned after the planned reconstruction of Darnytska Square.</p>');
+				$('#title').html("Darnytska Ploshcha (metro station of the Vyshhorod-Darnytska Line)");
+				$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+				$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Piazza Darnytska - una stazione prevista della metropolitana di Kiev. Sarà costruito sull`omonima piazza tra Sobornosti Avenue e Prague Street. I piani per costruire una stazione della metropolitana nella trafficata piazza Darnytsia risalgono al 1974, come parte della promettente linea della metropolitana Livoberezhnaya. Dati i cambiamenti nell`allineamento della linea della Rive Gauche, nonché la difficile situazione politica degli anni `90, la stazione sta progressivamente scomparendo dai circuiti. La stazione è apparsa nuovamente nei piani di costruzione nel 2005, già nell`ambito della linea Syretsko-Pecherska, ma a causa dei mutamenti della situazione urbanistica, delle difficoltà tecniche ed economiche della realizzazione del tratto di partenza della metropolitana "Chervony Khutir" stazione alla stazione di Livoberezhna e non è successo Infine, nel 2012, la stazione compare nei progetti di costruzione della metropolitana di Kiev come parte della promettente linea Vyshgorod-Darnytsia. La costruzione della stazione è prevista dopo la prevista ricostruzione di piazza Darnytska.</p>');
+				$('#title').html("Piazza Darnytska (stazione della metropolitana della linea Vyshhorod-Darnytska)");
+				$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+				$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+		});
+		$("#station_16").click(function(){
+			$('#text_station').html('<p>Дарницький вокзал - кінцева станція Київського метрополітену Вишгородсько-Дарницької лінії, що проектується. Буде збудована біля будівлі Дарницького вокзалу, буде вважатися колонно двопрогінною станцією мілкого залягання.</p>');
+			$('#title').html("Дарницький вокзал (станція метро Вишгородсько-Дарницької лінії)");
+			$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text()=="English") {
+				$('#text_station').html('<p>Дарницький вокзал - кінцева станція Київського метрополітену Вишгородсько-Дарницької лінії, що проектується. Буде збудована біля будівлі Дарницького вокзалу, буде вважатися колонно двопрогінною станцією мілкого залягання.</p>');
+				$('#title').html("Дарницький вокзал (станція метро Вишгородсько-Дарницької лінії)");
+				$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+				$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text()=="Italiano") {
+				$('#text_station').html('<p>Darnytsk`yy vokzal is the terminus of the planned Kyiv metro station of the Vyshgorod-Darnytskyi line. It will be built near the building of the Darnytsky station, and it will be considered a two-lane, shallow-lying column station.</p>');
+				$('#title').html("Darnyts`kyy vokzal (metro station of the Vyshhorod-Darnytskyi line)");
+				$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+				$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>La stazione di Darnytskyi è il capolinea della prevista stazione della metropolitana di Kiev della linea Vyshgorod-Darnytskyi. Sarà costruita vicino all`edificio della stazione di Darnytsky e sarà considerata una stazione a colonne a due corsie poco profonde.</p>');
+				$('#title').html("Stazione Darnytsky (stazione della metropolitana della linea Vyshhorod-Darnytskyi)");
+				$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+				$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+		});
+		
+		$("#p, h1, h2, h3, h4, li, legend, td, label, option").addClass("font_middle");
+
+		$("#small_text").click(function(){
+			$clas_new="font_small";
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").removeClass($clas_action).addClass($clas_new);
+			$clas_action=$clas_new;
+		})
+		$("#middle_text").click(function(){
+			$clas_new="font_middle";
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").removeClass($clas_action).addClass($clas_new);
+			$clas_action=$clas_new;
+		})
+		$("#big_text").click(function(){
+			$clas_new="font_big";
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").removeClass($clas_action).addClass($clas_new);
+			$clas_action=$clas_new;
+		})
+		$(function(){
+			$('#e').click(function(){
+				if ($('#e').text()=="Почати переклад") {
+					$('#e').text('English');}
+				else if ($('#e').text()=="Українська") {
+					$('#txt_logo').html('<h4>Вишгородсько-Дарницька лінія</h4>');
+					$('#menu_site').html('<table width="100%"><tr><td width="100px"><a href="Kiev_metro.html">Головна</a></td><td width="200px"><a href ="M1.html?m=1" class="light_sb"><div></div><div></div><div></div><div></div>Святошинсько-Броварська лінія</a></td><td width="200px"><a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div>Оболонсько-Теремківська лінія</td><td width="200px"><a href="M3.html?m=1" class="light_sp"><div></div><div></div><div></div><div></div>Сирецько-Печерська лінія</a></td><td width="200px"><a href="M4.html?m=1" class="light_pv"><div></div><div></div><div></div><div></div>Подільсько-Вигурівська лінія</a></td><td width="200px"><a href="M5.html?m=1" class="light_livoberezhna"><div></div><div></div><div></div><div></div>Лівобережна лінія</a></td><td width="200px">Вишгородсько-Дарницька лінія</td><td width="200px"><a href="M7.html" class="light_b"><div></div><div></div><div></div><div></div>Борщагівська лінія</a></td><td width="200px"><a href="Rolling_stock_kyiv_metro.html">Рухомий пасажирський склад метрополітену</a></td><td width="200px"><a href="about_us.html">Про нас</a></td></td></tr></table>');
+					$('#p').html('<p>Вишгородсько-Дарницька лінія — перспективна лінія Київського метрополітену, будівництво якого пропонується почати після 2037 року. Перша черга має з`єднувати Куренівку з Сирцем, потім лінія буде продовжена в бік пр. Лобановского та Деміївки, частково візьме на себе функції кільцевої.</p><p>Нумерація колій: «Площа Тараса Шевченка» — «Дарницький вокзал» — I, «Дарницький вокзал» — «Площа Тараса Шевченка» — II.</p>'); $("#station_15").text("Дарницька площа"); $("#station_16").text("Дарницький вокзал");
+					$("#p, h2, h3, li, legend, td, label, option").attr("style","color:#ffffff;");
+					$("#divDateTime").attr("style","color:maroon; font-family: Calibri; color: black; font-style: Italic; font-size:115%;");
+					$("#station_2").html("<p><a>Площа Тараса Шевченка </a></p><a>Вишгородська<img src='20px-BSicon_LDER.svg.png'></a></p><p><a>Вулиця Олени Теліги</a></p><p><a>Дорогожичі</a></p><p><a>Дегтярівська</a></p><p><a>Шулявська</a></p><p><a>Проспект Космонавта Комарова </a></p><p><a>Караваєві дачі<img src='20px-BSicon_LDER.svg.png'></a></p><p><a>Севастопольська площа</a></p><p><a>Проспект Валерія Лобановського</a></p><p><a>Либідська<img src='20px-BSicon_LDER.svg.png'></a></p><p><a>Ботанічна</a></p><p><a>Міст Патона</a></p><p><a>Русанівська набережна</a></p><p><a>Київська Русанівка<img src='20px-BSicon_LDER.svg.png'></a></p>"); $("#station_02").text("Празька");
+					$('#title').html("Вишгородсько-Дарницька лінія");
+					$('#e').text('English');}
+				else if ($('#e').text() == "English") {
+					$('#txt_logo').html('<h4>Vyshhorodsko-Darnytska line</h4>');
+					$('#menu_site'). html ('<table width = "100%"> <tr> <td width = "100px"> <a href="Kiev_metro.html">Main site</a> </td> <td width = "200px"><a href="M1.html?m=1" class="light_sb"><div></div><div></div><div></div><div></div> Sviatoshynsko-Brovarska line </a></td> <td width = "200px"> <a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div> Obolonsko-Teremkivska line </td> <td width = "200px"> <a href="M3.html?m=1" class="light_sp"><div></div><div></div><div></div><div></div> Syretsko-Pecherska line </a> </td> <td width = "200px"> <a href = "M4.html? M = 1 " class="light_pv"><div></div><div></div><div></div><div></div> Podilsko-Vyhurivska line </a> </td> <td width =" 200px "> <a href="M5.html?m=1" class="light_livoberezhna"><div></div><div></div><div></div><div></div> Livoberezhna line </a> </td> <td width = "200px"> Vyshhorodsko-Darnytska line </td> <td width = "200px"> <a href="M7.html" class="light_b"><div></div><div></div><div></div><div></div> Borshchahivska line </a> </td> <td width = "200px"> <a href="Rolling_stock_kyiv_metro.html"> Subway rolling stock </a> </td> <td width = "200px"> <a href = "about_us.html"> About us </a> </td> </td> </tr> </table> ');
+					$('#p').html('<p> Vyshhorodsko-Darnytska line is a promising line of the Kyiv Metro, the construction of which is proposed to begin after 2037. The first stage is to connect Kurenivka with Syrets, then the line will be extended towards Lobanovsky and Demiivka avenues, and will partially take over the functions of the ring road. </P><p> Numbering of the tracks: "Ploshcha Tarasa Shevchenka" - "Darnyts`kyy vokzal" - I, "Darnyts`kyy vokzal" - "Ploshcha Tarasa Shevchenka" - II. </p>');
+					$("#p, h2, h3, li, legend, td, label, option").attr("style","color:#ffffff;");
+					$("#divDateTime").attr("style","color:maroon; font-family: Calibri; color: black; font-style: Italic; font-size:115%;");
+					$("#station_2").html("<p><a>Ploshcha Tarasa Shevchenka </a></p><a>Vyshorods`ka<img src='20px-BSicon_LDER.svg.png'></a></p><p><a>Vulytsya Olena Telihy</a></p><p><a>Dorohozhychi</a></p><p><a>Dehtyarivs`ka</a></p><p><a>Shulyavska</a></p><p><a>Prospekt Kostonavta Komarova </a></p><p><a>Karavayevi dachi<img src='20px-BSicon_LDER.svg.png'></a></p><p><a>Sevastopol`s`ka ploshcha</a></p><p><a>Prospekt Valeriya Lobanovs`koho</a></p><p><a>Lybidska<img src='20px-BSicon_LDER.svg.png'></a></p><p><a>Botanichna</a></p><p><a>Mist Patona</a></p><p><a>Rusanivs`ka naberezhna</a></p><p><a>Kyyivks`ka Rusanivka<img src='20px-BSicon_LDER.svg.png'></a></p>");$("#station_02").text("Praz`ka"); $("#station_15").text("Darnyts`ka ploshcha"); $("#station_16").text("Darnyts`kyy vokzal");
+					$('#title').html("Vyshhorodsko-Darnytska line");
+					$('#e').text('Italiano');}
+				else if ($('#e').text() == "Italiano") {
+					$('#txt_logo').html('<h4>Linea Vyshhorodsko-Darnytska</h4>');
+					$('#menu_site').html('<table width="100%"><tr><td width="100px"><a href="Kiev_metro.html">Sito principale</a></td><td width="200px"><a href ="M1.html?m=1" class="light_sb"><div></div><div></div><div></div><div></div>Linea Svyatoshinsko-Brovarska</a></td><td width="200px"><a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div>Linea Obolonsko-Teremkivska</a></td><td width="200px"><a href="M3.html?m=1" class="light_sp"><div></div><div></div><div></div><div></div>Linea Syretsko-Pecherska</a></td><td width="200px"><a href="M4.html?m=1" class="light_pv"><div></div><div></div><div></div><div></div>Linea Podilsko-Vygurivska</a></td><td width="200px"><a href="M5.html?m=1" class="light_livoberezhna"><div></div><div></div><div></div><div></div>Linea Livoberezhna</a></td><td width="200px">Linea Vyshgorodsko-Darnytska</td><td width="200px"><a href="M7.html?m=1" class="light_b"><div></div><div></div><div></div><div></div>Linea Borshchahivska</a></td><td width="200px"><a href="Rolling_stock_kyiv_metro.html">Materiale rotabile della metropolitana</a></td><td width="200px"><a href="about_us.html">Chi siamo</a></td></td></tr></table>');
+					$('#p').html('<P>La linea Vyshhorodsko-Darnytska è una linea promettente della metropolitana di Kiev, la cui costruzione dovrebbe iniziare dopo il 2037. La prima tappa consiste nel collegare Kurenivka con Syrets, quindi la linea sarà estesa verso i viali Lobanovsky e Demiivka e assumerà parzialmente le funzioni della tangenziale.</p> <p>"Piazza Tarasa Shevchenka" - "Stazione Darnytskyi" - I, "Stazione Darnytskyi" - "Piazza Tarasa Shevchenka" - II.</ P>');
+					$("#p, h2, h3, li, legend, td, label, option").attr("style","color:#ffffff;");
+					$("#divDateTime").attr("style","color:maroon; font-family: Calibri; color: black; font-style: Italic; font-size:115%;");
+					$("#station_2").html("<p><a>Piazza Taras Shevchenko </a></p><a>Vyshorods`ka<img src='20px-BSicon_LDER.svg.png'></a></p><p><a>Vulytsya Olena Telihy</a></p><p><a>Dorohozhychi</a></p><p><a>Dehtyarivs`ka</a></p><p><a>Shulyavska</a></p><p><a>Prospekt Kostonavta Komarova </a></p><p><a>Karavayevi dachi<img src='20px-BSicon_LDER.svg.png'></a></p><p><a>Sevastopol`s`ka ploshcha</a></p><p><a>Prospekt Valeriya Lobanovs`koho</a></p><p><a>Lybidska<img src='20px-BSicon_LDER.svg.png'></a></p><p><a>Botanichna</a></p><p><a>Mist Patona</a></p><p><a>Rusanivs`ka naberezhna</a></p><p><a>Kyyivks`ka Rusanivka<img src='20px-BSicon_LDER.svg.png'></a></p>");$("#station_02").text("Praz`ka"); $("#station_15").text("Piazza Darnytska"); $("#station_16").text("Stazione Darnytskyi");
+					$('#title').html("Linea Vyshhorodsko-Darnytska");
+					$('#e').text('Українська');}
+			});
+		})
+		;
+		$(function(){
+			function change_width(id_obj,x){
+				var a=$(id_obj).attr('title');
+				var w=$(id_obj).width();
+				var h=$(id_obj).height();
+				if(a==''){
+					w=w*x;
+					h=h*x;
+					$(id_obj).width(w).height(h);
+					$(id_obj).attr('title','фото зменшене в 1.5 раз');
+					a=$(id_obj).attr('title');
+				}
+				else if(a=='фото зменшене в 1.5 раз'){
+					w=w/1.5;
+					h=h/1.5;
+					$(id_obj).width(w).height(h);
+					$(id_obj).attr('title','');
+					a=$(id_obj).attr('title');
+				}
+			}
+			$('#station img').each(function(){
+				$(this).attr('title','');
+				$(this).click(function(){
+					change_width(this,1.5);
+				});
+			});
+		})
+		;
+	});
+</script>
+<table width='100%'>
+<tr width='20%'><td width='20%' valign='top'><h1 id='txt_logo' class='logo_text'>Вишгородсько-Дарницька лінія</h1></td>
+<td>
+<div id="navigation">
+<ul valign="top">
+<li><div id="divDateTime" style='font-family: Calibri; color: black; font-style: Italic; font-size:115%;'></div></li>
+<li><div id="p_color_knop">
+					<div id="red"></div>
+					<div id="blue"></div>
+					<div id="green"></div>
+					<div id="yellow"></div>
+					<div id="cyan"></div>
+					<div id="purple"></div>
+					<div id="white"></div>
+					<div id="rainbow_text"></div>
+				</div></li>
+<li><div id="size_text">
+<div id="e" width="100px" style=" border:1px solid red; background:#3582c4; padding:5px ">Почати переклад</div></div></li>
+<li><div id="size_text">
+				<div id="small_text">A</div>
+				<div id="middle_text">A</div>
+				<div id="big_text">A</div>
+			</div></li>
+</ul>
+</div></td></tr>
+<tr valign='top'><td valign='top'><img id='logo' src='images_kyiv_metro_M4/Photo_coming_soon.jpg' align='left'width='300px' height='218px'></td>
+<td><img id='metro' src='kyiv_metro_branch/metro_animation_6_wagons.gif' width='100%'></td></tr>
+</table>
+<div id='menu_site' >
+<table width='100%'>
+<tr>
+<td width='100px'>
+         <a href="Kiev_metro.html">Головна</a></td>
+		 <td width='200px'>
+         <a href="M1.html?m=1" class="light_sb"><div></div><div></div><div></div><div></div>Святошинсько-Броварська лінія</a></td>
+		 <td width='200px'>
+		 <a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div>Оболонсько-Теремківська лінія</a></td>
+		 <td width='200px'>
+         <a href="M3.html?m=1" class="light_sp"><div></div><div></div><div></div><div></div>Сирецько-Печерська лінія</a></td>
+		 <td width='200px'>
+         <a href="M4.html?m=1" class="light_pv"><div></div><div></div><div></div><div></div>Подільсько-Вигурівська лінія</a></td>
+		 <td width='200px'>
+		 <a href="M5.html?m=1" class="light_livoberezhna"><div></div><div></div><div></div><div></div>Лівобережна лінія</a></td>
+		 <td width='200px'>
+			Вишгородсько-Дарницька лінія</td>
+		<td width='200px'>
+		 <a href="M7.html" class="light_b"><div></div><div></div><div></div><div></div>Борщагівська лінія</a></td>
+		<td width='200px'>
+            <a href="Rolling_stock_kyiv_metro.html">Рухомий пасажирський склад метрополітену</a></td>
+		<td width='200px'>
+            <a href="about_us.html">Про нас</a></td>
+</td>
+   </tr>
+   </table>
+      </div>
+				<div id='p'>
+<p>Вишгородсько-Дарницька лінія — перспективна лінія Київського метрополітену, будівництво якого пропонується почати після 2037 року. Перша черга має з'єднувати Куренівку з Сирцем, потім лінія буде продовжена в бік пр. Лобановского та Деміївки, частково візьме на себе функції кільцевої.</p>
+<p>Нумерація колій: «Площа Тараса Шевченка» — «Дарницький вокзал» — I, «Дарницький вокзал» — «Площа Тараса Шевченка» — II.</p>
+</div>
+<img id='map' src='kyiv_metro_branch/kiev_metro_line_M6.jpg'>
+<table id='center' cellspacing="0" border="0" width="100%" bordercolor="fff">
+<tr id='top'>
+<td id='menu_station' width='275px' valign="top">
+<div class='menu' >
+<div id='station_2'>
+<p><a>Площа Тараса Шевченка </a></p>
+<a>Вишгородська<img src='20px-BSicon_LDER.svg.png'></a></p>
+<p><a>Вулиця Олени Теліги</a></p>
+<p><a>Дорогожичі</a></p>
+<p><a>Дегтярівська</a></p>
+<p><a>Шулявська</a></p>
+<p><a>Проспект Космонавта Комарова </a></p>
+<p><a>Караваєві дачі<img src='20px-BSicon_LDER.svg.png'></a></p>
+<p><a>Севастопольська площа</a></p>
+<p><a>Проспект Валерія Лобановського</a></p>
+<p><a>Либідська<img src='20px-BSicon_LDER.svg.png'></a></p>
+<p><a>Ботанічна</a></p>
+<p><a>Міст Патона</a></p>
+<p><a>Русанівська набережна</a></p>
+<p><a>Київська Русанівка<img src='20px-BSicon_LDER.svg.png'></a></p>
+</div>
+<p><a id='station_15'>Дарницька площа</a></p>
+<p><a id='station_02'>Празька</a></p>
+<p><a id='station_16'>Дарницький вокзал<img src='20px-BSicon_LDER.svg.png'></a></p>
+</div>
+</td>
+<td id='station' valign="top" rowspan='2'>
+<p>
+<div id='text_station'></div>
+</p>
+<p>
+<div id='station_image' width='1050px' height='750px'></div>
+<div id='station_video' width='1050px' height='750px'></div>
+<div id='back_to_main_slide' class='menu'></div>
+</p>
+</td>
+</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1251">
+<title id='title'>Сирецько-Печерська лінія</title>
+<script src="js/jquery-1_11_3_min.js"> </script>
+<link href="css/new.css" rel="stylesheet" type="text/css" />
+<link rel="icon" href="kyiv_metro_branch/1200px-Kyiv_Metro_Line_3.svg.png" type="image/x-icon">
+</head>
+<body bgcolor="green">
+<script type="text/javascript">
+	function googleTranslateElementInit() {
+	 new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+	}
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+	var $clas_new="font_middle";
+	var $clas_action="font_middle";
+	
+	function GetDateTime(){
+		var DateTime = new Date();
+		var week = new Array('Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П`ятниця', 'Субота');
+		var day  = week[DateTime.getDay()];
+		$('#divDateTime').html("Сьогодні: " + DateTime.getDate() + "." + (DateTime.getMonth()+1) + "." + DateTime.getFullYear() + " - "+day+"<br> Час: " + DateTime.getHours() + ":" + DateTime.getMinutes() + ":" + DateTime.getSeconds());
+	}
+	
+	$('document').ready(function(){
+		setInterval(GetDateTime, 1000);
+
+		$(function(){
+			$('#logo').slideUp(0);
+			$('#logo').slideDown(3000);
+			$('#menu').slideUp(0);
+			$('#menu').slideDown(2000);
+			$('#map').slideUp(0);
+			$('#map').fadeIn(3000);
+		})
+		;
+		$("#red").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:maroon;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+		})
+		$("#blue").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:lightblue;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+		})
+		$("#green").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:lime;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+		})
+		$("#yellow").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:gold;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+		})
+		$("#cyan").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#00ffff;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+		})
+		$("#gold").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:yellow;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+		})
+		$("#purple").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#800080;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+		})
+		$("#white").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#ffffff;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+		})
+		$("#rainbow_text").click(function(){
+			$("#p, legend, td, label, option").attr("style","background: linear-gradient(90deg, #fd004c, #fe9000, #fff020, #3edf4b, #3363ff, #0000ff, #000080, #800080, #b102b7, #ff00c4, #fd004c);background-size: 400%;font-family: sans-serif;word-spacing: 5px;-webkit-text-fill-color: transparent;-webkit-text-stroke: 0.01em white;-webkit-background-clip: text;animation: animate 10s linear infinite;");
+			$("#divDateTime").attr("style","background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033ff, #ff00c4, #ff0000);background-size: 400%;font-family: Calibri; font-style: Italic; font-size:115%;word-spacing: 5px;-webkit-text-fill-color: transparent;-webkit-background-clip: text;animation: animate 10s linear infinite;");
+			$("h1, h2, h3, h4").attr("style","background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033ff, #ff00c4, #ff0000);background-size: 400%; width:100%; font:24px impact; height:10px; font-style: Italic; font-size:115%;letter-spacing: 3px;-webkit-text-fill-color: transparent;-webkit-background-clip: text;animation: animate 10s linear infinite;");
+			$("#menu a:hover").attr("style","background:#ffffff;");
+			$("#menu a:action").attr("style","background:#ffffff;");
+		})
+		
+		$("#back_to_main_slide").click(function(){
+			$('#text_station').html('');
+			$('#title').html("Сирецько-Печерська лінія");
+			$('#station_image').html("");
+			$('#station_video').html("");
+			$('#back_to_main_slide').html("");
+			$('#qrcode').html("<p>QR-код лінії:</p><img src='kyiv_metro_qrcodes/qrcode_syrets_pecherska_.png' align='left' width='300px' height='300px'>");
+			if ($('#e').text() == "English"){
+				$('#title').html("Сирецько-Печерська лінія");
+				$('#qrcode').html("<p>QR code of the line:</p><img src='kyiv_metro_qrcodes/qrcode_syrets_pecherska_.png' align='left' width='300px' height='300px'>");
+			}
+			else if ($('#e').text() == "Italiano"){
+				$('#title').html("Syretsko-Pecherskaya line");
+				$('#qrcode').html("<p>QR code of the line:</p><img src='kyiv_metro_qrcodes/qrcode_syrets_pecherska_.png' align='left' width='300px' height='300px'>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#title').html("Linea Syretsko-Pecherska");
+				$('#qrcode').html("<p>QR code della linea:</p><img src='kyiv_metro_qrcodes/qrcode_syrets_pecherska_.png' align='left' width='300px' height='300px'>");
+			}
+		});
+		
+		// Stations
+		$("#station_0").click(function(){
+			$('#text_station').html('<p>Ця станція поки що проектується, яка буде з`являтися в цієї лінії майбутньому.</p>');
+			$('#title').html("Сирецько-Печерська лінія");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text()=="English") {
+				$('#text_station').html('<p>Ця станція поки що проектується, яка буде з`являтися в цієї лінії майбутньому.</p>');
+				$('#title').html("Сирецько-Печерська лінія");
+				$('#qrcode').html("<p>QR-код станції немає!</p>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text()=="Italiano") {
+				$('#text_station').html('<p>This station is still being designed, which will appear in this line in the future.</p>');
+				$('#title').html("Syretsko-Pecherskaya line");
+				$('#qrcode').html("<p>There is no station QR code!</p>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Questa stazione e ancora in fase di progettazione, che apparira in questa linea in futuro.</p>');
+				$('#title').html("Linea Syretsko-Pecherska");
+				$('#qrcode').html("<p>Non c'e il codice QR della stazione!</p>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_01").click(function(){
+			$('#text_station').html('<p>Маршала Гречка - проєктована станція Сирецько-Печерської лінії Київського метрополітену, буде вважатися односклепінною станцією мілкого залягання. Згідно з планами має бути розташована за станцією «Виноградар» та буде кінцевою. Назва станції походить від колишньої назви вулиці Івана Виговського, яка була названа на честь радянського маршала Андрія Гречка. Унаслідок дії закону про декомунізацію станція матиме іншу назву.</p>');
+			$('#title').html("Маршала Гречка (станція метро Сирецько-Печерської лінії)");
+			$('#qrcode').html("<p>QR-код цієї станції немає!</p>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text()=="English") {
+				$('#text_station').html('<p>Маршала Гречка - проєктована станція Сирецько-Печерської лінії Київського метрополітену, буде вважатися односклепінною станцією мілкого залягання. Згідно з планами має бути розташована за станцією «Виноградар» та буде кінцевою. Назва станції походить від колишньої назви вулиці Івана Виговського, яка була названа на честь радянського маршала Андрія Гречка. Унаслідок дії закону про декомунізацію станція матиме іншу назву.</p>');
+				$('#title').html("Маршала Гречка (станція метро Сирецько-Печерської лінії)");
+				$('#qrcode').html("<p>QR-код цієї станції немає!</p>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text()=="Italiano") {
+				$('#text_station').html('<p>Marshala Hrechka - the designed station of the Syretsko-Pecherska line of the Kyiv metro, will be considered a single-vaulted shallow-lying station. According to the plans, it should be located behind the Vynogradar station and will be the terminus. The name of the station comes from the former name of Ivan Vyhovsky Street, which was named after Soviet Marshal Andrii Grechko. As a result of the decommunization law, the station will have a different name.</p>');
+				$('#title').html("Marshala Hrechka (metro station of Syretsko-Pecherska line)");
+				$('#qrcode').html("<p>There is no QR code for this station!</p>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Marshala Hrechka - la stazione progettata della linea Syretsko-Pecherska della metropolitana di Kiev, sara considerata una stazione poco profonda a volta singola. Secondo i piani, dovrebbe trovarsi dietro la stazione di Vynogradar e sara il capolinea. Il nome della stazione deriva dall`antico nome di via Ivan Vyhovsky, che prende il nome dal maresciallo sovietico Andrii Grechko. A causa della legge sulla decomunizzazione, la stazione avra un nome diverso.</p>');
+				$('#title').html("Marshala Hrechka (stazione della metropolitana della linea Syretsko-Pecherska)");
+				$('#qrcode').html("<p>Non esiste un codice QR per questa stazione!</p>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Marshala_Hrechka.jpeg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_02").click(function(){
+			$('#text_station').html('<p>Виноградар - проєктована станція Сирецько-Печерської лінії Київського метрополітену, буде вважатися односклепінною станцією мілкого залягання. Згідно з планами, має бути розташована на території так званого Нового Виноградаря між станціями «Мостицька» та «Маршала Гречка», поблизу перехрестя вулиць Олександра Олеся та Родини Крістерів. Назва станції — від житлового масиву Виноградар.</p>');
+			$('#title').html("Виноградар (станція метро Сирецько-Печерської лінії)");
+			$('#qrcode').html("<p>QR-код станції немає!</p>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text()=="English") {
+				$('#text_station').html('<p>Виноградар - проєктована станція Сирецько-Печерської лінії Київського метрополітену, буде вважатися односклепінною станцією мілкого залягання. Згідно з планами, має бути розташована на території так званого Нового Виноградаря між станціями «Мостицька» та «Маршала Гречка», поблизу перехрестя вулиць Олександра Олеся та Родини Крістерів. Назва станції — від житлового масиву Виноградар.</p>');
+				$('#title').html("Виноградар (станція метро Сирецько-Печерської лінії)");
+				$('#qrcode').html("<p>QR-код станції немає!</p>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text()=="Italiano") {
+				$('#text_station').html('<p>Vynohradar - the designed station of the Syretsko-Pecherska line of the Kyiv metro, will be considered a single-vaulted shallow-lying station. According to the plans, it should be located on the territory of the so-called New Vynohradar between the "Mostytska" and "Marshala Grechka" stations, near the intersection of Oleksandr Olesya and Rodina Kristeriv streets. The name of the station comes from the Vynogradar housing estate.</p>');
+				$('#title').html("Vynohradar (metro station of Syretsko-Pecherska line)");
+				$('#qrcode').html("<p>There is no QR code for this station!</p>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Vynogradar - la stazione progettata della linea Syretsko-Pecherska della metropolitana di Kiev, sara considerata una stazione poco profonda a volta singola. Secondo i piani, dovrebbe trovarsi nel territorio del cosiddetto New Vynohradar tra le stazioni "Mostytska" e "Marshala Grechka", vicino all`incrocio tra le strade Oleksandr Olesya e Rodina Kristeriv. Il nome della stazione deriva dal complesso residenziale di Vynogradar.</p>');
+				$('#title').html("Vynogradar (stazione della metropolitana della linea Syretsko-Pecherska)");
+				$('#qrcode').html("<p>Non esiste un codice QR per questa stazione!</p>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Vinohrador.jpeg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_03").click(function(){
+			$('#text_station').html('<p>Проспект Правди - станція Сирецько-Печерської лінії Київського метрополітену, будівництво якої розпочнеться в 2022 році, буде вважатися колонно двопрогінною станцією мілкого залягання. Станція стане однією з небагатьох в Київському метро не острівного типу. Згідно з планами має бути розташована за станцією «Мостицька» та буде кінцевою, до відкриття станцій Маршала Гречка та «Виноградар». Назва станції — від проспекту Правди. Вихід зі станції буде здійснюватись лише через південний вестибюль та пішохідний перехід під проспектом Правди (між житловими будинками 64 та 35). Станом на 22.01.2022 р. будівництво станції не розпочалось. Відкриття станції планується після 19 травня 2023 року. Але дата сумнівна. Ділянка в 1,5 км від Північно-Сирецької вулиці до проспекта Правди, яка має споруджуватись відкритим способом (котловани), не будується ще з середини грудня 2020 року.</p>');
+			$('#title').html("Проспект Правди (станція метро Сирецько-Печерської лінії)");
+			$('#qrcode').html("<p>QR-код станції немає!</p>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text()=="English") {
+				$('#text_station').html('<p>Проспект Правди - станція Сирецько-Печерської лінії Київського метрополітену, будівництво якої розпочнеться в 2022 році, буде вважатися колонно двопрогінною станцією мілкого залягання. Станція стане однією з небагатьох в Київському метро не острівного типу. Згідно з планами має бути розташована за станцією «Мостицька» та буде кінцевою, до відкриття станцій Маршала Гречка та «Виноградар». Назва станції — від проспекту Правди. Вихід зі станції буде здійснюватись лише через південний вестибюль та пішохідний перехід під проспектом Правди (між житловими будинками 64 та 35). Станом на 22.01.2022 р. будівництво станції не розпочалось. Відкриття станції планується після 19 травня 2023 року. Але дата сумнівна. Ділянка в 1,5 км від Північно-Сирецької вулиці до проспекта Правди, яка має споруджуватись відкритим способом (котловани), не будується ще з середини грудня 2020 року.</p>');
+				$('#title').html("Проспект Правди (станція метро Сирецько-Печерської лінії)");
+				$('#qrcode').html("<p>QR-код станції немає!</p>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text()=="Italiano") {
+				$('#text_station').html('<p>Prospekt Pravdy - a station on the Syretsko-Pecherska line of the Kyiv metro, the construction of which will begin in 2022, will be considered a two-lane, column-mounted, shallow-lying station. The station will be one of the few in the Kyiv metro that is not of the island type. According to the plans, it should be located behind the "Mostytska" station and will be the terminal until the opening of the Marshala Grechka and "Vynogradar" stations. The name of the station comes from Pravda Avenue. The exit from the station will be made only through the southern vestibule and the pedestrian crossing under Pravda Avenue (between residential buildings 64 and 35). As of January 22, 2022, construction of the station has not started. The opening of the station is planned after May 19, 2023. But the date is doubtful. The section 1.5 km from Severno-Syretska Street to Pravda Avenue, which is to be built in an open way (pits), has not been under construction since mid-December 2020.</p>');
+				$('#title').html("Prospekt Pravdy (metro station of Syretsko-Pecherska line)");
+				$('#qrcode').html("<p>There is no QR code for this station!</p>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Prospekt Pravdy - una stazione sulla linea Syretsko-Pecherska della metropolitana di Kiev, la cui costruzione iniziera nel 2022, sara considerata una stazione a due corsie, su colonne, poco profonda. La stazione sara una delle poche della metropolitana di Kiev a non essere del tipo insulare. Secondo i piani, dovrebbe trovarsi dietro la stazione "Mostytska" e sara il terminal fino all`apertura delle stazioni Marshala Grechka e "Vynogradar". Il nome della stazione deriva da Pravda Avenue. L`uscita dalla stazione avverra solo attraverso il vestibolo sud e il passaggio pedonale sotto Pravda Avenue (tra gli edifici residenziali 64 e 35). Dal 22 gennaio 2022 la costruzione della stazione non e iniziata. L`apertura della stazione e prevista dopo il 19 maggio 2023. Ma la data e dubbia. La sezione di 1,5 km da Severno-Syretska Street a Pravda Avenue, che deve essere costruita in modo aperto (box), non e in costruzione da meta dicembre 2020.</p>');
+				$('#title').html("Prospekt Pravdy (stazione della metropolitana della linea Syretsko-Pecherska)");
+				$('#qrcode').html("<p>Non esiste un codice QR per questa stazione!</p>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Prospekt_Pravdi.jpeg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_04").click(function(){
+			$('#text_station').html('<p>Мостицька - станція Сирецько-Печерської лінії Київського метрополітену, будівництво якої повинно розпочатись у 2022 році, буде вважатися односклепінною станцією мілкого залягання. Згідно з планами має бути розташована між станціями «Сирець» та «Проспект Правди», під перехрестям вулиць Білицької, Північно-Сирецької та Межової. Назва станції — від розташованого у 2-х (!) км Мостицького житлового масиву. Станом на 22.01.2022 р. будівництво безпосередньо самої станції ще не розпочалося. Поряд побудовано монтажно-щитову камеру. У жовтні 2017 року опубліковано проєктні рендери станції. 19 січня 2018 року оголошено тендер на будівництво станції. Переможцем торгів стало ПАТ «Київметробуд». За планом станція має бути мілкого закладення з острівною платформою. За останньою інформацією вона має бути відкрита в травні 2023 році, що малоймовірно. У лютому 2019 року почались облаштування будівельних майданчиків поряд з майбутньою станцією. Станом на 16 вересня 2021 року правий перегінний тунель до станції «Сирець» пройдено повністю. Деталі тунелепрохідницького щита повернені на монтажно-щитову камеру поблизу майбутньої станції "Мостицька". Втім наразі будівництво практично стоїть на місці.</p>');
+			$('#title').html("Мостицька (станція метро Сирецько-Печерської лінії)");
+			$('#qrcode').html("<p>QR-код станції немає!</p>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text()=="English") {
+				$('#text_station').html('<p>Мостицька - станція Сирецько-Печерської лінії Київського метрополітену, будівництво якої повинно розпочатись у 2022 році, буде вважатися односклепінною станцією мілкого залягання. Згідно з планами має бути розташована між станціями «Сирець» та «Проспект Правди», під перехрестям вулиць Білицької, Північно-Сирецької та Межової. Назва станції — від розташованого у 2-х (!) км Мостицького житлового масиву. Станом на 22.01.2022 р. будівництво безпосередньо самої станції ще не розпочалося. Поряд побудовано монтажно-щитову камеру. У жовтні 2017 року опубліковано проєктні рендери станції. 19 січня 2018 року оголошено тендер на будівництво станції. Переможцем торгів стало ПАТ «Київметробуд». За планом станція має бути мілкого закладення з острівною платформою. За останньою інформацією вона має бути відкрита в травні 2023 році, що малоймовірно. У лютому 2019 року почались облаштування будівельних майданчиків поряд з майбутньою станцією. Станом на 16 вересня 2021 року правий перегінний тунель до станції «Сирець» пройдено повністю. Деталі тунелепрохідницького щита повернені на монтажно-щитову камеру поблизу майбутньої станції "Мостицька". Втім наразі будівництво практично стоїть на місці.</p>');
+				$('#title').html("Мостицька (станція метро Сирецько-Печерської лінії)");
+				$('#qrcode').html("<p>QR-код станції немає!</p>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text()=="Italiano") {
+				$('#text_station').html('<p>Mostytska - the station of the Syretsko-Pecherska line of the Kyiv metro, the construction of which should begin in 2022, will be considered a shallow single-vaulted station. According to the plans, it should be located between the stations "Syrets" and "Prospekt Pravda", under the intersection of Bilytska, Severno-Syretska and Mezhova streets. The name of the station comes from the Mostytskyi housing estate located 2 (!) km away. As of January 22, 2022, construction of the station itself has not yet begun. An assembly and shield camera was built nearby. Project renderings of the station were published in October 2017. On January 19, 2018, a tender for the construction of the station was announced. PJSC "Kyivmetrobud" became the winner of the bidding. According to the plan, the station should be shallow with an island platform. According to the latest information, it should be opened in May 2023, which is unlikely. In February 2019, the arrangement of construction sites near the future station began. As of September 16, 2021, the right transfer tunnel to the Syrets station has been completely completed. The details of the tunneling shield are returned to the assembly-shield chamber near the future "Mostytska" station. However, construction is currently almost at a standstill.</p>');
+				$('#title').html("Mostytska (metro station of Syretsko-Pecherska line)");
+				$('#qrcode').html("<p>There is no QR code for this station!</p>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Mostytska - la stazione della linea Syretsko-Pecherska della metropolitana di Kiev, la cui costruzione dovrebbe iniziare nel 2022, sara considerata una stazione poco profonda a volta singola. Secondo i piani, dovrebbe trovarsi tra le stazioni "Syrets" e "Prospekt Pravdy", all`incrocio delle strade Bilytska, Severno-Syretska e Mezhova. Il nome della stazione deriva dal complesso residenziale Mostytskyi situato a 2 (!) km di distanza. Al 22 gennaio 2022 la costruzione della stazione stessa non e ancora iniziata. Nelle vicinanze e stata costruita una telecamera di montaggio e scudo. I rendering del progetto della stazione sono stati pubblicati nell`ottobre 2017. Il 19 gennaio 2018 e stato bandito il bando per la costruzione della stazione. PJSC "Kyivmetrobud" e diventato il vincitore della gara. Secondo il piano, la stazione dovrebbe essere poco profonda con una piattaforma dell`isola. Secondo le ultime informazioni, dovrebbe essere aperto a maggio 2023, il che e improbabile. A febbraio 2019 sono iniziati i cantieri vicino alla futura stazione. Dal 16 settembre 2021 e stato completato il tunnel di trasferimento destro alla stazione di Syrets. I dettagli dello scudo di tunneling vengono restituiti alla camera dello scudo di assemblaggio vicino alla futura stazione "Mostytska". Tuttavia, la costruzione e attualmente quasi ferma.</p>');
+				$('#title').html("Mostytska (stazione della metropolitana della linea Syretsko-Pecherska)");
+				$('#qrcode').html("<p>Non esiste un codice QR per questa stazione!</p>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Mostitska.jpeg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_1").click(function(){
+			$('#text_station').html('<p>Сирець - на даний момент перед відкриття нових станцій кінцева станція Сирецько-Печерської лінії, знаходиться на глибині 60 метрів, вважається пілонно трисклепінною станцією глибокого залягання, була відкрита 14 жовтня 2004 року. Свою назву получила за місцевістю Сирець, де розташована станція. Має наземний двоповерховий вестибюль (вул. Щусєва, 55), другий поверх якого відведено службам метрополітену. Світло із зенітних ліхтарів у вестибюлі можна побачити з рівня платформи.</p>');
+			$('#title').html("Сирець (станція метро Сирецько-Печерської лінії)");
+			$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_syrets.png' align='left' width='300px' height='300px'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text()=="English") {
+				$('#text_station').html('<p>Сирець - на даний момент перед відкриття нових станцій кінцева станція Сирецько-Печерської лінії, знаходиться на глибині 60 метрів, вважається пілонно трисклепінною станцією глибокого залягання, була відкрита 14 жовтня 2004 року. Свою назву получила за місцевістю Сирець, де розташована станція. Має наземний двоповерховий вестибюль (вул. Щусєва, 55), другий поверх якого відведено службам метрополітену. Світло із зенітних ліхтарів у вестибюлі можна побачити з рівня платформи.</p>');
+				$('#title').html("Сирець (станція метро Сирецько-Печерської лінії)");
+				$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_syrets.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text()=="Italiano") {
+				$('#text_station').html('<p>Syrets - at the moment, before the opening of new stations, the final station of the Syretsko-Pecherska line, located at a depth of 60 meters, is considered a deep-lying, three-vaulted pylon station, and was opened on October 14, 2004. It got its name from the area of Syrets, where the station is located. It has a ground two-story lobby (55 Shchuseva St.), the second floor of which is dedicated to subway services. The light from the skylights in the lobby can be seen from the platform level.</p>');
+				$('#title').html("Syrets (metro station of the Syretsko-Pecherska line)");
+				$('#qrcode').html("<p>QR code of the station:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_syrets.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Syrets - al momento, prima dell`apertura di nuove stazioni, la stazione finale della linea Syretsko-Pecherska, situata a una profondita di 60 metri, e considerata una stazione profonda a tre volte, e stata aperta il 14 ottobre 2004 . Ha preso il nome dalla zona di Syrets, dove si trova la stazione. Ha un atrio al piano terra a due piani (55 Shchuseva St.), il cui secondo piano e dedicato ai servizi della metropolitana. La luce dei lucernari nella lobby puo essere vista dal livello della piattaforma.</p>');
+				$('#title').html("Syrets (stazione della metropolitana della linea Syretsko-Pecherska)");
+				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_syrets.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Syrets_metro_station_Kiev_2010_02.jpg' style='width:1560px; height: 1050px;'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_2").click(function(){
+			$('#text_station').html('<p>Дорогожичі - 40-ва станція Київського метрополітену, розташована на Сирецько-Печерській лінії між станціями «Сирець» і «Лук`янівська» (на даний момент, а в майбутньому буде розташована між станціями «Сирець» і «Герцена»)., знаходиться на глибині 76 метрів вважається пілонно трисклепінною станцією глибокого залягання, була відкрита 30 березня 2000 року. Свою назву получила від місцевості, де розташована станція. В майбутньому буде мати перехід на станцію <a href="M6.html">з тієї самої назви, як і тут</a> Вишгородсько-Дарницької лінії.</p></p>');
+			$('#title').html("Дорогожичі (станція метро Сирецько-Печерської лінії)");
+			$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_dorohozhychi.png' align='left' width='300px' height='300px'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text()=="English") {
+				$('#text_station').html('<p>Дорогожичі - 40-ва станція Київського метрополітену, розташована на Сирецько-Печерській лінії між станціями «Сирець» і «Лук`янівська» (на даний момент, а в майбутньому буде розташована між станціями «Сирець» і «Герцена»)., знаходиться на глибині 76 метрів вважається пілонно трисклепінною станцією глибокого залягання, була відкрита 30 березня 2000 року. Свою назву получила від місцевості, де розташована станція. В майбутньому буде мати перехід на станцію <a href="M6.html">з тієї самої назви, як і тут</a> Вишгородсько-Дарницької лінії.</p></p>');
+				$('#title').html("Дорогожичі (станція метро Сирецько-Печерської лінії)");
+				$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_dorohozhychi.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text()=="Italiano") {
+				$('#text_station').html('<p>Dorohozhichi is the 40th station of the Kyiv metro, located on the Syretsko-Pecherska line between the stations "Syrets" and "Luk`yanivska" (at the moment, and in the future it will be located between the stations "Syrets" and "Hertsena"), located on at a depth of 76 meters, it is considered a deep-lying, three-vault station, and was opened on March 30, 2000. It got its name from the area where the station is located. In the future, there will be a transfer to the station <a href="M6.html">with the same name as here</a> of the Vyshgorod-Darnytska line.</p></p>');
+				$('#title').html("Dorohozhichi (metro station of Syretsko-Pecherska line)");
+				$('#qrcode').html("<p>QR code of the station:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_dorohozhychi.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Dorohozhichi e la 40a stazione della metropolitana di Kiev, situata sulla linea Syretsko-Pecherska tra le stazioni "Syrets" e "Luk`yanivska" (al momento, e in futuro sara situata tra le stazioni "Syrets" e " Hertsena"), situata a una profondita di 76 metri, e considerata una stazione profonda a tre volte ed e stata inaugurata il 30 marzo 2000. Prende il nome dalla zona in cui si trova la stazione. In futuro, ci sara un trasferimento alla stazione <a href="M6.html">con lo stesso nome qui</a> della linea Vyshgorod-Darnytska.</p></p>');
+				$('#title').html("Dorohozhichi (stazione della metropolitana della linea Syretsko-Pecherska)");
+				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_dorohozhychi.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Dorogozhychi_metro_station_Kiev_2010_01.jpg' style='width:1560px; height: 1050px;'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_3").click(function(){
+			$('#text_station').html('<p>Герцена - станція Сирецько-Печерської лінії, всього лише недобудована станція, яка буде відкрита в майбутньому і буде розташована між станціями «Дорогожичі» і «Лук`янівська», в яких не вийшло доробити із за рамки бумаг. Буде являтися пілонно трисклепінною станцією глибокого залягання.</p>');
+			$('#title').html("Герцена (станція метро Сирецько-Печерської лінії)");
+			$('#qrcode').html("<p>QR-код цієї станції немає!</p>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text()=="English") {
+				$('#text_station').html('<p>Герцена - станція Сирецько-Печерської лінії, всього лише недобудована станція, яка буде відкрита в майбутньому і буде розташована між станціями «Дорогожичі» і «Лук`янівська», в яких не вийшло доробити із за рамки бумаг. Буде являтися пілонно трисклепінною станцією глибокого залягання.</p>');
+				$('#title').html("Герцена (станція метро Сирецько-Печерської лінії)");
+				$('#qrcode').html("<p>QR-код цієї станції немає!</p>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text()=="Italiano") {
+				$('#text_station').html('<p>Hertsena is a station of the Syretsko-Pecherska line, just an unfinished station, which will be opened in the future and will be located between the stations "Dorogozhichi" and "Luk`yanivska", which could not be completed beyond the scope of the papers. It will be a pylon-like three-vaulted deep-seated station.</p>');
+				$('#title').html("Hertsena (metro station of Syretsko-Pecherska line)");
+				$('#qrcode').html("<p>There is no QR code for this station!</p>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Hertsena e una stazione della linea Syretsko-Pecherska, solo una stazione incompiuta, che sara aperta in futuro e sara situata tra le stazioni "Dorogozhichi" e "Luk`yanivska", che non potrebbe essere completata oltre lo scopo del carte. Sara una stazione profonda a tre volte simile a un pilone.</p>');
+				$('#title').html("Hertsena (stazione della metropolitana della linea Syretsko-Pecherska)");
+				$('#qrcode').html("<p>Non esiste un codice QR per questa stazione!</p>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Hertsena.jpg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_4").click(function(){
+			$('#text_station').html('<p>Лук`янівська - станція Сирецько-Печерської лінії, розташована між станціями «Дорогожичі» і «Золоті Ворота»(на даний момент, а в мабутньому буде розташована між станціями «Дорогожичі» і «Львівська брама») знаходиться на глибині 69 метрів, вважається пілонно трисклепінною станцією глибокого залягання, була відкрита 30 грудня 1996 року. Буде мати перехід на станцію <a href="M4.html">Глибочицьку</a> Подільсько-Вигурівської лінії.</p>');
+			$('#title').html("Лук`янівська (станція метро Сирецько-Печерської лінії)");
+			$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_lukhyanivska.png' align='left' width='300px' height='300px'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text()=="English") {
+				$('#text_station').html('<p>Лук`янівська - станція Сирецько-Печерської лінії, розташована між станціями «Дорогожичі» і «Золоті Ворота»(на даний момент, а в мабутньому буде розташована між станціями «Дорогожичі» і «Львівська брама») знаходиться на глибині 69 метрів, вважається пілонно трисклепінною станцією глибокого залягання, була відкрита 30 грудня 1996 року. Буде мати перехід на станцію <a href="M4.html">Глибочицьку</a> Подільсько-Вигурівської лінії.</p>');
+				$('#title').html("Лук`янівська (станція метро Сирецько-Печерської лінії)");
+				$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_lukhyanivska.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text()=="Italiano") {
+				$('#text_station').html('<p>Lukianivska - the station of the Syretsko-Pecherska line, located between the stations "Dorogozhichi" and "Zoloti Vorota" (at the moment, and in the future it will be located between the stations "Dorogozhichi" and "Lvivska brama") is located at a depth of 69 meters, it is considered a pylon a three-vault deep-sea station, was opened on December 30, 1996. It will have a transfer to the station <a href="M4.html">Hlybochytska</a> of the Podilsko-Vygurivskaya line.</p>');
+				$('#title').html("Lukianivska (metro station of Syretsko-Pecherska line)");
+				$('#qrcode').html("<p>QR code of the station:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_lukhyanivska.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Lukyanivska - si trova la stazione della linea Syretsko-Pecherska, situata tra le stazioni "Dorogozhichi" e "Zoloti Vorota" (al momento, e in futuro sara situata tra le stazioni "Dorogozhichi" e "Lvivska brama") a una profondita di 69 metri, e considerato un pilone una stazione profonda a tre volte, e stato inaugurato il 30 dicembre 1996. Avra un trasferimento alla stazione <a href="M4.html">Hlybochytska</a> della linea Podilsko-Vygurivskaya.</p>');
+				$('#title').html("Lukyanivska (stazione della metropolitana della linea Syretsko-Pecherska)");
+				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_lukhyanivska.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Lukianovska_metro_station_Kiev_2010_01.jpg' style='width:1560px; height: 1050px;'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_5").click(function(){
+			$('#text_station').html('<p>Львівська брама - станція Сирецько-Печерської лінії, всього лише недобудована пілонно трисклепінна станція глибокого заложення пілоного типу, адже станція повинна відкритися ще з 1996 року, але через складної ситуації стала станцією привидом на даний момент, яка буде відкрита в майбутньому (десь в 2025 році).</p>');
+			$('#title').html("Львівська брама (станція метро Сирецько-Печерської лінії)");
+			$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_lviv_brama.png' align='left' width='300px' height='300px'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text()=="English") {
+				$('#text_station').html('<p>Львівська брама - станція Сирецько-Печерської лінії, всього лише недобудована пілонно трисклепінна станція глибокого заложення пілоного типу, адже станція повинна відкритися ще з 1996 року, але через складної ситуації стала станцією привидом на даний момент, яка буде відкрита в майбутньому (десь в 2025 році).</p>');
+				$('#title').html("Львівська брама (станція метро Сирецько-Печерської лінії)");
+				$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_lviv_brama.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text()=="Italiano") {
+				$('#text_station').html('<p>Lvivska brama is a station of the Syretsko-Pecherska line, it is just an unfinished pylon-three-vault station of a deep foundation of the pylon type, because the station should have been opened since 1996, but due to a difficult situation it has become a ghost station at the moment, which will be opened in the future (somewhere in 2025 ).</p>');
+				$('#title').html("Lvivska brama (metro station of Syretsko-Pecherska Line)");
+				$('#qrcode').html("<p>QR code of the station:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_lviv_brama.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Lvivska brama e una stazione della linea Syretsko-Pecherska, e solo una stazione incompiuta con tre volte a pilone di una fondazione profonda del tipo a pilone, perche la stazione avrebbe dovuto essere aperta dal 1996, ma a causa di una situazione difficile ha diventare una stazione fantasma al momento, che sara aperta in futuro (da qualche parte nel 2025).</p>');
+				$('#title').html("Lvivska brama (stazione della metropolitana della linea Syretsko-Pecherska)");
+				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_lviv_brama.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Lvivska_Brama_Metro_Station_Kiev_Project_1990s_01.jpg'>");
+			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/eFdsPFGFL1I' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
+		});
+		$("#station_6").click(function(){
+			$('#text_station').html('<p>Золоті Ворота - станція Сирецько-Печерської лінії, розташована між станціями "Лук`янівська" (на даний момент, а в мабутньому буде розташована між станціями «Львівська брама» і «Палац Спорту») і "Палац Спорту", знаходиться на 96,5 метрів і вважається не лише найглибшою, але й найгарнішою станцією Сирецько-Печерської лінії і колонно трисклепінною глибокого залягання з проміжним вестибюлем. У неї є перехід на станцію <a href="M1.html">Театральна (Ленінська)</a> Святошинсько-Броварської лінії, була відкрита в останній день 1989 року (31 грудня). Свою назву получила, завдяки пам`ятнику архітектури, коли був період Київської Русі і керування князя Ярослава Мудрого, і саме це Золоті Ворота розташованні біля входу станції.</p>');
+			$('#title').html("Золоті Ворота (станція метро Сирецько-Печерської лінії)");
+			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/pSx7C_e52mg' allow='autoplay; encrypted-media' allowfullscreen></iframe><p>Відео від Олександра Гриненка з 2021 року: <iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/Bdr8aW5oF5M' allow='autoplay; encrypted-media' allowfullscreen></iframe></p>");
+			$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_Zoloti_Vorota.png' align='left' width='300px' height='300px'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text()=="English") {
+				$('#text_station').html('<p>Золоті Ворота - станція Сирецько-Печерської лінії, розташована між станціями "Лук`янівська" (на даний момент, а в мабутньому буде розташована між станціями «Львівська брама» і «Палац Спорту») і "Палац Спорту", знаходиться на 96,5 метрів і вважається не лише найглибшою, але й найгарнішою станцією Сирецько-Печерської лінії і колонно трисклепінною глибокого залягання з проміжним вестибюлем. У неї є перехід на станцію <a href="M1.html">Театральна (Ленінська)</a> Святошинсько-Броварської лінії, була відкрита в останній день 1989 року (31 грудня). Свою назву получила, завдяки пам`ятнику архітектури, коли був період Київської Русі і керування князя Ярослава Мудрого, і саме це Золоті Ворота розташованні біля входу станції.</p>');
+				$('#title').html("Золоті Ворота (станція метро Сирецько-Печерської лінії)");
+				$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/pSx7C_e52mg' allow='autoplay; encrypted-media' allowfullscreen></iframe><p>Відео від Олександра Гриненка з 2021 року: <iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/Bdr8aW5oF5M' allow='autoplay; encrypted-media' allowfullscreen></iframe></p>");
+				$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_Zoloti_Vorota.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text()=="Italiano") {
+				$('#text_station').html('<p>Zoloti Vorota - a station of the Syretsko-Pecherska line, located between the stations "Luk`yanivska" (at the moment, and in the future it will be located between the stations "Lvivska brama" and "Palace of Sport") and "Palace of Sport", located at 96.5 meters and is considered not only the deepest, but also the most beautiful station of the Syretsko-Pecherska line and is a deep three-vaulted column with an intermediate vestibule. It has a transition to the <a href="M1.html">Teatralna (Leninska)</a> station of the Svyatoshynsko-Brovarska line, it was opened on the last day of 1989 (December 31). It got its name thanks to the architectural monument during the period of Kievan Rus and the rule of Prince Yaroslav the Wise, and it is the Golden Gate located near the entrance of the station.</p>');
+				$('#title').html("Zoloti Vorota (metro station of Syretsko-Pecherska line)");
+				$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/pSx7C_e52mg' allow='autoplay; encrypted-media' allowfullscreen></iframe><p>Video from Alexander Grinenko from 2021: <iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/Bdr8aW5oF5M' allow='autoplay; encrypted-media' allowfullscreen></iframe></p>");
+				$('#qrcode').html("<p>QR code of the station:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_Zoloti_Vorota.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Zoloti Vorota - una stazione della linea Syretsko-Pecherska, situata tra le stazioni "Luk`yanivska" (al momento, e in futuro sara situata tra le stazioni "Lvivska brama" e "Palazzo dello Sport") e " Palace of Sport", situato a 96,5 metri ed e considerata non solo la stazione piu profonda, ma anche la piu bella della linea Syretsko-Pecherska ed e una profonda colonna a tre volte con un vestibolo intermedio. Ha un passaggio alla stazione <a href="M1.html">Teatralna (Leninska)</a> della linea Svyatoshynsko-Brovarska, e stata aperta l`ultimo giorno del 1989 (31 dicembre). Ha preso il nome dal monumento architettonico durante il periodo della Rus` di Kiev e dal governo del principe Yaroslav il Saggio, ed e la Porta d`Oro situata vicino all`ingresso della stazione.</p>');
+				$('#title').html("Zoloti Vorota (stazione della metropolitana della linea Syretsko-Pecherska)");
+				$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/pSx7C_e52mg' allow='autoplay; encrypted-media' allowfullscreen></iframe><p>Video di Alexander Grinenko del 2021: <iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/Bdr8aW5oF5M' allow='autoplay; encrypted-media' allowfullscreen></iframe></p>");
+				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_Zoloti_Vorota.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Zoloti_Vorota_Metro_Station_Cental_Hall.jpg'><p><img src='images_kyiv_metro_M1/teatralna_and_zolot_vorota.gif'></p>");
+		});
+		$("#station_7").click(function(){
+			$('#text_station').html('<p>Палац Спорту -  30-та станція Київського метрополітену, розташована на Сирецько-Печерській лінії між станціями «Кловська» і «Золоті ворота», знаходиться на глибині 59 метрів, вважається пілонно трисклепінною станцією глибокого залягання. Відкрита 31 грудня 1989 року у складі першої черги будівництва Сирецько-Печерської лінії. Назва станції — від розташованого поруч Палацу спорту. Має перехід на станцію <a href="M2.html">«Площа Василя Стуса»</a> Оболонсько-Теремківської лінії. «Палац спорту» — була єдиною станцією київського метрополітену, де на колійній стіні впродовж довгого часу зберігалися назви станції російською мовою. У лютому 2015 р. російськомовні написи було демонтовано.</p>');
+			$('#title').html("Палац Спорту (станція метро Сирецько-Печерської лінії)");
+			$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_palats_sportu.png' align='left' width='300px' height='300px'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text()=="English") {
+				$('#text_station').html('<p>Палац Спорту -  30-та станція Київського метрополітену, розташована на Сирецько-Печерській лінії між станціями «Кловська» і «Золоті ворота», знаходиться на глибині 59 метрів, вважається пілонно трисклепінною станцією глибокого залягання. Відкрита 31 грудня 1989 року у складі першої черги будівництва Сирецько-Печерської лінії. Назва станції — від розташованого поруч Палацу спорту. Має перехід на станцію <a href="M2.html">«Площа Василя Стуса»</a> Оболонсько-Теремківської лінії. «Палац спорту» — була єдиною станцією київського метрополітену, де на колійній стіні впродовж довгого часу зберігалися назви станції російською мовою. У лютому 2015 р. російськомовні написи було демонтовано.</p>');
+				$('#title').html("Палац Спорту (станція метро Сирецько-Печерської лінії)");
+				$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_palats_sportu.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text()=="Italiano") {
+				$('#text_station').html('<p>Palats Sportu is the 30th station of the Kyiv metro, located on the Syretsko-Pecherska line between the stations "Klovska" and "Zoloti Vorota", it is located at a depth of 59 meters, it is considered a deep-lying three-vault station. It was opened on December 31, 1989 as part of the first phase of construction of the Syretsko-Pecherska line. The name of the station comes from the nearby Sports Palace. It has a transition to the <a href="M2.html">"Ploshcha Vasylya Stusa"</a> station of the Obolonsko-Teremkivskaya line. "Palats Sportu" was the only station of the Kyiv metro, where station names in Russian were kept on the track wall for a long time. In February 2015, the Russian-language inscriptions were dismantled.</p>');
+				$('#title').html("Palats Sportu (metro station of Syretsko-Pecherska line)");
+				$('#qrcode').html("<p>QR code of the station:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_palats_sportu.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Il Palazzo dello Sport e la 30a stazione della metropolitana di Kiev, situata sulla linea Syretsko-Pecherska tra le stazioni "Klovska" e "Zoloti Vorota", si trova a una profondita di 59 metri, e considerato un tre -stazione del caveau. E stato inaugurato il 31 dicembre 1989 come parte della prima fase di costruzione della linea Syretsko-Pecherska. Il nome della stazione deriva dal vicino Palazzo dello Sport. Ha un trasferimento per la stazione <a href="M2.html">"Piazzo Vasyl Stus"</a> della linea Obolonsko-Teremkivskaya. Il "Palazzo dello Sport" era l`unica stazione della metropolitana di Kiev, dove i nomi delle stazioni in russo sono stati tenuti a lungo sul muro dei binari. Nel febbraio 2015 le iscrizioni in lingua russa sono state smantellate.</p>');
+				$('#title').html("Palazzo dello Sport (stazione della metropolitana della linea Syretsko-Pecherska)");
+				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_palats_sportu.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Palats_sportu_metro_station_Kiev_2010_011.jpg' style='width:1560px; height: 1050px;'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_8").click(function(){
+			$('#text_station').html('<p>Кловська - 31-ша станція Київського метрополітену, розташована на Сирецько-Печерській лінії між станціями «Палац спорту» і «Печерська», знаходиться на глибині 40 метрів і вважається пілонно трисклепінною станцією глибокого залягання. Відкрита 31 грудня 1989 року під назвою «Мечникова» у складі першої черги Сирецько-Печерської лінії. Нинішня назва — з 2 лютого 1993 року, походить від назви історичної місцевості Клов, де розташована станція. Станція з вузькими пілонами, облицьованими лекальним білим мармуром. Склепіння з листового фарбованого алюмінію. Інтер`єр перонного залу підкреслює планувальну особливість станції — акцент зроблено у напрямку похилого вестибюля. Великий проліт у 14 метрів і радіальне розміщення стін. Станція вирішена у спокійних світлих тонах, лаконічно, за відсутності зайвих декоративних елементів. Все це разом надає інтер`єру станції піднесеності та неповторності.</p>');
+			$('#title').html("Кловська (станція метро Сирецько-Печерської лінії)");
+			$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_klovska.png' align='left' width='300px' height='300px'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text()=="English") {
+				$('#text_station').html('<p>Кловська - 31-ша станція Київського метрополітену, розташована на Сирецько-Печерській лінії між станціями «Палац спорту» і «Печерська», знаходиться на глибині 40 метрів і вважається пілонно трисклепінною станцією глибокого залягання. Відкрита 31 грудня 1989 року під назвою «Мечникова» у складі першої черги Сирецько-Печерської лінії. Нинішня назва — з 2 лютого 1993 року, походить від назви історичної місцевості Клов, де розташована станція. Станція з вузькими пілонами, облицьованими лекальним білим мармуром. Склепіння з листового фарбованого алюмінію. Інтер`єр перонного залу підкреслює планувальну особливість станції — акцент зроблено у напрямку похилого вестибюля. Великий проліт у 14 метрів і радіальне розміщення стін. Станція вирішена у спокійних світлих тонах, лаконічно, за відсутності зайвих декоративних елементів. Все це разом надає інтер`єру станції піднесеності та неповторності.</p>');
+				$('#title').html("Кловська (станція метро Сирецько-Печерської лінії)");
+				$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_klovska.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text()=="Italiano") {
+				$('#text_station').html('<p>Klovska - the 31st station of the Kyiv metro, located on the Syretsko-Pecherska line between the stations "Palace Sportu" and "Pecherska", is at a depth of 40 meters and is considered a deep-lying three-vault station. It was opened on December 31, 1989 under the name "Mechnikova" as part of the first stage of the Syretsko-Pecherska line. The current name - since February 2, 1993, comes from the name of the historical area of ??Klov, where the station is located. A station with narrow pylons lined with white marble. The vault is made of sheet painted aluminum. The interior of the platform hall emphasizes the planning feature of the station — the emphasis is placed in the direction of the sloping vestibule. A large span of 14 meters and radial arrangement of walls. The station is designed in calm light colors, concisely, in the absence of unnecessary decorative elements. All this together gives the interior of the station sublimity and uniqueness.</p>');
+				$('#title').html("Klovska (metro station of Syretsko-Pecherska line)");
+				$('#qrcode').html("<p>QR code of the station:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_klovska.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Klovska e la 31a stazione della metropolitana di Kiev, situata sulla linea Syretsko-Pecherska tra le stazioni "Palazzo dello Sport" e "Pecherska", si trova a una profondita di 40 metri ed e considerata una stazione profonda a tre volte. E stato inaugurato il 31 dicembre 1989 con il nome "Mechnikova" come parte della prima tappa della linea Syretsko-Pecherska. Il nome attuale - dal 2 febbraio 1993, deriva dal nome della zona storica di Klov, dove si trova la stazione. Una stazione con stretti tralicci rivestiti di marmo bianco. La volta e realizzata in lamiera di alluminio verniciata. L`interno della sala della piattaforma enfatizza la caratteristica progettuale della stazione: l`enfasi e posta nella direzione del vestibolo inclinato. Una grande campata di 14 metri e disposizione radiale delle pareti. La stazione e progettata con colori chiari e calmi, in modo conciso, in assenza di elementi decorativi non necessari. Tutto questo insieme conferisce all`interno della stazione sublimita e unicita.</p>');
+				$('#title').html("Klovska (stazione della metropolitana della linea Syretsko-Pecherska)");
+				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_klovska.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Klovska_metro_station_Kiev_2010_01.jpg' style='width:1560px; height: 1050px;'>");
+			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/_VpxA7KbrPg' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
+		});
+		$("#station_9").click(function(){
+			$('#text_station').html('<p>Печерська - 39-та станція Київського метрополітену, розташована на Сирецько-Печерській лінії між станціями «Кловська» і «Ботанічна», знаходиться на глибині 90 метрів, вважається пілонно трисклепінною станцією глибокого залягання з проміжним вестибюлем. Відкрита 27 грудня 1997 року. Назва станції походить від назви історичної місцевості Печерськ. Незвична зменшенням товщини пілону, що складається не з блоків, а з тюбінгів. Назва станції зобов`язала авторів побачити золоті бані Києво-Печерської лаври — про це свідчить золотисте склепіння з анодованого алюмінію як платформи, так і проміжного вестибюля. Стіни з білого мармуру асоціюються зі стінами соборів, а вставки з пиляного граніту в пілонах — з бруківкою. Світлова лінія з світильників, що перехрещуються, та малюнок на підлозі у вигляді завуальованого хреста продовжують розвивати цю тему.</p>');
+			$('#title').html("Печерська (станція метро Сирецько-Печерської лінії)");
+			$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_pecherska.png' align='left' width='300px' height='300px'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text()=="English") {
+				$('#text_station').html('<p>Печерська - 39-та станція Київського метрополітену, розташована на Сирецько-Печерській лінії між станціями «Кловська» і «Ботанічна», знаходиться на глибині 90 метрів, вважається пілонно трисклепінною станцією глибокого залягання з проміжним вестибюлем. Відкрита 27 грудня 1997 року. Назва станції походить від назви історичної місцевості Печерськ. Незвична зменшенням товщини пілону, що складається не з блоків, а з тюбінгів. Назва станції зобов`язала авторів побачити золоті бані Києво-Печерської лаври — про це свідчить золотисте склепіння з анодованого алюмінію як платформи, так і проміжного вестибюля. Стіни з білого мармуру асоціюються зі стінами соборів, а вставки з пиляного граніту в пілонах — з бруківкою. Світлова лінія з світильників, що перехрещуються, та малюнок на підлозі у вигляді завуальованого хреста продовжують розвивати цю тему.</p>');
+				$('#title').html("Печерська (станція метро Сирецько-Печерської лінії)");
+				$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_pecherska.png' align='left' width='300px' 	height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text()=="Italiano") {
+				$('#text_station').html('<p>Pecherska - the 39th station of the Kyiv metro, located on the Syretsko-Pecherska line between the "Klovska" and "Botanichna" stations, is located at a depth of 90 meters, is considered a deep-lying, three-vault station with an intermediate vestibule. Opened on December 27, 1997. The name of the station comes from the name of the historical area of ??Pechersk. It is unusual in reducing the thickness of the pylon, which consists not of blocks, but of tubing. The name of the station obliged the authors to see the golden baths of the Kyiv-Pechersk Lavra — this is evidenced by the golden anodized aluminum vault of both the platform and the intermediate vestibule. White marble walls are associated with the walls of cathedrals, and sawn granite inserts in the pylons with cobblestones. A light line of criss-crossing lights and a veiled cross pattern on the floor continue to develop this theme.</p>');
+				$('#title').html("Pecherska (metro station of Syretsko-Pecherska line)");
+				$('#qrcode').html("<p>QR code of the station:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_pecherska.png' align='left' width='300px' 	height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Pecherska - la 39a stazione della metropolitana di Kiev, situata sulla linea Syretsko-Pecherska tra le stazioni "Klovska" e "Botanichna", si trova a una profondita di 90 metri, e considerata una stazione profonda a tre volte con un vestibolo intermedio. Inaugurato il 27 dicembre 1997. Il nome della stazione deriva dal nome dell`area storica di Pechersk. E insolito ridurre lo spessore del pilone, che non e costituito da blocchi, ma da tubi. Il nome della stazione obbligava gli autori a vedere i bagni dorati della Kyiv-Pechersk Lavra, come testimonia la volta in alluminio anodizzato dorato sia della piattaforma che del vestibolo intermedio. Le pareti di marmo bianco sono associate alle pareti delle cattedrali e gli inserti in granito segato nei piloni con ciottoli. Una linea leggera di luci incrociate e un motivo a croce velata sul pavimento continuano a sviluppare questo tema.</p>');
+				$('#title').html("Pecherska (stazione della metropolitana della linea Syretsko-Pecherska)");
+				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_pecherska.png' align='left' width='300px' 	height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Pecherska_metro_station_Kiev_2010_01.jpg' style='width:1560px; height: 1050px;'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_10").click(function(){
+			$('#text_station').html('<p>Ботанічна - 32-га станція Київського метрополітену. Розташована на Сирецько-Печерській лінії між станціями «Печерська» і «Видубичі» на глибині 66 метрів, вважається пілонно трисклепінною станцією глибокого залягання. Станція відкрита 30 грудня 1991 року. Названа за однойменним бульваром, що проходить над цієї станції. В майбутньому буде мати перехід на станцію <a href="M6.html">з тієї самої назви, як і тут</a> Вишгородсько-Дарницької лінії. До 2022 року мала назву Дружби Народів.</p>');
+			$('#title').html("Ботанічна (станція метро Сирецько-Печерської лінії)");
+			$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_botanichna.png' align='left' width='300px' height='300px'><p align='right'>QR-код Новопечерської школи:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_novopecherska_schkola.png' align='right' width='300px' height='300px'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text()=="English") {
+				$('#text_station').html('<p>Ботанічна - 32-га станція Київського метрополітену. Розташована на Сирецько-Печерській лінії між станціями «Печерська» і «Видубичі» на глибині 66 метрів, вважається пілонно трисклепінною станцією глибокого залягання. Станція відкрита 30 грудня 1991 року. Названа за однойменним бульваром, що проходить над цієї станції. В майбутньому буде мати перехід на станцію <a href="M6.html">з тієї самої назви, як і тут</a> Вишгородсько-Дарницької лінії. До 2022 року мала назву Дружби Народів.</p>');
+				$('#title').html("Ботанічна (станція метро Сирецько-Печерської лінії)");
+				$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_botanichna.png' align='left' width='300px' height='300px'><p align='right'>QR-код Новопечерської школи:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_novopecherska_schkola.png' align='right' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text()=="Italiano") {
+				$('#text_station').html('<p>Botanichna - the 32nd station of the Kyiv metro. Located on the Syretsko-Pecherska line between the "Pecherska" and "Vydubychi" stations at a depth of 66 meters, it is considered a deep-lying, three-vault station. The station was opened on December 30, 1991. It is named after the boulevard of the same name that passes above this station. In the future, there will be a transfer to the station <a href="M6.html">with the same name as here</a> of the Vyshgorod-Darnytska line. Until 2022, it was called Druzhby narodiv.</p>');
+				$('#title').html("Botanichna (metro station of Syretsko-Pecherska line)");
+				$('#qrcode').html("<p>QR code of the station:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_botanichna.png' align='left' width='300px' height='300px'><p align='right'>QR code of Novopechersk school:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_novopecherska_schkola.png' align='right' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Botanichna - la 32a stazione della metropolitana di Kiev. Situata sulla linea Syretsko-Pecherska tra le stazioni "Pecherska" e "Vydubychi" a una profondita di 66 metri, e considerata una stazione profonda a tre volte. La stazione e stata aperta il 30 dicembre 1991. Prende il nome dall`omonimo viale che passa sopra questa stazione. In futuro, ci sara un trasferimento alla stazione <a href="M6.html">con lo stesso nome qui</a> della linea Vyshgorod-Darnytska. Fino al 2022 si chiamava Druzhby narodiv.</p>');
+				$('#title').html("Botanichna (stazione della metropolitana della linea Syretsko-Pecherska)");
+				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_botanichna.png' align='left' width='300px' height='300px'><p align='right'>Codice QR della scuola di Novopechersk:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_novopecherska_schkola.png' align='right' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Druzhby_Narodiv_metro_station_Kiev_2010_01.jpg' style='width:1560px; height: 1050px;'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_11").click(function(){
+			$('#text_station').html('<p>Видубичі - 33-тя станція Київського метрополітену. Розташована на Сирецько-Печерській лінії між станціями «Ботанічна» і «Славутич» (на даний момент, а в майбутньому буде розташована між станціями «Ботанічна» і «Теличка»), вважається колонно трипрогінною станцією мілкого залягання. Відкрита 30 грудня 1991 року. Назва — від історичної місцевості Києва.</p>');
+			$('#title').html("Видубичі (станція метро Сирецько-Печерської лінії)");
+			$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_vydubichi.png' align='left' width='300px' height='300px'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			$('#station_video').html("<p>Відео від Олександра Гриненка з 2018 року: <iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/Fd1y_eyPP-E' allow='autoplay; encrypted-media' allowfullscreen></iframe></p>");
+			if ($('#e').text()=="English") {
+				$('#text_station').html('<p>Видубичі - 33-тя станція Київського метрополітену. Розташована на Сирецько-Печерській лінії між станціями «Ботанічна» і «Славутич» (на даний момент, а в майбутньому буде розташована між станціями «Ботанічна» і «Теличка»), вважається колонно трипрогінною станцією мілкого залягання. Відкрита 30 грудня 1991 року. Назва — від історичної місцевості Києва.</p>');
+				$('#title').html("Видубичі (станція метро Сирецько-Печерської лінії)");
+				$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_vydubichi.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+				$('#station_video').html("<p>Відео від Олександра Гриненка з 2018 року: <iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/Fd1y_eyPP-E' allow='autoplay; encrypted-media' allowfullscreen></iframe></p>");
+			}
+			else if ($('#e').text()=="Italiano") {
+				$('#text_station').html('<p>Vydubychi is the 33rd station of the Kyiv metro. Located on the Syretsko-Pecherska line between the stations "Botanichna" and "Slavutych" (at the moment, and in the future it will be located between the stations "Botanichna" and "Telychka"), it is considered a column three-track shallow-lying station. Opened on December 30, 1991. The name comes from the historical area of ??Kyiv.</p>');
+				$('#title').html("Vydubychi (metro station of Syretsko-Pecherska line)");
+				$('#qrcode').html("<p>QR code of the station:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_vydubichi.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+				$('#station_video').html("<p>Video from Alexander Grinenko from 2021: <iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/Fd1y_eyPP-E' allow='autoplay; encrypted-media' allowfullscreen></iframe></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Vydubychi e la 33a stazione della metropolitana di Kiev. Situata sulla linea Syretsko-Pecherska tra le stazioni "Botanichna" e "Slavutych" (al momento, e in futuro sara situata tra le stazioni "Botanichna" e "Telychka"), e considerata una colonna a tre binari stazione poco profonda. Inaugurato il 30 dicembre 1991. Il nome deriva dall`area storica di Kiev.</p>');
+				$('#title').html("Vydubychi (stazione della metropolitana della linea Syretsko-Pecherska)");
+				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_vydubichi.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+				$('#station_video').html("<p>Video di Alexander Grinenko del 2018: <iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/Fd1y_eyPP-E' allow='autoplay; encrypted-media' allowfullscreen></iframe></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Vydubychi_metro_station_Kiev_2010_01.jpg' style='width:1560px; height: 1050px;'>");
+		});
+		$("#station_12").click(function(){
+			$('#text_station').html('<p>Теличка - станція Сирецько-Печерської лінії, всього лише недобудована станція мілкого залягання, яка буде відкрита в майбутньому і тому метропотяги їдуть через цю станцію без зупинки. Буде розташована між станціями "Видубичі" і "Славутич".</p>');
+			$('#title').html("Теличка (станція метро Сирецько-Печерської лінії)");
+			$('#qrcode').html("<p>На даний момент QR-код цієї недобудованої станції немає!</p>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text()=="English") {
+				$('#text_station').html('<p>Теличка - станція Сирецько-Печерської лінії, всього лише недобудована станція мілкого залягання, яка буде відкрита в майбутньому і тому метропотяги їдуть через цю станцію без зупинки. Буде розташована між станціями "Видубичі" і "Славутич".</p>');
+				$('#title').html("Теличка (станція метро Сирецько-Печерської лінії)");
+				$('#qrcode').html("<p>На даний момент QR-код цієї недобудованої станції немає!</p>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text()=="Italiano") {
+				$('#text_station').html('<p>Telichka is a station of the Syretsko-Pecherska line, just an unfinished shallow station that will be opened in the future and therefore metro trains pass through this station without stopping. It will be located between the stations "Vydubychi" and "Slavutich".</p>');
+				$('#title').html("Telichka (metro station of Syretsko-Pecherska line)");
+				$('#qrcode').html("<p>At the moment, there is no QR code for this unfinished station!</p>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Telichka e una stazione della linea Syretsko-Pecherska, solo una stazione poco profonda incompiuta che verra aperta in futuro e quindi i treni della metropolitana passano attraverso questa stazione senza fermarsi. Sara situato tra le stazioni "Vydubychi" e "Slavutych".</p>');
+				$('#title').html("Telichka (stazione della metropolitana della linea Syretsko-Pecherska)");
+				$('#qrcode').html("<p>Al momento, non esiste un codice QR per questa stazione incompiuta!</p>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M3/telickha.webp'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_13").click(function(){
+			$('#text_station').html('<p>Славутич -  34-та станція Київського метрополітену на Сирецько-Печерській лінії між стаціями «Видубичі» (на даний момент, в майбутньому буде розташована між станціями «Теличка» і «Осокорки») та «Осокорки», вважається колонно трипрогінною станцією мілкого залягання. Розташована на лівому березі Дніпра. Станція відкрита 30 грудня 1992 року.</p>');
+			$('#title').html("Славутич (станція метро Сирецько-Печерської лінії)");
+			$('#station_video').html("<p>Відео від Олександра Гриненка з 2018 року: <iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/Fd1y_eyPP-E' allow='autoplay; encrypted-media' allowfullscreen></iframe></p>");
+			$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_slavutich.png' align='left' width='300px' height='300px'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text()=="English") {
+				$('#text_station').html('<p>Славутич -  34-та станція Київського метрополітену на Сирецько-Печерській лінії між стаціями «Видубичі» (на даний момент, в майбутньому буде розташована між станціями «Теличка» і «Осокорки») та «Осокорки», вважається колонно трипрогінною станцією мілкого залягання. Розташована на лівому березі Дніпра. Станція відкрита 30 грудня 1992 року.</p>');
+				$('#title').html("Славутич (станція метро Сирецько-Печерської лінії)");
+				$('#station_video').html("<p>Відео від Олександра Гриненка з 2018 року: <iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/Fd1y_eyPP-E' allow='autoplay; encrypted-media' allowfullscreen></iframe></p>");
+				$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_slavutich.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text()=="Italiano") {
+				$('#text_station').html('<p>Slavutych is the 34th station of the Kyiv metro on the Syretsko-Pecherska line between the stations "Vydubychi" (at the moment, in the future it will be located between the stations "Telychka" and "Osokorky") and "Osokorky", it is considered a column three-lane shallow-lying station. Located on the left bank of the Dnieper. The station was opened on December 30, 1992.</p>');
+				$('#title').html("Slavutych (metro station of Syretsko-Pecherska line)");
+				$('#station_video').html("<p>Video from Alexander Grinenko from 2018: <iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/Fd1y_eyPP-E' allow='autoplay; encrypted-media' allowfullscreen></iframe></p>");
+				$('#qrcode').html("<p>QR code of the station:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_slavutich.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Slavutych e la 34a stazione della metropolitana di Kiev sulla linea Syretsko-Pecherska tra le stazioni "Vydubychi" (al momento, in futuro sara situata tra le stazioni "Telychka" e "Osokorky") e "Osokorky", e e considerata una stazione superficiale a tre corsie di colonne. Situato sulla riva sinistra del Dnepr. La stazione e stata aperta il 30 dicembre 1992.</p>');
+				$('#title').html("Slavutych (stazione della metropolitana della linea Syretsko-Pecherska)");
+				$('#station_video').html("<p>Video di Alexander Grinenko del 2018: <iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/Fd1y_eyPP-E' allow='autoplay; encrypted-media' allowfullscreen></iframe></p>");
+				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_slavutich.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Slavutych_metro_station_Kiev_2010_02.jpg' style='width:1560px; height: 1050px;'>");
+		});
+		$("#station_14").click(function(){
+			$('#text_station').html('<p>Осокорки - 35-та станція Київського метрополітену. Розташована на Сирецько-Печерській лінії між станціями «Славутич» і «Позняки», вважається односклепінною станцією мілкого залягання. Відкрита 30 грудня 1992 року. Назва — від місцевості й житлового масиву, що розташовані поблизу. Зал з двох боків сполучається сходами з підземними вестибюлями, котрі виконані в єдиному блоці з підземними переходами під транспортною розв`язкою (у місці перетину проспекту Бажана та Дніпровської набережної). Наземні виходи на проспект Бажана.</p>');
+			$('#title').html("Осокорки (станція метро Сирецько-Печерської лінії)");
+			$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_osokorki.png' align='left' width='300px' height='300px'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text()=="English") {
+				$('#text_station').html('<p>Осокорки - 35-та станція Київського метрополітену. Розташована на Сирецько-Печерській лінії між станціями «Славутич» і «Позняки», вважається односклепінною станцією мілкого залягання. Відкрита 30 грудня 1992 року. Назва — від місцевості й житлового масиву, що розташовані поблизу. Зал з двох боків сполучається сходами з підземними вестибюлями, котрі виконані в єдиному блоці з підземними переходами під транспортною розв`язкою (у місці перетину проспекту Бажана та Дніпровської набережної). Наземні виходи на проспект Бажана.</p>');
+				$('#title').html("Осокорки (станція метро Сирецько-Печерської лінії)");
+				$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_osokorki.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text()=="Italiano") {
+				$('#text_station').html('<p>Osokorky is the 35th station of the Kyiv metro. Located on the Syretsko-Pecherska line between the "Slavutych" and "Poznyaki" stations, it is considered a shallow single-vaulted station. Opened on December 30, 1992. The name comes from the locality and residential area located nearby. The hall is connected on two sides by stairs with underground lobbies, which are made in a single block with underground passages under the traffic interchange (at the intersection of Bazhan Avenue and Dniprovska embankment). Ground exits to Bazhana Avenue.</p>');
+				$('#title').html("Osokorky (metro station of Syretsko-Pecherska line)");
+				$('#qrcode').html("<p>QR code of the station:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_osokorki.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Osokorky e la 35a stazione della metropolitana di Kiev. Situata sulla linea Syretsko-Pecherska tra le stazioni "Slavutych" e "Poznyaki", e considerata una stazione poco profonda a volta singola. Inaugurato il 30 dicembre 1992. Il nome deriva dalla localita e dalla zona residenziale situata nelle vicinanze. La sala e collegata su due lati da scale con atri sotterranei, che sono realizzati in un unico blocco con passaggi sotterranei sotto lo svincolo del traffico (all`incrocio tra Bazhan Avenue e il terrapieno Dniprovska). Uscite a terra per Bazhana Avenue.</p>');
+				$('#title').html("Osokorky (stazione della metropolitana della linea Syretsko-Pecherska)");
+				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_osokorki.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Osokorky_Metro_Station_Kiev_2011_02.jpg' style='width:1560px; height: 1050px;'>");
+			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/35iJ04ZYV8g' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
+		});
+		$("#station_15").click(function(){
+			$('#text_station').html('<p>Позняки - 36-та станція Київського метрополітену. Розташована на Сирецько-Печерській лінії між станціями «Осокорки» та «Харківська», вважається колонно двоповерхово двоярусною станцією мілкого залягання. Наземні виходи — на проспект Миколи Бажана. Відкрита 28 грудня 1994 року. Назва — від однойменного житлового масиву, що знаходиться поряд. В майбутньому буде мати перехід на станцію <a href="M5.html">Проспект Бажана</a> Лівобережної лінії.</p>');
+			$('#title').html("Позняки (станція метро Сирецько-Печерської лінії)");
+			$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_poznyaki.png' align='left' width='300px' height='300px'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text()=="English") {
+				$('#text_station').html('<p>Позняки - 36-та станція Київського метрополітену. Розташована на Сирецько-Печерській лінії між станціями «Осокорки» та «Харківська», вважається колонно двоповерхово двоярусною станцією мілкого залягання. Наземні виходи — на проспект Миколи Бажана. Відкрита 28 грудня 1994 року. Назва — від однойменного житлового масиву, що знаходиться поряд. В майбутньому буде мати перехід на станцію <a href="M5.html">Проспект Бажана</a> Лівобережної лінії.</p>');
+				$('#title').html("Позняки (станція метро Сирецько-Печерської лінії)");
+				$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_poznyaki.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text()=="Italiano") {
+				$('#text_station').html('<p>Poznyaky is the 36th station of the Kyiv metro. Located on the Syretsko-Pecherska line between Osokorky and Kharkivska stations, it is considered a two-story, two-story, shallow-lying station. Ground exits are on Mykola Bazhan Avenue. Opened on December 28, 1994. The name comes from the residential area of ??the same name, which is located nearby. In the future, there will be a transition to the station <a href="M5.html">Prospekt Bazhana</a> of the Livoberezhna line.</p>');
+				$('#title').html("Poznyaky (metro station of the Syretsko-Pecherska line)");
+				$('#qrcode').html("<p>QR code of the station:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_poznyaki.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Poznyaki e la 36a stazione della metropolitana di Kiev. Situata sulla linea Syretsko-Pecherska tra le stazioni di Osokorky e Kharkivska, e considerata una stazione a due piani, a due piani e poco profonda. Le uscite a terra sono su Mykola Bazhan Avenue. Inaugurato il 28 dicembre 1994. Il nome deriva dall`omonima zona residenziale, che si trova nelle vicinanze. In futuro, ci sara un passaggio alla stazione <a href="M5.html">Prospekt Bazhana</a> della linea Livoberezhna.</p>');
+				$('#title').html("Poznyaki (stazione della metropolitana della linea Syretsko-Pecherska)");
+				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_poznyaki.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Pozniaky_metro_station_Kiev_2011_01.jpg' style='width:1560px; height: 1050px;'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_16").click(function(){
+			$('#text_station').html('<p>Харківська - 37-ма станція Київського метрополітену. Розташована на Сирецько-Печерській лінії між станціями «Позняки» та «Вирлиця», вважається односклепінною станцією мілкого залягання. Відкрита 28 грудня 1994 року. Внутрішній підземний простір станції повністю розкрито завдяки застосуванню залізобетонних конструкцій, внаслідок чого середній і бокові касові зали зливаються в єдиний простір. Назва станції зроблена з граніту в облицюванні колійної стіни, тому перейменування їй не загрожують.</p>');
+			$('#title').html("Харківська (станція метро Сирецько-Печерської лінії)");
+			$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_kharkivska.png' align='left' width='300px' height='300px'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text()=="English") {
+				$('#text_station').html('<p>Харківська - 37-ма станція Київського метрополітену. Розташована на Сирецько-Печерській лінії між станціями «Позняки» та «Вирлиця», вважається односклепінною станцією мілкого залягання. Відкрита 28 грудня 1994 року. Внутрішній підземний простір станції повністю розкрито завдяки застосуванню залізобетонних конструкцій, внаслідок чого середній і бокові касові зали зливаються в єдиний простір. Назва станції зроблена з граніту в облицюванні колійної стіни, тому перейменування їй не загрожують.</p>');
+				$('#title').html("Харківська (станція метро Сирецько-Печерської лінії)");
+				$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_kharkivska.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text()=="Italiano") {
+				$('#text_station').html('<p>Kharkivska - the 37th station of the Kyiv metro. Located on the Syretsko-Pecherska line between Poznyaki and Vyrlytsia stations, it is considered a single-vaulted shallow-lying station. Opened on December 28, 1994. The internal underground space of the station is completely opened thanks to the use of reinforced concrete structures, as a result of which the middle and side ticket halls merge into a single space. The name of the station is made of granite in the lining of the track wall, so it is not in danger of being renamed.</p>');
+				$('#title').html("Kharkivska (metro station of Syretsko-Pecherska line)");
+				$('#qrcode').html("<p>QR code of the station:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_kharkivska.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Kharkivska - la 37a stazione della metropolitana di Kiev. Situata sulla linea Syretsko-Pecherska tra le stazioni di Poznyaki e Vyrlytsia, e considerata una stazione poco profonda a volta singola. Inaugurato il 28 dicembre 1994. Lo spazio sotterraneo interno della stazione e completamente aperto grazie all`utilizzo di strutture in cemento armato, per cui la biglietteria centrale e quella laterale si fondono in un unico spazio. Il nome della stazione e di granito nel rivestimento del muro dei binari, quindi non rischia di essere rinominata.</p>');
+				$('#title').html("Kharkivska (stazione della metropolitana della linea Syretsko-Pecherska)");
+				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_kharkivska.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Kharkivska_metro_station_Kiev_2011_01.jpg' style='width:1560px; height: 1050px;'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_17").click(function(){
+			$('#text_station').html('<p>Вирлиця - 45-та станція Київського метрополітену. Розташована на Сирецько-Печерській лінії між станціями «Харківська» та «Бориспільська», вважається колонно двопрогінною станцією мілкого залягання, але серед інших станцій такого залягання має берегові платформи справа. Відкрита 7 березня 2006 року. Назва — за однойменним озером, розташованим поруч. На станції заставлено тактильне покриття.</p>');
+			$('#title').html("Вирлиця (станція метро Сирецько-Печерської лінії)");
+			$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_vyrlitsya.png' align='left' width='300px' height='300px'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text()=="English") {
+				$('#text_station').html('<p>Вирлиця - 45-та станція Київського метрополітену. Розташована на Сирецько-Печерській лінії між станціями «Харківська» та «Бориспільська», вважається колонно двопрогінною станцією мілкого залягання, але серед інших станцій такого залягання має берегові платформи справа. Відкрита 7 березня 2006 року. Назва — за однойменним озером, розташованим поруч. На станції заставлено тактильне покриття.</p>');
+				$('#title').html("Вирлиця (станція метро Сирецько-Печерської лінії)");
+				$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_vyrlitsya.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text()=="Italiano") {
+				$('#text_station').html('<p>Vyrlytsia is the 45th station of the Kyiv metro. Located on the Syretsko-Pecherska line between the stations "Kharkivska" and "Boryspilska", it is considered to be a two-lane column-type station with a shallow location, but among other stations with such a location, it has coastal platforms on the right. Opened on March 7, 2006. The name comes from the nearby lake of the same name. The station has a tactile surface.</p>');
+				$('#title').html("Vyrlytsia (metro station of Syretsko-Pecherska line)");
+				$('#qrcode').html("<p>QR code of the station:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_vyrlitsya.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Vyrlytsia e la 45a stazione della metropolitana di Kiev. Situata sulla linea Syretsko-Pecherska tra le stazioni "Kharkivska" e "Boryspilska", e considerata una stazione a colonne a due corsie con una posizione poco profonda, ma tra le altre stazioni con tale posizione, ha piattaforme costiere sulla destra . Inaugurato il 7 marzo 2006. Il nome deriva dal vicino lago omonimo. La stazione ha una superficie tattile.</p>');
+				$('#title').html("Vyrlytsia (stazione della metropolitana della linea Syretsko-Pecherska)");
+				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_vyrlitsya.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Vyrlytsia_metro_station_Kiev_2011_01.jpg' style='width:1560px; height: 1050px;'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_18").click(function(){
+			$('#text_station').html('<p>Бориспільська - 44-та станція Київського метрополітену. Розташована на Сирецько-Печерській лінії між станціями «Вирлиця» і «Червоний хутір», вважається односклепінною станцією мілкого залягання, станція схожа на Васильківську, але вхідний вестибюль на станцію, назва станції інші і відсутні торшери в центрі плафторми. Відкрита 23 серпня 2005 року. На станції встановлено тактильне покриття.</p>');
+			$('#title').html("Бориспільська (станція метро Сирецько-Печерської лінії)");
+			$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_borispilska.png' align='left' width='300px' height='300px'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text()=="English") {
+				$('#text_station').html('<p>Бориспільська - 44-та станція Київського метрополітену. Розташована на Сирецько-Печерській лінії між станціями «Вирлиця» і «Червоний хутір», вважається односклепінною станцією мілкого залягання, станція схожа на Васильківську, але вхідний вестибюль на станцію, назва станції інші і відсутні торшери в центрі плафторми. Відкрита 23 серпня 2005 року. На станції встановлено тактильне покриття.</p>');
+				$('#title').html("Бориспільська (станція метро Сирецько-Печерської лінії)");
+				$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_borispilska.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text()=="Italiano") {
+				$('#text_station').html('<p>Boryspilska - the 44th station of the Kyiv metro. Located on the Syretsko-Pecherska line between the stations "Vyrlytsia" and "Chervony Khutir", it is considered a single-vaulted shallow station, the station is similar to Vasylkivska, but the entrance vestibule to the station, the name of the station are different and there are no floor lamps in the center of the platform. Opened on August 23, 2005. The station has a tactile surface.</p>');
+				$('#title').html("Boryspilska (metro station of Syretsko-Pecherska line)");
+				$('#qrcode').html("<p>QR code of the station:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_borispilska.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Boryspilska - la 44a stazione della metropolitana di Kiev. Situata sulla linea Syretsko-Pecherska tra le stazioni "Vyrlytsia" e "Chervony Khutir", e considerata una stazione poco profonda a volta singola, la stazione e simile a Vasylkivska, ma il vestibolo d`ingresso della stazione, il nome della stazione sono diverso e non ci sono lampade da terra al centro della piattaforma. Inaugurato il 23 agosto 2005. La stazione ha una superficie tattile.</p>');
+				$('#title').html("Boryspilska (stazione della metropolitana della linea Syretsko-Pecherska)");
+				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_borispilska.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Boryspilska_metro_station_Kiev_2011_03.jpg' style='width:1560px; height: 1050px;'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		$("#station_19").click(function(){
+			$('#text_station').html('<p>Червоний Хутір - 46-та станція Київського метрополітену, кінцева станція Сирецько-Печерській лінії, розташована після станції «Бориспільська», вважається колонно двопрогінною станцією мілкого залягання, на відміну від станції Вирлиця форма тут пряма. Вважається єдиною станцією, що знаходиться серед лісу і є декілька зупинок автобусів. Відкрито її 23 травня 2008 року. Назва — пов`язана з напрямом лінії метрополітенового шляху від найближчої місцевості. Перехідна. На станції заставлено тактильне покриття. У майбутньому планується продовження Сирецько-Печерської лінії до Дарницького вокзалу (також будується).</p>');
+			$('#title').html("Червоний Хутір (станція метро Сирецько-Печерської лінії)");
+			$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_hutir.png' align='left' width='300px' height='300px'>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			if ($('#e').text()=="English") {
+				$('#text_station').html('<p>Червоний Хутір - 46-та станція Київського метрополітену, кінцева станція Сирецько-Печерській лінії, розташована після станції «Бориспільська», вважається колонно двопрогінною станцією мілкого залягання, на відміну від станції Вирлиця форма тут пряма. Вважається єдиною станцією, що знаходиться серед лісу і є декілька зупинок автобусів. Відкрито її 23 травня 2008 року. Назва — пов`язана з напрямом лінії метрополітенового шляху від найближчої місцевості. Перехідна. На станції заставлено тактильне покриття. У майбутньому планується продовження Сирецько-Печерської лінії до Дарницького вокзалу (також будується).</p>');
+				$('#title').html("Червоний Хутір (станція метро Сирецько-Печерської лінії)");
+				$('#qrcode').html("<p>QR-код станції:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_hutir.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
+			}
+			else if ($('#e').text()=="Italiano") {
+				$('#text_station').html('<p>Chervonyi Khutir - the 46th station of the Kyiv metro, the terminus of the Syretsko-Pecherska line, located after the Boryspilska station, is considered a columnar two-lane shallow-lying station, unlike the Vyrlytsia station, the shape here is straight. It is considered the only station located in the middle of the forest and there are several bus stops. It was opened on May 23, 2008. The name is related to the direction of the subway line from the nearest area. Transitional The station has a tactile surface. In the future, it is planned to extend the Syretsko-Pecherska line to Darnytsky station (also under construction).</p>');
+				$('#title').html("Chervonyi Khutir (metro station of Syretsko-Pecherska line)");
+				$('#qrcode').html("<p>QR code of the station:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_hutir.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Chervonyi Khutir e la 46a stazione della metropolitana di Kiev, capolinea della linea Syretsko-Pecherska, situata dopo la stazione di Boryspilska, e considerata una stazione colonnare a due corsie poco profonde, a differenza della stazione di Vyrlytsia, la forma qui e diritta. E considerata l`unica stazione situata in mezzo alla foresta e vi sono diverse fermate di autobus. E stato inaugurato il 23 maggio 2008. Il nome e legato alla direzione della linea metropolitana dalla zona piu vicina. di transizione La stazione ha una superficie tattile. In futuro si prevede di estendere la linea Syretsko-Pecherska fino alla stazione di Darnytsky (anch`essa in costruzione).</p>');
+				$('#title').html("Chervonyi Khutir (stazione della metropolitana della linea Syretsko-Pecherska)");
+				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M3/qrcode_hutir.png' align='left' width='300px' height='300px'>");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
+			}
+			$('#station_image').html("<img src='images_kyiv_metro_M3/Chervonyi_khutir_metro_station_Kiev_2010_01.jpg' style='width:1560px; height: 1050px;'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+		});
+		
+		
+		$("#p, h1, h2, h3, h4, li, legend, td, label, option").addClass("font_middle");
+
+		$("#small_text").click(function(){
+			$clas_new="font_small";
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").removeClass($clas_action).addClass($clas_new);
+			$clas_action=$clas_new;
+		})
+		$("#middle_text").click(function(){
+			$clas_new="font_middle";
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").removeClass($clas_action).addClass($clas_new);
+			$clas_action=$clas_new;
+		})
+		$("#big_text").click(function(){
+			$clas_new="font_big";
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").removeClass($clas_action).addClass($clas_new);
+			$clas_action=$clas_new;
+		})
+		$(function(){
+			$('#e').click(function(){
+				if ($('#e').text()=="Почати переклад") {
+					$('#e').text('English');}
+				else if ($('#e').text()=="Українська") {
+					$('#txt_logo').html('<h4>Сирецько-Печерська лінія</h4>');
+					$('#title').html("Сирецько-Печерська лінія");
+					$('#qrcode').html("<p>QR code of the line:</p><img src='kyiv_metro_qrcodes/qrcode_syrets_pecherska_.png' align='left' width='300px' height='300px'>");
+					$('#menu_site').html('<table width="100%"><tr><td width="100px"><a href="Kiev_metro.html">Головна</a></td><td width="200px"><a href="M1.html?m=1" class="light_sb"><div></div><div></div><div></div><div></div>Святошинсько-Броварська лінія</a></td><td width="200px"><a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div>Оболонсько-Теремківська лінія</a></td><td width="200px">Сирецько-Печерська лінія</td><td width="200px"><a href="M4.html?m=1" class="light_pv"><div></div><div></div><div></div><div></div>Подільсько-Вигурівська лінія</a></td><td width="200px"><a href="M5.html?m=1" class="light_livoberezhna"><div></div><div></div><div></div><div></div>Лівобережна лінія</a></td><td width="200px"><a href="M6.html?m=1" class="light_vd"><div></div><div></div><div></div><div></div>Вишгородсько-Дарницька лінія</a></td><td width="200px"><a href="M7.html" class="light_b"><div></div><div></div><div></div><div></div>Борщагівська лінія</a></td><td width="200px"><a href="Rolling_stock_kyiv_metro.html">Рухомий пасажирський склад метрополітену</a></td><td width="200px"><a href="about_us.html">Про нас</a></td></td></tr></table>');
+					$('#p').html('<p>Сирецько-Печерська лінія — історично третя лінія Київського метрополітену. Кількість станцій — 16, довжина лінії — 23,9 км.</p><p>Нумерація колій: Сирець — Червоний хутір-I, Червоний хутір — Сирець-II.</p>');
+					$("#p, h2, h3, li, legend, td, label, option").attr("style","color:#ffffff;");
+					$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+					$("#station_01").text("Маршала Гречка");$("#station_02").text("Виноградар");$("#station_03").text("Проспект Правди");$("#station_04").text("Мостицька");$("#station_1").html("Сирець<img src='20px-BSicon_LDER.svg.png'>");$("#station_2").text("Дорогожичі");$("#station_3").text("Герцена");$("#station_4").text("Лук`янівська");$("#station_5").text("Львівська брама");$("#station_6").text("Золоті Ворота");$("#station_7").text("Палац Спорту");$("#station_8").text("Кловська");$("#station_9").text("Печерська");$("#station_10").text("Ботанічна");$("#station_11").html("Видубичі<img src='20px-BSicon_LDER.svg.png'>");$("#station_12").text("Теличка");$("#station_13").text("Славутич");$("#station_14").text("Осокорки");$("#station_15").text("Позняки");$("#station_16").text("Харківська");$("#station_17").text("Вирлиця");$("#station_18").text("Бориспільська");$("#station_19").text("Червоний Хутір");
+					$("#station_0").html("<p><a>Промислова</a></p><p><a>Вулиця Горбунова</a></p><p><a>Дарницький вокзал<img src='20px-BSicon_LDER.svg.png'></a></p><p><a>Дніпровська площа</a></p><p><a>Броварський проспект<img src='20px-BSicon_LDER.svg.png'></a></p>");
+					$('#e').text('English');}
+				else if ($('#e').text() == "English") {
+					$('#txt_logo').html('<h4>Syretsko-Pecherska line</h4>');
+					$('#title').html("Syretsko-Pecherskaya line");
+					$('#qrcode').html("<p>QR code of the line:</p><img src='kyiv_metro_qrcodes/qrcode_syrets_pecherska_.png' align='left' width='300px' height='300px'>");
+					$('#menu_site').html('<table width="100%"><tr><td width="100px"><a href="Kiev_metro.html">Main site</a></td><td width="200px"><a href ="M1.html?m=1" class="light_sb"><div></div><div></div><div></div><div></div>Svyatoshinsko-Brovarska line</a></td><td width="200px"><a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div>Obolonsko-Teremkivska line</a></td><td width="200px">Syretsko-Pecherska line</td><td width="200px"><a href="M4.html?m=1" class="light_pv"><div></div><div></div><div></div><div></div>Podilsko-Vygurivska line</a></td><td width="200px"><a href="M5.html?m=1" class="light_livoberezhna"><div></div><div></div><div></div><div></div>Livoberezhna line</a></td><td width="200px"><a href ="M6.html?m=1" class="light_vd"><div></div><div></div><div></div><div></div>Vyshgorodsko-Darnitska line</a></td><td width="200px"><a href="M7.html" class="light_b"><div></div><div></div><div></div><div></div>Borshchahivska line</a></td ><td width="200px"><a href="Rolling_stock_kyiv_metro.html">Subway rolling stock</a></td><td width="200px"><a href="about_us.html">About us</a></td></td></tr></table>');
+					$('#p').html('<p>Sieretsko-Pecherskaya line - historically the third line of the Kiev subway. The number of stations is 16, the length of the line is 23.9 km. </P><p> Numbering of tracks: Syrets - Red Farm-I, Red Farm - Syrets-II. </ p>');
+					$("#p, h2, h3, li, legend, td, label, option").attr("style","color:#ffffff;");
+					$("#station_01").text("Marshala Hrechka");$("#station_02").text("Vynohrador");$("#station_03").text("Prospekt Pravdy");$("#station_04").text("Mostytska");$("#station_1").html("Syrets<img src='20px-BSicon_LDER.svg.png'>");$("#station_2").text("Dorohozhychi");$("#station_3").text("Hertsena");$("#station_4").text("Lukianivska");$("#station_5").text("Lvivska brama");$("#station_6").text("Zoloti Vorota");$("#station_7").text("Palats Sportu");$("#station_8").text("Klovska");$("#station_9").text("Pecherska");$("#station_10").text("Botanichna");$("#station_11").html("Vydubychi<img src='20px-BSicon_LDER.svg.png'>");$("#station_12").text("Telychka");$("#station_13").text("Slavutych");$("#station_14").text("Osokorky");$("#station_15").text("Pozniaky");$("#station_16").text("Kharkivska");$("#station_17").text("Vyrlystia");$("#station_18").text("Boryspilska");$("#station_19").text("Chervonyi Khutir");
+					$("#station_0").html("<p><a>Promyslova</a></p><p><a>Vylutsya Gorbunova</a></p><p><a>Darnytskyy vokzal<img src='20px-BSicon_LDER.svg.png'></a></p><p><a>Dniprovska Ploshcha</a></p><p><a>Brovarsky Prospekt<img src= '20px-BSicon_LDER.svg.png'></a></p>");
+					$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+					$('#e').text('Italiano');}
+				else if ($('#e').text() == "Italiano") {
+					$('#txt_logo').html('<h4>Linea Syretsko-Pecherska</h4>');
+					$('#title').html("Linea Syretsko-Pecherska");
+					$('#qrcode').html("<p>QR code della linea:</p><img src='kyiv_metro_qrcodes/qrcode_syrets_pecherska_.png' align='left' width='300px' height='300px'>");
+					$('#menu_site').html('<table width="100%"><tr><td width="100px"><a href="Kiev_metro.html">Sito principale</a></td><td width="200px"><a href ="M1.html?m=1" class="light_sb"><div></div><div></div><div></div><div></div>Linea Svyatoshinsko-Brovarska</a></td><td width="200px"><a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div>Linea Obolonsko-Teremkivska</a></td><td width="200px">Linea Syretsko-Pecherska</td><td width="200px"><a href="M4.html?m=1" class="light_pv"><div></div><div></div><div></div><div></div>Linea Podilsko-Vygurivska</a></td><td width="200px"><a href="M5.html?m=1" class="light_livoberezhna"><div></div><div></div><div></div><div></div>Linea Livoberezhna</a></td><td width="200px"><a href="M6.html?m=1" class="light_vd"><div></div><div></div><div></div><div></div>Linea Vyshgorodsko-Darnitska</a></td><td width="200px"><a href="M7.html" class="light_b"><div></div><div></div><div></div><div></div>Linea Borshchahivska</a></ td ><td width="200px"><a href="Rolling_stock_kyiv_metro.html">Materiale rotabile della metropolitana</a></td><td width="200px"><a href="about_us.html" >Chi siamo</a></td></td></tr></table>');
+					$('#p').html('<P>La linea Syretsko-Pecherska e storicamente la terza linea della metropolitana di Kiev. Numero di stazioni - 16, lunghezza della linea - 23,9 Km. </p> <p> Numerazione dei binari: Raw - Red Farm-I, Red Farm - Raw-II.</P>');
+					$("#p, h2, h3, li, legend, td, label, option").attr("style","color:#ffffff;");
+					$("#station_01").text("Marshala Hrechka");$("#station_02").text("Vynogradar");$("#station_03").text("Prospekt Pravdy");$("#station_04").text("Mostytska");$("#station_1").html("Syrets<img src='20px-BSicon_LDER.svg.png'>");$("#station_2").text("Dorohozhichi");$("#station_3").text("Herzen");$("#station_4").text("Lukyanivska");$("#station_5").text("Lvivska brama");$("#station_6").text("Zoloti Vorota");$("#station_7").text("Palazzo dello Sport");$("#station_8").text("Klovska");$("#station_9").text("Pecherska");$("#station_10").text("Botanichna");$("#station_11").html("Vydubychi<img src='20px-BSicon_LDER.svg.png'>");$("#station_12").text("Telichka");$("#station_13").text("Slavutych");$("#station_14").text("Osokorky");$("#station_15").text("Poznyaki");$("#station_16").text("Kharkivska");$("#station_17").text("Vyrlystia");$("#station_18").text("Boryspilska");$("#station_19").text("Chervonyi Khutir");
+					$("#station_0").html("<p><a>Promyslova</a></p><p><a>Via Gorbunova</a></p><p><a>Stazione ferroviaria di Darnyckij<img src='20px-BSicon_LDER.svg.png'></a></p><p><a>Piazza Dniprovska</a></p><p><a>Brovarsky Prospekt<img src= '20px-BSicon_LDER.svg.png'></a></p>");
+					$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+					$('#e').text('Українська');}
+			});
+		})
+		;
+		$(function(){
+			function change_width(id_obj,x){
+				var a=$(id_obj).attr('title');
+				var w=$(id_obj).width();
+				var h=$(id_obj).height();
+				if(a==''){
+					w=w*x;
+					h=h*x;
+					$(id_obj).width(w).height(h);
+					$(id_obj).attr('title','фото зменшене в 1.5 раз');
+					a=$(id_obj).attr('title');
+				}
+				else if(a=='фото зменшене в 1.5 раз'){
+					w=w/1.5;
+					h=h/1.5;
+					$(id_obj).width(w).height(h);
+					$(id_obj).attr('title','');
+					a=$(id_obj).attr('title');
+				}
+			}
+			$('#station img').each(function(){
+				$(this).attr('title','');
+				$(this).click(function(){
+					change_width(this,1.5);
+				});
+			});
+		})
+		;
+	});
+
+</script>
+<table width='100%'>
+<tr width='20%'><td width='20%' valign='top'><h1 id='txt_logo' class='logo_text'>Сирецько-Печерська лінія</h1></td>
+<td>
+<div id="navigation">
+<ul valign="top">
+<li align='left'><div id="divDateTime" style='font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;'></div></li>
+<li><div id="p_color_knop">
+					<div id="red"></div>
+					<div id="blue"></div>
+					<div id="yellow"></div>
+					<div id="cyan"></div>
+					<div id="gold"></div>
+					<div id="purple"></div>
+					<div id="white"></div>
+					<div id="rainbow_text"></div>
+				</div></li>
+<li><div id="size_text">
+<div id="e" width="100px" style=" border:1px solid red; background:#3582c4; padding:5px ">Почати переклад</div></div></li>
+<li><div id="size_text">
+				<div id="small_text">A</div>
+				<div id="middle_text">A</div>
+				<div id="big_text">A</div>
+			</div></li>
+</ul>
+</div></td></tr>
+<tr valign='top'><td valign='top'><img id='logo' src='kyiv_metro_branch/M3.png' align='left'width='300px' height='218px'></td>
+<td><img id='metro' src='kyiv_metro_branch/metro_animation.gif' width='100%'></td></tr>
+</table>
+
+<div id='menu_site' >
+<table width='100%'>
+<tr>
+<td width='100px'>
+         <a href="Kiev_metro.html" >Головна</a></td>
+		 <td width='200px'>
+         <a href="M1.html?m=1" class="light_sb"><div></div><div></div><div></div><div></div>Святошинсько-Броварська лінія</a></td>
+		 <td width='200px'>
+         <a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div>Оболонсько-Теремківська лінія</a></td>
+		 <td width='200px'>
+Сирецько-Печерська лінія</td>
+		 <td width='200px'>
+         <a href="M4.html?m=1" class="light_pv"><div></div><div></div><div></div><div></div>Подільсько-Вигурівська лінія</a></td>
+		 <td width='200px'>
+		 <a href="M5.html?m=1" class="light_livoberezhna"><div></div><div></div><div></div><div></div>Лівобережна лінія</a></td>
+		 <td width='200px'>
+		 <a href="M6.html?m=1" class="light_vd"><div></div><div></div><div></div><div></div>Вишгородсько-Дарницька лінія</a></td>
+		 <td width='200px'>
+		 <a href="M7.html" class="light_b"><div></div><div></div><div></div><div></div>Борщагівська лінія</a></td>
+		 <td width='200px'>
+         <a href="Rolling_stock_kyiv_metro.html">Рухомий пасажирський склад метрополітену</a></td>
+		 <td width='100px'>
+            <a href="about_us.html">Про нас</a></td>
+</td>
+   </tr>
+   </table>
+      </div>
+				<div id='p'>
+<p>Сирецько-Печерська лінія — історично третя лінія Київського метрополітену. Кількість станцій — 16, довжина лінії — 23,9 км.</p>
+<p>Нумерація колій: Сирець — Червоний хутір-I, Червоний хутір — Сирець-II.</p>
+</div>
+<img id='map' src='kyiv_metro_branch/kiev_metro_line_M3.jpg' width='100%'>
+<table id='center' cellspacing="0" border="0" width="100%" bordercolor="fff">
+<tr id='top'>
+<td id='menu_station' width='275px' valign="top">
+<div class='menu'>
+<p><a id="station_01">Маршала Гречка</a></p>
+<p><a id="station_02">Виноградар</a></p>
+<p><a id="station_03">Проспект Правди</a></p>
+<p><a id="station_04">Мостицька</a></p>
+<p><a id="station_1">Сирець<img src='20px-BSicon_LDER.svg.png'></a></p>
+<p><a id="station_2">Дорогожичі</a></p>
+<p><a id="station_3">Герцена</a></p>
+<p><a id="station_4">Лук'янівська</a></p>
+<p><a id="station_5">Львівська брама</a></p>
+<p><a id="station_6">Золоті Ворота</a></p>
+<p><a id="station_7">Палац Спорту</a></p>
+<p><a id="station_8">Кловська</a></p>
+<p><a id="station_9">Печерська </a></p>
+<p><a id="station_10">Ботанічна</a></p>
+<p><a id="station_11">Видубичі<img src='20px-BSicon_LDER.svg.png'></a></p>
+<p><a id="station_12">Теличка</a></p>
+<p><a id="station_13">Славутич</a></p>
+<p><a id="station_14">Осокорки</a></p>
+<p><a id="station_15">Позняки</a></p>
+<p><a id="station_16">Харківська</a></p>
+<p><a id="station_17">Вирлиця</a></p>
+<p><a id="station_18">Бориспільська</a></p>
+<p><a id="station_19">Червоний Хутір</a></p>
+<div id="station_0">
+<p><a>Промислова</a></p>
+<p><a>Вулиця Горбунова</a></p>
+<p><a>Дарницький вокзал<img src='20px-BSicon_LDER.svg.png'></a></p>
+<p><a>Дніпровська площа</a></p>
+<p><a>Броварський проспект<img src='20px-BSicon_LDER.svg.png'></a></p>
+</div>
+</div>
+</td>
+<td id='station' valign="top" rowspan='2'>
+<p>
+<div id='text_station'></div>
+</p>
+<p>
+<div id='station_image' width='1050px' height='750px'></div>
+<div id='station_video' width='1050px' height='750px'></div>
+<div id='qrcode' width='1050px' height='750px'><p>QR-код лінії:</p><img src='kyiv_metro_qrcodes/qrcode_syrets_pecherska_.png' align='left' width='300px' height='300px'></div>
+<div id='back_to_main_slide' class='menu'></div>
+</p>
+</td>
+</tr>
+</table>
+</body>
+</html>

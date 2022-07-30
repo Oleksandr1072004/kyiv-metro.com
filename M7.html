@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1251">
+<title>Борщагівська лінія</title>
+<script src="js/jquery-1_11_3_min.js"> </script>
+<link href="css/new.css" rel="stylesheet" type="text/css" />
+<link rel="icon" href="kyiv_metro_branch/1024px-Kyiv_Metro_Line_7-removebg-preview.png" type="image/x-icon">
+</head>
+<body bgcolor="purple">
+<script>
+	var $clas_new="font_middle";
+	var $clas_action="font_middle";
+	
+	
+	function GetDateTime(){
+		var DateTime = new Date();
+		var week = new Array('Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П`ятниця', 'Субота');
+		var day  = week[DateTime.getDay()];
+		$('#divDateTime').html("Сьогодні: " + DateTime.getDate() + "." + (DateTime.getMonth()+1) + "." + DateTime.getFullYear() + " - "+day+"<br> Час: " + DateTime.getHours() + ":" + DateTime.getMinutes() + ":" + DateTime.getSeconds());
+	}
+	
+	$('document').ready(function(){
+		setInterval(GetDateTime, 1000);
+		
+		$(function(){
+			$('#logo').slideUp(0);
+			$('#logo').slideDown(3000);
+			$('#menu').slideUp(0);
+			$('#menu').slideDown(2000);
+		})
+		;
+		$("#red").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:red;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+		})
+		$("#blue").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:lightblue;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+		})
+		$("#green").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:lime;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+		})
+		$("#yellow").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:gold;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+		})
+		$("#gold").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:yellow;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+		})
+		$("#cyan").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#00ffff;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+		})
+		$("#white").click(function(){
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#ffffff;");
+			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+		})
+		$("#rainbow_text").click(function(){
+			$("#p, legend, td, label, option").attr("style","background: linear-gradient(90deg, #fd004c, #fe9000, #fff020, #3edf4b, #3363ff, #0000ff, #000080, #800080, #b102b7, #ff00c4, #fd004c);background-size: 400%;font-family: sans-serif;word-spacing: 5px;-webkit-text-fill-color: transparent;-webkit-text-stroke: 0.01em white;-webkit-background-clip: text;animation: animate 10s linear infinite;");
+			$("#divDateTime").attr("style","background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033ff, #ff00c4, #ff0000);background-size: 400%;font-family: Calibri; font-style: Italic; font-size:115%;word-spacing: 5px;-webkit-text-fill-color: transparent;-webkit-background-clip: text;animation: animate 10s linear infinite;");
+			$("h1, h2, h3, h4").attr("style","background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033ff, #ff00c4, #ff0000);background-size: 400%; width:100%; font:24px impact; height:10px; font-style: Italic; font-size:115%;letter-spacing: 3px;-webkit-text-fill-color: transparent;-webkit-background-clip: text;animation: animate 10s linear infinite;");
+			$("#menu a:hover").attr("style","background:#ffffff;");
+			$("#menu a:action").attr("style","background:#ffffff;");
+		})
+		
+		// Stations
+		$("#station_2").click(function(){
+			$('#text_station').html('<p>Станції цієї лінії проектуються, але це все залишається на паперах!</p>');
+			$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+			$('#back_to_main_slide').text("Назад до головної сторінки цього сайту");
+			if ($('#e').text()=="English") {
+				$('#text_station').html('<p>Станції цієї лінії проектуються, але це все залишається на паперах!</p>');
+				$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+				$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+				$('#back_to_main_slide').text("Назад до головної сторінки цього сайту");
+			}
+			else if ($('#e').text()=="Italiano") {
+				$('#text_station').html('<p>The stations of this line are being designed, but it all remains on paper!</p>');
+				$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+				$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+				$('#back_to_main_slide').text("Back to the main page of this site");
+			}
+			else if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Le stazioni di questa linea sono in fase di progettazione, ma resta tutto sulla carta!</p>');
+				$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+				$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+				$('#back_to_main_slide').text("Torna alla pagina principale di questo sito");
+			}
+			
+		});
+		$("#back_to_main_slide").click(function(){
+			$('#text_station').html('<p>Фото проекта, там де М7 - це і є Борщагівська лінія</p>');
+			$('#station_image').html("<img src='metro43.png' style='width:1560px; height: 1050px;'>");
+			$('#station_video').html("");
+			$('#back_to_main_slide').html("");
+			if ($('#e').text()=="Українська") {
+				$('#text_station').html('<p>Foto del progetto, dove si trova M7, questa e la linea Borshchagivska</p>');
+				$('#station_image').html("<img src='metro43.png' style='width:1560px; height: 1050px;'>");
+				$('#station_video').html("");
+				$('#back_to_main_slide').html("");
+			}
+			else if ($('#e').text()=="English") {
+				$('#text_station').html('<p>Фото проекта, там де М7 - це і є Борщагівська лінія</p>');
+				$('#station_image').html("<img src='metro43.png' style='width:1560px; height: 1050px;'>");
+				$('#station_video').html("");
+				$('#back_to_main_slide').html("");
+			}
+			else if ($('#e').text()=="Italiano") {
+				$('#text_station').html('<p>Photo of the project, where M7 is, this is the Borshchagivska line</p>');
+				$('#station_image').html("<img src='metro43.png' style='width:1560px; height: 1050px;'>");
+				$('#station_video').html("");
+				$('#back_to_main_slide').html("");
+			}
+		});
+		
+		$("#p, h1, h2, h3, h4, li, legend, td, label, option").addClass("font_middle");
+
+		$("#small_text").click(function(){
+			$clas_new="font_small";
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").removeClass($clas_action).addClass($clas_new);
+			$clas_action=$clas_new;
+		})
+		$("#middle_text").click(function(){
+			$clas_new="font_middle";
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").removeClass($clas_action).addClass($clas_new);
+			$clas_action=$clas_new;
+		})
+		$("#big_text").click(function(){
+			$clas_new="font_big";
+			$("#p, h1, h2, h3, h4, li, legend, td, label, option").removeClass($clas_action).addClass($clas_new);
+			$clas_action=$clas_new;
+		})
+		$(function(){
+			$('#e').click(function(){
+				if ($('#e').text()=="Почати переклад") {
+					$('#e').text('English');}
+                else if ($('#e').text()=="Українська") {
+					$('#txt_logo').html('<h4>Борщагівська лінія</h4>');
+					$('#menu_site').html('<table width="100%"><tr><td width="100px"><a href="Kiev_metro.html">Головна</a></td><td width="200px"><a href="M1.html?m=1" class="light_sb"><div></div><div></div><div></div><div></div>Святошинсько-Броварська лінія</a></td><td width="200px"><a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div>Оболонсько-Теремківська лінія</a></td><td width="200px"><a href="M3.html?m=1" class="light_sp"><div></div><div></div><div></div><div></div>Сирецько-Печерська лінія</a></td><td width="200px"><a href="M4.html?m=1" class="light_pv"><div></div><div></div><div></div><div></div>Подільсько-Вигурівська лінія</a></td><td width="200px"><a href="M5.html?m=1" class="light_livoberezhna"><div></div><div></div><div></div><div></div>Лівобережна лінія</a></td><td width="200px"><a href="M6.html?m=1" class="light_vd"><div></div><div></div><div></div><div></div>Вишгородсько-Дарницька лінія</a></td><td width="200px">Борщагівська лінія</td><td width="200px"><a href="Rolling_stock_kyiv_metro.html">Рухомий пасажирський склад метрополітену</a></td><td width="200px"><a href="about_us.html">Про нас</a></td></td></tr></table>');
+					$('#p').html('<p>Проект сьомої лінії Київського метрополітена, який був уніфікований з швидкісним трамваєм, до російсько-української війни швидкісного трамвая доробили і провели випробування. Але із за російсько-української війни і складної економічної ситуації, Борщагівський швидкісний трамвай лишився єдиним екземпляром, а проект Борщагівської лінії Київського метрополітена залишився на паперах.</p>');
+					$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#ffffff;");
+					$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+					$("#text_station").html('<p>Фото проекта, там де М7 - це і є Борщагівська лінія</p>');
+					$("#station_2").html("<p><a>Зараз список станцій Борщагівської лінії Київського метрополітена немає</a></p>");
+					$('#e').text('English');}
+				else if ($('#e').text() == "English") {
+					$('#txt_logo').html('<h4>Borshchahivska line</h4>');
+					$('#menu_site').html('<table width="100%"><tr><td width="100px"><a href="Kiev_metro.html">Main site</a></td><td width="200px"><a href ="M1.html?m=1" class="light_sb"><div></div><div></div><div></div><div></div>Svyatoshinsko-Brovarska line</a></td><td width="200px"><a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div>Obolonsko-Teremkivska line</a></td><td width="200px"><a href="M3.html?m=1" class="light_sp"><div></div><div></div><div></div><div></div>Syretsko-Pecherska line</a></td><td width="200px"><a href="M4.html?m=1" class="light_pv"><div></div><div></div><div></div><div></div>Podilsko-Vygurivska line</a></td><td width="200px"><a href="M5.html?m=1" class="light_livoberezhna"><div></div><div></div><div></div><div></div>Livoberezhna line</a></td><td width="200px"><a href="M6.html?m=1" class="light_vd"><div></div><div></div><div></div><div></div>Vyshhorodsko-Darnytska line</a></td><td width="200px">Borshchagivska line</td><td width="200px"><a href="Rolling_stock_kyiv_metro.html">Subway rolling stock</a></td><td width="200px"><a href="about_us. html">About Us</a></td></td></tr></table>');
+					$('#p').html('<p>The project of the seventh line of the Kyiv metro, which was unified with the high-speed tram, was completed and tested before the Russian-Ukrainian war. But due to the Russian-Ukrainian war and the difficult economic situation, the Borshchagiv high-speed tram remained the only copy, and the project of the Borshchagiv line of the Kyiv metro remained on paper.</p>');
+					$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#ffffff;");
+					$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+					$("#text_station").html('<p>Photo of the project, where M7 is, this is the Borshchagivska line</p>');
+					$("#station_2").html("<p><a>Currently, there is no list of stations on the Borshchagivska Line of the Kyiv Metro</a></p>");
+					$('#e').text('Italiano');}
+				else if ($('#e').text() == "Italiano") {
+					$('#txt_logo').html('<h4>Linea Borshchahivska</h4>');
+					$('#menu_site').html('<table width="100%"><tr><td width="100px"><a href="Kiev_metro.html">Sito principale</a></td><td width="200px"><a href ="M1.html?m=1" class="light_sb"><div></div><div></div><div></div><div></div>Linea Svyatoshinsko-Brovarska</a></td><td width="200px"><a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div>Linea Obolonsko-Teremkivska</a></td><td width="200px"><a href="M3.html?m=1" class="light_sp"><div></div><div></div><div></div><div></div>Linea Syretsko-Pecherska</a></td><td width="200px"><a href="M4.html?m=1" class="light_pv"><div></div><div></div><div></div><div></div>Linea Podilsko-Vygurivska</a></td><td width="200px"><a href="M5.html?m=1" class="light_livoberezhna"><div></div><div></div><div></div><div></div>Linea Livoberezhna</a></td><td width="200px"><a href="M6.html?m=1" class="light_vd"><div></div><div></div><div></div><div></div>Linea Vyshhorodsko-Darnytska</a></td><td width="200px">Linea Borshchagivska</td><td width="200px"><a href="Rolling_stock_kyiv_metro.html">Materiale rotabile della metropolitana</a></td><td width="200px"><a href="about_us.html">Chi siamo</a></td></td></tr></table>');
+					$('#p').html("<P>Il progetto della settima linea della metropolitana di Kiev, che e stata unificata con il tram ad alta velocita, e stato completato e testato prima della guerra russo-ucraina. Ma a causa della guerra russo-ucraina e della difficile situazione economica, il tram ad alta velocita Borshchagiv e rimasto l'unica copia e il progetto della linea Borshchagiv della metropolitana di Kiev e rimasto sulla carta.</P>");
+					$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#ffffff;");
+					$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
+					$("#text_station").html('<p>Foto del progetto, dove si trova M7, questa e la linea Borshchagivska</p>');
+					$("#station_2").html("<p><a>Attualmente non esiste un elenco di stazioni sulla linea Borshchagivska della metropolitana di Kiev</a></p>");
+					$('#e').text('Українська');}
+			});
+		})
+		;
+$(function(){
+			function change_width(id_obj,x){
+				var a=$(id_obj).attr('title');
+				var w=$(id_obj).width();
+				var h=$(id_obj).height();
+				if(a==''){
+					w=w*x;
+					h=h*x;
+					$(id_obj).width(w).height(h);
+					$(id_obj).attr('title','фото зменшене в 1.5 раз');
+					a=$(id_obj).attr('title');
+				}
+				else if(a=='фото зменшене в 1.5 раз'){
+					w=w/1.5;
+					h=h/1.5;
+					$(id_obj).width(w).height(h);
+					$(id_obj).attr('title','');
+					a=$(id_obj).attr('title');
+				}
+			}
+			$('#station img').each(function(){
+				$(this).attr('title','');
+				$(this).click(function(){
+					change_width(this,1.5);
+				});
+			});
+		})
+		;
+	});
+</script>
+<table width='100%'>
+<tr width='20%'><td width='20%' valign='top'><h1 id='txt_logo' class='logo_text'>Борщагівська лінія</h1></td>
+<td>
+<div id="navigation">
+<ul valign="top">
+<li align='left'><div id="divDateTime" style='font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;'></div></li>
+<li><div id="p_color_knop">
+					<div id="red"></div>
+					<div id="blue"></div>
+					<div id="green"></div>
+					<div id="yellow"></div>
+					<div id="cyan"></div>
+					<div id="gold"></div>
+					<div id="white"></div>
+					<div id="rainbow_text"></div>
+				</div></li>
+<li><div id="size_text">
+<div id="e" width="100px" style=" border:1px solid red; background:#3582c4; padding:5px ">Почати переклад</div></div></li>
+<li><div id="size_text">
+				<div id="small_text">A</div>
+				<div id="middle_text">A</div>
+				<div id="big_text">A</div>
+			</div></li>
+</ul>
+</div></td></tr>
+<tr valign='top'><td valign='top'><img id='logo' src='images_kyiv_metro_M4/Photo_coming_soon.jpg' align='left'width='300px' height='218px'></td>
+<td><div id="divDateTime" style='font-family: Calibri; color: orange; font-style: Italic; font-size:115%;'></div></td></tr>
+</table>
+<div id='menu_site' >
+<table width='100%'>
+<tr>
+<td width='100px'>
+	<a href="Kiev_metro.html">Головна</a></td>
+	<td width='200px'>
+		<a href="M1.html?m=1" class="light_sb"><div></div><div></div><div></div><div></div>Святошинсько-Броварська лінія</a></td>
+	<td width='200px'>
+		<a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div>Оболонсько-Теремківська лінія</a></td>
+	<td width='200px'>
+		<a href="M3.html?m=1" class="light_sp"><div></div><div></div><div></div><div></div>Сирецько-Печерська лінія</a></td>
+	<td width='200px'>
+		<a href="M4.html?m=1" class="light_pv"><div></div><div></div><div></div><div></div>Подільсько-Вигурівська лінія</a></td>
+	<td width='200px'>
+		 <a href="M5.html?m=1" class="light_livoberezhna"><div></div><div></div><div></div><div></div>Лівобережна лінія</a></td>
+	<td width='200px'>
+		<a href="M6.html?m=1" class="light_vd"><div></div><div></div><div></div><div></div>Вишгородсько-Дарницька лінія</a></td>
+	<td width='200px'>
+		Борщагівська лінія</td>
+	<td width='200px'>
+		<a href="Rolling_stock_kyiv_metro.html">Рухомий пасажирський склад метрополітену</a></td>
+	<td width='200px'>
+            <a href="about_us.html">Про нас</a></td>
+</td>
+   </tr>
+   </table>
+      </div>
+				<div id='p'>
+<p>Проект сьомої лінії Київського метрополітена, який був уніфікований з швидкісним трамваєм, до російсько-української війни швидкісного трамвая доробили і провели випробування. Але із за російсько-української війни і складної економічної ситуації, Борщагівський швидкісний трамвай лишився єдиним екземпляром, а проект Борщагівської лінії Київського метрополітена залишився на паперах.</p>
+</div>
+<table id='center' cellspacing="0" border="0" width="100%" bordercolor="fff">
+<tr id='top'>
+<td id='menu' width='275px' valign="top">
+<div class='menu_station' >
+<div id='station_2'>
+<p><a>Зараз список станцій Борщагівської лінії Київського метрополітена немає</a></p>
+</div>
+</div>
+</td>
+<td id='station' valign="top" rowspan='2'>
+<p>
+<div id='text_station'><p>Фото проекта, там де М7 - це і є Борщагівська лінія</p></div>
+</p>
+<p>
+<div id='station_image' width='1050px' height='750px'><img src='metro43.png' style='width:1560px; height: 1050px;'></div>
+<div id='station_video' width='1050px' height='750px'></div>
+<div id='back_to_main_slide'></div>
+</p>
+</td>
+</tr>
+</table>
+</body>
+</html>
