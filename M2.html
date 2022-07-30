@@ -10,17 +10,17 @@
 <script>
 	var $clas_new="font_middle";
 	var $clas_action="font_middle";
-	
+
 	function GetDateTime(){
 		var DateTime = new Date();
 		var week = new Array('Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П`ятниця', 'Субота');
 		var day  = week[DateTime.getDay()];
 		$('#divDateTime').html("Сьогодні: " + DateTime.getDate() + "." + (DateTime.getMonth()+1) + "." + DateTime.getFullYear() + " - "+day+"<br> Час: " + DateTime.getHours() + ":" + DateTime.getMinutes() + ":" + DateTime.getSeconds());
 	}
-	
+
 	$('document').ready(function(){
 		setInterval(GetDateTime, 1000);
-		
+
 		$(function(){
 			$('#map').slideUp(0);
 			$('#map').fadeIn(3000);
@@ -65,7 +65,7 @@
 			$("#menu a:hover").attr("style","background:#ffffff;");
 			$("#menu a:action").attr("style","background:#ffffff;");
 		})
-		
+
 		$("#back_to_main_slide").click(function(){
 			$('#text_station').html('');
 			$('#title').html("Оболонсько-Теремківська лінія");
@@ -86,7 +86,7 @@
 				$('#qrcode').html("<p>Codice QR della linea:</p><img src='kyiv_metro_qrcodes/qrcode_obolon_teremky_.png' align='left' width='300px' height='300px'>");
 			}
 		});
-		
+
 		// Stations
 		$("#station_1").click(function(){
 			$('#text_station').html('<p>Героїв України - 25-та станція Київського метрополітену. Кінцева станція Оболонсько-Теремківської лінії, розташована після станції «Варшавська». Відкрита 6 листопада 1982 року. Названа за однойменною вулицею. До 2022 року мала назву Героїв Дніпра.</p>');
@@ -111,7 +111,7 @@
 				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M2/qrcode_heroiv_ukraine.png' align='left' width='300px' height='300px'>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M2/Heroiv_Dnipra_metro_station_Kiev_2011_01.jpg' style='width:1550px; height: 1050px;'>");
+			$('#station_image').html("<img src='images_kyiv_metro_M2/Heroiv_Dnipra_metro_station_Kiev_2011_01.jpg' style='width:100%'>");
 			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/0YubMl-CGv8' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
 		});
 		$("#station_2").click(function(){
@@ -137,7 +137,7 @@
 				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M2/qrcode_warshaw.png' align='left' width='300px' height='300px'>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M2/Minska_metro_station_Kiev_2011_02.jpg' style='width:1550px; height: 1050px;'>");
+			$('#station_image').html("<img src='images_kyiv_metro_M2/Minska_metro_station_Kiev_2011_02.jpg' style='width:100%'>");
 			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/45ucKgyedVA' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
 		});
 		$("#station_3").click(function(){
@@ -167,7 +167,7 @@
 				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M2/qrcode_obolon.png' align='left' width='300px' height='300px'>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M2/Obolon_metro_station_Kiev_01.jpg' style='width:1560px; height: 1000px;'>");
+			$('#station_image').html("<img src='images_kyiv_metro_M2/Obolon_metro_station_Kiev_01.jpg' style='width:100%'>");
 		});
 		$("#station_4").click(function(){
 			$('#text_station').html('<p>Почайна - 20-та станція Київського метрополітену. Розташована на Оболонсько-Теремківській лінії між станціями «Оболонь» та «Тараса Шевченка». Відкрита 19 грудня 1980 року. До 2018 року мала назву «Петрівка».</p>');
@@ -192,7 +192,7 @@
 				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M2/qrcode_pochaina.png' align='left' width='300px' height='300px'>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M2/Petrovka_metro_station_Kiev_2010_01.jpg' style='width:1558px; height: 1050px;'>");
+			$('#station_image').html("<img src='images_kyiv_metro_M2/Petrovka_metro_station_Kiev_2010_01.jpg' style='width:100%'>");
 			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/GKf-Jhz8dVU' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
 		});
 		$("#station_5").click(function(){
@@ -218,7 +218,7 @@
 				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M2/qrcode_Tarasa_Shevchenka.png' align='left' width='300px' height='300px'>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M2/Tarasa_Shevchenka_metro_station_Kiev_01.jpg' style='width:1550px; height: 1053px;'>");
+			$('#station_image').html("<img src='images_kyiv_metro_M2/Tarasa_Shevchenka_metro_station_Kiev_01.jpg' style='width:100%'>");
 			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/w_dW-egimuw' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
 		});
 		$("#station_6").click(function(){
@@ -244,7 +244,7 @@
 				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M2/qrcode_contract_square.png' align='left' width='300px' height='300px'>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M2/Kontraktova_Ploscha_Metro_Station_Kiev_01.jpg' style='width:1550px; height: 1050px;'>");
+			$('#station_image').html("<img src='images_kyiv_metro_M2/Kontraktova_Ploscha_Metro_Station_Kiev_01.jpg' style='width:100%'>");
 			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/s2QZ36zXWhU' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
 		});
 		$("#station_7").click(function(){
@@ -270,7 +270,7 @@
 				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M2/qrcode_mail_square.png' align='left' width='300px' height='300px'>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M2/Poshtova_Ploscha_Metro_Station_Kiev_2011_01.jpg' style='width:1550px; height: 1053px;'>");
+			$('#station_image').html("<img src='images_kyiv_metro_M2/Poshtova_Ploscha_Metro_Station_Kiev_2011_01.jpg' style='width:100%'>");
 			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/QfLFsMfPUsc' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
 		});
 		$("#station_8").click(function(){
@@ -300,7 +300,7 @@
 				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M2/qrcode_Maidan.png' align='left' width='300px' height='300px'>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M2/Maydan_Nezalezhnosti_metro_station_Kiev_2010_01.jpg' style='width:1550px; height: 1053px;'>");
+			$('#station_image').html("<img src='images_kyiv_metro_M2/Maydan_Nezalezhnosti_metro_station_Kiev_2010_01.jpg' style='width:100%'>");
 		});
 		$("#station_9").click(function(){
 			$('#text_station').html('<p>Площа Василя Стуса -  22-га станція Київського метрополітену. Розташована на Оболонсько-Теремківській лінії між станціями «Майдан Незалежності» та «Олімпійська», знаходиться на глибині 59 метрів і вважається пілонно трисклепінною станцією глибокого залягання. Має перехід на станцію <a href="M3.html">Палац Спорту</a> Сирецько-Печерської лінії. Відкрита 19 грудня 1981 року. Станція має один вихід, що сполучений з підземним переходом на площі Василя Стуса. Наземний вестибюль відсутній. До 2022 року мала назву (крім Площа) Льва Толстого.</p>');
@@ -329,7 +329,7 @@
 				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M2/qrcode_Stus.png' align='left' width='300px' height='300px'>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M2/Ploscha_Lva_Tolstogo_metro_station_Kiev_2010_01.jpg' style='width:1550px; height: 1053px;'>");
+			$('#station_image').html("<img src='images_kyiv_metro_M2/Ploscha_Lva_Tolstogo_metro_station_Kiev_2010_01.jpg' style='width:100%'>");
 		});
 		$("#station_10").click(function(){
 			$('#text_station').html('<p>Олімпійська - 23-тя станція Київського метрополітену, розташована на Оболонсько-Теремківській лінії між станціями «Площа Василя Стуса» і «Палац „Україна“», знаходиться на глибині 30 метрів, вважається пілонно трисклепінною станцією глибокого залягання. Відкрита 19 грудня 1981 року під назвою «Республіканський стадіон». Сучасна назва — з 11 липня 2011 року, від розташованого неподалік НСК «Олімпійський».</p>');
@@ -354,7 +354,7 @@
 				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M2/qrcode_olimp.png' align='left' width='300px' height='300px'>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M2/Respublikanskyi_Stadion_metro_station_2010_01.jpg' style='width:1560px; height: 1053px;'>");
+			$('#station_image').html("<img src='images_kyiv_metro_M2/Respublikanskyi_Stadion_metro_station_2010_01.jpg' style='width:100%'>");
 			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/01kA7CCtgq8' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
 		});
 		$("#station_11").click(function(){
@@ -380,7 +380,7 @@
 				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M2/qrcode_palats_Ukraine.png' align='left' width='300px' height='300px'>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M2/Дворец_Украина_(станция_метро)_1.jpg' style='width:1560px; height: 1050px;'>");
+			$('#station_image').html("<img src='images_kyiv_metro_M2/Дворец_Украина_(станция_метро)_1.jpg' style='width:100%'>");
 			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/HS_uYMrmEoo' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
 		});
 		$("#station_12").click(function(){
@@ -406,7 +406,7 @@
 				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M2/qrcode_lybidska.png' align='left' width='300px' height='300px'>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M2/Lybidska_metro_station_Kiev_2010_01.jpg' style='width:1550px; height: 1050px;'>");
+			$('#station_image').html("<img src='images_kyiv_metro_M2/Lybidska_metro_station_Kiev_2010_01.jpg' style='width:100%'>");
 			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/phyox7jS1Uk' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
 		});
 		$("#station_13").click(function(){
@@ -432,7 +432,7 @@
 				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M2/qrcode_demiivka.png' align='left' width='300px' height='300px'>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M2/Demiivska_metro_station_Kiev_2010_02.jpg' style='width:1560px; height: 1053px;'>");
+			$('#station_image').html("<img src='images_kyiv_metro_M2/Demiivska_metro_station_Kiev_2010_02.jpg' style='width:100%'>");
 			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
 		});
 		$("#station_14").click(function(){
@@ -458,7 +458,7 @@
 				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M2/qrcode_holosiivka.png' align='left' width='300px' height='300px'>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M2/Голосіївська_станція_метро.jpg'>");
+			$('#station_image').html("<img src='images_kyiv_metro_M2/Голосіївська_станція_метро.jpg' style='width:100%'>");
 			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
 		});
 		$("#station_15").click(function(){
@@ -484,7 +484,7 @@
 				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M2/qrcode_vasilivka.png' align='left' width='300px' height='300px'>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M2/Vasylkivska_metro_station_Kiev_2011_01.jpg' style='width:1550px; height: 1050px;'>");
+			$('#station_image').html("<img src='images_kyiv_metro_M2/Vasylkivska_metro_station_Kiev_2011_01.jpg' style='width:100%'>");
 			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/-50f-L6fK2Q' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
 		});
 		$("#station_16").click(function(){
@@ -510,7 +510,7 @@
 				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M2/qrcode_v_center.png' align='left' width='300px' height='300px'>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M2/Metro_Vystavkovyi_Tsentr.jpg' style='width:1550px; height: 1050px;'>");
+			$('#station_image').html("<img src='images_kyiv_metro_M2/Metro_Vystavkovyi_Tsentr.jpg' style='width:100%'>");
 			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
 		});
 		$("#station_17").click(function(){
@@ -536,7 +536,7 @@
 				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M2/qrcode_ipodrom.png' align='left' width='300px' height='300px'>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M2/Ipodrom_station_(Kiev_metro).jpg' style='width:1550px; height: 1050px;'>");
+			$('#station_image').html("<img src='images_kyiv_metro_M2/Ipodrom_station_(Kiev_metro).jpg' style='width:100%'>");
 			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
 		});
 		$("#station_18").click(function(){
@@ -562,7 +562,7 @@
 				$('#qrcode').html("<p>Codice QR della stazione:</p><img src='kyiv_metro_qrcodes/qrcodes_M2/qrcode_teremky.png' align='left' width='300px' height='300px'>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
-			$('#station_image').html("<img src='images_kyiv_metro_M2/Teremky_Metro_Station.jpg' style='width:1550px; height: 950px;'>");
+			$('#station_image').html("<img src='images_kyiv_metro_M2/Teremky_Metro_Station.jpg' style='width:100%'>");
 			$('#station_video').html("<iframe style='width:500px; height: 350px;' src='https://www.youtube.com/embed/h7DH2Jezpw0' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
 		});
 		$("#station_19").click(function(){
@@ -814,8 +814,8 @@
 <div id='text_station'></div>
 </p>
 <p>
-<div id='station_image' width="100%"></div>
-<div id='station_video' width="100%"></div>
+<div id='station_image'></div>
+<div id='station_video'></div>
 <div id='qrcode'><p>QR-код лінії:</p><img src='kyiv_metro_qrcodes/qrcode_obolon_teremky_.png' align='left' width='300px' height='300px'></div>
 <div id='back_to_main_slide' class='menu'></div>
 </p>
