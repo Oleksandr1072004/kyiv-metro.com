@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=windows-1251">
-<title>Борщагівська лінія</title>
+<title>Р‘РѕСЂС‰Р°РіС–РІСЃСЊРєР° Р»С–РЅС–СЏ</title>
 <script src="js/jquery-1_11_3_min.js"> </script>
 <link href="css/new.css" rel="stylesheet" type="text/css" />
 <link rel="icon" href="kyiv_metro_branch/1024px-Kyiv_Metro_Line_7-removebg-preview.png" type="image/x-icon">
@@ -14,9 +14,9 @@
 	
 	function GetDateTime(){
 		var DateTime = new Date();
-		var week = new Array('Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П`ятниця', 'Субота');
+		var week = new Array('РќРµРґС–Р»СЏ', 'РџРѕРЅРµРґС–Р»РѕРє', 'Р’С–РІС‚РѕСЂРѕРє', 'РЎРµСЂРµРґР°', 'Р§РµС‚РІРµСЂ', 'Рџ`СЏС‚РЅРёС†СЏ', 'РЎСѓР±РѕС‚Р°');
 		var day  = week[DateTime.getDay()];
-		$('#divDateTime').html("Сьогодні: " + DateTime.getDate() + "." + (DateTime.getMonth()+1) + "." + DateTime.getFullYear() + " - "+day+"<br> Час: " + DateTime.getHours() + ":" + DateTime.getMinutes() + ":" + DateTime.getSeconds());
+		$('#divDateTime').html("РЎСЊРѕРіРѕРґРЅС–: " + DateTime.getDate() + "." + (DateTime.getMonth()+1) + "." + DateTime.getFullYear() + " - "+day+"<br> Р§Р°СЃ: " + DateTime.getHours() + ":" + DateTime.getMinutes() + ":" + DateTime.getSeconds());
 	}
 	
 	$('document').ready(function(){
@@ -67,15 +67,15 @@
 		
 		// Stations
 		$("#station_2").click(function(){
-			$('#text_station').html('<p>Станції цієї лінії проектуються, але це все залишається на паперах!</p>');
+			$('#text_station').html('<p>РЎС‚Р°РЅС†С–С— С†С–С”С— Р»С–РЅС–С— РїСЂРѕРµРєС‚СѓСЋС‚СЊСЃСЏ, Р°Р»Рµ С†Рµ РІСЃРµ Р·Р°Р»РёС€Р°С”С‚СЊСЃСЏ РЅР° РїР°РїРµСЂР°С…!</p>');
 			$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
 			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
-			$('#back_to_main_slide').text("Назад до головної сторінки цього сайту");
+			$('#back_to_main_slide').text("РќР°Р·Р°Рґ РґРѕ РіРѕР»РѕРІРЅРѕС— СЃС‚РѕСЂС–РЅРєРё С†СЊРѕРіРѕ СЃР°Р№С‚Сѓ");
 			if ($('#e').text()=="English") {
-				$('#text_station').html('<p>Станції цієї лінії проектуються, але це все залишається на паперах!</p>');
+				$('#text_station').html('<p>РЎС‚Р°РЅС†С–С— С†С–С”С— Р»С–РЅС–С— РїСЂРѕРµРєС‚СѓСЋС‚СЊСЃСЏ, Р°Р»Рµ С†Рµ РІСЃРµ Р·Р°Р»РёС€Р°С”С‚СЊСЃСЏ РЅР° РїР°РїРµСЂР°С…!</p>');
 				$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
 				$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
-				$('#back_to_main_slide').text("Назад до головної сторінки цього сайту");
+				$('#back_to_main_slide').text("РќР°Р·Р°Рґ РґРѕ РіРѕР»РѕРІРЅРѕС— СЃС‚РѕСЂС–РЅРєРё С†СЊРѕРіРѕ СЃР°Р№С‚Сѓ");
 			}
 			else if ($('#e').text()=="Italiano") {
 				$('#text_station').html('<p>The stations of this line are being designed, but it all remains on paper!</p>');
@@ -83,7 +83,7 @@
 				$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
 				$('#back_to_main_slide').text("Back to the main page of this site");
 			}
-			else if ($('#e').text()=="Українська") {
+			else if ($('#e').text()=="РЈРєСЂР°С—РЅСЃСЊРєР°") {
 				$('#text_station').html('<p>Le stazioni di questa linea sono in fase di progettazione, ma resta tutto sulla carta!</p>');
 				$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
 				$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
@@ -92,18 +92,18 @@
 			
 		});
 		$("#back_to_main_slide").click(function(){
-			$('#text_station').html('<p>Фото проекта, там де М7 - це і є Борщагівська лінія</p>');
+			$('#text_station').html('<p>Р¤РѕС‚Рѕ РїСЂРѕРµРєС‚Р°, С‚Р°Рј РґРµ Рњ7 - С†Рµ С– С” Р‘РѕСЂС‰Р°РіС–РІСЃСЊРєР° Р»С–РЅС–СЏ</p>');
 			$('#station_image').html("<img src='metro43.png' style='width:1560px; height: 1050px;'>");
 			$('#station_video').html("");
 			$('#back_to_main_slide').html("");
-			if ($('#e').text()=="Українська") {
+			if ($('#e').text()=="РЈРєСЂР°С—РЅСЃСЊРєР°") {
 				$('#text_station').html('<p>Foto del progetto, dove si trova M7, questa e la linea Borshchagivska</p>');
 				$('#station_image').html("<img src='metro43.png' style='width:1560px; height: 1050px;'>");
 				$('#station_video').html("");
 				$('#back_to_main_slide').html("");
 			}
 			else if ($('#e').text()=="English") {
-				$('#text_station').html('<p>Фото проекта, там де М7 - це і є Борщагівська лінія</p>');
+				$('#text_station').html('<p>Р¤РѕС‚Рѕ РїСЂРѕРµРєС‚Р°, С‚Р°Рј РґРµ Рњ7 - С†Рµ С– С” Р‘РѕСЂС‰Р°РіС–РІСЃСЊРєР° Р»С–РЅС–СЏ</p>');
 				$('#station_image').html("<img src='metro43.png' style='width:1560px; height: 1050px;'>");
 				$('#station_video').html("");
 				$('#back_to_main_slide').html("");
@@ -135,16 +135,16 @@
 		})
 		$(function(){
 			$('#e').click(function(){
-				if ($('#e').text()=="Почати переклад") {
+				if ($('#e').text()=="РџРѕС‡Р°С‚Рё РїРµСЂРµРєР»Р°Рґ") {
 					$('#e').text('English');}
-                else if ($('#e').text()=="Українська") {
-					$('#txt_logo').html('<h4>Борщагівська лінія</h4>');
-					$('#menu_site').html('<table width="100%"><tr><td width="100px"><a href="Kiev_metro.html">Головна</a></td><td width="200px"><a href="M1.html?m=1" class="light_sb"><div></div><div></div><div></div><div></div>Святошинсько-Броварська лінія</a></td><td width="200px"><a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div>Оболонсько-Теремківська лінія</a></td><td width="200px"><a href="M3.html?m=1" class="light_sp"><div></div><div></div><div></div><div></div>Сирецько-Печерська лінія</a></td><td width="200px"><a href="M4.html?m=1" class="light_pv"><div></div><div></div><div></div><div></div>Подільсько-Вигурівська лінія</a></td><td width="200px"><a href="M5.html?m=1" class="light_livoberezhna"><div></div><div></div><div></div><div></div>Лівобережна лінія</a></td><td width="200px"><a href="M6.html?m=1" class="light_vd"><div></div><div></div><div></div><div></div>Вишгородсько-Дарницька лінія</a></td><td width="200px">Борщагівська лінія</td><td width="200px"><a href="Rolling_stock_kyiv_metro.html">Рухомий пасажирський склад метрополітену</a></td><td width="200px"><a href="about_us.html">Про нас</a></td></td></tr></table>');
-					$('#p').html('<p>Проект сьомої лінії Київського метрополітена, який був уніфікований з швидкісним трамваєм, до російсько-української війни швидкісного трамвая доробили і провели випробування. Але із за російсько-української війни і складної економічної ситуації, Борщагівський швидкісний трамвай лишився єдиним екземпляром, а проект Борщагівської лінії Київського метрополітена залишився на паперах.</p>');
+                else if ($('#e').text()=="РЈРєСЂР°С—РЅСЃСЊРєР°") {
+					$('#txt_logo').html('<h4>Р‘РѕСЂС‰Р°РіС–РІСЃСЊРєР° Р»С–РЅС–СЏ</h4>');
+					$('#menu_site').html('<table width="100%"><tr><td width="100px"><a href="Kiev_metro.html">Р“РѕР»РѕРІРЅР°</a></td><td width="200px"><a href="M1.html?m=1" class="light_sb"><div></div><div></div><div></div><div></div>РЎРІСЏС‚РѕС€РёРЅСЃСЊРєРѕ-Р‘СЂРѕРІР°СЂСЃСЊРєР° Р»С–РЅС–СЏ</a></td><td width="200px"><a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div>РћР±РѕР»РѕРЅСЃСЊРєРѕ-РўРµСЂРµРјРєС–РІСЃСЊРєР° Р»С–РЅС–СЏ</a></td><td width="200px"><a href="M3.html?m=1" class="light_sp"><div></div><div></div><div></div><div></div>РЎРёСЂРµС†СЊРєРѕ-РџРµС‡РµСЂСЃСЊРєР° Р»С–РЅС–СЏ</a></td><td width="200px"><a href="M4.html?m=1" class="light_pv"><div></div><div></div><div></div><div></div>РџРѕРґС–Р»СЊСЃСЊРєРѕ-Р’РёРіСѓСЂС–РІСЃСЊРєР° Р»С–РЅС–СЏ</a></td><td width="200px"><a href="M5.html?m=1" class="light_livoberezhna"><div></div><div></div><div></div><div></div>Р›С–РІРѕР±РµСЂРµР¶РЅР° Р»С–РЅС–СЏ</a></td><td width="200px"><a href="M6.html?m=1" class="light_vd"><div></div><div></div><div></div><div></div>Р’РёС€РіРѕСЂРѕРґСЃСЊРєРѕ-Р”Р°СЂРЅРёС†СЊРєР° Р»С–РЅС–СЏ</a></td><td width="200px">Р‘РѕСЂС‰Р°РіС–РІСЃСЊРєР° Р»С–РЅС–СЏ</td><td width="200px"><a href="Rolling_stock_kyiv_metro.html">Р СѓС…РѕРјРёР№ РїР°СЃР°Р¶РёСЂСЃСЊРєРёР№ СЃРєР»Р°Рґ РјРµС‚СЂРѕРїРѕР»С–С‚РµРЅСѓ</a></td><td width="200px"><a href="about_us.html">РџСЂРѕ РЅР°СЃ</a></td></td></tr></table>');
+					$('#p').html('<p>РџСЂРѕРµРєС‚ СЃСЊРѕРјРѕС— Р»С–РЅС–С— РљРёС—РІСЃСЊРєРѕРіРѕ РјРµС‚СЂРѕРїРѕР»С–С‚РµРЅР°, СЏРєРёР№ Р±СѓРІ СѓРЅС–С„С–РєРѕРІР°РЅРёР№ Р· С€РІРёРґРєС–СЃРЅРёРј С‚СЂР°РјРІР°С”Рј, РґРѕ СЂРѕСЃС–Р№СЃСЊРєРѕ-СѓРєСЂР°С—РЅСЃСЊРєРѕС— РІС–Р№РЅРё С€РІРёРґРєС–СЃРЅРѕРіРѕ С‚СЂР°РјРІР°СЏ РґРѕСЂРѕР±РёР»Рё С– РїСЂРѕРІРµР»Рё РІРёРїСЂРѕР±СѓРІР°РЅРЅСЏ. РђР»Рµ С–Р· Р·Р° СЂРѕСЃС–Р№СЃСЊРєРѕ-СѓРєСЂР°С—РЅСЃСЊРєРѕС— РІС–Р№РЅРё С– СЃРєР»Р°РґРЅРѕС— РµРєРѕРЅРѕРјС–С‡РЅРѕС— СЃРёС‚СѓР°С†С–С—, Р‘РѕСЂС‰Р°РіС–РІСЃСЊРєРёР№ С€РІРёРґРєС–СЃРЅРёР№ С‚СЂР°РјРІР°Р№ Р»РёС€РёРІСЃСЏ С”РґРёРЅРёРј РµРєР·РµРјРїР»СЏСЂРѕРј, Р° РїСЂРѕРµРєС‚ Р‘РѕСЂС‰Р°РіС–РІСЃСЊРєРѕС— Р»С–РЅС–С— РљРёС—РІСЃСЊРєРѕРіРѕ РјРµС‚СЂРѕРїРѕР»С–С‚РµРЅР° Р·Р°Р»РёС€РёРІСЃСЏ РЅР° РїР°РїРµСЂР°С….</p>');
 					$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#ffffff;");
 					$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
-					$("#text_station").html('<p>Фото проекта, там де М7 - це і є Борщагівська лінія</p>');
-					$("#station_2").html("<p><a>Зараз список станцій Борщагівської лінії Київського метрополітена немає</a></p>");
+					$("#text_station").html('<p>Р¤РѕС‚Рѕ РїСЂРѕРµРєС‚Р°, С‚Р°Рј РґРµ Рњ7 - С†Рµ С– С” Р‘РѕСЂС‰Р°РіС–РІСЃСЊРєР° Р»С–РЅС–СЏ</p>');
+					$("#station_2").html("<p><a>Р—Р°СЂР°Р· СЃРїРёСЃРѕРє СЃС‚Р°РЅС†С–Р№ Р‘РѕСЂС‰Р°РіС–РІСЃСЊРєРѕС— Р»С–РЅС–С— РљРёС—РІСЃСЊРєРѕРіРѕ РјРµС‚СЂРѕРїРѕР»С–С‚РµРЅР° РЅРµРјР°С”</a></p>");
 					$('#e').text('English');}
 				else if ($('#e').text() == "English") {
 					$('#txt_logo').html('<h4>Borshchahivska line</h4>');
@@ -163,7 +163,7 @@
 					$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
 					$("#text_station").html('<p>Foto del progetto, dove si trova M7, questa e la linea Borshchagivska</p>');
 					$("#station_2").html("<p><a>Attualmente non esiste un elenco di stazioni sulla linea Borshchagivska della metropolitana di Kiev</a></p>");
-					$('#e').text('Українська');}
+					$('#e').text('РЈРєСЂР°С—РЅСЃСЊРєР°');}
 			});
 		})
 		;
@@ -176,10 +176,10 @@ $(function(){
 					w=w*x;
 					h=h*x;
 					$(id_obj).width(w).height(h);
-					$(id_obj).attr('title','фото зменшене в 1.5 раз');
+					$(id_obj).attr('title','С„РѕС‚Рѕ Р·РјРµРЅС€РµРЅРµ РІ 1.5 СЂР°Р·');
 					a=$(id_obj).attr('title');
 				}
-				else if(a=='фото зменшене в 1.5 раз'){
+				else if(a=='С„РѕС‚Рѕ Р·РјРµРЅС€РµРЅРµ РІ 1.5 СЂР°Р·'){
 					w=w/1.5;
 					h=h/1.5;
 					$(id_obj).width(w).height(h);
@@ -198,7 +198,7 @@ $(function(){
 	});
 </script>
 <table width='100%'>
-<tr width='20%'><td width='20%' valign='top'><h1 id='txt_logo' class='logo_text'>Борщагівська лінія</h1></td>
+<tr width='20%'><td width='20%' valign='top'><h1 id='txt_logo' class='logo_text'>Р‘РѕСЂС‰Р°РіС–РІСЃСЊРєР° Р»С–РЅС–СЏ</h1></td>
 <td>
 <div id="navigation">
 <ul valign="top">
@@ -214,7 +214,7 @@ $(function(){
 					<div id="rainbow_text"></div>
 				</div></li>
 <li><div id="size_text">
-<div id="e" width="100px" style=" border:1px solid red; background:#3582c4; padding:5px ">Почати переклад</div></div></li>
+<div id="e" width="100px" style=" border:1px solid red; background:#3582c4; padding:5px ">РџРѕС‡Р°С‚Рё РїРµСЂРµРєР»Р°Рґ</div></div></li>
 <li><div id="size_text">
 				<div id="small_text">A</div>
 				<div id="middle_text">A</div>
@@ -229,44 +229,44 @@ $(function(){
 <table width='100%'>
 <tr>
 <td width='100px'>
-	<a href="Kiev_metro.html">Головна</a></td>
+	<a href="Kiev_metro.html">Р“РѕР»РѕРІРЅР°</a></td>
 	<td width='200px'>
-		<a href="M1.html?m=1" class="light_sb"><div></div><div></div><div></div><div></div>Святошинсько-Броварська лінія</a></td>
+		<a href="M1.html?m=1" class="light_sb"><div></div><div></div><div></div><div></div>РЎРІСЏС‚РѕС€РёРЅСЃСЊРєРѕ-Р‘СЂРѕРІР°СЂСЃСЊРєР° Р»С–РЅС–СЏ</a></td>
 	<td width='200px'>
-		<a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div>Оболонсько-Теремківська лінія</a></td>
+		<a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div>РћР±РѕР»РѕРЅСЃСЊРєРѕ-РўРµСЂРµРјРєС–РІСЃСЊРєР° Р»С–РЅС–СЏ</a></td>
 	<td width='200px'>
-		<a href="M3.html?m=1" class="light_sp"><div></div><div></div><div></div><div></div>Сирецько-Печерська лінія</a></td>
+		<a href="M3.html?m=1" class="light_sp"><div></div><div></div><div></div><div></div>РЎРёСЂРµС†СЊРєРѕ-РџРµС‡РµСЂСЃСЊРєР° Р»С–РЅС–СЏ</a></td>
 	<td width='200px'>
-		<a href="M4.html?m=1" class="light_pv"><div></div><div></div><div></div><div></div>Подільсько-Вигурівська лінія</a></td>
+		<a href="M4.html?m=1" class="light_pv"><div></div><div></div><div></div><div></div>РџРѕРґС–Р»СЊСЃСЊРєРѕ-Р’РёРіСѓСЂС–РІСЃСЊРєР° Р»С–РЅС–СЏ</a></td>
 	<td width='200px'>
-		 <a href="M5.html?m=1" class="light_livoberezhna"><div></div><div></div><div></div><div></div>Лівобережна лінія</a></td>
+		 <a href="M5.html?m=1" class="light_livoberezhna"><div></div><div></div><div></div><div></div>Р›С–РІРѕР±РµСЂРµР¶РЅР° Р»С–РЅС–СЏ</a></td>
 	<td width='200px'>
-		<a href="M6.html?m=1" class="light_vd"><div></div><div></div><div></div><div></div>Вишгородсько-Дарницька лінія</a></td>
+		<a href="M6.html?m=1" class="light_vd"><div></div><div></div><div></div><div></div>Р’РёС€РіРѕСЂРѕРґСЃСЊРєРѕ-Р”Р°СЂРЅРёС†СЊРєР° Р»С–РЅС–СЏ</a></td>
 	<td width='200px'>
-		Борщагівська лінія</td>
+		Р‘РѕСЂС‰Р°РіС–РІСЃСЊРєР° Р»С–РЅС–СЏ</td>
 	<td width='200px'>
-		<a href="Rolling_stock_kyiv_metro.html">Рухомий пасажирський склад метрополітену</a></td>
+		<a href="Rolling_stock_kyiv_metro.html">Р СѓС…РѕРјРёР№ РїР°СЃР°Р¶РёСЂСЃСЊРєРёР№ СЃРєР»Р°Рґ РјРµС‚СЂРѕРїРѕР»С–С‚РµРЅСѓ</a></td>
 	<td width='200px'>
-            <a href="about_us.html">Про нас</a></td>
+            <a href="about_us.html">РџСЂРѕ РЅР°СЃ</a></td>
 </td>
    </tr>
    </table>
       </div>
 				<div id='p'>
-<p>Проект сьомої лінії Київського метрополітена, який був уніфікований з швидкісним трамваєм, до російсько-української війни швидкісного трамвая доробили і провели випробування. Але із за російсько-української війни і складної економічної ситуації, Борщагівський швидкісний трамвай лишився єдиним екземпляром, а проект Борщагівської лінії Київського метрополітена залишився на паперах.</p>
+<p>РџСЂРѕРµРєС‚ СЃСЊРѕРјРѕС— Р»С–РЅС–С— РљРёС—РІСЃСЊРєРѕРіРѕ РјРµС‚СЂРѕРїРѕР»С–С‚РµРЅР°, СЏРєРёР№ Р±СѓРІ СѓРЅС–С„С–РєРѕРІР°РЅРёР№ Р· С€РІРёРґРєС–СЃРЅРёРј С‚СЂР°РјРІР°С”Рј, РґРѕ СЂРѕСЃС–Р№СЃСЊРєРѕ-СѓРєСЂР°С—РЅСЃСЊРєРѕС— РІС–Р№РЅРё С€РІРёРґРєС–СЃРЅРѕРіРѕ С‚СЂР°РјРІР°СЏ РґРѕСЂРѕР±РёР»Рё С– РїСЂРѕРІРµР»Рё РІРёРїСЂРѕР±СѓРІР°РЅРЅСЏ. РђР»Рµ С–Р· Р·Р° СЂРѕСЃС–Р№СЃСЊРєРѕ-СѓРєСЂР°С—РЅСЃСЊРєРѕС— РІС–Р№РЅРё С– СЃРєР»Р°РґРЅРѕС— РµРєРѕРЅРѕРјС–С‡РЅРѕС— СЃРёС‚СѓР°С†С–С—, Р‘РѕСЂС‰Р°РіС–РІСЃСЊРєРёР№ С€РІРёРґРєС–СЃРЅРёР№ С‚СЂР°РјРІР°Р№ Р»РёС€РёРІСЃСЏ С”РґРёРЅРёРј РµРєР·РµРјРїР»СЏСЂРѕРј, Р° РїСЂРѕРµРєС‚ Р‘РѕСЂС‰Р°РіС–РІСЃСЊРєРѕС— Р»С–РЅС–С— РљРёС—РІСЃСЊРєРѕРіРѕ РјРµС‚СЂРѕРїРѕР»С–С‚РµРЅР° Р·Р°Р»РёС€РёРІСЃСЏ РЅР° РїР°РїРµСЂР°С….</p>
 </div>
 <table id='center' cellspacing="0" border="0" width="100%" bordercolor="fff">
 <tr id='top'>
 <td id='menu' width='275px' valign="top">
 <div class='menu_station' >
 <div id='station_2'>
-<p><a>Зараз список станцій Борщагівської лінії Київського метрополітена немає</a></p>
+<p><a>Р—Р°СЂР°Р· СЃРїРёСЃРѕРє СЃС‚Р°РЅС†С–Р№ Р‘РѕСЂС‰Р°РіС–РІСЃСЊРєРѕС— Р»С–РЅС–С— РљРёС—РІСЃСЊРєРѕРіРѕ РјРµС‚СЂРѕРїРѕР»С–С‚РµРЅР° РЅРµРјР°С”</a></p>
 </div>
 </div>
 </td>
 <td id='station' valign="top" rowspan='2'>
 <p>
-<div id='text_station'><p>Фото проекта, там де М7 - це і є Борщагівська лінія</p></div>
+<div id='text_station'><p>Р¤РѕС‚Рѕ РїСЂРѕРµРєС‚Р°, С‚Р°Рј РґРµ Рњ7 - С†Рµ С– С” Р‘РѕСЂС‰Р°РіС–РІСЃСЊРєР° Р»С–РЅС–СЏ</p></div>
 </p>
 <p>
 <div id='station_image' width='1050px' height='750px'><img src='metro43.png' style='width:1560px; height: 1050px;'></div>
