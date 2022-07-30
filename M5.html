@@ -7,12 +7,6 @@
 <link rel="icon" href="kyiv_metro_branch/1200px-Kyiv_Metro_Line_5.svg.png" type="image/x-icon">
 </head>
 <body bgcolor="#00b8d4">
-<script type="text/javascript">
-	function googleTranslateElementInit() {
-	 new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
-	}
-</script>
-<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
 	var $clas_new="font_middle";
 	var $clas_action="font_middle";
@@ -27,10 +21,6 @@
 	$('document').ready(function(){
 		setInterval(GetDateTime, 1000);
 		$(function(){
-			$('#logo').slideUp(0);
-			$('#logo').slideDown(3000);
-			$('#menu').slideUp(0);
-			$('#menu').slideDown(2000);
 			$('#map').slideUp(0);
 			$('#map').fadeIn(3000);
 		})
@@ -557,7 +547,7 @@
 <img width='100%' style='display: inline-block' id='map' src='kyiv_metro_branch/kiev_metro_line_M5.jpg'>
 <table id='center' cellspacing="0" border="0" width="100%" bordercolor="fff">
 <tr id='top'>
-<td id='menu' width='275px' valign="top">
+<td class='menu' width='275px' valign="top">
 <div class='menu_station' >
 <p><a id='station_1'>Вулиця Милославська</a></p>
 <p><a id='station_2'>Вулиця Цвєтаєвої</a></p>
