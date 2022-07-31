@@ -25,48 +25,19 @@
 		$('#logo').slideDown(2000);
 	})
 	;
-		
-        $("#red").click(function(){
-            $("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:maroon; text-shadow: 1px 1px 2px black;");
-			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
-        })
-        $("#blue").click(function(){
-            $("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:blue; text-shadow: 1px 1px 2px black;");
-			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
-        })
-        $("#green").click(function(){
-            $("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:green; text-shadow: 1px 1px 2px black;");
-			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
-        })
-        $("#yellow").click(function(){
-            $("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:yellow; text-shadow: 1px 1px 2px black;");
-			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
-        })
-        $("#cyan").click(function(){
-            $("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#00ffff; text-shadow: 1px 1px 2px black;");
-			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
-        })
-		$("#gold").click(function(){
-			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:yellow; text-shadow: 1px 1px 2px black;");
-			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
-		})
-		$("#purple").click(function(){
-			$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#800080; text-shadow: 1px 1px 2px black;");
-			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
-		})
         $("#white").click(function(){
             $("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#ffffff; text-shadow: 1px 1px 2px black;");
 			$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
         })
-		$("#rainbow_text").click(function(){
-			$("#p, legend, td, label, option").attr("style","background: linear-gradient(90deg, #fd004c, #fe9000, #fff020, #3edf4b, #3363ff, #0000ff, #000080, #800080, #b102b7, #ff00c4, #fd004c);background-size: 400%;font-family: sans-serif;word-spacing: 5px;-webkit-text-fill-color: transparent;-webkit-text-stroke: 0.01em white;-webkit-background-clip: text;animation: animate 10s linear infinite;");
-			$("#divDateTime").attr("style","background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033ff, #ff00c4, #ff0000);background-size: 400%;font-family: Calibri; font-style: Italic; font-size:115%;word-spacing: 5px;-webkit-text-fill-color: transparent;-webkit-background-clip: text;animation: animate 10s linear infinite;");
-			$("h1, h2, h3, h4").attr("style","background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033ff, #ff00c4, #ff0000);background-size: 400%; width:100%; font:24px impact; height:10px; font-style: Italic; font-size:115%;letter-spacing: 3px;-webkit-text-fill-color: transparent;-webkit-background-clip: text;animation: animate 10s linear infinite;");
-			$("#menu a:hover").attr("style","background:#ffffff;");
-			$("#menu a:action").attr("style","background:#ffffff;");
-		})
+	$("#rainbow_text").click(function(){
+		$("#p, legend, td, label, option").attr("style","background: linear-gradient(90deg, #fd004c, #fe9000, #fff020, #3edf4b, #3363ff, #0000ff, #000080, #800080, #b102b7, #ff00c4, #fd004c);background-size: 400%;font-family: sans-serif;word-spacing: 5px;-webkit-text-fill-color: transparent;-webkit-text-stroke: 0.01em white;-webkit-background-clip: text;animation: animate 10s linear infinite;");
+		$("#divDateTime").attr("style","background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033ff, #ff00c4, #ff0000);background-size: 400%;font-family: Calibri; font-style: Italic; font-size:115%;word-spacing: 5px;-webkit-text-fill-color: transparent;-webkit-background-clip: text;animation: animate 10s linear infinite;");
+		$("h1, h2, h3, h4").attr("style","background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033ff, #ff00c4, #ff0000);background-size: 400%; width:100%; font:24px impact; height:10px; font-style: Italic; font-size:115%;letter-spacing: 3px;-webkit-text-fill-color: transparent;-webkit-background-clip: text;animation: animate 10s linear infinite;");
+		$("#menu a:hover").attr("style","background:#ffffff;");
+		$("#menu a:action").attr("style","background:#ffffff;");
+	})
 		
-		$("#back_to_main_slide").click(function(){
+	$("#back_to_main_slide").click(function(){
 			$('#text_station').html('');
 			$('#title').html("Рухомий пасажирський склад метрополітену");
 			$('#metro_image').html("");
@@ -498,13 +469,6 @@
 <ul valign="top">
 <li align='left'><div id="divDateTime" style='font-family: Calibri; color: Orange; font-style: Italic; font-size:115%; text-shadow: 1px 1px 2px black;'></div></li>
 <li><div id="p_color_knop">
-					<div id="red"></div>
-					<div id="blue"></div>
-					<div id="green"></div>
-					<div id="yellow"></div>
-					<div id="cyan"></div>
-					<div id="gold"></div>
-					<div id="purple"></div>
 					<div id="white"></div>
 					<div id="rainbow_text"></div>
 				</div></li>
