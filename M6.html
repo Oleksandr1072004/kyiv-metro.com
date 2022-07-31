@@ -22,6 +22,8 @@
 		setInterval(GetDateTime, 1000);
 	
 		$(function(){
+			$('#logo').slideUp(0);
+			$('#logo').slideDown(3000);
 			$('#map').slideUp(0);
 			$('#map').fadeIn(3000);
 		})
@@ -186,7 +188,7 @@
 					$('#e').text('English');}
 				else if ($('#e').text() == "English") {
 					$('#txt_logo').html('<h4>Vyshhorodsko-Darnytska line</h4>');
-					$('#menu_site'). html ('<table width = "100%"> <tr> <td width = "100px"> <a href="Kiev_metro.html">Main site</a> </td> <td width = "200px"><a href="M1.html?m=1" class="light_sb"><div></div><div></div><div></div><div></div> Sviatoshynsko-Brovarska line </a></td> <td width = "200px"> <a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div> Obolonsko-Teremkivska line </td> <td width = "200px"> <a href="M3.html?m=1" class="light_sp"><div></div><div></div><div></div><div></div> Syretsko-Pecherska line </a> </td> <td width = "200px"> <a href = "M4.html? M = 1 " class="light_pv"><div></div><div></div><div></div><div></div> Podilsko-Vyhurivska line </a> </td></tr><tr> <td width =" 200px "> <a href="M5.html?m=1" class="light_livoberezhna"><div></div><div></div><div></div><div></div> Livoberezhna line </a> </td> <td width = "200px"> Vyshhorodsko-Darnytska line </td> <td width = "200px"> <a href="M7.html" class="light_b"><div></div><div></div><div></div><div></div> Borshchahivska line </a> </td> <td width = "200px"> <a href="Rolling_stock_kyiv_metro.html"> Subway rolling stock </a> </td> <td width = "200px"> <a href = "about_us.html"> About us </a> </td> </td> </tr> </table> ');
+					$('#menu_site'). html ('<table width = "100%"> <tr> <td> <a href="Kiev_metro.html">Main site</a> </td> <td><a href="M1.html?m=1" class="light_sb"><div></div><div></div><div></div><div></div> Sviatoshynsko-Brovarska line </a></td> <td> <a href="M2.html?m=1" class="light_ot"><div></div><div></div><div></div><div></div> Obolonsko-Teremkivska line </td> <td> <a href="M3.html?m=1" class="light_sp"><div></div><div></div><div></div><div></div> Syretsko-Pecherska line </a> </td> <td> <a href = "M4.html? M = 1 " class="light_pv"><div></div><div></div><div></div><div></div> Podilsko-Vyhurivska line </a> </td></tr><tr> <td> <a href="M5.html?m=1" class="light_livoberezhna"><div></div><div></div><div></div><div></div> Livoberezhna line </a> </td> <td> Vyshhorodsko-Darnytska line </td> <td> <a href="M7.html" class="light_b"><div></div><div></div><div></div><div></div> Borshchahivska line </a> </td> <td> <a href="Rolling_stock_kyiv_metro.html"> Subway rolling stock </a> </td> <td> <a href = "about_us.html"> About us </a> </td> </td> </tr> </table> ');
 					$('#p').html('<p> Vyshhorodsko-Darnytska line is a promising line of the Kyiv Metro, the construction of which is proposed to begin after 2037. The first stage is to connect Kurenivka with Syrets, then the line will be extended towards Lobanovsky and Demiivka avenues, and will partially take over the functions of the ring road. </P><p> Numbering of the tracks: "Ploshcha Tarasa Shevchenka" - "Darnyts`kyy vokzal" - I, "Darnyts`kyy vokzal" - "Ploshcha Tarasa Shevchenka" - II. </p>');
 					$("#p, h2, h3, li, legend, td, label, option").attr("style","color:#ffffff;");
 					$("#divDateTime").attr("style","color:maroon; font-family: Calibri; color: black; font-style: Italic; font-size:115%;");
