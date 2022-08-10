@@ -40,26 +40,26 @@
 		// Stations
 		$("#station_2").click(function(){
 			$('#text_station').html('<p>Станції цієї лінії проектуються, але це все залишається на паперах!</p>');
-			$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+			$('#station_image').html("<p style='font-style: Italic'>Використана фотографія, яка взята з відкритих джерел 'Calgary Humane Society'</p><img src='images_kyiv_metro_M4/Photo_coming_soon.jpg' style='width: 25%'>");
 			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
 			$('#back_to_main_slide').text("Назад до головної сторінки цього сайту");
 			if ($('#e').text()=="English") {
 				$('#text_station').html('<p>Станції цієї лінії проектуються, але це все залишається на паперах!</p>');
-				$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+				$('#station_image').html("<p style='font-style: Italic'>Використана фотографія, яка взята з відкритих джерел 'Calgary Humane Society'</p><img src='images_kyiv_metro_M4/Photo_coming_soon.jpg' style='width: 25%'>");
 				$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
-				$('#back_to_main_slide').text("Назад до головної сторінки цього сайту");
+				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
 			}
 			else if ($('#e').text()=="Italiano") {
 				$('#text_station').html('<p>The stations of this line are being designed, but it all remains on paper!</p>');
-				$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+				$('#station_image').html("<p style='font-style: Italic'>The photo used is taken from open sources 'Calgary Humane Society'</p><img src='images_kyiv_metro_M4/Photo_coming_soon.jpg' style='width: 25%'>");
 				$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
-				$('#back_to_main_slide').text("Back to the main page of this site");
+				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
 			}
 			else if ($('#e').text()=="Українська") {
 				$('#text_station').html('<p>Le stazioni di questa linea sono in fase di progettazione, ma resta tutto sulla carta!</p>');
-				$('#station_image').html("<img src='images_kyiv_metro_M4/Photo_coming_soon.jpg'>");
+				$('#station_image').html("<p style='font-style: Italic'>La foto utilizzata è tratta da fonti aperte 'Calgary Humane Society'</p><img src='images_kyiv_metro_M4/Photo_coming_soon.jpg' style='width: 25%'>");
 				$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
-				$('#back_to_main_slide').text("Torna alla pagina principale di questo sito");
+				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
 			
 		});
