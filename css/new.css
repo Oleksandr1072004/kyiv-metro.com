@@ -50,7 +50,7 @@ body::after {
 	}
 }
 
-.btn_sb, .btn_ot, .btn_sp, .btn_pv, .btn_livoberezhna, .btn_vd, .btn_b, .btn_rs, .btn_main, .btn_au{
+.btn_sb, .btn_ot, .btn_sp, .btn_pv, .btn_livoberezhna, .btn_vd, .btn_b, .btn{
 	position: relative;
 	display: inline-block;
 	text-decoration: none;
@@ -58,6 +58,63 @@ body::after {
 	overflow: hidden;
 	transition: 0.2s;
 }
+
+.light_btn {
+  position: relative;
+  padding: 25px 30px;
+  color: blue;
+  font-size: 24px;
+  transition: 0.5s;
+  cursor: pointer;
+  overflow: hidden;
+}
+.light_btn:hover {
+  background-color: blue;
+  color: #050801;
+  box-shadow: 0 0 5px blue,
+              0 0 25px #c9af28,
+              0 0 50px #c9af28,
+              0 0 200px blue;
+}
+.light_btn div {
+  position: absolute;
+}
+.light_btn div:nth-child(1){
+  width: 100%;
+  height: 2px;
+  top: 0;
+  left: -100%;
+  background: linear-gradient(to right,transparent,blue);
+  animation: animate1 1s linear infinite;
+}
+.light_btn div:nth-child(2){
+  width: 2px;
+  height: 100%;
+  top: -100%;
+  right: 0;
+  background: linear-gradient(to bottom,transparent,#c9af28);
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+.light_btn div:nth-child(3){
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  right: -100%;
+  background: linear-gradient(to left,transparent,#c9af28);
+  animation: animate3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+.light_btn div:nth-child(4){
+  width: 2px;
+  height: 100%;
+  bottom: -100%;
+  left: 0;
+  background: linear-gradient(to top,transparent,blue);
+  animation: animate4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
 #btn_sb{
 	color:white;
 }
