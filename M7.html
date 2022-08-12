@@ -41,48 +41,48 @@
 		$("#station_2").click(function(){
 			$('#text_station').html('<p>Станції цієї лінії проектуються, але це все залишається на паперах!</p>');
 			$('#station_image').html("<p style='font-style: Italic'>Використана фотографія, яка взята з відкритих джерел 'Calgary Humane Society'</p><img src='images_kyiv_metro_M4/Photo_coming_soon.jpg' style='width: 25%'>");
-			$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
-			$('#back_to_main_slide').text("Назад до головної сторінки цього сайту");
+			$('#station_video').html("<p style='font-style: Italic'><img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png' style='width: 30%'>Використана фотографія, яка взята з відкритих джерел 'kindpng'</p>");
+			$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
 			if ($('#e').text()=="English") {
 				$('#text_station').html('<p>Станції цієї лінії проектуються, але це все залишається на паперах!</p>');
 				$('#station_image').html("<p style='font-style: Italic'>Використана фотографія, яка взята з відкритих джерел 'Calgary Humane Society'</p><img src='images_kyiv_metro_M4/Photo_coming_soon.jpg' style='width: 25%'>");
-				$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+				$('#station_video').html("<p style='font-style: Italic'><img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png' style='width: 30%'>Використана фотографія, яка взята з відкритих джерел 'kindpng'</p>");
 				$('#back_to_main_slide').html("<p><a>Назад до головної сторінки цього сайту</a></p>");
 			}
 			else if ($('#e').text()=="Italiano") {
 				$('#text_station').html('<p>The stations of this line are being designed, but it all remains on paper!</p>');
 				$('#station_image').html("<p style='font-style: Italic'>The photo used is taken from open sources 'Calgary Humane Society'</p><img src='images_kyiv_metro_M4/Photo_coming_soon.jpg' style='width: 25%'>");
-				$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+				$('#station_video').html("<p style='font-style: Italic'><img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png' style='width: 30%'>The photo used is taken from open sources 'kindpng'</p>");
 				$('#back_to_main_slide').html("<p><a>Back to the main page of this site</a></p>");
 			}
 			else if ($('#e').text()=="Українська") {
 				$('#text_station').html('<p>Le stazioni di questa linea sono in fase di progettazione, ma resta tutto sulla carta!</p>');
 				$('#station_image').html("<p style='font-style: Italic'>La foto utilizzata è tratta da fonti aperte 'Calgary Humane Society'</p><img src='images_kyiv_metro_M4/Photo_coming_soon.jpg' style='width: 25%'>");
-				$('#station_video').html("<img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png'>");
+				$('#station_video').html("<p style='font-style: Italic'><img src='images_kyiv_metro_M4/406-4069787_video-coming-soon-clip-arts-graphics-hd-png.png' style='width: 30%'>La foto utilizzata è tratta da fonti aperte 'kindpng'</p>");
 				$('#back_to_main_slide').html("<p><a>Torna alla pagina principale di questo sito</a></p>");
 			}
 			
 		});
 		$("#back_to_main_slide").click(function(){
 			$('#text_station').html('<p>Фото проекта, там де М7 - це і є Борщагівська лінія</p>');
-			$('#station_image').html("<img src='metro43.png' width='100%'>");
+			$('#station_image').html("<p style='font-style: Italic'>Використана фотографія з відкритого джерела Facebook (канал 'Метро на Борщаговку')<img src='metro43.png' width='100%'></p>");
 			$('#station_video').html("");
 			$('#back_to_main_slide').html("");
 			if ($('#e').text()=="Українська") {
 				$('#text_station').html('<p>Foto del progetto, dove si trova M7, questa e la linea Borshchagivska</p>');
-				$('#station_image').html("<img src='metro43.png'  width='100%'>");
+				$('#station_image').html("<p style='font-style: Italic'>La foto utilizzata proviene da un Facebook open source (canale 'Метро на Борщаговку')<img src='metro43.png' width='100%'></p>");
 				$('#station_video').html("");
 				$('#back_to_main_slide').html("");
 			}
 			else if ($('#e').text()=="English") {
 				$('#text_station').html('<p>Фото проекта, там де М7 - це і є Борщагівська лінія</p>');
-				$('#station_image').html("<img src='metro43.png'  width='100%'>");
+				$('#station_image').html("<p style='font-style: Italic'>Використана фотографія з відкритого джерела Facebook (канал 'Метро на Борщаговку')<img src='metro43.png' width='100%'></p>");
 				$('#station_video').html("");
 				$('#back_to_main_slide').html("");
 			}
 			else if ($('#e').text()=="Italiano") {
 				$('#text_station').html('<p>Photo of the project, where M7 is, this is the Borshchagivska line</p>');
-				$('#station_image').html("<img src='metro43.png'  width='100%'>");
+				$('#station_image').html("<p style='font-style: Italic'>The photo used is from an open source Facebook (channel 'Метро на Борщаговку')<img src='metro43.png' width='100%'></p>");
 				$('#station_video').html("");
 				$('#back_to_main_slide').html("");
 			}
@@ -114,6 +114,7 @@
 					$('#menu_site').html('<table width="100%"><tr><td><a href="Kiev_metro.html">Головна</a></td><td><a href="M1.html" class="light_sb"><div></div><div></div><div></div><div></div>Святошинсько-Броварська лінія</a></td><td><a href="M2.html" class="light_ot"><div></div><div></div><div></div><div></div>Оболонсько-Теремківська лінія</a></td><td><a href="M3.html" class="light_sp"><div></div><div></div><div></div><div></div>Сирецько-Печерська лінія</a></td><td><a href="M4.html" class="light_pv"><div></div><div></div><div></div><div></div>Подільсько-Вигурівська лінія</a></td></tr><tr><td><a href="M5.html" class="light_livoberezhna"><div></div><div></div><div></div><div></div>Лівобережна лінія</a></td><td><a href="M6.html" class="light_vd"><div></div><div></div><div></div><div></div>Вишгородсько-Дарницька лінія</a></td><td>Борщагівська лінія</td><td><a href="Rolling_stock_kyiv_metro.html">Рухомий пасажирський склад метрополітену</a></td><td><a href="about_us.html">Про нас</a></td></td></tr></table>');
 					$('#p').html('<p>Проект сьомої лінії Київського метрополітена, який був уніфікований з швидкісним трамваєм, до російсько-української війни швидкісного трамвая доробили і провели випробування. Але із за російсько-української війни і складної економічної ситуації, Борщагівський швидкісний трамвай лишився єдиним екземпляром, а проект Борщагівської лінії Київського метрополітена залишився на паперах.</p>');
 					$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#ffffff;");
+					$('#station_image').html("<p style='font-style: Italic'>Використана фотографія з відкритого джерела Facebook (канал 'Метро на Борщаговку')<img src='metro43.png' width='100%'></p>");
 					$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
 					$("#text_station").html('<p>Фото проекта, там де М7 - це і є Борщагівська лінія</p>');
 					$("#station_2").html("<p><a>Зараз список станцій Борщагівської лінії Київського метрополітена немає</a></p>");
@@ -123,6 +124,7 @@
 					$('#menu_site').html('<table width="100%"><tr><td><a href="Kiev_metro.html">Main site</a></td><td><a href ="M1.html" class="light_sb"><div></div><div></div><div></div><div></div>Svyatoshinsko-Brovarska line</a></td><td><a href="M2.html" class="light_ot"><div></div><div></div><div></div><div></div>Obolonsko-Teremkivska line</a></td><td><a href="M3.html" class="light_sp"><div></div><div></div><div></div><div></div>Syretsko-Pecherska line</a></td><td><a href="M4.html" class="light_pv"><div></div><div></div><div></div><div></div>Podilsko-Vygurivska line</a></td></tr><tr><td><a href="M5.html" class="light_livoberezhna"><div></div><div></div><div></div><div></div>Livoberezhna line</a></td><td><a href="M6.html" class="light_vd"><div></div><div></div><div></div><div></div>Vyshhorodsko-Darnytska line</a></td><td>Borshchagivska line</td><td><a href="Rolling_stock_kyiv_metro.html">Subway rolling stock</a></td><td><a href="about_us. html">About Us</a></td></td></tr></table>');
 					$('#p').html('<p>The project of the seventh line of the Kyiv metro, which was unified with the high-speed tram, was completed and tested before the Russian-Ukrainian war. But due to the Russian-Ukrainian war and the difficult economic situation, the Borshchahivska high-speed tram remained the only copy, and the project of the Borshchahivska line of the Kyiv metro remained on paper.</p>');
 					$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#ffffff;");
+					$('#station_image').html("<p style='font-style: Italic'>The photo used is from an open source Facebook (channel 'Метро на Борщаговку')<img src='metro43.png' width='100%'></p>");
 					$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
 					$("#text_station").html('<p>Photo of the project, where M7 is, this is the Borshchagivska line</p>');
 					$("#station_2").html("<p><a>Currently, there is no list of stations on the Borshchagivska Line of the Kyiv Metro</a></p>");
@@ -132,6 +134,7 @@
 					$('#menu_site').html('<table width="100%"><tr><td><a href="Kiev_metro.html">Sito principale</a></td><td><a href ="M1.html" class="light_sb"><div></div><div></div><div></div><div></div>Linea Svyatoshinsko-Brovarska</a></td><td><a href="M2.html" class="light_ot"><div></div><div></div><div></div><div></div>Linea Obolonsko-Teremkivska</a></td><td><a href="M3.html" class="light_sp"><div></div><div></div><div></div><div></div>Linea Syretsko-Pecherska</a></td><td><a href="M4.html" class="light_pv"><div></div><div></div><div></div><div></div>Linea Podilsko-Vygurivska</a></td></tr><tr><td><a href="M5.html" class="light_livoberezhna"><div></div><div></div><div></div><div></div>Linea Livoberezhna</a></td><td><a href="M6.html" class="light_vd"><div></div><div></div><div></div><div></div>Linea Vyshhorodsko-Darnytska</a></td><td>Linea Borshchagivska</td><td><a href="Rolling_stock_kyiv_metro.html">Materiale rotabile della metropolitana</a></td><td><a href="about_us.html">Chi siamo</a></td></td></tr></table>');
 					$('#p').html("<P>Il progetto della settima linea della metropolitana di Kiev, che e stata unificata con il tram ad alta velocita, e stato completato e testato prima della guerra russo-ucraina. Ma a causa della guerra russo-ucraina e della difficile situazione economica, il tram ad alta velocita Borshchahivska e rimasto l'unica copia e il progetto della linea Borshchahivska della metropolitana di Kiev e rimasto sulla carta.</P>");
 					$("#p, h1, h2, h3, h4, li, legend, td, label, option").attr("style","color:#ffffff;");
+					$('#station_image').html("<p style='font-style: Italic'>La foto utilizzata proviene da un Facebook open source (canale 'Метро на Борщаговку')<img src='metro43.png' width='100%'></p>");
 					$("#divDateTime").attr("style","font-family: Calibri; color: Orange; font-style: Italic; font-size:115%;");
 					$("#text_station").html('<p>Foto del progetto, dove si trova M7, questa e la linea Borshchagivska</p>');
 					$("#station_2").html("<p><a>Attualmente non esiste un elenco di stazioni sulla linea Borshchagivska della metropolitana di Kiev</a></p>");
@@ -159,7 +162,7 @@ $(function(){
 					a=$(id_obj).attr('title');
 				}
 			}
-			$('#station img').each(function(){
+			$('#station_image img').each(function(){
 				$(this).attr('title','');
 				$(this).click(function(){
 					change_width(this,1.5);
@@ -235,7 +238,7 @@ $(function(){
 <div id='text_station'><p>Фото проекта, там де М7 - це і є Борщагівська лінія</p></div>
 </p>
 <p>
-<div id='station_image'><img src='metro43.png' width="100%"></div>
+<div id='station_image'><p style='font-style: Italic'>Використана фотографія з відкритого джерела Facebook (канал 'Метро на Борщаговку')<img src='metro43.png' width="100%"></p></div>
 <div id='station_video'></div>
 <div id='back_to_main_slide'></div>
 </p>
